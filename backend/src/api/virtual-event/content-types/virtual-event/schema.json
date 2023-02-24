@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "virtual_events",
+  "info": {
+    "singularName": "virtual-event",
+    "pluralName": "virtual-events",
+    "displayName": "VirtualEvent"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "event_host": {
+      "type": "string"
+    },
+    "event_host_description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "private": true
+    },
+    "enroll_url": {
+      "type": "string"
+    },
+    "learn_more_url": {
+      "type": "string"
+    }
+  }
+}

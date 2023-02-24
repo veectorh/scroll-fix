@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "board_members",
+  "info": {
+    "singularName": "board-member",
+    "pluralName": "board-members",
+    "displayName": "BoardMember",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

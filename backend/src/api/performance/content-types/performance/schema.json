@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "performances",
+  "info": {
+    "singularName": "performance",
+    "pluralName": "performances",
+    "displayName": "Performance",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "video_url": {
+      "type": "string"
+    },
+    "artist_name": {
+      "type": "string"
+    },
+    "artist_description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "artist_photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "artist_url": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "related_speakers",
+  "info": {
+    "singularName": "related-speaker",
+    "pluralName": "related-speakers",
+    "displayName": "RelatedSpeaker"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "speakers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::speaker.speaker",
+      "inversedBy": "related_speakers"
+    }
+  }
+}

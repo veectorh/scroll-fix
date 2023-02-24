@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "summer_institutes",
+  "info": {
+    "singularName": "summer-institute",
+    "pluralName": "summer-institutes",
+    "displayName": "SummerInstitute"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "year": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "register_url": {
+      "type": "string",
+      "required": true
+    },
+    "speaker_name": {
+      "type": "string",
+      "required": true
+    },
+    "speaker_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "session_name": {
+      "type": "string",
+      "required": true
+    },
+    "session_speaker": {
+      "type": "string"
+    }
+  }
+}
