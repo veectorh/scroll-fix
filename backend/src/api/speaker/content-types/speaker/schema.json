@@ -47,9 +47,8 @@
     },
     "related_speakers": {
       "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::related-speaker.related-speaker",
-      "mappedBy": "speakers"
+      "relation": "oneToMany",
+      "target": "api::speaker.speaker"
     },
     "featured": {
       "type": "boolean",
