@@ -53,7 +53,7 @@ export default function Speaker({ speaker }) {
     <SpeakerStyles>
       <Link href={`/speakers/${speakerName}`}>
         <Image 
-          src={speaker.attributes.photo.data.attributes.url} 
+          src={speaker.attributes.photo.data?.attributes.url} 
           alt={speaker.attributes.fullName} 
           width={150} 
           height={150} 

@@ -67,7 +67,7 @@ export default function Performance({performance}) {
     <PerformanceStyle>
       <div className="image-buttons">
         <Image 
-          src={performance.attributes.image.data.attributes.url} 
+          src={performance.attributes.image.data?.attributes.url} 
           alt={performance.attributes.name} 
           width={436} 
           height={255} 
@@ -88,7 +88,7 @@ export default function Performance({performance}) {
         <div className="artist">
           <div className="artist-image">
             <Image 
-              src={performance.attributes.artist_photo.data.attributes.url} 
+              src={performance.attributes.artist_photo.data?.attributes.url} 
               alt={performance.attributes.name} 
               width={121} 
               height={121} 
