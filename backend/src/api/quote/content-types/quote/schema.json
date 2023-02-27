@@ -4,7 +4,7 @@
   "info": {
     "singularName": "quote",
     "pluralName": "quotes",
-    "displayName": "Quote",
+    "displayName": "GlobalQuote",
     "description": ""
   },
   "options": {
