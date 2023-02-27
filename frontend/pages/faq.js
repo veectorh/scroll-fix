@@ -1,9 +1,6 @@
-import ButtonStyles from "@/components/styles/ButtonStyles";
-import Link from "next/link";
 import styled from "styled-components";
 import { BsChevronBarExpand } from "react-icons/bs";
 import NeedHelp from "@/components/NeedHelp";
-
 
 const FAQStyle = styled.section`
   padding: 100px 0 0;
@@ -27,7 +24,6 @@ const FAQStyle = styled.section`
     width: 100%;
     border-radius: 20px;
     margin-bottom: 15px;
-    /* padding: 20px; */
 
     .question {
       display: flex;
@@ -62,7 +58,6 @@ const FAQStyle = styled.section`
     }
   }
 `;
-
 
 export default function FAQPage() {
   return (
