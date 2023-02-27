@@ -68,7 +68,7 @@ export default function Performance({performance}) {
       <div className="image-buttons">
         <Image 
           src={performance.attributes.image.data?.attributes.url} 
-          alt={performance.attributes.name} 
+          alt={performance.attributes?.name} 
           width={436} 
           height={255} 
           priority
@@ -83,21 +83,21 @@ export default function Performance({performance}) {
         </div >
       </div>
       <div className="name-descriptions">
-        <h2>{performance.attributes.name}</h2>
-        <p>{performance.attributes.description}</p>
+        <h2>{performance.attributes?.name}</h2>
+        <p>{performance.attributes?.description}</p>
         <div className="artist">
           <div className="artist-image">
             <Image 
-              src={performance.attributes.artist_photo.data?.attributes.url} 
-              alt={performance.attributes.name} 
+              src={performance.attributes.artist_photo.data?.attributes?.url} 
+              alt={performance.attributes?.name} 
               width={121} 
               height={121} 
               priority
             />
           </div >
           <div className="artist-description">
-            <h3>Created by {performance.attributes.artist_name}</h3>
-            <p>Created by {performance.attributes.artist_description}</p>
+            <h3>Created by {performance.attributes?.artist_name}</h3>
+            <p>Created by {performance.attributes?.artist_description}</p>
             <ButtonStyles theme={{ main: "#000000" }} border={true}>
               <Link href="/ecourse">More About the Artist</Link>
             </ButtonStyles>
