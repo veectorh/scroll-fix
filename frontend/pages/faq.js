@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { BsChevronBarExpand } from "react-icons/bs";
 import NeedHelp from "@/components/NeedHelp";
+import { loadFAQs } from "@/lib/load-faqs";
+import FAQ from "@/components/FAQ";
 
 const FAQStyle = styled.section`
   padding: 100px 0 0;
@@ -41,12 +42,15 @@ const FAQStyle = styled.section`
         margin: 0;
       }
       .icon {
-
+        color: #F8A151;
+        font-size: 55px;
+        line-height: 0;
+        font-weight: 320
       }
     }
 
     .answer {
-      display: none;
+      /* display: none; */
       padding: 0 20px 20px;
       p {
         font-weight: 400;
@@ -59,39 +63,26 @@ const FAQStyle = styled.section`
   }
 `;
 
-export default function FAQPage() {
+export default function FAQPage({ faqs }) {
+  console.log("FAQs:", faqs.data);
+
   return (
     <>
       <FAQStyle>
         <h1>FREQUENTLY ASKED QUESTIONS</h1>
         <p>Here are brief responses to questions most often asked of us:</p>
-        <div className="question-answer">
-          <div className="question">
-            <p>Does non-profit mean there is no charge for speakers and artists?</p>
-            <BsChevronBarExpand className='icon' />
-          </div>
-          <div className="answer">
-            <p>
-            While Speak Out is a 501(c)3 tax-exempt organization, speakers and artists do ask an honorarium plus travel expenses and accommodations must be covered. We work with some 100 speakers and artists – some of them make their living through lectures or performances; others are raising funds for their own organizations, communities and causes.<br/><br/>
-
-            Fees range from $3000 and up. While all speakers and artists have a set fee there can sometimes be flexibility. For example, if a speaker or artist is already going to be in your area, block booking may reduce costs. Some speakers have specific criteria on when they might charge less, especially for groups or communities that have less access to funds. Contact Speak Out for costs on the specific people you’re interested in.
-            </p>
-          </div>
-        </div>
-        <div className="question-answer">
-          <div className="question">
-            <p>Where are the speakers and artists located geographically?</p>
-            <BsChevronBarExpand className='icon' />
-          </div>
-        </div>
-        <div className="question-answer">
-          <div className="question">
-            <p>Are SpeakOut speakers and artists available for other events related to their engagement such as book-signings, press interviews, receptions, etc? Are SpeakOut speakers and artists available for other events related to their engagement such as book-signings, press interviews, receptions, etc?</p>
-            <BsChevronBarExpand className='icon' />
-          </div>
-        </div>
+        {
+          faqs.data.map(faq => (
+            <FAQ question={faq.attributes.question} answer={faq.attributes.answer} key={faq.id} />
+          ))
+        }      
       </FAQStyle>
       <NeedHelp />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const faqs = await loadFAQs();
+  return { props: { faqs } }
 }
