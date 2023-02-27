@@ -80,7 +80,7 @@ export default function Footer() {
             </Link>
           </div >
           <div className="social">
-            <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+            <a href="https://www.facebook.com/SpeakOutSpeakers" target="_blank" rel="noreferrer">
               <Image
                 src='/images/facebook.png'
                 alt="Facebook"
@@ -88,7 +88,7 @@ export default function Footer() {
                 height="21"
               />
             </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/SpeakOutspeakers" target="_blank" rel="noreferrer">
               <Image
                 src='/images/instagram.png'
                 alt="Instagram"
@@ -96,7 +96,7 @@ export default function Footer() {
                 height="20"
               />
             </a>
-            <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+            <a href="https://twitter.com/SpeakOutIDEC" target="_blank" rel="noreferrer">
               <Image
                 src="/images/twitter.png"
                 alt="Twitter"
@@ -122,7 +122,7 @@ export default function Footer() {
               />
             </div>
             <div className="info">
-              <p>info@speakoutnow.org</p>
+              <p><a href="mailto:info@speakoutnow.org">info@speakoutnow.org</a></p>
             </div>
           </div>
           <div className="image-info">
@@ -136,7 +136,7 @@ export default function Footer() {
               />
             </div>
             <div className="info">
-              <p>+1 (510) 601-0182</p>
+              <p><a href="tel:+15106010182">+1 (510) 601-0182</a></p>
             </div>
           </div>
           <div className="image-info">

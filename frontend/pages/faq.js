@@ -64,8 +64,6 @@ const FAQStyle = styled.section`
 `;
 
 export default function FAQPage({ faqs }) {
-  console.log("FAQs:", faqs.data);
-
   return (
     <>
       <FAQStyle>

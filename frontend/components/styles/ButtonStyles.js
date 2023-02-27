@@ -41,7 +41,10 @@ const ButtonStyles = styled.div`
         margin: unset;
         padding-left: 7px;
     }
+  }
 
+  a:hover {
+    background: #2a2a2a;
   }
 `
 

@@ -72,6 +72,16 @@ const FooterStyles = styled.footer`
       .image-info {
         display: flex;
         gap: 15px;
+
+        .info {
+          p {
+            a {
+              text-decoration: none;
+              color: inherit;
+            }
+            
+          }
+        }
       }
     }
   }

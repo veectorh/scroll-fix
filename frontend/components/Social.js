@@ -13,7 +13,7 @@ const SocialStyles = styled.nav`
 export default function Social() {
   return (
     <SocialStyles>
-      <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+      <a href="https://www.facebook.com/SpeakOutSpeakers" target="_blank" rel="noreferrer">
         <Image
           src="/images/facebook.png"
           alt="Facebook"
@@ -21,7 +21,7 @@ export default function Social() {
           height="17"
         />
       </a>
-      <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+      <a href="https://www.instagram.com/SpeakOutspeakers" target="_blank" rel="noreferrer">
         <Image
           src="/images/instagram.png"
           alt="Instagram"
@@ -29,7 +29,7 @@ export default function Social() {
           height="16"
         />
       </a>
-      <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+      <a href="https://twitter.com/SpeakOutIDEC" target="_blank" rel="noreferrer">
         <Image
           src="/images/twitter.png"
           alt="Twitter"
@@ -37,7 +37,7 @@ export default function Social() {
           height="15"
         />
       </a>
-      <a href="https://www.donate.com" target="_blank" rel="noreferrer" style={{ marginLeft:15 }}>
+      <a href="https://www.paypal.com/us/fundraiser/charity/2248447" target="_blank" rel="noreferrer" style={{ marginLeft:15 }}>
         <Image
           src="/images/donate.png"
           alt="Donate"
