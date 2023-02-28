@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from 'next/image';
 import Link from 'next/link';
-import ButtonStyles from '../components/styles/ButtonStyles';
+import SecondButtonStyles from '../components/styles/SecondButtonStyles';
 
 const PerformanceStyle = styled.div`
   background-color: #000000;
@@ -41,6 +41,7 @@ const PerformanceStyle = styled.div`
     display: flex;
     width: 436px;
     justify-content: space-around;
+    gap: 10px;
   }
 
   .artist {
@@ -55,6 +56,9 @@ const PerformanceStyle = styled.div`
     }
   }
   .artist-description {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     p {
       margin-bottom: 30px;
     }
@@ -63,23 +67,24 @@ const PerformanceStyle = styled.div`
 
 
 export default function Performance({performance}) {
+  console.log("We INSIDE:", performance)
   return (
     <PerformanceStyle>
       <div className="image-buttons">
         <Image 
-          src={performance.attributes.image.data?.attributes.url} 
+          src={performance.attributes.image?.data?.attributes.url} 
           alt={performance.attributes?.name} 
           width={436} 
           height={255} 
           priority
         />
         <div className="buttons">
-          <ButtonStyles theme={{ main: "#00AFB5" }}>
+          <SecondButtonStyles theme={{ main: "#00AFB5" }} className="test">
             <Link href="/ecourse">Watch a Clip</Link>
-          </ButtonStyles>
-          <ButtonStyles theme={{ main: "#00AFB5" }}>
+          </SecondButtonStyles>
+          <SecondButtonStyles theme={{ main: "#00AFB5" }} className="test">
             <Link href="/ecourse">Request Info</Link>
-          </ButtonStyles>
+          </SecondButtonStyles>
         </div >
       </div>
       <div className="name-descriptions">
@@ -88,7 +93,7 @@ export default function Performance({performance}) {
         <div className="artist">
           <div className="artist-image">
             <Image 
-              src={performance.attributes.artist_photo.data?.attributes?.url} 
+              src={performance.attributes.artist_photo?.data?.attributes?.url} 
               alt={performance.attributes?.name} 
               width={121} 
               height={121} 
@@ -98,9 +103,9 @@ export default function Performance({performance}) {
           <div className="artist-description">
             <h3>Created by {performance.attributes?.artist_name}</h3>
             <p>Created by {performance.attributes?.artist_description}</p>
-            <ButtonStyles theme={{ main: "#000000" }} border={true}>
+            <SecondButtonStyles theme={{ main: "#000000" }} border={true}>
               <Link href="/ecourse">More About the Artist</Link>
-            </ButtonStyles>
+            </SecondButtonStyles>
           </div >
         </div >
       </div>
