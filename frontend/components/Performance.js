@@ -66,8 +66,8 @@ const PerformanceStyle = styled.div`
 `;
 
 
-export default function Performance({performance}) {
-  console.log("We INSIDE:", performance)
+export default function Performance({ performance }) {
+  console.log("Performance", typeof performance);
   return (
     <PerformanceStyle>
       <div className="image-buttons">

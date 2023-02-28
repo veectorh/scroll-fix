@@ -42,6 +42,7 @@ const PerfomancesListStyle = styled.div`
 `;
 
 export default function PerformancesPage({ performances }) {
+  console.log(performances.data)
   return (
     <>
       <PerformancesPageStyle>
@@ -49,11 +50,11 @@ export default function PerformancesPage({ performances }) {
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin fringilla sagittis. Nunc ultrices turpis eget nunc consequat vulputate. Donec libero magna, tincidunt nec sapien ut, porttitor gravida tortor.</p>
 
         <PerfomancesListStyle>
-          {
+          {/* {
             performances.data.map(performance => (
               <Performance key={performance.id} performance={performance} />
             ))
-          }
+          } */}
 
         </PerfomancesListStyle>
 
