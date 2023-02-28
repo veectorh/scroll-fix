@@ -22,7 +22,7 @@ export default function EducationalInstitute() {
             src='/images/ecourse.png'
             alt="e-course"
             fill
-            sizes="15vw"
+            sizes="50vw"
             priority
           />
         </div>
@@ -34,7 +34,7 @@ export default function EducationalInstitute() {
               src='/images/virtual-events.png'
               alt="e-course"
               fill
-              sizes="15vw"
+              sizes="50vw"
               priority
             />
         </div>
@@ -60,7 +60,7 @@ export default function EducationalInstitute() {
             src='/images/summer-institute.png'
             alt="e-course"
             fill
-            sizes="15vw"
+            sizes="50vw"
             priority
           />
         </div>
@@ -72,7 +72,7 @@ export default function EducationalInstitute() {
               src='/images/so-original-films.png'
               alt="e-course"
               fill
-              sizes="15vw"
+              sizes="50vw"
               priority
             />
         </div>
