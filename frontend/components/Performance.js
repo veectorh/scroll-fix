@@ -66,45 +66,48 @@ const PerformanceStyle = styled.div`
 `;
 
 
-export default function Performance({ performance }) {
-  console.log("Performance", typeof performance);
+export default function Performance( performance ) {
+  const { name, description, artist_name, image, video_url } = performance.performance.performance.attributes;
+  const slug = artist_name.data.attributes.fullName.toLowerCase().replace('.', '').split(' ').join('-');
+
+
   return (
     <PerformanceStyle>
       <div className="image-buttons">
         <Image 
-          src={performance.attributes.image?.data?.attributes.url} 
-          alt={performance.attributes?.name} 
+          src={image.data.attributes.url} 
+          alt={name} 
           width={436} 
           height={255} 
           priority
         />
         <div className="buttons">
           <SecondButtonStyles theme={{ main: "#00AFB5" }} className="test">
-            <Link href="/ecourse">Watch a Clip</Link>
+            <Link href={video_url === null ? "/#" : video_url}>Watch a Clip</Link>
           </SecondButtonStyles>
           <SecondButtonStyles theme={{ main: "#00AFB5" }} className="test">
-            <Link href="/ecourse">Request Info</Link>
+            <Link href="/inquiry-form">Request Info</Link>
           </SecondButtonStyles>
         </div >
       </div>
       <div className="name-descriptions">
-        <h2>{performance.attributes?.name}</h2>
-        <p>{performance.attributes?.description}</p>
+        <h2>{name}</h2>
+        <p>{description}</p>
         <div className="artist">
           <div className="artist-image">
             <Image 
-              src={performance.attributes.artist_photo?.data?.attributes?.url} 
-              alt={performance.attributes?.name} 
+              src={artist_name.data.attributes.photo.data.attributes.url} 
+              alt={artist_name.data.attributes.fullName} 
               width={121} 
               height={121} 
               priority
             />
           </div >
           <div className="artist-description">
-            <h3>Created by {performance.attributes?.artist_name}</h3>
-            <p>Created by {performance.attributes?.artist_description}</p>
+            <h3>Created by {artist_name.data.attributes.fullName}</h3>
+            <p>{artist_name.data.attributes.tagLine}</p>
             <SecondButtonStyles theme={{ main: "#000000" }} border={true}>
-              <Link href="/ecourse">More About the Artist</Link>
+              <Link href={`/speakers/${slug}`}>More About the Artist</Link>
             </SecondButtonStyles>
           </div >
         </div >
