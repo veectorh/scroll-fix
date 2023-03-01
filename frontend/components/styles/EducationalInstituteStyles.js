@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const EducationalInstituteStyles = styled.section`
   background: #F2F2F2;
   text-align: center;
-  padding: 30px 0 60px;
+  padding: 0;
   p {
     max-width: 898px;
     margin: 0 auto 66px;;

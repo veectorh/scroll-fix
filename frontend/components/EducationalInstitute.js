@@ -6,14 +6,11 @@ import ButtonStyles from '../components/styles/ButtonStyles';
 export default function EducationalInstitute() {
   return (
     <EducationalInstituteStyles>
-      <h2>Educational Institute</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
       <div className="copy-image">
         <div className="copy">
           <div className="copy-container">
             <h2>E-Course</h2>
-            <p>SpeakOut&apos;s mission is to encourage critical and imaginative thinking to address the major inequities of our day and transform a fractured world.</p>
+            <p>Learn from leading speakers and experts in our educational, social justice e-courses. Designed for self-paced or group learning, these courses will empower you to make a positive impact on yourself, in your institutions, and in society as a whole.</p>
             <ButtonStyles theme={{ main: "#00AFB5" }}><Link href="/ecourse">Learn More and Sign Up</Link></ButtonStyles>
           </div>
         </div>
@@ -41,7 +38,7 @@ export default function EducationalInstitute() {
         <div className="copy">
           <div className="copy-container">
             <h2>Virtual Events</h2>
-            <p>SpeakOut&apos;s mission is to encourage critical and imaginative thinking to address the major inequities of our day and transform a fractured world.</p>
+            <p>Join us for live virtual events featuring renowned and emerging speakers presenting new, cutting-edge material on race, culture, and politics. Engage with others in accessible and affordable events.</p>
             <ButtonStyles theme={{ main: "#00AFB5" }}><Link href="/events">See All Events</Link></ButtonStyles>
           </div>
         </div>
@@ -51,7 +48,7 @@ export default function EducationalInstitute() {
         <div className="copy">
           <div className="copy-container">
             <h2>Summer Institute</h2>
-            <p>SpeakOut&apos;s mission is to encourage critical and imaginative thinking to address the major inequities of our day and transform a fractured world.</p>
+            <p>Join our multi-day Summer Institute for activists, educators, scholars, and professionals to learn from leading experts, engage in interactive workshops, and connect with a diverse network of change-makers. Make a positive impact in your institutions and communities.</p>
             <ButtonStyles theme={{ main: "#00AFB5" }}><Link href="/summer-institute">Learn More and Register</Link></ButtonStyles>
           </div>
         </div>
@@ -79,7 +76,7 @@ export default function EducationalInstitute() {
         <div className="copy">
           <div className="copy-container">
             <h2>SpeakOut Original Films</h2>
-            <p>SpeakOut&apos;s mission is to encourage critical and imaginative thinking to address the major inequities of our day and transform a fractured world.</p>
+            <p>Explore our selection of SpeakOut-produced films and learn about the talented speakers and artists involved. Support the next generation of artists and filmmakers by watching and contributing to our films.</p>
             <ButtonStyles theme={{ main: "#00AFB5" }}><Link href="/original-films">Explore Our Films</Link></ButtonStyles>
           </div>
         </div>

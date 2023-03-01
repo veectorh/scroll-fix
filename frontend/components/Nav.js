@@ -117,7 +117,7 @@ export default function Nav() {
         <div className='ul-list-1'>
           <ul>
             <li>
-              <Link className={`${router.pathname === '/institute' && ("active-link")}`} href="/e-course">About the Institute</Link>
+              <Link className={`${router.pathname === '/institute' && ("active-link")}`} href="/institute">Education Institute</Link>
             </li>
             <li>
               <Link className={`${router.pathname === '/e-course' && ("active-link")}`} href="/e-course">E-COURSE</Link>

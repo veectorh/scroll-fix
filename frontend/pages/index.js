@@ -9,6 +9,17 @@ import QuotesCarousel from '../components/QuotesCarousel';
 import OurStore from '../components/OurStore';
 import { loadFeaturedSpeakers } from '@/lib/load-featured-speakers';
 import Speaker from '@/components/Speaker';
+import styled from 'styled-components';
+
+const EducationalIntro = styled.div`
+  background: #F2F2F2;
+  text-align: center;
+  padding: 30px 0 60px;
+  p {
+    max-width: 898px;
+    margin: 0 auto 0px;
+  }
+`;
 
 const Home = ({ featuredSpeakers, error }) => {
   const speakers = getRandomSpeakers(featuredSpeakers);
@@ -56,6 +67,12 @@ const Home = ({ featuredSpeakers, error }) => {
           } */}
         </div>
       </FeaturedSpeakersStyles>
+
+
+      <EducationalIntro>
+        <h2>Educational Institute</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </EducationalIntro>
       <EducationalInstitute />
       <QuotesCarousel />
       <OurStore />

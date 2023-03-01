@@ -65,6 +65,7 @@ const styles = {
     position: 'relative',
     width: '100%',
     background: '#F2F2F2',
+    paddingTop: '60px',
   },
   image: {
     width: '100px',
