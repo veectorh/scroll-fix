@@ -41,7 +41,7 @@ export default function InstitutePage() {
   return (
     <>
       <InstitutePageStyle>
-        <h1>INSTITUTE FOR DEMOCRATIC<br/>EDUCATION AND CULTURE</h1>
+        <h1>EDUCATION INSTITUTE</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin fringilla sagittis. Nunc ultrices turpis eget nunc consequat vulputate. Donec libero magna, tincidunt nec sapien ut, porttitor gravida tortor.</p>
       </InstitutePageStyle>
       <EducationalInstitute />
