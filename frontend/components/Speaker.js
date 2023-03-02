@@ -46,8 +46,7 @@ const SpeakerStyles = styled.div`
 
 `;
 
-export default function Speaker({ speaker }) {  
-  console.log("Speaker:", speaker);
+export default function Speaker({ speaker }) {
   const speakerName = speaker.attributes.fullName.toLowerCase().replace('.', '').split(' ').join('-');
   // console.log(speakerName)
   return (
