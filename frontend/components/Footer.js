@@ -14,7 +14,7 @@ export default function Footer() {
         </div>
         <div className="instagram-section">
           <h4>Follow us <br/>On Instagram</h4>
-          <div className='instagram-images'>
+          {/* <div className='instagram-images'>
             <a href="https://www.instagram.com/p/CoczDQrJmEJ/?hl=en" target="_blank" rel="noreferrer">
               <Image
                 src="https://scontent-qro1-1.cdninstagram.com/v/t51.2885-15/329783503_1964936083837401_35886849969918183_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_ht=scontent-qro1-1.cdninstagram.com&_nc_cat=109&_nc_ohc=GYfy4viTVBYAX-B3sBD&edm=AP_V10EBAAAA&ccb=7-5&oh=00_AfDtzKz-gsRMgBo0WiG6WLNBlCopyNJ37CzfOiC2fgLMgQ&oe=63F3F4B4&_nc_sid=4f375e"
@@ -63,7 +63,7 @@ export default function Footer() {
                 height="80"
               />
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="footer">
