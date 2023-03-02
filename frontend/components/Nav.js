@@ -120,7 +120,7 @@ export default function Nav() {
               <Link className={`${router.pathname === '/institute' && ("active-link")}`} href="/institute">Education Institute</Link>
             </li>
             <li>
-              <Link className={`${router.pathname === '/e-course' && ("active-link")}`} href="/e-course">E-COURSE</Link>
+              <Link className={`${router.pathname === '/e-course' && ("active-link")}`} href="https://speakoutinstitute.thinkific.com/collections" target={'_blank'}>E-COURSE</Link>
             </li>
             <li>
               <Link className={`${router.pathname === '/events' && ("active-link")}`} href="/events">VIRTUAL EVENTS</Link>
