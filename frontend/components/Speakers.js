@@ -53,10 +53,7 @@ export default function Speakers(speakers, topics, error) {
   if (error) {
     return <div>An error occured: {error.message}</div>;
   }
-  // console.log("TOPICS:", speakers.topics.data);
-  // console.log("SPEAKERS:", speakers);
 
-  // console.log("topics", speakers.topics.data)
   const [topicsList, setTopicsList] = useState([]);
   const [speakersList, setSpeakersList] = useState([]);
 
@@ -74,8 +71,9 @@ export default function Speakers(speakers, topics, error) {
     }
   }, [speakers])
 
-
+  // filter function
   const handleSelectedCategory = (id) => {
+
     const updateSpeakersList = [];
     const updateTopicList = [...topicsList]
     let selectedTopicsList = [];
@@ -110,8 +108,6 @@ export default function Speakers(speakers, topics, error) {
     }
 
   }
-
-  console.log("speakers", speakersList)
 
   return (
     <>
