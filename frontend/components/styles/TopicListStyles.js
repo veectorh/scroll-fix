@@ -12,7 +12,6 @@ const TopicListStyles = styled.section`
       outline: none;
       border: none;
       height: 28px;
-      background: #F2F2F2;
       border-radius: 20px;
       -moz-border-radius: 20px;
       -webkit-border-radius: 20px;
@@ -23,6 +22,7 @@ const TopicListStyles = styled.section`
       text-align: center;
       letter-spacing: 0.035em;
       color: #000000;
+      cursor: pointer;
     }
 `;
 
