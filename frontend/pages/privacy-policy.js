@@ -1,6 +1,3 @@
-// import EducationalInstitute from "@/components/EducationalInstitute";
-// import NeedHelp from "@/components/NeedHelp";
-// import QuotesCarousel from "@/components/QuotesCarousel";
 import styled from "styled-components";
 
 const PrivacyPageStyle = styled.section`
