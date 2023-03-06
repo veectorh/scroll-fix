@@ -10,6 +10,37 @@ const SocialStyles = styled.nav`
   }
 `;
 
+const DonateButtonStyle = styled.div`
+  a {
+    display:flex;
+    align-items: center;
+    outline: none;
+    border: none;
+    height: 44px;
+    text-align: center;
+    padding: 0 20px;
+    background: #FFFFFF;
+    color: #D66740;
+    font-size: 16px;
+    font-family: "Oswald", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    height: 44px;
+    line-height: 24px;
+    letter-spacing: 0.085em;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    cursor: pointer;
+  }
+
+  a:hover {
+    color: #FFFFFF;
+    background: #000000;
+  }
+`;
+
 export default function Social() {
   return (
     <SocialStyles>
@@ -37,15 +68,11 @@ export default function Social() {
           height="15"
         />
       </a>
-      <a href="https://www.paypal.com/us/fundraiser/charity/2248447" target="_blank" rel="noreferrer" style={{ marginLeft:15 }}>
-        <Image
-          src="/images/donate.png"
-          alt="Donate"
-          width="95"
-          height="44"
-        />
-      </a>
+      <DonateButtonStyle>
+        <a href="https://www.paypal.com/us/fundraiser/charity/2248447" target="_blank" rel="noreferrer" style={{ marginLeft:15 }}>
+          DONATE
+        </a>
+      </DonateButtonStyle>
     </SocialStyles>
   )
-
 }

@@ -96,6 +96,14 @@ const FooterStyles = styled.footer`
       letter-spacing: 0.05em;
       margin-bottom: 0;
     }
+
+    .privacy {
+      color: white;
+      text-decoration: underline;
+    }
+    .privacy:hover {
+      color: #F8A151
+    }
   }
 `;
 
