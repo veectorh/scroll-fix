@@ -156,7 +156,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="copyright">
-        <p>© 2023 SpeakOut. All rights reserved.</p>
+        <p>© 2023 SpeakOut. All rights reserved. <a href="/privacy-policy" className="privacy">Privacy policy</a>.</p>
       </div>
     </FooterStyles>
   )
