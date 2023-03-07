@@ -57,7 +57,11 @@ const FAQStyle = styled.section`
         font-size: 14px;
         line-height: 20px;
         letter-spacing: 0.05em;
-        margin: 0;
+        margin: 14px 0;
+      }
+      a {
+        color: inherit;
+        text-decoration: underline;
       }
     }
   }

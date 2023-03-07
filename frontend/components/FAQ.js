@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactMarkdown from "react-markdown";
 
 export default function FAQ({ question, answer }) {
   const [isActive, setIsActive] = useState(false);
@@ -6,10 +7,10 @@ export default function FAQ({ question, answer }) {
   return (
     <div className="question-answer" >
       <div className="question" onClick={() => setIsActive(!isActive)}>
-        <p>{question}</p>
+        <ReactMarkdown children={question} />
         <div className="icon">{isActive ? '–' : '+'}</div>
       </div>
-      {isActive && <div className="answer"><p>{answer}</p></div>}
+      {isActive && <div className="answer"><ReactMarkdown children={answer} /></div>}
     </div>
   )
 }
