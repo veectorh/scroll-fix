@@ -96,8 +96,8 @@ export default function Performance( performance ) {
         <div className="artist">
           <div className="artist-image">
             <Image 
-              src={artist_name.data.attributes.photo.data.attributes.url} 
-              alt={artist_name.data.attributes.fullName} 
+              src={artist_name.data.attributes?.photo.data.attributes.url} 
+              alt={artist_name.data.attributes?.fullName} 
               width={121} 
               height={121} 
               priority
