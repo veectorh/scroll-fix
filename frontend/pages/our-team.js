@@ -112,8 +112,6 @@ const TeamMemberStyles = styled.div`
 
 
 function OurTeamPage({ staff, directors }) {
-  console.log("STAFF:", staff);
-  console.log("DIRECTORS:", directors);
   return (
     <>
       <OurTeamStyles>
