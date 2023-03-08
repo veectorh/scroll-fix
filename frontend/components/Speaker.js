@@ -47,16 +47,16 @@ const SpeakerStyles = styled.div`
 `;
 
 export default function Speaker({ speaker }) {
-  const speakerName = speaker.attributes.fullName.toLowerCase().replace('.', '').split(' ').join('-');
-  // console.log(speakerName)
+  const speakerName = speaker.attributes.fullName.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-');
+  // console.log("speaker.attributes.fullName", speaker.attributes.fullName.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-'))
   return (
     <SpeakerStyles>
-      <Link href={`/speakers/${speakerName}`}>
-        <Image 
-          src={speaker.attributes.photo.data?.attributes.url} 
-          alt={speaker.attributes.fullName} 
-          width={150} 
-          height={150} 
+      <Link href={`/speakers/${speaker.id}`}>
+        <Image
+          src={speaker.attributes.photo.data?.attributes.url}
+          alt={speaker.attributes.fullName}
+          width={150}
+          height={150}
           priority
         />
         <div className="speaker-info">
