@@ -134,7 +134,7 @@ export const getStaticPaths = async () => {
   // create path names with id
   const paths = speakers?.data?.map(speaker => {
     return {
-      params: { id: speaker.id.toString() }
+      params: { slug: speaker.attributes.slug }
     }
   })
 
@@ -147,10 +147,10 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
 
-  const id = context.params.id;
+  const slug = context.params.slug;
 
   // fetch data of each user with id 
-  const speaker = await loadSingleSpeakers(id);
+  const speaker = await loadSingleSpeakers(slug);
 
   // generate pages 
   return { props: { singleSpeaker: speaker } }
