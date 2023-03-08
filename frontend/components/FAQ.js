@@ -10,7 +10,7 @@ export default function FAQ({ question, answer }) {
         <ReactMarkdown children={question} />
         <div className="icon">{isActive ? '–' : '+'}</div>
       </div>
-      {isActive && <div className="answer"><ReactMarkdown children={answer} /></div>}
+      {isActive && <div className="answer"><ReactMarkdown linkTarget="_blank" children={answer} /></div>}
     </div>
   )
 }
