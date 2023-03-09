@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 import Link from 'next/link';
 import styled from 'styled-components';
 import ButtonStyles from '@/components/styles/ButtonStyles';
@@ -6,6 +6,9 @@ import Image from 'next/image';
 import TopicListStyles from '@/components/styles/TopicListStyles';
 import QuotesCarousel from '@/components/QuotesCarousel';
 import OurStore from '@/components/OurStore';
+import { loadSpeakers } from '@/lib/load-speakers';
+import { loadSingleSpeakers } from '@/lib/load-single-speaker';
+import React, { useState, useEffect } from 'react';
 
 const SpeakerHeroStyles = styled.section`
   background: rgba(56, 240, 240, 0.2);
@@ -77,6 +80,10 @@ const SpeakerInfoStyles = styled.section`
   }
   .content {
     padding-bottom: 75px;
+
+    p {
+      white-space: pre-line;
+    }
   }
   .topics {
     margin: 30px 0;
@@ -121,19 +128,34 @@ const SpeakerInfoStyles = styled.section`
   }
 `;
 
-export default function SingleSpeaker() {
-  const router = useRouter();
-  const query = router.query;
-  // console.log("PATHNAME", router.query.id);
-  // console.log('QUERY', query);
-  // console.log('Router:', router.components);
-  // const speakerQueryName = query.id.split('-').join(' ');
-  // console.log({speakerQueryName});
-  // const speakerID = query.speakerID;
-  // console.log({speakerID});
+export const getStaticPaths = async () => {
+  const speakers = await loadSpeakers();
+  // create path names with id
+  const paths = speakers?.data?.map(speaker => {
+    return {
+      params: { id: speaker.attributes.slug }
+    }
+  })
+  return {
+    paths,
+    fallback: false,
+  }
+}
 
-  // TODO: LOOK INTO NEXTJS DOCS TO FIND HOW TO SSR ALL INDIVIDUAL SPEAKER PAGES = getStaticProps....
+export const getStaticProps = async (context) => {
+  const slug = context.params.id;
+  // fetch data of each user with id 
+  const speaker = await loadSingleSpeakers(slug);
+  // generate pages 
+  return { props: { singleSpeaker: speaker } }
+}
 
+
+export default function SingleSpeaker({ singleSpeaker }) {
+  // const router = useRouter();
+  const speaker = singleSpeaker?.data[0]?.attributes;
+  console.log("speaker", singleSpeaker)
+  const [showAbout, setShowAbout] = useState(true);
 
   return (
     <>
@@ -142,11 +164,11 @@ export default function SingleSpeaker() {
           <div className="return-link">
             <Link href="/speakers">Back to All Speakers</Link>
           </div >
-          <h1>{query.title}</h1>
-          <p>{query.tagLine}</p>
+          <h1>{speaker?.fullName}</h1>
+          <p>{speaker?.tagLine}</p>
           <div className="buttons">
             <ButtonStyles theme={{ main: "#00AFB5;" }}>
-              <Link href="/speakers">
+              <Link href="/inquiry-form">
                 Request Info
               </Link>
             </ButtonStyles>
@@ -160,15 +182,15 @@ export default function SingleSpeaker() {
                     width={16}
                     height={16}
                   />
-              </span>
+                </span>
               </Link>
             </ButtonStyles>
           </div>
         </div >
         <div className="speaker-image">
-          <Image 
-            src='/images/speaker1.png' 
-            alt='Speaker'
+          <Image
+            src={speaker?.photo.data?.attributes.url}
+            alt={speaker?.fullName}
             fill
             sizes="33vw"
             priority
@@ -178,26 +200,18 @@ export default function SingleSpeaker() {
       <SpeakerInfoStyles>
         <div className="left">
           <div className="heading-flex headings">
-            <h2 className='selected'>&nbsp;&nbsp;About&nbsp;&nbsp;</h2>
-            <h2>&nbsp;&nbsp;Speeches&nbsp;&nbsp;</h2>
+            <h2 onClick={() => setShowAbout(true)} className={showAbout == true ? 'selected' : ''}>&nbsp;&nbsp;About&nbsp;&nbsp;</h2>
+            <h2 onClick={() => setShowAbout(false)} className={showAbout === false ? 'selected' : ''}>&nbsp;&nbsp;Speeches&nbsp;&nbsp;</h2>
           </div>
           <div className="content">
-            <div className="about">
+            <div className={`about ${showAbout == false ? 'hide' : ''}`} >
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh ipsum consequat nisl vel pretium. <br/>
-                Suspendisse in est ante in nibh mauris. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Tristique nulla aliquet enim tortor. Condimentum id venenatis a condimentum vitae sapien pellentesque habitant morbi. Ultricies mi eget mauris pharetra. Laoreet suspendisse interdum consectetur libero id faucibus nisl. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Dis parturient montes nascetur ridiculus mus mauris vitae. At auctor urna nunc id cursus metus aliquam. <br />
-                At elementum eu facilisis sed odio morbi quis commodo odio. Sodales ut etiam sit amet. Enim sed faucibus turpis in eu mi bibendum neque egestas. Morbi tincidunt augue interdum velit euismod in pellentesque massa. Id aliquet risus feugiat in ante metus dictum at. Sed odio morbi quis commodo odio aenean sed. Pretium aenean pharetra magna ac placerat vestibulum lectus mauris. Nec tincidunt praesent semper feugiat nibh sed.<br/>
-                Eu ultrices vitae auctor eu augue ut lectus arcu. Libero enim sed faucibus turpis in. Pellentesque nec nam aliquam sem et tortor consequat id porta. Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Amet venenatis urna cursus eget nunc. Id aliquet risus feugiat in. Vitae justo eget magna fermentum iaculis. Praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla. Tellus in hac habitasse platea dictumst vestibulum rhoncus est. Ullamcorper eget nulla facilisi etiam. Euismod quis viverra nibh cras pulvinar mattis. Facilisi cras fermentum odio eu. Facilisis volutpat est velit egestas dui id ornare. Diam quam nulla porttitor massa id neque aliquam. Faucibus in ornare quam viverra orci sagittis. Malesuada proin libero nunc consequat interdum varius sit amet.<br/>
-                Eget nulla facilisi etiam dignissim. Consequat ac felis donec et odio pellentesque diam. Nisl suscipit adipiscing bibendum est ultricies. Egestas integer eget aliquet nibh praesent tristique magna sit. Ut porttitor leo a diam sollicitudin tempor id. Lacinia at quis risus sed vulputate. Id eu nisl nunc mi ipsum. Ipsum a arcu cursus vitae congue mauris rhoncus aenean vel. Nascetur ridiculus mus mauris vitae. Condimentum lacinia quis vel eros. In ante metus dictum at tempor commodo ullamcorper a lacus. Amet nisl suscipit adipiscing bibendum est. Varius vel pharetra vel turpis nunc eget lorem dolor. Hendrerit dolor magna eget est lorem ipsum dolor sit. Scelerisque purus semper eget duis at tellus. Sodales ut etiam sit amet nisl purus in mollis.
+                {speaker?.about}
               </p>
             </div>
-            <div className="speeches hide">
+            <div className={`speeches ${showAbout == true ? 'hide' : ''}`} >
               <p>
-                At elementum eu facilisis sed odio morbi quis commodo odio. Sodales ut etiam sit amet. Enim sed faucibus turpis in eu mi bibendum neque egestas. Morbi tincidunt augue interdum velit euismod in pellentesque massa. Id aliquet risus feugiat in ante metus dictum at. Sed odio morbi quis commodo odio aenean sed. Pretium aenean pharetra magna ac placerat vestibulum lectus mauris. Nec tincidunt praesent semper feugiat nibh sed.<br/>
-                Eu ultrices vitae auctor eu augue ut lectus arcu. Libero enim sed faucibus turpis in. Pellentesque nec nam aliquam sem et tortor consequat id porta. Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium. Amet venenatis urna cursus eget nunc. Id aliquet risus feugiat in. Vitae justo eget magna fermentum iaculis. Praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla. Tellus in hac habitasse platea dictumst vestibulum rhoncus est. Ullamcorper eget nulla facilisi etiam. Euismod quis viverra nibh cras pulvinar mattis. Facilisi cras fermentum odio eu. Facilisis volutpat est velit egestas dui id ornare. Diam quam nulla porttitor massa id neque aliquam. Faucibus in ornare quam viverra orci sagittis. Malesuada proin libero nunc consequat interdum varius sit amet.<br/>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh ipsum consequat nisl vel pretium. <br/>
-                Suspendisse in est ante in nibh mauris. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Tristique nulla aliquet enim tortor. Condimentum id venenatis a condimentum vitae sapien pellentesque habitant morbi. Ultricies mi eget mauris pharetra. Laoreet suspendisse interdum consectetur libero id faucibus nisl. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Dis parturient montes nascetur ridiculus mus mauris vitae. At auctor urna nunc id cursus metus aliquam. <br />
-                Eget nulla facilisi etiam dignissim. Consequat ac felis donec et odio pellentesque diam. Nisl suscipit adipiscing bibendum est ultricies. Egestas integer eget aliquet nibh praesent tristique magna sit. Ut porttitor leo a diam sollicitudin tempor id. Lacinia at quis risus sed vulputate. Id eu nisl nunc mi ipsum. Ipsum a arcu cursus vitae congue mauris rhoncus aenean vel. Nascetur ridiculus mus mauris vitae. Condimentum lacinia quis vel eros. In ante metus dictum at tempor commodo ullamcorper a lacus. Amet nisl suscipit adipiscing bibendum est. Varius vel pharetra vel turpis nunc eget lorem dolor. Hendrerit dolor magna eget est lorem ipsum dolor sit. Scelerisque purus semper eget duis at tellus. Sodales ut etiam sit amet nisl purus in mollis.
+                {speaker?.speeches}
               </p>
             </div>
           </div>
@@ -208,19 +222,20 @@ export default function SingleSpeaker() {
           </div>
           <div className="topics">
             <TopicListStyles>
-              <div>Test Lorem</div>
-              <div>Lorem</div>
-              <div>Vitae Ornare</div>
-              <div>Dolor Sit</div>
-              <div>Egestas integer</div>
+              {speaker?.topics?.data.map(topic =>
+                <div key={topic.id} style={{ backgroundColor: "#F2F2F2" }}>{topic?.attributes?.name}</div>
+              )}
+
             </TopicListStyles>
           </div >
           <div className="headings">
             <h2>&nbsp;&nbsp;Related Links</h2>
           </div>
           <div className="links">
-            <a href="#"><p>Consequat ac felis donec et odio pellentesque diam</p></a>
-            <a href="#"><p>Eget nulla facilisi etiam dignissim</p></a><br/>
+            {speaker?.related_links?.map(link =>
+              <a href={link.url} key={link.id}><p>{link.text}</p></a>
+            )}
+
           </div>
           <ButtonStyles theme={{ main: "#00AFB5" }}>
             <Link href="/ecourse">
