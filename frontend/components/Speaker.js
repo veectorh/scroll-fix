@@ -37,7 +37,7 @@ const SpeakerStyles = styled.div`
       .tagline {
         font-size: 12px;
         font-weight: 400;
-        line-height: 17px;
+        line-height: 14px;
         letter-spacing: 0.05em;
         color: #ffffff;
         margin: 0;

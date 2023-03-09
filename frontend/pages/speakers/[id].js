@@ -154,7 +154,7 @@ export const getStaticProps = async (context) => {
 export default function SingleSpeaker({ singleSpeaker }) {
   // const router = useRouter();
   const speaker = singleSpeaker?.data[0]?.attributes;
-  console.log("speaker", singleSpeaker)
+  // console.log("speaker", singleSpeaker)
   const [showAbout, setShowAbout] = useState(true);
 
   return (
