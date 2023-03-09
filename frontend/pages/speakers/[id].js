@@ -134,7 +134,7 @@ export const getStaticPaths = async () => {
   // create path names with id
   const paths = speakers?.data?.map(speaker => {
     return {
-      params: { slug: speaker.attributes.slug }
+      params: { id: speaker.attributes.slug }
     }
   })
 
@@ -147,9 +147,10 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
 
-  const slug = context.params.slug;
+  const slug = context.params.id;
 
   // fetch data of each user with id 
+
   const speaker = await loadSingleSpeakers(slug);
 
   // generate pages 
@@ -158,29 +159,19 @@ export const getStaticProps = async (context) => {
 
 
 export default function SingleSpeaker({ singleSpeaker }) {
-  
-  const router = useRouter();
- 
-  const speaker = singleSpeaker?.data?.attributes;
 
+  const router = useRouter();
+
+
+  const speaker = singleSpeaker?.data[0]?.attributes;
+  console.log("speaker", singleSpeaker)
   const [showAbout, setShowAbout] = useState(true);
 
-
-  // add this code if you want to replace id with name in url 
-
-  // useEffect(() => {
-  //   if (speaker) {
-  //     router.push({
-  //       pathname: `${speaker?.fullName.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-')}`,
-  //     },
-  //       undefined, { shallow: true }
-  //     )
-  //   }
-  // }, [speaker])
 
 
   return (
     <>
+
       <SpeakerHeroStyles>
         <div className="speaker-info">
           <div className="return-link">
@@ -212,7 +203,8 @@ export default function SingleSpeaker({ singleSpeaker }) {
         <div className="speaker-image">
 
           <Image
-            src={speaker?.photo.data?.attributes.url}
+            src='/images/speaker1.png'
+            // src={speaker?.photo.data?.attributes.url}
             alt={speaker?.fullName}
             fill
             sizes="33vw"

@@ -50,7 +50,7 @@ export default function Speaker({ speaker }) {
 
   return (
     <SpeakerStyles>
-      <Link href={`/speakers/${speaker.attributes.slug}`}>
+      <Link href={`/speakers/${speaker.attributes.slug}`} passHref>
         <Image
           src={speaker.attributes.photo.data?.attributes.url}
           alt={speaker.attributes.fullName}
