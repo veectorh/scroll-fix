@@ -3,8 +3,6 @@ import { loadSpeakers } from '@/lib/load-speakers';
 import { loadTopics } from '@/lib/load-topics';
 
 function SpeakersPage({ speakers, topics }) {
-
-
     // console.log("speakers", speakers.data)
     return (
         <div>

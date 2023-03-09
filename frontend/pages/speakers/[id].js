@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 import Link from 'next/link';
 import styled from 'styled-components';
 import ButtonStyles from '@/components/styles/ButtonStyles';
@@ -9,6 +9,7 @@ import OurStore from '@/components/OurStore';
 import { loadSpeakers } from '@/lib/load-speakers';
 import { loadSingleSpeakers } from '@/lib/load-single-speaker';
 import React, { useState, useEffect } from 'react';
+
 const SpeakerHeroStyles = styled.section`
   background: rgba(56, 240, 240, 0.2);
   display: flex;
@@ -128,50 +129,36 @@ const SpeakerInfoStyles = styled.section`
 `;
 
 export const getStaticPaths = async () => {
-
   const speakers = await loadSpeakers();
-
   // create path names with id
   const paths = speakers?.data?.map(speaker => {
     return {
       params: { id: speaker.attributes.slug }
     }
   })
-
   return {
     paths,
     fallback: false,
   }
-
 }
 
 export const getStaticProps = async (context) => {
-
   const slug = context.params.id;
-
   // fetch data of each user with id 
-
   const speaker = await loadSingleSpeakers(slug);
-
   // generate pages 
   return { props: { singleSpeaker: speaker } }
 }
 
 
 export default function SingleSpeaker({ singleSpeaker }) {
-
-  const router = useRouter();
-
-
+  // const router = useRouter();
   const speaker = singleSpeaker?.data[0]?.attributes;
   console.log("speaker", singleSpeaker)
   const [showAbout, setShowAbout] = useState(true);
 
-
-
   return (
     <>
-
       <SpeakerHeroStyles>
         <div className="speaker-info">
           <div className="return-link">
@@ -181,7 +168,7 @@ export default function SingleSpeaker({ singleSpeaker }) {
           <p>{speaker?.tagLine}</p>
           <div className="buttons">
             <ButtonStyles theme={{ main: "#00AFB5;" }}>
-              <Link href="/speakers">
+              <Link href="/inquiry-form">
                 Request Info
               </Link>
             </ButtonStyles>
@@ -201,10 +188,8 @@ export default function SingleSpeaker({ singleSpeaker }) {
           </div>
         </div >
         <div className="speaker-image">
-
           <Image
-            src='/images/speaker1.png'
-            // src={speaker?.photo.data?.attributes.url}
+            src={speaker?.photo.data?.attributes.url}
             alt={speaker?.fullName}
             fill
             sizes="33vw"
@@ -238,7 +223,7 @@ export default function SingleSpeaker({ singleSpeaker }) {
           <div className="topics">
             <TopicListStyles>
               {speaker?.topics?.data.map(topic =>
-                <div key={topic.id}>{topic?.attributes?.name}</div>
+                <div key={topic.id} style={{ backgroundColor: "#F2F2F2" }}>{topic?.attributes?.name}</div>
               )}
 
             </TopicListStyles>
