@@ -54,8 +54,8 @@ export default function Speaker({ speaker }) {
         <Image
           src={speaker.attributes.photo.data?.attributes.url}
           alt={speaker.attributes.fullName}
-          width={150}
-          height={150}
+          width={300}
+          height={300}
           priority
         />
         <div className="speaker-info">

@@ -181,6 +181,7 @@ export default function SingleSpeaker({ singleSpeaker }) {
                     alt="Download"
                     width={16}
                     height={16}
+                    priority
                   />
                 </span>
               </Link>
