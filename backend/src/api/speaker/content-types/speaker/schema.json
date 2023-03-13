@@ -72,6 +72,13 @@
     "slug": {
       "type": "uid",
       "targetField": "fullName"
+    },
+    "publicity_packet": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
