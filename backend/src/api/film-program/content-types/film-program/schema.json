@@ -4,7 +4,8 @@
   "info": {
     "singularName": "film-program",
     "pluralName": "film-programs",
-    "displayName": "FilmProgram"
+    "displayName": "FilmProgram",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,28 +22,18 @@
     "video_url": {
       "type": "string"
     },
-    "artist_name": {
-      "type": "string"
-    },
-    "artist_description": {
-      "type": "text"
-    },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
-    "artist_photo": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "artist_url": {
-      "type": "string"
+    "artist_name": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::speaker.speaker"
     }
   }
 }

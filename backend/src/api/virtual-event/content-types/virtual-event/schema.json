@@ -4,7 +4,8 @@
   "info": {
     "singularName": "virtual-event",
     "pluralName": "virtual-events",
-    "displayName": "VirtualEvent"
+    "displayName": "VirtualEvent",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,25 +20,24 @@
       "type": "text",
       "required": true
     },
-    "event_host": {
-      "type": "string"
-    },
-    "event_host_description": {
-      "type": "text"
-    },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "private": true
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "enroll_url": {
       "type": "string"
     },
     "learn_more_url": {
       "type": "string"
+    },
+    "host_name": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::speaker.speaker"
     }
   }
 }

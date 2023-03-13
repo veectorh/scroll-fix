@@ -22,9 +22,6 @@
     "video_url": {
       "type": "string"
     },
-    "artist_description": {
-      "type": "text"
-    },
     "image": {
       "type": "media",
       "multiple": false,

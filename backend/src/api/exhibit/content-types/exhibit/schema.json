@@ -22,12 +22,6 @@
     "video_url": {
       "type": "string"
     },
-    "artist_name": {
-      "type": "string"
-    },
-    "artist_description": {
-      "type": "text"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -36,16 +30,10 @@
         "images"
       ]
     },
-    "artist_photo": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "artist_url": {
-      "type": "string"
+    "artist_name": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::speaker.speaker"
     }
   }
 }
