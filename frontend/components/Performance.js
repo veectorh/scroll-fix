@@ -9,6 +9,7 @@ const PerformanceStyle = styled.div`
   gap: 40px;
   padding: 42px 42px;
   border-radius: 20px;
+  margin-bottom: 25px;
   h2 {
     color: #ffffff;
     margin: 0 0 15px;;

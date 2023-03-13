@@ -15,6 +15,7 @@ const QuotesStyles = styled.section`
       position: absolute;
       top: 65px;
       left: -36px;
+      z-index: 1
     }
     .quote-text {
       font-size: 30px;
@@ -23,6 +24,8 @@ const QuotesStyles = styled.section`
       letter-spacing: 0.03em;
       color: #262626;
       margin-bottom: 20px;
+      position: inherit;
+      z-index: 9;
     }
     .quote-author {
       font-size: 20px;
