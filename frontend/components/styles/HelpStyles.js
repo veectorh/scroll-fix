@@ -4,6 +4,7 @@ const HelpStyles = styled.section`
   padding: 100px 0 0;
   max-width: 1250px;
   margin: 0 auto 40px;
+  padding-bottom: 130px;
   h1 {
     font-weight: 400;
     font-size: 60px;
