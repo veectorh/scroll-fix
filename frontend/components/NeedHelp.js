@@ -27,7 +27,7 @@ export default function NeedHelp() {
     <NeedHelpStyles>
       <h3>Need Help <br/>Finding a Speaker?</h3>
       <ButtonStyles theme={{ main: "#00AFB5;" }}>
-        <Link href="/ecourse">Let Us Help</Link>
+        <Link href="/inquiry-form">Let Us Help</Link>
       </ButtonStyles>
     </NeedHelpStyles>
   );
