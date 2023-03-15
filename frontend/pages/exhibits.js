@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from "styled-components";
-import { loadPerformances } from "@/lib/load-performances";
-import Performance from "@/components/Performance";
+import Exhibit from '@/components/Exhibits';
 import quotemark from '../public/images/quote-blue.png';
 import vevent from '../public/images/virtual-events.png'
 import ButtonStyles from '../components/styles/ButtonStyles';
+import { loadAPI } from '@/lib/load-api';
 
 const ExhibitsPageStyle = styled.section`
   padding: 100px 0 0;
@@ -115,7 +115,7 @@ const FamilyExhibitsStyle = styled.section`
   }
 `;
 
-export default function ExhibitsPage({ performances }) {
+export default function ExhibitsPage({ exhibits, familyExhibits }) {
   return (
     <>
       <ExhibitsPageStyle>
@@ -126,8 +126,8 @@ export default function ExhibitsPage({ performances }) {
 
         <ExhibitsListStyle>
           {
-            performances.data.map(performance => (
-              <Performance key={performance.id} performance={{ performance }} />
+            exhibits.data.map(exhibit => (
+              <Exhibit key={exhibit.id} exhibit={{ exhibit }} />
             ))
           }
         </ExhibitsListStyle>
@@ -161,62 +161,24 @@ export default function ExhibitsPage({ performances }) {
           </div>
         </div>
         <div className="family-exhibits">
-          <div className="exhibit">
-            <Image 
-              src={vevent} 
-              alt="test image"
-              width={399} 
-              height={243} 
-              priority
-            />
-            <h4>Lorem ipsum dolor sit amert</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin fringilla sagittis. Nunc ultrices turpis eget nunc consequat vulputate. Donec libero magna, tincidunt nec sapien ut, porttitor gravida tortor.</p>
-            <ButtonStyles theme={{ main: "#00AFB5;" }}>
-              <Link href="/ecourse">Watch a clip</Link>
-            </ButtonStyles>
-          </div>
-          <div className="exhibit">
-            <Image 
-              src={vevent} 
-              alt="test image"
-              width={399} 
-              height={243} 
-              priority
-            />
-            <h4>Lorem ipsum dolor sit amert</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin fringilla sagittis. Nunc ultrices turpis eget nunc consequat vulputate. Donec libero magna, tincidunt nec sapien ut, porttitor gravida tortor.</p>
-            <ButtonStyles theme={{ main: "#00AFB5;" }}>
-              <Link href="/ecourse">Let Us Help</Link>
-            </ButtonStyles>
-          </div>
-          <div className="exhibit">
-              <Image 
-                src={vevent} 
-                alt="test image"
-                width={399} 
-                height={243} 
-                priority
-              />
-            <h4>Lorem ipsum dolor sit amert</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin fringilla sagittis. Nunc ultrices turpis eget nunc consequat vulputate. Donec libero magna, tincidunt nec sapien ut, porttitor gravida tortor.</p>
-            <ButtonStyles theme={{ main: "#00AFB5;" }}>
-              <Link href="/ecourse">Let Us Help</Link>
-            </ButtonStyles>
-          </div>
-          <div className="exhibit">
-            <Image 
-              src={vevent} 
-              alt="test image"
-              width={399} 
-              height={243} 
-              priority
-            />
-            <h4>Lorem ipsum dolor sit amert</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin fringilla sagittis. Nunc ultrices turpis eget nunc consequat vulputate. Donec libero magna, tincidunt nec sapien ut, porttitor gravida tortor.</p>
-            <ButtonStyles theme={{ main: "#00AFB5;" }}>
-              <Link href="/ecourse">Let Us Help</Link>
-            </ButtonStyles>
-          </div>
+          {
+            familyExhibits.data.map(familyExhibit => (
+              <div className="exhibit" key={familyExhibit.id}>
+                <Image 
+                  src={familyExhibit.attributes.image.data.attributes.url} 
+                  alt={familyExhibit.attributes.name}
+                  width={399} 
+                  height={243} 
+                  priority
+                />
+                <h4>{familyExhibit.attributes.name}</h4>
+                <p>{familyExhibit.attributes.description}</p>
+                <ButtonStyles theme={{ main: "#00AFB5;" }}>
+                  <Link href={familyExhibit.attributes.video_url}>Watch a clip</Link>
+                </ButtonStyles>
+              </div>
+            ))
+          }
         </div>
       </FamilyExhibitsStyle>
     </>
@@ -224,6 +186,7 @@ export default function ExhibitsPage({ performances }) {
 }
 
 export async function getStaticProps() {
-  const performances = await loadPerformances();
-  return { props: { performances } }
+  const exhibits = await loadAPI("exhibits");
+  const familyExhibits = await loadAPI("family-diversity-exhibits")
+  return { props: { exhibits, familyExhibits } }
 }
