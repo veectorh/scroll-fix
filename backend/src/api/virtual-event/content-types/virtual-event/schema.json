@@ -34,7 +34,7 @@
     "learn_more_url": {
       "type": "string"
     },
-    "host_name": {
+    "artist_name": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::speaker.speaker"
