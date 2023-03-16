@@ -57,6 +57,8 @@ export default function Speaker({ speaker }) {
           alt={speaker.attributes.fullName}
           width={300}
           height={300}
+          placeholder="blur"
+          blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO0MjGpBwACdQEjn3nYVQAAAABJRU5ErkJggg=="
         />
         <div className="speaker-info">
           <p className="name">{speaker.attributes.fullName}</p>
