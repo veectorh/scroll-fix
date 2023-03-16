@@ -47,6 +47,8 @@ const SpeakerStyles = styled.div`
 
 `;
 
+const graylight = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAANSURBVBhXY7hy5cp/AAh4A3zas3NuAAAAAElFTkSuQmCC";
+
 export default function Speaker({ speaker }) {
 
   return (
@@ -58,7 +60,7 @@ export default function Speaker({ speaker }) {
           width={300}
           height={300}
           placeholder="blur"
-          blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO0MjGpBwACdQEjn3nYVQAAAABJRU5ErkJggg=="
+          blurDataURL={graylight}
         />
         <div className="speaker-info">
           <p className="name">{speaker.attributes.fullName}</p>
