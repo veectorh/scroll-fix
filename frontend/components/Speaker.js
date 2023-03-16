@@ -7,6 +7,7 @@ const SpeakerStyles = styled.div`
     overflow: hidden;
     position: relative;
     height: 310px;
+    
     img {
       width: 310px;
       height: 100%;
@@ -56,7 +57,6 @@ export default function Speaker({ speaker }) {
           alt={speaker.attributes.fullName}
           width={300}
           height={300}
-          priority
         />
         <div className="speaker-info">
           <p className="name">{speaker.attributes.fullName}</p>
