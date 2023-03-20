@@ -130,7 +130,7 @@ export default function EventsPage({ events}) {
   return (
     <>
       <EventsPageStyle>
-        <h1>Events</h1>
+        <h1>Virtual Events</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin fringilla sagittis. Nunc ultrices turpis eget nunc consequat vulputate. Donec libero magna, tincidunt nec sapien ut, porttitor gravida tortor.
         </p>
