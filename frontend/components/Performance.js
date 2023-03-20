@@ -12,7 +12,7 @@ const PerformanceStyle = styled.div`
   margin-bottom: 25px;
   h2 {
     color: #ffffff;
-    margin: 0 0 15px;;
+    margin: 0 0 20px;;
     padding: 0;
     font-weight: 400;
     font-size: 36px;
@@ -35,6 +35,7 @@ const PerformanceStyle = styled.div`
       height: 255px;
       border-radius: 20px;
       margin-bottom: 20px;
+      object-fit: cover;
     }
   }
 
@@ -44,7 +45,10 @@ const PerformanceStyle = styled.div`
     justify-content: space-around;
     gap: 10px;
   }
-
+  .name-descriptions {
+    width: 100%;
+    /* padding-top: 50px; */
+  }
   .artist {
     display: flex;
     gap: 20px;
@@ -99,8 +103,8 @@ export default function Performance( performance ) {
             <Image 
               src={artist_name.data.attributes?.photo.data?.attributes?.url} 
               alt={artist_name.data.attributes?.fullName} 
-              width={121} 
-              height={121} 
+              width={80} 
+              height={80} 
               priority
             />
           </div >

@@ -67,7 +67,6 @@ const EventStyle = styled.div`
 `;
 
 export default function Event( event ) {
-  console.log("EVENT", event);
   const { name, description, artist_name, image, enroll_url } = event.event.event.attributes;
   // const slug = artist_name.data.attributes.fullName.toLowerCase().replace('.', '').split(' ').join('-');
 
