@@ -4,7 +4,8 @@
   "info": {
     "singularName": "sponsored-project",
     "pluralName": "sponsored-projects",
-    "displayName": "SponsoredProject"
+    "displayName": "SponsoredProject",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,21 +16,20 @@
       "type": "string",
       "required": true
     },
-    "description": {
-      "type": "text",
-      "required": true
-    },
     "learn_more_url": {
       "type": "string",
       "required": true
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }
