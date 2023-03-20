@@ -116,7 +116,7 @@ function OurTeamPage({ staff, directors }) {
     <>
       <OurTeamStyles>
         <h1>Our Team</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin fringilla sagittis. Nunc ultrices turpis eget nunc consequat vulputate. Donec libero magna, tincidunt nec sapien ut, porttitor gravida tortor.</p>
+        <p>Meet the passionate and dedicated team behind SpeakOut, who are on a mission to create positive change through education, storytelling, and activism.</p>
       </OurTeamStyles>
   
       <TeamImagesStyles>
