@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown";
 const SponsoredProjectStyle = styled.div`
   width: 400px;
   img {
-    object-fit: cover;
+    object-fit: contain;
   }
   h4 {
     font-family: 'Oswald';
