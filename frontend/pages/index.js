@@ -22,7 +22,6 @@ const EducationalIntro = styled.div`
 `;
 
 const Home = ({ featuredSpeakers, error }) => {
-  const speakers = getRandomSpeakers(featuredSpeakers);
   return (
     <div style={{marginTop: -79}}>
       <HeroStyles>
@@ -61,10 +60,10 @@ const Home = ({ featuredSpeakers, error }) => {
           <ButtonStyles theme={{ main: "#00AFB5" }}><Link href="/speakers">Explore Our Speakers</Link></ButtonStyles>
         </div>
         <div className="featured-images">
-          {/* { speakers.map(speaker => (
+          { featuredSpeakers.map(speaker => (
               <Speaker key={speaker.id} speaker={speaker} />
             ))
-          } */}
+          }
         </div>
       </FeaturedSpeakersStyles>
 
@@ -81,10 +80,10 @@ const Home = ({ featuredSpeakers, error }) => {
 };
 
 // Return 4 Random Featured Speakers
-function getRandomSpeakers(speakersData) {
-  const shuffledSpeakers = speakersData.sort(() => Math.random() - 0.5);
-  return shuffledSpeakers.slice(0, 4);
-}
+// function getRandomSpeakers(speakersData) {
+//   const shuffledSpeakers = speakersData.data.sort(() => Math.random() - 0.5);
+//   return shuffledSpeakers.slice(0, 4);
+// }
 
 export async function getStaticProps() {
   const featuredSpeakers = await loadFeaturedSpeakers();
