@@ -71,7 +71,7 @@ const Home = ({ featuredSpeakers, error }) => {
 
       <EducationalIntro>
         <h2>Educational Institute</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>A digital destination that empowers young people, educators, and professionals through transformative programming featuring our speakers. The goal of our educational programs is to create a more just society.</p>
       </EducationalIntro>
       <EducationalInstitute />
       <QuotesCarousel />
