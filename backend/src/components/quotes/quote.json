@@ -1,13 +1,11 @@
 {
   "collectionName": "components_quotes_quotes",
   "info": {
-    "displayName": "Quote"
+    "displayName": "Quote",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "quote": {
-      "type": "string"
-    },
     "author": {
       "type": "string"
     },
@@ -17,6 +15,9 @@
     "featured": {
       "type": "boolean",
       "default": false
+    },
+    "quote": {
+      "type": "richtext"
     }
   }
 }

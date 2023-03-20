@@ -12,11 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "quote": {
-      "type": "string",
-      "required": true,
-      "unique": true
-    },
     "featured": {
       "type": "boolean",
       "default": false
@@ -27,6 +22,9 @@
     },
     "title": {
       "type": "string"
+    },
+    "quote": {
+      "type": "richtext"
     }
   }
 }
