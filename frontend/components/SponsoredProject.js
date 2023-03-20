@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Image from "next/image";
 import ButtonStyles from './styles/ButtonStyles';
+import ReactMarkdown from "react-markdown";
 
 const SponsoredProjectStyle = styled.div`
   width: 400px;
@@ -29,7 +30,7 @@ export default function SponsoredProject({ project }) {
         priority
       />
       <h4>{project.attributes.name}</h4>
-      <p>{project.attributes.description}</p>
+      <ReactMarkdown children={project.attributes.description} />
       <ButtonStyles theme={{ main: "#00AFB5" }}>
         <a href={project.attributes.learn_more_url} target="_blank">Learn More</a>
       </ButtonStyles>

@@ -37,7 +37,7 @@ export default function SponsoredProjectsPage({ projects }) {
     <>
       <SponsoredProjectsStyle>
         <h1>Our Fiscally-Sponsored Projects</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin fringilla sagittis. Nunc ultrices turpis eget nunc consequat vulputate. Donec libero magna, tincidunt nec sapien ut, porttitor gravida tortor.</p>
+        <p>Explore the important work of our fiscally-sponsored projects and consider supporting their efforts to create positive change in their communities and beyond. Together, we can invest in the movement for social justice and create a more equitable and compassionate world.</p>
         <SponsoredProjectsListStyles>
           {
             projects.data.map(project => (
