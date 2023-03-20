@@ -29,7 +29,7 @@ export default function EducationalInstitute() {
         <div className="image">
             <Image
               src='/images/virtual-events.png'
-              alt="e-course"
+              alt="virtual events"
               fill
               sizes="50vw"
               priority
@@ -55,7 +55,7 @@ export default function EducationalInstitute() {
         <div className="image">
           <Image
             src='/images/summer-institute.png'
-            alt="e-course"
+            alt="summer institute"
             fill
             sizes="50vw"
             priority
@@ -67,7 +67,7 @@ export default function EducationalInstitute() {
         <div className="image">
             <Image
               src='/images/so-original-films.png'
-              alt="e-course"
+              alt="original films"
               fill
               sizes="50vw"
               priority

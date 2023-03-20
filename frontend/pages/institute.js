@@ -42,7 +42,7 @@ export default function InstitutePage() {
     <>
       <InstitutePageStyle>
         <h1>EDUCATION INSTITUTE</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin fringilla sagittis. Nunc ultrices turpis eget nunc consequat vulputate. Donec libero magna, tincidunt nec sapien ut, porttitor gravida tortor.</p>
+        <p>A digital destination that empowers young people, educators, and professionals through transformative programming featuring our speakers. The goal of our educational programs is to create a more just society.</p>
       </InstitutePageStyle>
       <EducationalInstitute />
     </>
