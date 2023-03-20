@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="newsletter-footer">
         <div className="newsletter">
           <h4>Join Our Newsletter</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ullamcorper erat. Sed tempor a dolor et mattis.</p>
+          <p>Stay informed on when speakers and artists will be in your area and receive updates on new educational resources.</p>
           <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }} fullWidth={true}><Link href="#">Sign Up Now</Link></ButtonStyles>
         </div>
         <div className="instagram-section">
