@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Image from 'next/image';
 import ButtonStyles from "@/components/styles/ButtonStyles";
+import ReactMarkdown from "react-markdown";
+import { loadAPI } from "@/lib/load-api";
 
 const OriginalFilmStyles = styled.section`
   padding: 100px 0 0;
@@ -66,66 +68,47 @@ const OriginalFilmStyles = styled.section`
   }
 `;
 
-export default function OriginalFilmsPage() {
+export default function OriginalFilmsPage({ films }) {
+  console.log("FILMS", films.data);
   return (
     <OriginalFilmStyles>
       <div className="intro">
         <h1>SPEAKOUT ORIGINAL FILMS</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin fringilla sagittis. Nunc ultrices turpis eget nunc consequat vulputate. Donec libero magna, tincidunt nec sapien ut, porttitor gravida tortor.</p>
+        <p>Explore our selection of SpeakOut-produced films and learn about the talented speakers and artists involved. Support the next generation of artists and filmmakers by watching and contributing to our films.</p>
       </div>
       <div className="movies">
-        <div className="movie">
-          <div className="movie-image">
-            <Image 
-              src="https://fastly.picsum.photos/id/120/500/800.jpg?hmac=p9-EelyvGmpARM3F5pvBFpk78UPG16ENIcsomNlGpnE"
-              alt="Night sky"
-              width={400} 
-              height={838} 
-              priority
-            />
-          </div>
-          <div className="movie-description">
-            <h2>Vocabulary of Change</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh ipsum consequat nisl vel pretium. Suspendisse in est ante in nibh mauris. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Tristique nulla aliquet enim tortor. Condimentum id venenatis a condimentum vitae sapien pellentesque habitant morbi. Ultricies mi eget mauris pharetra. Laoreet suspendisse interdum consectetur libero id faucibus nisl. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Dis parturient montes nascetur ridiculus mus mauris vitae. At auctor urna nunc id cursus metus aliquam. At elementum eu facilisis sed odio morbi quis commodo odio. Sodales ut etiam sit amet. Enim sed faucibus turpis in eu mi </p>
-          </div>
-          <div className="buttons">
-            <ButtonStyles theme={{ main: "#00AFB5" }}>
-              <a href="#" target="_blank">Watch the trailer</a>
-            </ButtonStyles>
-            <ButtonStyles theme={{ main: "#00AFB5" }}>
-              <a href="#" target="_blank">Buy the film</a>
-            </ButtonStyles>
-          </div>
-        </div>
-
-        <div className="movie">
-          <div className="movie-image">
-            <Image 
-              src="https://fastly.picsum.photos/id/381/500/800.jpg?hmac=Jm6Tr1BCCwbiDvzCtpSbTvUgvq3vOpYWng89mXoi0Ug"
-              alt="Night sky"
-              width={400} 
-              height={838} 
-              priority
-            />
-          </div>
-          <div className="movie-description">
-            <h2>Vocabulary of Change</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh ipsum consequat nisl vel pretium. Suspendisse in est ante in nibh mauris. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Tristique nulla aliquet enim tortor. Condimentum id venenatis a condimentum vitae sapien pellentesque habitant morbi. Ultricies mi eget mauris pharetra. Laoreet suspendisse interdum consectetur libero id faucibus nisl. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Dis parturient montes nascetur ridiculus mus mauris vitae. At auctor urna nunc id cursus metus aliquam. At elementum eu facilisis sed odio morbi quis commodo odio. Sodales ut etiam sit amet. Enim sed faucibus turpis in eu mi </p>
-          </div>
-          <div className="buttons">
-            <ButtonStyles theme={{ main: "#00AFB5" }}>
-              <a href="#" target="_blank">Watch the trailer</a>
-            </ButtonStyles>
-            <ButtonStyles theme={{ main: "#00AFB5" }}>
-              <a href="#" target="_blank">Buy the film</a>
-            </ButtonStyles>
-          </div>
-        </div>
+        {
+          films.data.map(film => (
+            <div className="movie">
+              <div className="movie-image">
+                <Image 
+                  src={film.attributes.image.data.attributes.url}
+                  alt={film.attributes.name}
+                  width={400} 
+                  height={838} 
+                  priority
+                />
+              </div>
+              <div className="movie-description">
+                <h2>{film.attributes.name}</h2>
+                <ReactMarkdown children={film.attributes.description} />
+              </div>
+              <div className="buttons">
+                <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: film.attributes.trailer_url === null ? "none" : "flex"}}>
+                  <a href={film.attributes.trailer_url} target="_blank" >Watch the trailer</a>
+                </ButtonStyles>
+                <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: film.attributes.buy_url === null ? "none" : "flex"}}>
+                  <a href={film.attributes.buy_url} target="_blank">Buy the film</a>
+                </ButtonStyles>
+              </div>
+            </div>
+          ))
+        }
       </div>
 
       <div className="callout">
         <h2>Apply to SpeakOut’s Emerging Filmmakers Fund</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh ipsum consequat nisl vel pretium. Suspendisse in est ante in nibh mauris. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Tristique nulla aliquet enim  magna aliqua. Nibh ipsum consequat nisl vel pretium. Suspendisse in est ante in nibh mauris. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Tristique nulla aliquet enim</p>
+        <p>We support and nurture the next generation of talented and diverse filmmakers by providing grants and resources to help bring their vision to life. Whether you are a budding filmmaker looking to apply, or a film-lover looking to support the cause, we welcome you to join us!</p>
         <div className="buttons">
             <ButtonStyles theme={{ main: "#00AFB5" }}>
               <a href="#" target="_blank">Submit to the fund</a>
@@ -138,4 +121,9 @@ export default function OriginalFilmsPage() {
     </OriginalFilmStyles>
 
   );
+}
+
+export async function getStaticProps() {
+  const films = await loadAPI("original-films");
+  return { props: { films } }
 }
