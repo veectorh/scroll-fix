@@ -173,8 +173,8 @@ export default function ExhibitsPage({ exhibits, familyExhibits }) {
                 />
                 <h4>{familyExhibit.attributes.name}</h4>
                 <p>{familyExhibit.attributes.description}</p>
-                <ButtonStyles theme={{ main: "#00AFB5;" }}>
-                  <Link href={familyExhibit.attributes.video_url}>Watch a clip</Link>
+                <ButtonStyles theme={{ main: "#00AFB5;" }} style={{ display: familyExhibit.attributes.video_url === null ? "none" : "flex"}}>
+                  <Link href={familyExhibit.attributes.video_url === null ? "/#" : familyExhibit.attributes.video_url}>Watch a clip</Link>
                 </ButtonStyles>
               </div>
             ))

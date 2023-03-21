@@ -69,7 +69,6 @@ const OriginalFilmStyles = styled.section`
 `;
 
 export default function OriginalFilmsPage({ films }) {
-  console.log("FILMS", films.data);
   return (
     <OriginalFilmStyles>
       <div className="intro">

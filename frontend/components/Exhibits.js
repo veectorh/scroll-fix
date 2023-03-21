@@ -99,8 +99,8 @@ export default function Exhibit( exhibit) {
             <Image 
               src={artist_name.data.attributes?.photo.data?.attributes?.url} 
               alt={artist_name.data.attributes?.fullName} 
-              width={121} 
-              height={121} 
+              width={80} 
+              height={80} 
               priority
             />
           </div >

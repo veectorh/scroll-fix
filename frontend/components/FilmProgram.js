@@ -68,6 +68,7 @@ const FilmProgramStyle = styled.div`
 
 
 export default function FilmProgram( film ) {
+  console.log("FILM", film);
   const { name, description, artist_name, image, video_url } = film.film.film.attributes;
   const slug = artist_name.data.attributes.fullName.toLowerCase().replace('.', '').split(' ').join('-');
 
@@ -75,7 +76,7 @@ export default function FilmProgram( film ) {
     <FilmProgramStyle>
       <div className="image-buttons">
         <Image 
-          src={image.data.attributes.url} 
+          src={image.data?.attributes?.url} 
           alt={name} 
           width={436} 
           height={255} 
@@ -98,8 +99,8 @@ export default function FilmProgram( film ) {
             <Image 
               src={artist_name.data.attributes?.photo.data?.attributes?.url} 
               alt={artist_name.data.attributes?.fullName} 
-              width={121} 
-              height={121} 
+              width={80} 
+              height={80} 
               priority
             />
           </div >
