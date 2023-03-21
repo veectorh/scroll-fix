@@ -4,7 +4,8 @@
   "info": {
     "singularName": "original-film",
     "pluralName": "original-films",
-    "displayName": "OriginalFilm"
+    "displayName": "OriginalFilm",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,14 +19,6 @@
     "description": {
       "type": "richtext",
       "required": true
-    },
-    "image": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false,
-      "private": true
     },
     "trailer_url": {
       "type": "string"
