@@ -14,7 +14,7 @@ const EducationalInstituteStyles = styled.section`
     align-items: center;
     background: white;
     /* margin-bottom: -4px; */
-    height: 100vh;
+    height: 101vh;
     .copy {      
       .copy-container {
         max-width: 353px;
@@ -23,7 +23,7 @@ const EducationalInstituteStyles = styled.section`
       }
     }
     .image {
-      height: 100vh;
+      height: 101vh;
       img {
         position: relative !important;
         object-fit: cover;
