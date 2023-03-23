@@ -17,6 +17,12 @@ const SponsoredProjectStyle = styled.div`
     letter-spacing: 0.05em;
     color: #000000;
   }
+  p {
+    a {
+    text-decoration: underline;
+    color: inherit;
+  }
+  }
 `;
 
 export default function SponsoredProject({ project }) {
