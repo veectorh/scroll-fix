@@ -40,6 +40,11 @@ const AboutPageStyle = styled.section`
     margin: 0 auto;
     padding: 50px 0 50px;
   }
+  .history {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 60px 0 20px;
+  }
   .history-copy {
     max-width: 1250px;
     margin: 0 auto;
@@ -73,13 +78,11 @@ const SponsoredProjectsListStyles = styled.div`
 
   .projects {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    column-gap: 30px;
+    justify-content: space-between;
     row-gap: 40px;
+    padding: 0 5vw;
   }
-
 `;
 
 export default function AboutUsPage({ projects }) {
@@ -91,10 +94,10 @@ export default function AboutUsPage({ projects }) {
           <p>SpeakOut — The Institute for Democratic Education and Culture is a non-profit, mission-driven speakers agency and education institute.</p>
         </div>
         <SubHeroStyles>
-          <h2>Our mission is to encourage critical and imaginative thinking to address the major inequities of our day and transform a fractured world.</h2>
-          <p>Our network of speakers, artists, and strategic partners provide experiential learning opportunities and programming through lectures, workshops, professional development and trainings, film screenings, performances and curriculum development. Since our founding in 1990, we have worked with thousands of colleges, universities, K-12 schools and districts, community organizations, government and private sector providing 15,000 programs which advance the humanities and promote critical analysis, creativity, and innovative strategies for 21st-century problem-solving. We have reached over 3 million people nationwide through our network of 35k contacts.</p>
+          <h2 className="about">Our mission is to encourage critical and imaginative thinking to address the major inequities of our day and transform a fractured world.</h2>
+          <p className="about white">Our network of speakers, artists, and strategic partners provide experiential learning opportunities and programming through lectures, workshops, professional development and trainings, film screenings, performances and curriculum development. Since our founding in 1990, we have worked with thousands of colleges, universities, K-12 schools and districts, community organizations, government and private sector providing 15,000 programs which advance the humanities and promote critical analysis, creativity, and innovative strategies for 21st-century problem-solving. We have reached over 3 million people nationwide through our network of 35k contacts.</p>
         </SubHeroStyles>
-        <h3 className="intro">Our History</h3>
+        <h3 className="history">Our History</h3>
         <p className="history-copy">
           Speak Out was founded in 1990 as part of the non-profit Institute for Social and Cultural Change which included the progressive publishing house South End Press and Z Magazine. Initially, Speak Out was a way to showcase South End Press authors like Howard Zinn, Noam Chomsky, Elizabeth Martinez, Winona LaDuke, among others.
           <br/><br/>
@@ -114,10 +117,10 @@ export default function AboutUsPage({ projects }) {
           <h3>Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit</h3>
           <div className="buttons">
             <ButtonStyles theme={{ main: "#00AFB5" }}>
-              <Link href="/">Explore Our Speakers</Link>
+              <Link href="/speakers">Explore Our Speakers</Link>
             </ButtonStyles>
             <ButtonStyles theme={{ main: "#00AFB5" }}>
-              <Link href="/">Meet Our Team</Link>
+              <Link href="/our-team">Meet Our Team</Link>
             </ButtonStyles>
           </div >
         </div>

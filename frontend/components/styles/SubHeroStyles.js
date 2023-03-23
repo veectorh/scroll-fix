@@ -34,6 +34,14 @@ const SubHeroStyles = styled.section`
     color: #FFFFFF;
   }
 
+  .white {
+    color: white;
+  }
+  .about {
+    max-width: 990px;
+    padding-bottom: 30px;
+  }
+
   .three-column {
     display: flex;
     flex-direction: row;
