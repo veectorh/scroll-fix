@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import ButtonStyles from '@/components/styles/ButtonStyles';
 import Image from 'next/image';
 import TopicListStyles from '@/components/styles/TopicListStyles';
-import QuotesCarousel from '@/components/QuotesCarousel';
+import SpeakerQuotesCarousel from '@/components/SpeakerQuotesCarousel';
+// import QuotesCarousel from '@/components/QuotesCarousel';
 import OurStore from '@/components/OurStore';
 import { loadSpeakers } from '@/lib/load-speakers';
 import { loadSingleSpeakers } from '@/lib/load-single-speaker';
@@ -154,7 +155,9 @@ export const getStaticProps = async (context) => {
 export default function SingleSpeaker({ singleSpeaker }) {
   // const router = useRouter();
   const speaker = singleSpeaker?.data[0]?.attributes;
-  // console.log("speaker", singleSpeaker)
+  // console.log("speaker", singleSpeaker.data[0].attributes.quotes)
+  const quotes = singleSpeaker.data[0].attributes?.quotes
+  console.log("QUOTES-ID", quotes);
   const [showAbout, setShowAbout] = useState(true);
 
   return (
@@ -245,7 +248,7 @@ export default function SingleSpeaker({ singleSpeaker }) {
           </ButtonStyles>
         </div>
       </SpeakerInfoStyles>
-      <QuotesCarousel />
+      <SpeakerQuotesCarousel quotes={quotes} />
       <OurStore />
     </>
   );
