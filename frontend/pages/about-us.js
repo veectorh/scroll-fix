@@ -6,6 +6,7 @@ import ButtonStyles from "@/components/styles/ButtonStyles";
 import Link from "next/link";
 import SubHeroStyles from '../components/styles/SubHeroStyles';
 import { loadSponsoredProjects } from "@/lib/load-sponsored-projects";
+import { loadQuotes } from "@/lib/load-quotes";
 
 const AboutPageStyle = styled.section`
   padding: 50px 0 0;
@@ -85,7 +86,7 @@ const SponsoredProjectsListStyles = styled.div`
   }
 `;
 
-export default function AboutUsPage({ projects }) {
+export default function AboutUsPage({ projects, quotes }) {
   return (
     <>
       <AboutPageStyle>
@@ -125,7 +126,7 @@ export default function AboutUsPage({ projects }) {
           </div >
         </div>
       </AboutPageStyle>
-      <QuotesCarousel />
+      <QuotesCarousel quotes={quotes.data} />
       <SponsoredProjectsListStyles>
         <h3>Our Fiscally-Sponsored Projects</h3>
         <div className="projects">
@@ -143,5 +144,6 @@ export default function AboutUsPage({ projects }) {
 
 export async function getStaticProps() {
   const projects = await loadSponsoredProjects();
-  return { props: { projects }}
+  const quotes = await loadQuotes();
+  return { props: { projects, quotes }}
 }

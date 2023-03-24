@@ -45,7 +45,7 @@ const QuotesStyles = styled.section`
   }
 `;
 
-export default function Quotes({quote, author, title}) {
+export default function Quotes( {attributes} ) {
   return (
     <QuotesStyles>
       <div className="quote-container">
@@ -56,10 +56,10 @@ export default function Quotes({quote, author, title}) {
           className='quote-image'
         />
         <div className="quote-text">
-          {quote}
+          {attributes.quote}
         </div>
         <div className="quote-author">
-          — {author} <span>{title}</span >
+          — {attributes.author} <span>{attributes.title}</span >
         </div>
       </div>
     </QuotesStyles>
