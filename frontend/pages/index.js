@@ -1,15 +1,15 @@
-import { useEffect, useState } from 'react'
+import styled from 'styled-components';
 import Link from 'next/link';
+import { loadFeaturedSpeakers } from '@/lib/load-featured-speakers';
+import { loadQuotes } from '@/lib/load-quotes';
 import HeroStyles from '../components/styles/HeroStyles';
-import ButtonStyles from '../components/styles/ButtonStyles';
+import Speaker from '@/components/Speaker';
 import SubHeroStyles from '../components/styles/SubHeroStyles';
 import FeaturedSpeakersStyles from '../components/styles/FeaturedSpeakersStyles';
 import EducationalInstitute from '@/components/EducationalInstitute';
 import QuotesCarousel from '../components/QuotesCarousel';
 import OurStore from '../components/OurStore';
-import { loadFeaturedSpeakers } from '@/lib/load-featured-speakers';
-import Speaker from '@/components/Speaker';
-import styled from 'styled-components';
+import ButtonStyles from '../components/styles/ButtonStyles';
 
 const EducationalIntro = styled.div`
   background: #F2F2F2;
@@ -21,7 +21,7 @@ const EducationalIntro = styled.div`
   }
 `;
 
-const Home = ({ featuredSpeakers, error }) => {
+const Home = ({ featuredSpeakers, quotes }) => {
   return (
     <div style={{marginTop: -79}}>
       <HeroStyles>
@@ -73,7 +73,7 @@ const Home = ({ featuredSpeakers, error }) => {
         <p>A digital destination that empowers young people, educators, and professionals through transformative programming featuring our speakers. The goal of our educational programs is to create a more just society.</p>
       </EducationalIntro>
       <EducationalInstitute />
-      <QuotesCarousel />
+      <QuotesCarousel quotes={quotes.data} />
       <OurStore />
     </div>
   );
@@ -87,8 +87,9 @@ const Home = ({ featuredSpeakers, error }) => {
 
 export async function getStaticProps() {
   const featuredSpeakers = await loadFeaturedSpeakers();
+  const quotes = await loadQuotes();
 
-  return { props: { featuredSpeakers } }
+  return { props: { featuredSpeakers, quotes } }
 }
 
 export default Home;
