@@ -46,7 +46,6 @@ const QuotesStyles = styled.section`
 `;
 
 export default function SpeakerQuotes( quote ) {
-  console.log("YO", quote);
   return (
     <QuotesStyles>
       <div className="quote-container">
