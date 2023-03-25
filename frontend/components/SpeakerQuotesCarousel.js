@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import SpeakerQuotes from './SpeakerQuotes';
 
 export default function SpeakerQuotesCarousel({quotes}) {
-  console.log("CAROUSEL", quotes[0]);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {

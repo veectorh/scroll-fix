@@ -1,15 +1,14 @@
-// import { useRouter } from 'next/router';
 import Link from 'next/link';
 import styled from 'styled-components';
 import ButtonStyles from '@/components/styles/ButtonStyles';
 import Image from 'next/image';
 import TopicListStyles from '@/components/styles/TopicListStyles';
 import SpeakerQuotesCarousel from '@/components/SpeakerQuotesCarousel';
-// import QuotesCarousel from '@/components/QuotesCarousel';
 import OurStore from '@/components/OurStore';
 import { loadSpeakers } from '@/lib/load-speakers';
 import { loadSingleSpeakers } from '@/lib/load-single-speaker';
 import React, { useState, useEffect } from 'react';
+import ReactMarkdown from "react-markdown";
 
 const SpeakerHeroStyles = styled.section`
   background: rgba(56, 240, 240, 0.2);
@@ -153,11 +152,8 @@ export const getStaticProps = async (context) => {
 
 
 export default function SingleSpeaker({ singleSpeaker }) {
-  // const router = useRouter();
   const speaker = singleSpeaker?.data[0]?.attributes;
-  // console.log("speaker", singleSpeaker.data[0].attributes.quotes)
   const quotes = singleSpeaker.data[0].attributes?.quotes
-  console.log("QUOTES-ID", quotes);
   const [showAbout, setShowAbout] = useState(true);
 
   return (
@@ -209,14 +205,10 @@ export default function SingleSpeaker({ singleSpeaker }) {
           </div>
           <div className="content">
             <div className={`about ${showAbout == false ? 'hide' : ''}`} >
-              <p>
-                {speaker?.about}
-              </p>
+              <ReactMarkdown children={speaker?.about} />
             </div>
             <div className={`speeches ${showAbout == true ? 'hide' : ''}`} >
-              <p>
-                {speaker?.speeches}
-              </p>
+              <ReactMarkdown children={speaker?.speeches} />
             </div>
           </div>
         </div >
