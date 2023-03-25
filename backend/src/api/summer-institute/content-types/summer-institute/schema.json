@@ -4,7 +4,8 @@
   "info": {
     "singularName": "summer-institute",
     "pluralName": "summer-institutes",
-    "displayName": "SummerInstitute"
+    "displayName": "SummerInstitute",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -27,23 +28,15 @@
       "type": "string",
       "required": true
     },
-    "speaker_name": {
-      "type": "string",
-      "required": true
+    "speakers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::speaker.speaker"
     },
-    "speaker_image": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "session_name": {
-      "type": "string",
-      "required": true
-    },
-    "session_speaker": {
-      "type": "string"
+    "sessions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sessions.session"
     }
   }
 }
