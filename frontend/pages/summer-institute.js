@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import ButtonStyles from "@/components/styles/ButtonStyles";
 import Link from "next/link";
+import Image from 'next/image';
+import { loadSummerInstitutes } from "@/lib/load-summer-institutes";
 
 const SummerInstituteStyle = styled.section`
   padding: 50px 0 0;
@@ -99,6 +101,8 @@ const SummerInstituteStyle = styled.section`
           letter-spacing: 0.05em;
           color: #000000;
           text-transform: uppercase;
+          width: 120px;
+          padding-top: 15px;
         }
       }
     }
@@ -188,7 +192,9 @@ const PreviousInstituteStyle = styled.div`
 `;
 
 
-export default function SummerInstitutePage() {
+export default function SummerInstitutePage({ institutes}) {
+  console.log("INSTITUTES", institutes.data);
+
   return (
     <>
       <SummerInstituteStyle>
@@ -197,101 +203,53 @@ export default function SummerInstitutePage() {
           <p>A virtual institute focused on building equity and social justice education and providing participants with ideas, tools, and resources to create inclusive learning environments on campus and online. For college faculty and professional staff.</p>
         </div >
 
-        <div className="summer-institute">
-          <h2 className="orange-heading">2022</h2>
-          <p className="sub-heading">Summer Institute</p>
-          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh ipsum consequat nisl vel pretium. Suspendisse in est ante in nibh mauris. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Tristique nulla aliquet enim tortor. Condimentum id venenatis a condimentum vitae sapien pellentesque habitant morbi. Ultricies mi eget mauris pharetra. Laoreet suspendisse interdum consectetur libero id faucibus nisl. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit.</p>
-          <ButtonStyles theme={{ main: "#00AFB5" }}>
-              <Link href="/speakers">Register Now</Link>
-          </ButtonStyles>
+        {
+          institutes.data.map(institute => (
+            <div className="summer-institute" key={institute.id} >
+              <h2 className="orange-heading">{institute.attributes.year}</h2>
+              <p className="sub-heading">Summer Institute</p>
+              <h3>{institute.attributes.title}</h3>
+              <p>{institute.attributes.description}</p>
+              <ButtonStyles theme={{ main: "#00AFB5" }}>
+                  <Link href={institute.attributes.register_url}>Register Now</Link>
+              </ButtonStyles>
 
-          <h3 className="top">SPEAKERS</h3>
-          <div className="speakers">
-            <div className="speaker">
-              <div className="speaker-image">
-                {/* Add Speaker Image here from API */}
+              <h3 className="top">SPEAKERS</h3>
+              <div className="speakers">
+                {
+                  institute.attributes.speakers.data.map(speaker => (
+                    <div className="speaker">
+                      <div className="speaker-image">
+                        {/* Add Speaker Image here from API */}
+                        {/* <Image 
+                          src={image.data.attributes.url} 
+                          alt={name} 
+                          width={436} 
+                          height={255} 
+                          priority
+                        /> */}
+                      </div>
+                      <div className="speaker-name">{speaker.attributes.fullName}</div>
+                    </div>
+                  ))
+                }
               </div>
-              <div className="speaker-name">First Name<br />Last Name</div>
-            </div>
-  
-            <div className="speaker">
-              <div className="speaker-image">
-                {/* Add Speaker Image here from API */}
-              </div>
-              <div className="speaker-name">First Name<br />Last Name</div>
-            </div>
-  
-            <div className="speaker">
-              <div className="speaker-image">
-                {/* Add Speaker Image here from API */}
-              </div>
-              <div className="speaker-name">First Name<br />Last Name</div>
-            </div>
 
-            <div className="speaker">
-              <div className="speaker-image">
-                {/* Add Speaker Image here from API */}
-              </div>
-              <div className="speaker-name">First Name<br />Last Name</div>
-            </div>
-  
-            <div className="speaker">
-              <div className="speaker-image">
-                {/* Add Speaker Image here from API */}
-              </div>
-              <div className="speaker-name">First Name<br />Last Name</div>
-            </div>
-  
-            <div className="speaker">
-              <div className="speaker-image">
-                {/* Add Speaker Image here from API */}
-              </div>
-              <div className="speaker-name">First Name<br />Last Name</div>
-            </div>
-          </div>
-
-          <h3 className="top">SESSIONS</h3>
-          <div className="sessions">
-            <div className="session">
-              <div className="session-description">
-                Lorem ipsum dolor sit amet WITH <span className="name">FIRST NAME LAST NAME</span>
+              <h3 className="top">SESSIONS</h3>
+              <div className="sessions">
+                {
+                  institute.attributes.sessions.map(session => (
+                    <div className="session">
+                      <div className="session-description">
+                        {session.session_name} WITH <span className="name">{session.speaker.data.attributes.fullName}</span>
+                      </div>
+                    </div>
+                  ))
+                }
               </div>
             </div>
-
-            <div className="session">
-              <div className="session-description">
-                Lorem ipsum dolor sit amet WITH <span className="name">FIRST NAME LAST NAME</span>
-              </div>
-            </div>
-
-            <div className="session">
-              <div className="session-description">
-                Lorem ipsum dolor sit amet WITH <span className="name">FIRST NAME LAST NAME</span>
-              </div>
-            </div>
-
-            <div className="session">
-              <div className="session-description">
-                Lorem ipsum dolor sit amet WITH <span className="name">FIRST NAME LAST NAME</span>
-              </div>
-            </div>
-
-            <div className="session">
-              <div className="session-description">
-                Lorem ipsum dolor sit amet WITH <span className="name">FIRST NAME LAST NAME</span>
-              </div>
-            </div>
-
-            <div className="session">
-              <div className="session-description">
-                Lorem ipsum dolor sit amet WITH <span className="name">FIRST NAME LAST NAME</span>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
+          ))
+        }
       </SummerInstituteStyle>
 
       <PreviousInstitutesCTA>
@@ -316,4 +274,9 @@ export default function SummerInstitutePage() {
       </PreviousInstitutesCTA>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const institutes = await loadSummerInstitutes();
+  return { props: { institutes } }
 }
