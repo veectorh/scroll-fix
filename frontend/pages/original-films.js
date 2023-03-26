@@ -109,11 +109,11 @@ export default function OriginalFilmsPage({ films }) {
         <h2>Apply to SpeakOut’s Emerging Filmmakers Fund</h2>
         <p>We support and nurture the next generation of talented and diverse filmmakers by providing grants and resources to help bring their vision to life. Whether you are a budding filmmaker looking to apply, or a film-lover looking to support the cause, we welcome you to join us!</p>
         <div className="buttons">
-            <ButtonStyles theme={{ main: "#00AFB5" }}>
+            {/* <ButtonStyles theme={{ main: "#00AFB5" }}>
               <a href="#" target="_blank">Submit to the fund</a>
-            </ButtonStyles>
+            </ButtonStyles> */}
             <ButtonStyles theme={{ main: "#00AFB5" }}>
-              <a href="#" target="_blank">Donate to the fund</a>
+              <a href="https://www.paypal.com/us/fundraiser/charity/2248447" target="_blank">Donate to the fund</a>
             </ButtonStyles>
           </div>
       </div>
