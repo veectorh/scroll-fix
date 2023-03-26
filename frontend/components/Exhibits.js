@@ -108,7 +108,7 @@ export default function Exhibit( exhibit) {
             <h3>Created by {artist_name.data.attributes.fullName}</h3>
             <p>{artist_name.data.attributes.tagLine}</p>
             <SecondButtonStyles theme={{ main: "#000000" }} border={true}>
-              <Link href={`/speakers/${slug}`}>More About the Artist</Link>
+              <Link href={`/speakers/${slug}`}>More About the Creator</Link>
             </SecondButtonStyles>
           </div >
         </div >

@@ -63,10 +63,12 @@ const FamilyExhibitsStyle = styled.section`
     background: rgba(56, 240, 240, 0.2);
     padding: 80px 10vw 211px;
     .copy {
-      max-width: 543px;
+      /* max-width: 543px; */
+      flex: 0.9;
     }
     .quote {
-      min-width: 587px;
+      /* min-width: 587px; */
+      flex: 1;
       .quote-container {
         padding: 40px 0 0;
         position: relative;
@@ -111,6 +113,9 @@ const FamilyExhibitsStyle = styled.section`
     margin-top: -220px;
     .exhibit {
       width: 399px;
+      img {
+        border-radius: 20px;
+      }
     }
   }
 `;
@@ -121,7 +126,7 @@ export default function ExhibitsPage({ exhibits, familyExhibits }) {
       <ExhibitsPageStyle>
         <h1>Exhibits</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin fringilla sagittis. Nunc ultrices turpis eget nunc consequat vulputate. Donec libero magna, tincidunt nec sapien ut, porttitor gravida tortor.
+          Book one of SpeakOut's award-winning exhibitions that explore history, race, family diversity, sexual orientation, gender identity, and culture. Whether presented in person or virtually, each powerful exhibit offers an unforgettable educational experience.
         </p>
 
         <ExhibitsListStyle>
