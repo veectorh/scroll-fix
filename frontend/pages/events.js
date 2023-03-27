@@ -132,7 +132,7 @@ export default function EventsPage({ events}) {
       <EventsPageStyle>
         <h1>Virtual Events</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin fringilla sagittis. Nunc ultrices turpis eget nunc consequat vulputate. Donec libero magna, tincidunt nec sapien ut, porttitor gravida tortor.
+        Join us for live virtual events featuring renowned and emerging speakers presenting new, cutting-edge material on race, culture, and politics. Engage with others in accessible and affordable events.
         </p>
 
         <EventsListStyle>
@@ -148,7 +148,7 @@ export default function EventsPage({ events}) {
           <h2>Watch Past SpeakOut Virtual Events and Webinars</h2>
           <p>Watch past SpeakOut virtual programs, focusing on a range of contemporary issues and featuring SpeakOut speakers and artists. Most programs are free to watch; some just $10 to support SpeakOut's ongoing educational work.</p>
           <ButtonStyles theme={{ main: "#00AFB5" }}>
-            <Link href="/#">Learn More</Link>
+            <a href="https://youtube.com/playlist?list=PLIKi6ujYCSbeCc3rIpM6HUMY_JOQ-5aUe" target="_blank">Learn More</a>
           </ButtonStyles>
         </CTAStyleEvents>
         <CTAStyleStore>
