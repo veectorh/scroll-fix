@@ -145,15 +145,15 @@ export default function EventsPage({ events}) {
       </EventsPageStyle>
       <CTASectionStyle>
         <CTAStyleEvents>
-          <h2>Watch Past SpeakOut Virtual Events and Webinars</h2>
-          <p>Watch past SpeakOut virtual programs, focusing on a range of contemporary issues and featuring SpeakOut speakers and artists. Most programs are free to watch; some just $10 to support SpeakOut's ongoing educational work.</p>
+          <h2>Watch Free SpeakOut Virtual Events and Webinars </h2>
+          <p>Watch FREE SpeakOut virtual event recordings, focusing on a range of contemporary issues and featuring SpeakOut speakers and artists. Most programs are free to watch; some just $10 to support SpeakOut's ongoing educational work.</p>
           <ButtonStyles theme={{ main: "#00AFB5" }}>
             <a href="https://youtube.com/playlist?list=PLIKi6ujYCSbeCc3rIpM6HUMY_JOQ-5aUe" target="_blank">Learn More</a>
           </ButtonStyles>
         </CTAStyleEvents>
         <CTAStyleStore>
           <h2>SpeakOut Online Store</h2>
-          <p>Shop social and racial justice books, films, resources, webinars, even coloring books and a game! Great gift-giving ideas for people of all ages! Plus check out our special end-of-year virtual events package! And your purchase supports SpeakOut's social justice education efforts (not a billionaire's excursions to space)!</p>
+          <p>Find recent SpeakOut virtual event recordings in the online store, and support our ongoing educational work. Featuring compelling and transformative presentations and conversations.</p>
           <ButtonStyles theme={{ main: "#00AFB5" }}>
             <Link href="/store">Learn More</Link>
           </ButtonStyles>
