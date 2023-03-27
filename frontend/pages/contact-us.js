@@ -79,8 +79,8 @@ const ContactUsStyle = styled.section`
 export default function ContactUsPage() {
   return (
     <ContactUsStyle>
-      <h1>Contact Us</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin fringilla sagittis. Nunc ultrices turpis eget nunc<br/>*Required Field.</p>
+      <h1>CONTACT US</h1>
+      <p>Contact us for general inquiries or to learn more about how to get involved in SpeakOut's efforts for social justice.</p>
 
       <div className="contact">
 
