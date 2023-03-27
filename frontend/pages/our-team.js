@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { loadStaff } from "@/lib/load-staff";
 import { loadDirectors } from "@/lib/load-directors";
+import { useState } from 'react';
+
 
 const OurTeamStyles = styled.section`
   padding: 100px 0 0;
@@ -65,12 +67,56 @@ const MembersListStyles = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `;
 
+//   border-radius: 20px;
+//   overflow: hidden;
+//   position: relative;
+//   height: 466px;
+//   background: rgba(67, 67, 67, 0.6);
+//   img {
+//     width: 399px;
+//     height: 100%;
+//     object-fit: cover;
+//     border-radius: 20px;
+//     overflow: hidden;
+//   }
+//   .speaker-info {
+//     background-color: rgba(0, 0, 0, 0.5);
+//     position: absolute;
+//     bottom: 0;
+//     width: 100%;
+//     height: 80px;
+//     padding: 8px 16px;
+//     max-width: 399px;
+//     overflow: hidden;
+//     border-bottom-right-radius: 20px;
+//     cursor: pointer;
+//     .name {
+//       font-family: 'Oswald';
+//       font-size: 18px;
+//       font-weight: 500;
+//       line-height: 25px;
+//       letter-spacing: 0.085em;
+//       text-transform: uppercase;
+//       color: #F8A151;
+//       margin: 0;
+//     }
+//     .tagline {
+//       font-size: 12px;
+//       font-weight: 400;
+//       line-height: 17px;
+//       letter-spacing: 0.05em;
+//       color: #ffffff;
+//       margin: 0;
+//     }
+//   }
+// `;
 const TeamMemberStyles = styled.div`
   border-radius: 20px;
   overflow: hidden;
   position: relative;
   height: 466px;
   background: rgba(67, 67, 67, 0.6);
+  position: relative;
   img {
     width: 399px;
     height: 100%;
@@ -83,11 +129,13 @@ const TeamMemberStyles = styled.div`
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 80px;
+    height: ${({ isExpanded }) => (isExpanded ? '100%' : '80px')};
     padding: 8px 16px;
     max-width: 399px;
     overflow: hidden;
     border-bottom-right-radius: 20px;
+    cursor: pointer;
+    transition: height 0.3s ease-in-out;
     .name {
       font-family: 'Oswald';
       font-size: 18px;
@@ -99,19 +147,49 @@ const TeamMemberStyles = styled.div`
       margin: 0;
     }
     .tagline {
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 400;
       line-height: 17px;
       letter-spacing: 0.05em;
       color: #ffffff;
       margin: 0;
     }
+    .description {
+      margin-top: 27px;
+      font-size: 14px;
+      color: #ffffff;
+    }
+    .icon {
+      color: #F8A151;
+      font-size: 55px;
+      line-height: 0;
+      font-weight: 320;
+      position: absolute;
+      top: 25px;
+      right: 11px;
+    }
   }
 `;
 
 
-
 function OurTeamPage({ staff, directors }) {
+  const jeaniIndex = staff.data.findIndex(item => item.attributes.name === "Jean Caiani");
+  const shavonneeIndex = staff.data.findIndex(item => item.attributes.name === "Shavonnee Clark-Lowe");
+  // move Jean Caiani to the first index
+  staff.data.splice(0, 0, staff.data.splice(jeaniIndex, 1)[0]);
+  // move Shavonnee to the second index
+  staff.data.splice(1, 0, staff.data.splice(shavonneeIndex, 1)[0]);
+
+  const [expandedIndex, setExpandedIndex] = useState(-1);
+
+  const toggleExpansion = (index) => {
+    if (index === expandedIndex) {
+      setExpandedIndex(-1);
+    } else {
+      setExpandedIndex(index);
+    }
+  };
+
   return (
     <>
       <OurTeamStyles>
@@ -124,23 +202,27 @@ function OurTeamPage({ staff, directors }) {
           <h2><span>Staff</span></h2>
         </div>
         <MembersListStyles>
-          {
-            staff.data.map(s => (
-              <TeamMemberStyles>
-                <Image 
-                  src={s.attributes.photo.data?.attributes.url} 
-                  alt={s.attributes.name} 
-                  width={399} 
-                  height={466} 
-                  priority
-                />
-                <div className="speaker-info">
-                  <p className="name">{s.attributes.name}</p>
-                  <p className="tagline">{s.attributes.title}</p>
-                </div>
-              </TeamMemberStyles>
-            ))
-          }
+          {staff.data.map((s, index) => (
+            <TeamMemberStyles
+              key={index}
+              isExpanded={index === expandedIndex}
+              onClick={() => toggleExpansion(index)}
+            >
+              <Image 
+                src={s.attributes.photo.data?.attributes.url} 
+                alt={s.attributes.name} 
+                width={399} 
+                height={466} 
+                priority
+              />
+              <div className="speaker-info">
+                <p className="name">{s.attributes.name}</p>
+                <p className="tagline">{s.attributes.title}</p>
+                <p className="description">{s.attributes.description}</p>
+                <div className="icon">{index === expandedIndex ? '–' : '+'}</div>
+              </div>
+            </TeamMemberStyles>
+          ))}
         </MembersListStyles>
       </TeamImagesStyles>
 
@@ -150,8 +232,12 @@ function OurTeamPage({ staff, directors }) {
         </div>
         <MembersListStyles>
           {
-            directors.data.map(director => (
-              <TeamMemberStyles>
+            directors.data.map((director, index) => (
+              <TeamMemberStyles
+                key={index}
+                isExpanded={index === expandedIndex}
+                onClick={() => toggleExpansion(index)}
+              >
                 <Image 
                   src={director.attributes.photo.data?.attributes.url} 
                   alt={director.attributes.name} 
@@ -162,6 +248,8 @@ function OurTeamPage({ staff, directors }) {
                 <div className="speaker-info">
                   <p className="name">{director.attributes.name}</p>
                   <p className="tagline">{director.attributes.title}</p>
+                  <p className="description">{director.attributes.description}</p>
+                  <div className="icon">{index === expandedIndex ? '–' : '+'}</div>
                 </div>
               </TeamMemberStyles>
             ))
