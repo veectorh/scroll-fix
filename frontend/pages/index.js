@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { loadFeaturedSpeakers } from '@/lib/load-featured-speakers';
@@ -11,7 +10,6 @@ import EducationalInstitute from '@/components/EducationalInstitute';
 import QuotesCarousel from '../components/QuotesCarousel';
 import OurStore from '../components/OurStore';
 import ButtonStyles from '../components/styles/ButtonStyles';
-import ModalVideo from 'react-modal-video'
 
 const EducationalIntro = styled.div`
   background: #F2F2F2;
@@ -24,8 +22,6 @@ const EducationalIntro = styled.div`
 `;
 
 const Home = ({ featuredSpeakers, quotes }) => {
-  const [isOpen, setOpen] = useState(false)
-
   return (
     <>
       <div style={{marginTop: -79}}>
@@ -36,8 +32,7 @@ const Home = ({ featuredSpeakers, quotes }) => {
           <div className="hero-buttons">
             <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }}><Link href="/speakers">Explore Our Speakers</Link></ButtonStyles>
             <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }}><Link href="/institute">Explore the Institute</Link></ButtonStyles>
-            <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }} onClick={()=> setOpen(true)}><Link href="#">Watch Our Video <span></span></Link></ButtonStyles>
-            <ModalVideo channel='custom' autoplay isOpen={isOpen} url="https://speakout-website.s3.amazonaws.com/SpeakOut_30th_Anniversary_Promo.mp4" onClose={() => setOpen(false)} />
+            <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }}><Link href="#">Watch Our Video <span></span></Link></ButtonStyles>
           </div>
         </HeroStyles>
         <SubHeroStyles>

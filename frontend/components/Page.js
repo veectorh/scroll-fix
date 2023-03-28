@@ -1,7 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
-import 'node_modules/react-modal-video/scss/modal-video.scss';
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
