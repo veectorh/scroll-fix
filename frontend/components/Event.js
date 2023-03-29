@@ -82,11 +82,11 @@ export default function Event( event ) {
         />
         <div className="buttons">
           <SecondButtonStyles theme={{ main: "#00AFB5" }} className="test">
-            <Link href={enroll_url === null ? "/#" : enroll_url}>Enroll Now</Link>
+            <Link href={enroll_url === null ? "/#" : enroll_url}>Register Here</Link>
           </SecondButtonStyles>
-          <SecondButtonStyles theme={{ main: "#00AFB5" }} className="test">
-            <Link href="/inquiry-form">Learn More</Link>
-          </SecondButtonStyles>
+          {/* <SecondButtonStyles theme={{ main: "#00AFB5" }} className="test">
+            <Link href="/inquiry-form">Register & Learn More</Link>
+          </SecondButtonStyles> */}
         </div >
       </div>
       <div className="name-descriptions">
@@ -103,7 +103,7 @@ export default function Event( event ) {
             />
           </div > */}
           <div className="artist-description">
-            <h3>Lead by {artist_name.data.attributes.fullName}</h3>
+            <h3>Featuring {artist_name.data.attributes.fullName}</h3>
             <p>{artist_name.data.attributes.tagLine}</p>
             {/* <SecondButtonStyles theme={{ main: "#000000" }} border={true}>
               <Link href={`/speakers/${slug}`}>More About the Artist</Link>
