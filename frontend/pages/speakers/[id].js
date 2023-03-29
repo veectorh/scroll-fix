@@ -20,6 +20,7 @@ const SpeakerHeroStyles = styled.section`
   justify-content: space-between;
   .speaker-info {
     padding: 50px 90px;
+    flex: 1;
     .return-link {
       a {
         font-weight: 500;
@@ -57,17 +58,18 @@ const SpeakerHeroStyles = styled.section`
     }
   }
   .speaker-image {
-    width: 50vw;
+    /* width: 50vw; */
     height: 600px;
     box-shadow: inset 175px 0 175px 0 ${color};
     background-position: 0 2%;
-    background-size: 50vw auto;
+    background-size: cover;
     background-repeat: no-repeat;
-    /* img {
+    flex: 1;
+    img {
       position: relative !important;
       object-fit: cover;
       object-position: 0 15%;
-    } */
+    }
   }
 `;
 
