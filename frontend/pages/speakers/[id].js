@@ -59,8 +59,8 @@ const SpeakerHeroStyles = styled.section`
   }
   .speaker-image {
     /* width: 50vw; */
-    height: 600px;
-    box-shadow: inset 175px 0 175px 0 ${color};
+    height: 530px;
+    /* box-shadow: inset 175px 0 175px 0 ${color}; */
     background-position: 0 2%;
     background-size: cover;
     background-repeat: no-repeat;
