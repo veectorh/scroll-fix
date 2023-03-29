@@ -190,7 +190,7 @@ export default function SingleSpeaker({ singleSpeaker }) {
             </ButtonStyles>
             <ButtonStyles theme={{ main: "#00AFB5;" }}>
               <Link href="/speakers">
-                Publicity Packet
+                Photos
                 <span className="icon">
                   <Image
                     src='/images/download-icon.png'
