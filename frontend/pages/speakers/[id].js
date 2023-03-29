@@ -10,8 +10,12 @@ import { loadSingleSpeakers } from '@/lib/load-single-speaker';
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from "react-markdown";
 
+const colors = ['#FBECDE', '#F2F2F2', '#F8A151'];
+const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
+const color = getRandomColor();
+
 const SpeakerHeroStyles = styled.section`
-  background: rgba(56, 240, 240, 0.2);
+  background: ${color};
   display: flex;
   justify-content: space-between;
   .speaker-info {
@@ -53,10 +57,17 @@ const SpeakerHeroStyles = styled.section`
     }
   }
   .speaker-image {
-    img {
+    width: 50vw;
+    height: 600px;
+    box-shadow: inset 175px 0 175px 0 ${color};
+    background-position: 0 2%;
+    background-size: 50vw auto;
+    background-repeat: no-repeat;
+    /* img {
       position: relative !important;
       object-fit: cover;
-    }
+      object-position: 0 15%;
+    } */
   }
 `;
 
@@ -156,6 +167,10 @@ export default function SingleSpeaker({ singleSpeaker }) {
   const quotes = singleSpeaker.data[0].attributes?.quotes
   const [showAbout, setShowAbout] = useState(true);
 
+  let styleImage = {
+    backgroundImage: "url(" + speaker?.photo.data?.attributes.url + ")",
+  }
+
   return (
     <>
       <SpeakerHeroStyles>
@@ -187,14 +202,14 @@ export default function SingleSpeaker({ singleSpeaker }) {
             </ButtonStyles>
           </div>
         </div >
-        <div className="speaker-image">
-          <Image
+        <div className="speaker-image" style={styleImage}>
+          {/* <Image
             src={speaker?.photo.data?.attributes.url}
             alt={speaker?.fullName}
             fill
             sizes="33vw"
             priority
-          />
+          /> */}
         </div>
       </SpeakerHeroStyles>
       <SpeakerInfoStyles>
