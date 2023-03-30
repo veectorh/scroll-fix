@@ -113,10 +113,10 @@ export default function Speakers(speakers, topics, error) {
     <>
       <SpeakersPageStyle>
         <h1>Speakers</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin fringilla sagittis. Nunc ultrices turpis eget nunc consequat vulputate. Donec libero magna, tincidunt nec sapien ut, porttitor gravida tortor.</p>
+        <p>Browse through the profiles of our diverse network of speakers and artists who offer a range of learning opportunities, including lectures, workshops, films. and performances. Our speakers have a wealth of knowledge and experience in a variety of fields and are able to customize their presentations to meet your specific needs and goals. Use the filter options to narrow down your search or contact us for personalized recommendations. We look forward to connecting you to find the perfect speaker for your event.</p>
         <div className="filter-description">
           <h4>Filter Speakers by Topic</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin fringilla sagittis. Nunc ultrices turpis eget nunc</p>
+          <p>Our extensive roster covers a range of topics, budgets, and needs. Filter below or if you need help or recommendations, reach out here.</p>
         </div>
         <TopicListStyles>
           {

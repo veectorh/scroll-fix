@@ -43,7 +43,7 @@ export default function FilmProgramsPage({ films }) {
     <>
       <FilmProgramsPageStyle>
         <h1>Film Programs</h1>
-        <p>Book a film program featuring SpeakOut's award-winning filmmakers - in person or virtually. Explore a variety of cultural and social issues through powerful and thought-provoking films, accompanied by in-depth discussions with the filmmakers themselves. A unique and enriching experience!</p>
+        <p>Book a film program featuring SpeakOut's award-winning filmmakers - in person or virutally. Explore a variety of cultural and social issues through powerful and thought-provoking films, accompanied by in-depth discussions with the filmmakers themselves. A unique and enriching experience!</p>
 
         <FilmProgramListStyle>
           {

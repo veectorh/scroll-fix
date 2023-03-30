@@ -44,6 +44,7 @@ export default function PerformancesPage({ performances }) {
       <PerformancesPageStyle>
         <h1>Performances</h1>
         <p>Experience the power of live performance from top SpeakOut artist/activists. Solo-shows, spoken word and poetry, comedy, and film - each program brings vital and inspiring messages to campuses and communities. Join us for a transformative experience, available in person or virtually.</p>
+        
 
         <PerfomancesListStyle>
           {

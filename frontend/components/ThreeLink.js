@@ -40,23 +40,23 @@ export default function ThreeLink() {
       <div className="links">
         <div className="link">
           <h4>Performances</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+          <p>Experience the power of live performance from top SpeakOut artist/activists. Solo-shows, spoken word and poetry, comedy, and film - each program brings vital and inspiring messages to campuses and communities. Join us for a transformative experience, available in person or virtually.</p>
           <ButtonStyles theme={{ main: "#00AFB5;" }}>
-            <Link href="/ecourse">See Performances</Link>
+            <Link href="/performances">See Performances</Link>
           </ButtonStyles>
         </div>
         <div className="link">
           <h4>Exhibits</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+          <p>Book one of SpeakOut's award-winning exhibitions that explore history, race, family diversity, sexual orientation gender identity, and culture. Whether presented in person or virtually, each powerful exhibit offers an unforgettable educational experience.</p>
           <ButtonStyles theme={{ main: "#00AFB5;" }}>
-            <Link href="/ecourse">See Exhibits</Link>
+            <Link href="/exhibits">See Exhibits</Link>
           </ButtonStyles>
         </div>
         <div className="link">
           <h4>Film Programs</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+          <p>Book a film program featuring SpeakOut's award-winning filmmakers - in person or virutally. Explore a variety of cultural and social issues through powerful and thought-provoking films, accompanied by in-depth discussions with the filmmakers themselves. A unique and enriching experience!</p>
           <ButtonStyles theme={{ main: "#00AFB5;" }}>
-            <Link href="/ecourse">See Film Programs</Link>
+            <Link href="/film-programs">See Film Programs</Link>
           </ButtonStyles>
         </div>
       </div>
