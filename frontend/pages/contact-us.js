@@ -77,14 +77,45 @@ const ContactUsStyle = styled.section`
 
 
   @media ${device.tablet} {
+    h1 {
+      font-family: Oswald;
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+      text-align: left;      
+    }
+    padding: 50px 0 0;
     .contact {
-     flex-direction: column;
-     .contact-area {
-      max-width: 100%;
-      width: 100%;
-     }
+      flex-direction: column;
+      gap: 40px;
+      .contact-area {
+        max-width: 100%;
+        width: 100%;
+        padding-top: 0px;
+          .logo {
+            width: 136px;
+            height: 62px;
+          }
+      }
+    }
+    .form {
+      .fsBody{
+        padding: 0px !important;
+        color: red;
+      }
+    }
+    .fsForm {
+      .fsSubmit {
+
+      }
     }
   }
+
+  @media ${device.mobileL} {
+    padding: 36px 0 0;
+  }
+  
 `;
 
 export default function ContactUsPage() {
@@ -105,6 +136,7 @@ export default function ContactUsPage() {
                   width="258"
                   height="119"
                   priority
+                  className="logo"
                 />
               </Link>
             </div >
@@ -121,6 +153,7 @@ export default function ContactUsPage() {
                   width="14"
                   height="21"
                   priority
+
                 />
               </div>
               <div className="info">
