@@ -21,19 +21,19 @@ const OurStoreStyles = styled.section`
 `;
 
 export default function OurStore({ products }) {
-  console.log("PRODUCTS", products);
   return (
     <OurStoreStyles>
       <h2>Our Store</h2>
       <div className="products">
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+        {
+          products.map(product => (
+            <Product key={product.id} product={product} />
+          ))
+        }
       </div>
       <div className="button">
         <ButtonStyles theme={{ main: "#F8A151" }} fullWidth={true}>
-          <Link href="/ecourse">Buy Now</Link>
+          <Link href="/store">View Our Store</Link>
         </ButtonStyles>
       </div >
     </OurStoreStyles>
