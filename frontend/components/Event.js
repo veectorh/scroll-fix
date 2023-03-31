@@ -16,7 +16,7 @@ const EventStyle = styled.div`
     padding: 0;
     font-weight: 400;
     font-size: 36px;
-    line-height: 26px;
+    line-height: 35px;
     letter-spacing: 0.03em;
   }
   h3 {
@@ -82,7 +82,7 @@ export default function Event( event ) {
         />
         <div className="buttons">
           <SecondButtonStyles theme={{ main: "#00AFB5" }} className="test">
-            <Link href={enroll_url === null ? "/#" : enroll_url}>Register Here</Link>
+            <Link href={enroll_url === null ? "/#" : enroll_url} target="_blank">Register Here</Link>
           </SecondButtonStyles>
           {/* <SecondButtonStyles theme={{ main: "#00AFB5" }} className="test">
             <Link href="/inquiry-form">Register & Learn More</Link>
@@ -97,8 +97,8 @@ export default function Event( event ) {
             <Image 
               src={artist_name.data.attributes?.photo.data?.attributes?.url} 
               alt={artist_name.data.attributes?.fullName} 
-              width={121} 
-              height={121} 
+              width={80} 
+              height={80} 
               priority
             />
           </div > */}
