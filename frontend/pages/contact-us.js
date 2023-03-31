@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { device } from "@/components/device";
 const ContactUsStyle = styled.section`
   padding: 100px 0 0;
   max-width: 1250px;
@@ -59,8 +59,8 @@ const ContactUsStyle = styled.section`
     }
 
     .form {
-      width: 900px;
-
+      max-width: 900px;
+      width: 100%;
       iframe {
         border: none;
         height: 1000px;
@@ -72,6 +72,17 @@ const ContactUsStyle = styled.section`
           color: orange;
         }
       }
+    }
+  }
+
+
+  @media ${device.tablet} {
+    .contact {
+     flex-direction: column;
+     .contact-area {
+      max-width: 100%;
+      width: 100%;
+     }
     }
   }
 `;
@@ -99,7 +110,7 @@ export default function ContactUsPage() {
             </div >
           </div>
 
-          <p>A mission-driven speakers agency<br/> and education institute.</p>
+          <p>A mission-driven speakers agency<br /> and education institute.</p>
 
           <div className="contact-info">
             <div div className="image-info">
@@ -113,7 +124,7 @@ export default function ContactUsPage() {
                 />
               </div>
               <div className="info">
-                <p style={{paddingLeft:"10px"}}>SpeakOut<br/>PO Box 22748<br/>Oakland, CA 94609</p>
+                <p style={{ paddingLeft: "10px" }}>SpeakOut<br />PO Box 22748<br />Oakland, CA 94609</p>
               </div>
             </div>
 
@@ -128,7 +139,7 @@ export default function ContactUsPage() {
                 />
               </div>
               <div className="info">
-                <p style={{paddingLeft:"5px"}}><a href="tel:+15106010182">+1 (510) 601-0182</a></p>
+                <p style={{ paddingLeft: "5px" }}><a href="tel:+15106010182">+1 (510) 601-0182</a></p>
               </div>
             </div>
 
@@ -143,10 +154,10 @@ export default function ContactUsPage() {
                 />
               </div>
               <div className="info">
-                <p style={{paddingLeft:"2px"}}><a href="mailto:info@speakoutnow.org">info@speakoutnow.org</a></p>
+                <p style={{ paddingLeft: "2px" }}><a href="mailto:info@speakoutnow.org">info@speakoutnow.org</a></p>
               </div>
             </div>
-          </div>  
+          </div>
 
           <div className="logo-social">
             <div className="social">
@@ -176,9 +187,8 @@ export default function ContactUsPage() {
               </a>
             </div>
           </div>
+
         </div>
-
-
 
         <div className="form">
           <iframe src="https://speakout.formstack.com/forms/contact_us" title="Contact Us" width="600" height="400"></iframe>
