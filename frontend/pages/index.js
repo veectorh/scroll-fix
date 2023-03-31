@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { loadFeaturedSpeakers } from '@/lib/load-featured-speakers';
 import { loadQuotes } from '@/lib/load-quotes';
+import { loadFeaturedProducts } from '@/lib/load-featured-products';
 import HeroStyles from '../components/styles/HeroStyles';
 import Speaker from '@/components/Speaker';
 import SubHeroStyles from '../components/styles/SubHeroStyles';
@@ -21,7 +22,7 @@ const EducationalIntro = styled.div`
   }
 `;
 
-const Home = ({ featuredSpeakers, quotes }) => {
+const Home = ({ featuredSpeakers, quotes, products }) => {
   return (
     <>
       <div style={{marginTop: -79}}>
@@ -75,7 +76,7 @@ const Home = ({ featuredSpeakers, quotes }) => {
         </EducationalIntro>
         <EducationalInstitute />
         <QuotesCarousel quotes={quotes.data} />
-        <OurStore />
+        <OurStore products={products} />
       </div>
     </>
   );
@@ -90,8 +91,9 @@ const Home = ({ featuredSpeakers, quotes }) => {
 export async function getStaticProps() {
   const featuredSpeakers = await loadFeaturedSpeakers();
   const quotes = await loadQuotes();
+  const products = await loadFeaturedProducts();
 
-  return { props: { featuredSpeakers, quotes } }
+  return { props: { featuredSpeakers, quotes, products } }
 }
 
 export default Home;

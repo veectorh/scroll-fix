@@ -35,24 +35,24 @@ const ProductStyles = styled.div`
   }
 `;
 
-export default function Product() {
+export default function Product({ product }) {
   return (
     <ProductStyles>
-      <a href="https://www.speakoutnow.org/store" target="_blank" rel="noreferrer">
+      <a href={product.attributes.product_url} target="_blank" rel="noreferrer">
         <Image
-          src='/images/temp/product1.png'
+          src={product.attributes.image.data.attributes.url}
           alt="Facebook"
           width="262"
           height="262"
         />
       </a>
       <div className="title-price">
-        <h4 className="title">2022 AAPI Heritage Month Bundle - INDIVIDUAL RATE</h4>
-        <h5 className="price">$29.00</h5>
+        <h4 className="title">{product.attributes.name}</h4>
+        <h5 className="price">${product.attributes.price}</h5>
       </div>
-      <p className="description">This Asian American and Pacific Islander (AAPI) Heritage Month celebrate the diverse identities, histories, and experiences of our AAPI communities with this one-of-a-kind Bundle.</p>
+      <p className="description">{product.attributes.description}</p>
       <ButtonStyles theme={{ main: "#00AFB5" }}>
-        <Link href="/ecourse">Buy Now</Link>
+        <Link href={product.attributes.product_url} target="_blank">Buy Now</Link>
       </ButtonStyles>
     </ProductStyles>
   )
