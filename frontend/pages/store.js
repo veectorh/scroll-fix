@@ -29,12 +29,11 @@ const StorePageStyles = styled.section`
 `;
 
 export default function StorePage({ products }) {
-  console.log("STORE", products);
   return (
     <>
       <StorePageStyles>
         <h1>SPEAKOUT STORE</h1>
-        <p>Update with subheader copy here</p>
+        <p>Find inspiration in our online store, featuring a selection of racial and social justice books, films, event recordings, and curriculum from SpeakOut speakers.</p>
         <div className="products">
           {
             products.data.map(product => (
