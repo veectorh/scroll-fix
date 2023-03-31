@@ -258,7 +258,7 @@ export default function SingleSpeaker({ singleSpeaker }) {
         </div>
       </SpeakerInfoStyles>
       <SpeakerQuotesCarousel quotes={quotes} />
-      <OurStore />
+      {/* <OurStore /> */}
     </>
   );
 }
