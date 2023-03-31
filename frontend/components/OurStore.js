@@ -1,4 +1,3 @@
-// @ts-nocheck
 import Link from 'next/link';
 import styled from 'styled-components';
 import Product from './Product';
@@ -21,7 +20,8 @@ const OurStoreStyles = styled.section`
   }
 `;
 
-export default function OurStore() {
+export default function OurStore({ products }) {
+  console.log("PRODUCTS", products);
   return (
     <OurStoreStyles>
       <h2>Our Store</h2>
