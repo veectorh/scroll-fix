@@ -74,11 +74,19 @@
       "targetField": "fullName"
     },
     "publicity_packet": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "files"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
     }
   }
 }

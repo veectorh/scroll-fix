@@ -126,7 +126,7 @@ export default function ExhibitsPage({ exhibits, familyExhibits }) {
       <ExhibitsPageStyle>
         <h1>Exhibits</h1>
         <p>
-          Book one of SpeakOut's award-winning exhibitions that explore history, race, family diversity, sexual orientation, gender identity, and culture. Whether presented in person or virtually, each powerful exhibit offers an unforgettable educational experience.
+          Book one of SpeakOut's award-winning exhibitions that explore history, race, family diversity, sexual orientation gender identity, and culture. Whether presented in person or virtually, each powerful exhibit offers an unforgettable educational experience.
         </p>
 
         <ExhibitsListStyle>

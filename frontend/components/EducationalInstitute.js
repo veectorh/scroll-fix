@@ -39,7 +39,10 @@ export default function EducationalInstitute() {
           <div className="copy-container">
             <h2>Virtual Events</h2>
             <p>Join us for live virtual events featuring renowned and emerging speakers presenting new, cutting-edge material on race, culture, and politics. Engage with others in accessible and affordable events.</p>
-            <ButtonStyles theme={{ main: "#00AFB5" }}><Link href="/events">See All Events</Link></ButtonStyles>
+            <div style={{display: "flex", gap: "10px"}}>
+              <ButtonStyles theme={{ main: "#00AFB5" }}><a href="https://www.eventbrite.com/e/spill-the-disabili-tea-an-introduction-to-disability-justice-alex-locust-tickets-580911781777" target='_blank'>Upcoming Event</a></ButtonStyles>
+              <ButtonStyles theme={{ main: "#00AFB5" }}><Link href="/events">See All Events</Link></ButtonStyles>
+            </div>
           </div>
         </div>
       </div>

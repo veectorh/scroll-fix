@@ -42,6 +42,10 @@
     "featured": {
       "type": "boolean",
       "default": false
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
     }
   }
 }
