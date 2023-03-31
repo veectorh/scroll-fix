@@ -165,9 +165,15 @@ export const getStaticProps = async (context) => {
 
 
 export default function SingleSpeaker({ singleSpeaker }) {
+  console.log("SPEAKER", singleSpeaker);
   const speaker = singleSpeaker?.data[0]?.attributes;
-  const quotes = singleSpeaker.data[0].attributes?.quotes
+  const quotes = singleSpeaker.data[0].attributes?.quotes;
+  const products = singleSpeaker.data[0].attributes.products.data;
+  const photos = singleSpeaker.data[0].attributes.publicity_packet.data[0].attributes.url;
   const [showAbout, setShowAbout] = useState(true);
+  console.log("PRODUCTS", products);
+  console.log("PHOTOSDOWNLOWD", photos);
+  console.log("Empty", products.length === 0);
 
   let styleImage = {
     backgroundImage: "url(" + speaker?.photo.data?.attributes.url + ")",
@@ -188,8 +194,8 @@ export default function SingleSpeaker({ singleSpeaker }) {
                 Request Info
               </Link>
             </ButtonStyles>
-            <ButtonStyles theme={{ main: "#00AFB5;" }}>
-              <Link href="/speakers">
+            <ButtonStyles theme={{ main: "#00AFB5;" }} style={{ display: photos === null ? "none" : "flex"}}>
+              <Link href={photos}>
                 Photos
                 <span className="icon">
                   <Image
@@ -258,7 +264,8 @@ export default function SingleSpeaker({ singleSpeaker }) {
         </div>
       </SpeakerInfoStyles>
       <SpeakerQuotesCarousel quotes={quotes} />
-      {/* <OurStore /> */}
+      {/* Display OurStore component only if Speaker has a related Product */}
+      { products.length === 0 ? null : <OurStore products={products} /> }
     </>
   );
 }

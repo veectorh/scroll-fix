@@ -21,6 +21,7 @@ const OurStoreStyles = styled.section`
 `;
 
 export default function OurStore({ products }) {
+  console.log("YOOO PRODUCTS", products);
   return (
     <OurStoreStyles>
       <h2>Our Store</h2>
