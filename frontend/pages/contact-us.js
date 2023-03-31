@@ -77,6 +77,7 @@ const ContactUsStyle = styled.section`
 
 
   @media ${device.tablet} {
+    padding: 50px 0 0;
     h1 {
       font-family: Oswald;
       font-size: 30px;
@@ -85,7 +86,6 @@ const ContactUsStyle = styled.section`
       letter-spacing: 0.05em;
       text-align: left;      
     }
-    padding: 50px 0 0;
     .contact {
       flex-direction: column;
       gap: 40px;

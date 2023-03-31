@@ -143,6 +143,7 @@ const FooterStyles = styled.footer`
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 30px;
         .logo img {
           width: 146px;
@@ -154,6 +155,15 @@ const FooterStyles = styled.footer`
           justify-content: space-between;
           margin-bottom: 10px;
         }
+      }
+      .mission h5{
+        font-family: Oswald;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px; 
+        letter-spacing: 0.05em;
+        text-align: left;
+
       }
     }
   }
