@@ -168,8 +168,8 @@ export default function SingleSpeaker({ singleSpeaker }) {
   console.log("SPEAKER", singleSpeaker);
   const speaker = singleSpeaker?.data[0]?.attributes;
   const quotes = singleSpeaker.data[0].attributes?.quotes;
-  const products = singleSpeaker.data[0].attributes.products.data;
-  const photos = singleSpeaker.data[0].attributes.publicity_packet.data[0].attributes.url;
+  const products = singleSpeaker.data[0]?.attributes?.products?.data;
+  const photos = singleSpeaker.data[0]?.attributes?.publicity_packet?.data[0]?.attributes?.url;
   const [showAbout, setShowAbout] = useState(true);
   console.log("PRODUCTS", products);
   console.log("PHOTOSDOWNLOWD", photos);
