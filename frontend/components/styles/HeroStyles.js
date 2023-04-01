@@ -43,6 +43,7 @@ const HeroStyles = styled.section`
     gap: 20px;
     padding: 40px 0;
   }
+
 `;
 
 export default HeroStyles;

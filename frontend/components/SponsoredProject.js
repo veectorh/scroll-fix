@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Image from "next/image";
 import ButtonStyles from './styles/ButtonStyles';
 import ReactMarkdown from "react-markdown";
+import { device } from './device';
 
 const SponsoredProjectStyle = styled.div`
   width: 400px;
@@ -22,6 +23,19 @@ const SponsoredProjectStyle = styled.div`
     text-decoration: underline;
     color: inherit;
   }
+  }
+  @media ${device.tablet} {
+    width: 100%;
+
+    h4 { 
+      //styleName: H2 Mobile;
+      font-family: Oswald;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.085em;
+      text-align: left;
+    }
   }
 `;
 
