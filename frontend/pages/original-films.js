@@ -3,6 +3,7 @@ import Image from 'next/image';
 import ButtonStyles from "@/components/styles/ButtonStyles";
 import ReactMarkdown from "react-markdown";
 import { loadAPI } from "@/lib/load-api";
+import { device } from "@/components/device";
 
 const OriginalFilmStyles = styled.section`
   padding: 100px 0 0;
@@ -66,6 +67,60 @@ const OriginalFilmStyles = styled.section`
       text-align: center;
     }
   }
+
+  @media ${device.tablet} {
+    padding: 50px 0 0;
+
+    h1 {
+      font-family: Oswald;
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+      text-align: left;      
+    }
+
+    h2 {
+      //styleName: H1 Mobile;
+      font-family: Oswald;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 28px;
+      letter-spacing: 0.085em;
+      text-align: left;
+    }
+
+    p {
+      margin: 0 0 24px;
+    }
+
+    .movies {
+      gap: 24px;
+      .movie {
+      .movie-image {
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            overflow: hidden;
+          }
+      }
+    }
+    }
+
+    .callout {
+      margin-top: 10px;
+      padding: 20px 20px 30px;
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+
+  @media ${device.mobileL} {
+    padding: 36px 0 0;
+  }
+
 `;
 
 export default function OriginalFilmsPage({ films }) {
@@ -80,11 +135,11 @@ export default function OriginalFilmsPage({ films }) {
           films.data.map(film => (
             <div className="movie">
               <div className="movie-image">
-                <Image 
+                <Image
                   src={film.attributes.image.data.attributes.url}
                   alt={film.attributes.name}
-                  width={400} 
-                  height={838} 
+                  width={400}
+                  height={838}
                   priority
                 />
               </div>
@@ -93,10 +148,10 @@ export default function OriginalFilmsPage({ films }) {
                 <ReactMarkdown children={film.attributes.description} />
               </div>
               <div className="buttons">
-                <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: film.attributes.trailer_url === null ? "none" : "flex"}}>
+                <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: film.attributes.trailer_url === null ? "none" : "flex" }}>
                   <a href={film.attributes.trailer_url} target="_blank" >Watch the trailer</a>
                 </ButtonStyles>
-                <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: film.attributes.buy_url === null ? "none" : "flex"}}>
+                <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: film.attributes.buy_url === null ? "none" : "flex" }}>
                   <a href={film.attributes.buy_url} target="_blank">Buy the film</a>
                 </ButtonStyles>
               </div>
@@ -109,13 +164,13 @@ export default function OriginalFilmsPage({ films }) {
         <h2>Apply to SpeakOut’s Emerging Filmmakers Fund</h2>
         <p>We support and nurture the next generation of talented and diverse filmmakers by providing grants and resources to help bring their vision to life. Whether you are a budding filmmaker looking to apply, or a film-lover looking to support the cause, we welcome you to join us!</p>
         <div className="buttons">
-            {/* <ButtonStyles theme={{ main: "#00AFB5" }}>
+          {/* <ButtonStyles theme={{ main: "#00AFB5" }}>
               <a href="#" target="_blank">Submit to the fund</a>
             </ButtonStyles> */}
-            <ButtonStyles theme={{ main: "#00AFB5" }}>
-              <a href="https://www.paypal.com/us/fundraiser/charity/2248447" target="_blank">Donate to the fund</a>
-            </ButtonStyles>
-          </div>
+          <ButtonStyles theme={{ main: "#00AFB5" }}>
+            <a href="https://www.paypal.com/us/fundraiser/charity/2248447" target="_blank">Donate to the fund</a>
+          </ButtonStyles>
+        </div>
       </div>
     </OriginalFilmStyles>
 
