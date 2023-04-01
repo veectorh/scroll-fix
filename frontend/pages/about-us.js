@@ -114,10 +114,6 @@ const SponsoredProjectsListStyles = styled.div`
     justify-content: space-between;
     row-gap: 40px;
     padding: 0 5vw;
-
-    img {
-      width: 100%;
-    }
   }
 
   @media ${device.tablet} {
@@ -137,10 +133,6 @@ const SponsoredProjectsListStyles = styled.div`
     .projects {
       row-gap: 30px;
       padding: 0px;
-
-      img {
-      height: auto;
-      }
     }
   }
 `;

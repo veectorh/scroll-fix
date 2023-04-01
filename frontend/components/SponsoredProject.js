@@ -26,6 +26,11 @@ const SponsoredProjectStyle = styled.div`
   }
   @media ${device.tablet} {
     width: 100%;
+    
+    /* img {
+      width: 100%;
+      height: auto;
+    } */
 
     h4 { 
       //styleName: H2 Mobile;

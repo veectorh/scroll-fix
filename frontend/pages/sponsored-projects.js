@@ -2,6 +2,7 @@ import styled from "styled-components";
 import NeedHelp from "@/components/NeedHelp";
 import SponsoredProject from "@/components/SponsoredProject";
 import { loadSponsoredProjects } from "@/lib/load-sponsored-projects";
+import { device } from "@/components/device";
 
 const SponsoredProjectsStyle = styled.section`
   padding: 100px 0 0;
@@ -21,6 +22,23 @@ const SponsoredProjectsStyle = styled.section`
     margin: 0 0 35px;
     max-width: 910px;
   }
+
+  @media ${device.tablet} {
+    padding: 50px 0 0;
+
+    h1 {
+      font-family: Oswald;
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+      text-align: left;      
+    }
+  }
+
+  @media ${device.mobileL} {
+    padding: 36px 0 0;
+  }
 `;
 
 const SponsoredProjectsListStyles = styled.section`
@@ -30,6 +48,19 @@ const SponsoredProjectsListStyles = styled.section`
   justify-content: left;
   column-gap: 30px;
   row-gap: 40px;
+
+  img{
+    width: 100%;
+    height: auto;
+  }
+
+  @media ${device.tablet} {
+
+    .projects {
+      row-gap: 30px;
+      padding: 0px;
+    }
+  }
 `;
 
 export default function SponsoredProjectsPage({ projects }) {
@@ -53,5 +84,5 @@ export default function SponsoredProjectsPage({ projects }) {
 
 export async function getStaticProps() {
   const projects = await loadSponsoredProjects();
-  return { props: { projects }}
+  return { props: { projects } }
 }
