@@ -3,6 +3,7 @@ import NeedHelp from "@/components/NeedHelp";
 import { loadFAQs } from "@/lib/load-faqs";
 import FAQ from "@/components/FAQ";
 import { device } from "@/components/device";
+import ContainerBox from "@/components/styles/ContainerBox";
 
 const FAQStyle = styled.section`
   padding: 100px 0 0;
@@ -120,15 +121,17 @@ const FAQStyle = styled.section`
 export default function FAQPage({ faqs }) {
   return (
     <>
-      <FAQStyle>
-        <h1>FREQUENTLY ASKED QUESTIONS</h1>
-        <p>Here are brief responses to questions most often asked of us:</p>
-        {
-          faqs.data.map(faq => (
-            <FAQ question={faq.attributes.question} answer={faq.attributes.answer} key={faq.id} />
-          ))
-        }
-      </FAQStyle>
+      <ContainerBox>
+        <FAQStyle>
+          <h1>FREQUENTLY ASKED QUESTIONS</h1>
+          <p>Here are brief responses to questions most often asked of us:</p>
+          {
+            faqs.data.map(faq => (
+              <FAQ question={faq.attributes.question} answer={faq.attributes.answer} key={faq.id} />
+            ))
+          }
+        </FAQStyle>
+      </ContainerBox>
       <NeedHelp />
     </>
   );

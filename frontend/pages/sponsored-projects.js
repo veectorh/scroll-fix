@@ -3,6 +3,7 @@ import NeedHelp from "@/components/NeedHelp";
 import SponsoredProject from "@/components/SponsoredProject";
 import { loadSponsoredProjects } from "@/lib/load-sponsored-projects";
 import { device } from "@/components/device";
+import ContainerBox from "@/components/styles/ContainerBox";
 
 const SponsoredProjectsStyle = styled.section`
   padding: 100px 0 0;
@@ -66,17 +67,19 @@ const SponsoredProjectsListStyles = styled.section`
 export default function SponsoredProjectsPage({ projects }) {
   return (
     <>
-      <SponsoredProjectsStyle>
-        <h1>Our Fiscally-Sponsored Projects</h1>
-        <p>Explore the important work of our fiscally-sponsored projects and consider supporting their efforts to create positive change in their communities and beyond. Together, we can invest in the movement for social justice and create a more equitable and compassionate world.</p>
-        <SponsoredProjectsListStyles>
-          {
-            projects.data.map(project => (
-              <SponsoredProject key={project.id} project={project} />
-            ))
-          }
-        </SponsoredProjectsListStyles>
-      </SponsoredProjectsStyle>
+      <ContainerBox>
+        <SponsoredProjectsStyle>
+          <h1>Our Fiscally-Sponsored Projects</h1>
+          <p>Explore the important work of our fiscally-sponsored projects and consider supporting their efforts to create positive change in their communities and beyond. Together, we can invest in the movement for social justice and create a more equitable and compassionate world.</p>
+          <SponsoredProjectsListStyles>
+            {
+              projects.data.map(project => (
+                <SponsoredProject key={project.id} project={project} />
+              ))
+            }
+          </SponsoredProjectsListStyles>
+        </SponsoredProjectsStyle>
+      </ContainerBox>
       <NeedHelp />
     </>
   );

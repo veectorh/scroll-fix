@@ -8,6 +8,7 @@ import SubHeroStyles from '../components/styles/SubHeroStyles';
 import { loadSponsoredProjects } from "@/lib/load-sponsored-projects";
 import { loadQuotes } from "@/lib/load-quotes";
 import { device } from "@/components/device";
+import ContainerBox from "@/components/styles/ContainerBox";
 
 const AboutPageStyle = styled.section`
   padding: 50px 0 0;
@@ -146,48 +147,55 @@ export default function AboutUsPage({ projects, quotes }) {
   return (
     <>
       <AboutPageStyle>
-        <div className="intro">
-          <h1>About Us</h1>
-          <p>SpeakOut — The Institute for Democratic Education and Culture is a non-profit, mission-driven speakers agency and education institute.</p>
-        </div>
+        <ContainerBox>
+          <div className="intro">
+            <h1>About Us</h1>
+            <p>SpeakOut — The Institute for Democratic Education and Culture is a non-profit, mission-driven speakers agency and education institute.</p>
+          </div>
+        </ContainerBox>
         <SubHeroStyles>
           <h2 className="about">Our mission is to encourage critical and imaginative thinking to address the major inequities of our day and transform a fractured world.</h2>
           <p className="about white">Our network of speakers, artists, and strategic partners provide experiential learning opportunities and programming through lectures, workshops, professional development and trainings, film screenings, performances and curriculum development. Since our founding in 1990, we have worked with thousands of colleges, universities, K-12 schools and districts, community organizations, government and private sector providing 15,000 programs which advance the humanities and promote critical analysis, creativity, and innovative strategies for 21st-century problem-solving. We have reached over 3 million people nationwide through our network of 35k contacts.</p>
         </SubHeroStyles>
-        <h3 className="history">Our History</h3>
-        <p className="history-copy">
-          SpeakOut (501c3) was founded in 1990 with the goal of showcasing progressive authors and speakers, such as Howard Zinn, Noam Chomsky, Elizabeth Martinez, and Winona LaDuke. Over the years, our roster has grown to include dozens of speakers, scholars, performing and visual artists, exhibits, and films, all working to educate, inspire, and empower young people and others to become actively engaged in society and to work for social justice. Our roster of speakers and artists includes some of the most prominent and influential figures in their fields.<br /><br />
 
-          The organization was founded by Jean Caiani, who brought with her experience in organizing speaking tours for former CIA agent and whistleblower Philip Agee, as well as her years of service with the United Farm Workers Union, where she coordinated tours for Cesar Chavez. SpeakOut quickly became a go-to resource for those seeking progressive speakers and artists to engage with on campuses and beyond.
+        <ContainerBox>
+          <h3 className="history">Our History</h3>
+          <p className="history-copy">
+            SpeakOut (501c3) was founded in 1990 with the goal of showcasing progressive authors and speakers, such as Howard Zinn, Noam Chomsky, Elizabeth Martinez, and Winona LaDuke. Over the years, our roster has grown to include dozens of speakers, scholars, performing and visual artists, exhibits, and films, all working to educate, inspire, and empower young people and others to become actively engaged in society and to work for social justice. Our roster of speakers and artists includes some of the most prominent and influential figures in their fields.<br /><br />
 
-          In the years since its founding, SpeakOut has grown its roster to include dozens of speakers, scholars, performing and visual artists, exhibits, and films, all dedicated to educating, inspiring, and empowering young people and others to become actively engaged in society and to work towards social justice. Among its speakers and artists are some of the most prominent and influential figures in their fields, ensuring that SpeakOut is always at the forefront of progressive discourse.<br /><br />
+            The organization was founded by Jean Caiani, who brought with her experience in organizing speaking tours for former CIA agent and whistleblower Philip Agee, as well as her years of service with the United Farm Workers Union, where she coordinated tours for Cesar Chavez. SpeakOut quickly became a go-to resource for those seeking progressive speakers and artists to engage with on campuses and beyond.
 
-          In addition to organizing hundreds of lectures and performances each year, SpeakOut has also expanded its programming and impact through the Education Institution, which offers virtual events, e-courses, the annual Summer Institute, films and film programs, and an online store and resources. By leveraging innovative programming and our incredible network, SpeakOut is able to bring its mission of promoting social justice and progressive change to an ever-widening audience.
-        </p>
+            In the years since its founding, SpeakOut has grown its roster to include dozens of speakers, scholars, performing and visual artists, exhibits, and films, all dedicated to educating, inspiring, and empowering young people and others to become actively engaged in society and to work towards social justice. Among its speakers and artists are some of the most prominent and influential figures in their fields, ensuring that SpeakOut is always at the forefront of progressive discourse.<br /><br />
 
-        <div className="cta intro">
-          <h3>Join a movement of voices changing lives</h3>
-          <div className="buttons">
-            <ButtonStyles theme={{ main: "#00AFB5" }}>
-              <Link href="/speakers">Explore Our Speakers</Link>
-            </ButtonStyles>
-            <ButtonStyles theme={{ main: "#00AFB5" }}>
-              <Link href="/our-team">Meet Our Team</Link>
-            </ButtonStyles>
-          </div >
-        </div>
+            In addition to organizing hundreds of lectures and performances each year, SpeakOut has also expanded its programming and impact through the Education Institution, which offers virtual events, e-courses, the annual Summer Institute, films and film programs, and an online store and resources. By leveraging innovative programming and our incredible network, SpeakOut is able to bring its mission of promoting social justice and progressive change to an ever-widening audience.
+          </p>
+
+          <div className="cta intro">
+            <h3>Join a movement of voices changing lives</h3>
+            <div className="buttons">
+              <ButtonStyles theme={{ main: "#00AFB5" }}>
+                <Link href="/speakers">Explore Our Speakers</Link>
+              </ButtonStyles>
+              <ButtonStyles theme={{ main: "#00AFB5" }}>
+                <Link href="/our-team">Meet Our Team</Link>
+              </ButtonStyles>
+            </div >
+          </div>
+        </ContainerBox>
       </AboutPageStyle>
       <QuotesCarousel quotes={quotes.data} />
-      <SponsoredProjectsListStyles>
-        <h3>Our Fiscally-Sponsored Projects</h3>
-        <div className="projects">
-          {
-            projects?.data?.map(project => (
-              <SponsoredProject key={project.id} project={project} />
-            ))
-          }
-        </div >
-      </SponsoredProjectsListStyles>
+      <ContainerBox>
+        <SponsoredProjectsListStyles>
+          <h3>Our Fiscally-Sponsored Projects</h3>
+          <div className="projects">
+            {
+              projects?.data?.map(project => (
+                <SponsoredProject key={project.id} project={project} />
+              ))
+            }
+          </div >
+        </SponsoredProjectsListStyles>
+      </ContainerBox>
       <NeedHelp />
     </>
   );

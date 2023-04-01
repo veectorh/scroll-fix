@@ -127,7 +127,7 @@ export default function NavMobile({ setOpenSideBar }) {
         <NavStyles>
             <div className='link-1'>
                 <div className='main-nav-link-div'>
-                    <Link className={`${router.pathname === '/speakers' || router.pathname === '/performances' || router.pathname === '/exhibits' || router.pathname === '/film-programs' || router.pathname === '/inquiry-form' ? "active-link" : ''} main-nav-link`} href="/speakers">
+                    <Link onClick={() => setOpenSideBar(false)}  className={`${router.pathname === '/speakers' || router.pathname === '/performances' || router.pathname === '/exhibits' || router.pathname === '/film-programs' || router.pathname === '/inquiry-form' ? "active-link" : ''} main-nav-link`} href="/speakers">
                         SPEAKERS
                     </Link>
                     <BsChevronDown className={` ${router.pathname === '/speakers' || router.pathname === '/performances' || router.pathname === '/exhibits' || router.pathname === '/film-programs' || router.pathname === '/inquiry-form' ? "active-link" : ''} icon`} />
@@ -154,8 +154,7 @@ export default function NavMobile({ setOpenSideBar }) {
             </div>
             <div className='link-1'>
                 <div className='main-nav-link-div'>
-                    <Link
-                        className={`${router.pathname === '/institute' || router.pathname === '/e-course' || router.pathname === '/events' || router.pathname === '/summer-institute' || router.pathname === '/original-films' ? "active-link" : ''} main-nav-link`} href="/institute">
+                    <Link onClick={() => setOpenSideBar(false)}  className={`${router.pathname === '/institute' || router.pathname === '/e-course' || router.pathname === '/events' || router.pathname === '/summer-institute' || router.pathname === '/original-films' ? "active-link" : ''} main-nav-link`} href="/institute">
                         INSTITUTE
                     </Link>
                     <BsChevronDown className={`${router.pathname === '/institute' || router.pathname === '/e-course' || router.pathname === '/events' || router.pathname === '/summer-institute' || router.pathname === '/original-films' ? "active-icon" : ''} icon`} />
@@ -182,8 +181,7 @@ export default function NavMobile({ setOpenSideBar }) {
             </div>
             <div className='link-1' >
                 <div className='main-nav-link-div'>
-                    <Link
-                        className={`${router.pathname === '/about-us' || router.pathname === '/our-team' || router.pathname === '/faq' || router.pathname === '/sponsored-projects' || router.pathname === '/contact' ? "active-link" : ''} main-nav-link`}
+                    <Link onClick={() => setOpenSideBar(false)}  className={`${router.pathname === '/about-us' || router.pathname === '/our-team' || router.pathname === '/faq' || router.pathname === '/sponsored-projects' || router.pathname === '/contact' ? "active-link" : ''} main-nav-link`}
                         href="/about-us">
                         ABOUT
                     </Link>
