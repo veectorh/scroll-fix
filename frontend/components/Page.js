@@ -63,7 +63,7 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const InnerStyles = styled.div`
-    margin: 0px 20px;
+    /* margin: 0px 20px;
 
     @media ${device.laptopL} {
       margin: 0px 48px;
@@ -87,11 +87,7 @@ const InnerStyles = styled.div`
 
     @media ${device.mobileS} {
       margin: 0px 24px;
-    }
-
-
-
-
+    } */
 
 `;
 

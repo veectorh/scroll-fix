@@ -49,7 +49,6 @@ const OriginalFilmStyles = styled.section`
             overflow: hidden;
           }
       }
-
       .movie-description {
         max-width: 533px;
       }
