@@ -37,7 +37,7 @@ const OriginalFilmStyles = styled.section`
   .movies {
     display: flex;
     gap: 40px;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     .movie {
       margin-bottom: 30px;
       .movie-image {
@@ -68,6 +68,7 @@ const OriginalFilmStyles = styled.section`
     }
   }
 
+
   @media ${device.tablet} {
     padding: 50px 0 0;
 
@@ -96,6 +97,7 @@ const OriginalFilmStyles = styled.section`
 
     .movies {
       gap: 24px;
+      flex-direction: column;
       .movie {
       .movie-image {
           img {
