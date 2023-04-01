@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { device } from '../device';
 const SecondButtonStyles = styled.div`
   display: flex;
   flex-direction: row;
@@ -58,6 +58,11 @@ const SecondButtonStyles = styled.div`
       justify-content: center !important;
     }
   }
+
+  @media ${device.tablet} {
+    
+  }
+  
 `
 
 export default SecondButtonStyles;
