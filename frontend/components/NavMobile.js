@@ -27,12 +27,18 @@ const NavStyles = styled.nav`
     color: #F8A151;
   }
 
+
+
+  .main-nav-link-div{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #00AFB5;
+      width: 100%;
+      height: 55px;
+  }
   .main-nav-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 55px;
-    border-bottom: 1px solid #00AFB5;
+    width: fit-content;
   }
 
   .main-nav-social {
@@ -57,6 +63,12 @@ const NavStyles = styled.nav`
 
   .icon {
    transition: .2s ease-in;
+   color: white;
+   margin: 15px;
+  }
+
+  .active-icon {
+    color: #F8A151;
   }
 
   .ul-list-1 {
@@ -114,10 +126,12 @@ export default function NavMobile({ setOpenSideBar }) {
     return (
         <NavStyles>
             <div className='link-1'>
-                <Link className={`${router.pathname === '/speakers' || router.pathname === '/performances' || router.pathname === '/exhibits' || router.pathname === '/film-programs' || router.pathname === '/inquiry-form' ? "active-link" : ''} main-nav-link`} href="/speakers">
-                    SPEAKERS
-                    <BsChevronDown className='icon' />
-                </Link>
+                <div className='main-nav-link-div'>
+                    <Link className={`${router.pathname === '/speakers' || router.pathname === '/performances' || router.pathname === '/exhibits' || router.pathname === '/film-programs' || router.pathname === '/inquiry-form' ? "active-link" : ''} main-nav-link`} href="/speakers">
+                        SPEAKERS
+                    </Link>
+                    <BsChevronDown className={` ${router.pathname === '/speakers' || router.pathname === '/performances' || router.pathname === '/exhibits' || router.pathname === '/film-programs' || router.pathname === '/inquiry-form' ? "active-link" : ''} icon`} />
+                </div>
                 <div className='ul-list-1'>
                     <ul>
                         <li>
@@ -139,11 +153,13 @@ export default function NavMobile({ setOpenSideBar }) {
                 </div>
             </div>
             <div className='link-1'>
-                <Link
-                    className={`${router.pathname === '/institute' || router.pathname === '/e-course' || router.pathname === '/events' || router.pathname === '/summer-institute' || router.pathname === '/original-films' ? "active-link" : ''} main-nav-link`} href="/institute">
-                    INSTITUTE
-                    <BsChevronDown className='icon' />
-                </Link>
+                <div className='main-nav-link-div'>
+                    <Link
+                        className={`${router.pathname === '/institute' || router.pathname === '/e-course' || router.pathname === '/events' || router.pathname === '/summer-institute' || router.pathname === '/original-films' ? "active-link" : ''} main-nav-link`} href="/institute">
+                        INSTITUTE
+                    </Link>
+                    <BsChevronDown className={`${router.pathname === '/institute' || router.pathname === '/e-course' || router.pathname === '/events' || router.pathname === '/summer-institute' || router.pathname === '/original-films' ? "active-icon" : ''} icon`} />
+                </div>
                 <div className='ul-list-1'>
                     <ul>
                         <li>
@@ -165,12 +181,14 @@ export default function NavMobile({ setOpenSideBar }) {
                 </div>
             </div>
             <div className='link-1' >
-                <Link
-                    className={`${router.pathname === '/about-us' || router.pathname === '/our-team' || router.pathname === '/faq' || router.pathname === '/sponsored-projects' || router.pathname === '/contact' ? "active-link" : ''} main-nav-link`}
-                    href="/about-us">
-                    ABOUT
-                    <BsChevronDown className='icon' />
-                </Link>
+                <div className='main-nav-link-div'>
+                    <Link
+                        className={`${router.pathname === '/about-us' || router.pathname === '/our-team' || router.pathname === '/faq' || router.pathname === '/sponsored-projects' || router.pathname === '/contact' ? "active-link" : ''} main-nav-link`}
+                        href="/about-us">
+                        ABOUT
+                    </Link>
+                    <BsChevronDown className={` ${router.pathname === '/about-us' || router.pathname === '/our-team' || router.pathname === '/faq' || router.pathname === '/sponsored-projects' || router.pathname === '/contact' ? "active-icon" : ''} icon`} />
+                </div>
                 <div className='ul-list-1' >
                     <ul>
                         <li>

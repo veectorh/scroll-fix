@@ -114,6 +114,11 @@ const SponsoredProjectsListStyles = styled.div`
     justify-content: space-between;
     row-gap: 40px;
     padding: 0 5vw;
+
+    img{
+    width: 100%;
+    height: auto;
+    }
   }
 
   @media ${device.tablet} {
