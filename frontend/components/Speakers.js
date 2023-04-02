@@ -4,6 +4,7 @@ import Speaker from "./Speaker";
 import ThreeLink from "./ThreeLink";
 import TopicListStyles from "./styles/TopicListStyles";
 import React, { useState, useEffect } from 'react'
+import ContainerBox from "./styles/ContainerBox";
 
 
 const SpeakersPageStyle = styled.section`
@@ -112,8 +113,10 @@ export default function Speakers(speakers, topics, error) {
   return (
     <>
       <SpeakersPageStyle>
-        <h1>Speakers</h1>
-        <p>Browse through the profiles of our diverse network of speakers and artists who offer a range of learning opportunities, including lectures, workshops, films. and performances. Our speakers have a wealth of knowledge and experience in a variety of fields and are able to customize their presentations to meet your specific needs and goals. Use the filter options to narrow down your search or contact us for personalized recommendations. We look forward to connecting you to find the perfect speaker for your event.</p>
+        <ContainerBox>
+          <h1>Speakers</h1>
+          <p>Browse through the profiles of our diverse network of speakers and artists who offer a range of learning opportunities, including lectures, workshops, films. and performances. Our speakers have a wealth of knowledge and experience in a variety of fields and are able to customize their presentations to meet your specific needs and goals. Use the filter options to narrow down your search or contact us for personalized recommendations. We look forward to connecting you to find the perfect speaker for your event.</p>
+        </ContainerBox>
         <div className="filter-description">
           <h4>Filter Speakers by Topic</h4>
           <p>Our extensive roster covers a range of topics, budgets, and needs. Filter below or if you need help or recommendations, reach out here.</p>
@@ -125,7 +128,7 @@ export default function Speakers(speakers, topics, error) {
             ))
           }
         </TopicListStyles>
-        <div>
+        <ContainerBox>
           <SpeakersListStyles>
             {
               speakersList?.map(speaker => (
@@ -133,7 +136,8 @@ export default function Speakers(speakers, topics, error) {
               ))
             }
           </SpeakersListStyles>
-        </div>
+        </ContainerBox>
+
       </SpeakersPageStyle>
       <NeedHelp />
       <ThreeLink />

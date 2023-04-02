@@ -25,7 +25,7 @@ const NeedHelpStyles = styled.section`
     flex-direction: column;
     align-items: flex-start;
     gap: 50px;
-    padding: 20px 25px 25px;
+    padding: 20px 40px 25px;
 
     h3 {
      
@@ -40,8 +40,8 @@ const NeedHelpStyles = styled.section`
   }
   @media ${device.mobileL} {
     gap: 30px;
-    
   }
+
 `;
 
 export default function NeedHelp() {
