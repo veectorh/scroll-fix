@@ -12,7 +12,7 @@ const FilmProgramStyle = styled.div`
   margin-bottom: 25px;
   h2 {
     color: #ffffff;
-    margin: 0 0 15px;;
+    margin: 0 0 15px;
     padding: 0;
     font-weight: 400;
     font-size: 36px;
@@ -92,23 +92,31 @@ const FilmProgramStyle = styled.div`
         width: 100%;
       }
     }
-  }
-
-  @media ${device.tablet} {
-    padding: 24px 24px;
+    .image-buttons {
+      max-width: 100%;
+      img {
+        height: auto;
+      }
+    }
     .buttons {
       /* flex-direction: column; */
       width: 100%;
       max-width: 100%;
     }
+  }
+
+  @media ${device.tablet} {
+    padding: 24px 24px;
+    gap: 16px;
+  
     h2 {
       //styleName: H2 Mobile;
-     
       font-size: 16px;
       font-weight: 500;
       line-height: 24px;
       letter-spacing: 0.085em;
       text-align: left;
+      margin: 0 0 6px;
     }
     .mobile-des {
       display: block;

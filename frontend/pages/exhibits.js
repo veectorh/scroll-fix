@@ -6,7 +6,8 @@ import quotemark from '../public/images/quote-blue.png';
 import vevent from '../public/images/virtual-events.png'
 import ButtonStyles from '../components/styles/ButtonStyles';
 import { loadAPI } from '@/lib/load-api';
-
+import { device } from '@/components/device';
+import ContainerBox from '@/components/styles/ContainerBox';
 const ExhibitsPageStyle = styled.section`
   padding: 100px 0 0;
   max-width: 1250px;
@@ -21,20 +22,57 @@ const ExhibitsPageStyle = styled.section`
     text-transform: uppercase;
     margin: 0;
   }
-  h4 {
-    font-family: 'Oswald';
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.05em;
-    color: #2A2A2A;
-    margin: 0;
-  }
+ 
   p {
     color: #2A2A2A;
     margin: 0;
     max-width: 910px;
   }
+
+  @media ${device.tablet} {
+    padding: 50px 0 0;
+
+    h1 {
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+      text-align: left;  
+      margin-bottom : 8px;
+    }
+  
+  }
+
+
+  @media ${device.mobileL} {
+    padding: 36px 0 0;
+  }
+
+  
+    @media ${device.tablet} {
+        .page-detail {
+          margin: 0px 36px;
+        }
+    }
+  
+    @media ${device.mobileL} {
+        .page-detail {
+          margin: 0px 24px;
+        }
+    }
+  
+    @media ${device.mobileM} {
+        .page-detail {
+          margin: 0px 24px;
+        }
+    }
+  
+    @media ${device.mobileS} {
+        .page-detail {
+          margin: 0px 24px;
+        }
+    }
+
 `;
 
 const ExhibitsListStyle = styled.div`
@@ -59,6 +97,7 @@ const FamilyExhibitsStyle = styled.section`
   .copy-quote {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 125px;
     background: rgba(56, 240, 240, 0.2);
     padding: 80px 10vw 211px;
@@ -116,27 +155,138 @@ const FamilyExhibitsStyle = styled.section`
       img {
         border-radius: 20px;
       }
+      h4 {
+        font-family: 'Oswald';
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.05em;
+        color: #2A2A2A;
+        margin: 6px 0px;
+      }
     }
   }
+
+  @media ${device.tablet} {
+
+    .copy-quote {
+      flex-direction: column;
+      gap: 40px;
+      padding: 56px 10vw 230px;
+      .quote {
+        .quote-container {
+          img {
+            top: 26px;
+            left: -6px;
+            width: 30px;
+            height: 30px;
+          }
+          .quote-text {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 24px;
+            letter-spacing: 0.03em;
+            text-align: left;
+          }
+          .quote-author {
+            font-weight :500;
+            font-size:16px;
+            line-height: 23.71px;
+            letter-spacing:8.5%;
+            span {
+              font-weight :400;
+              font-size: 12px;
+              line-height: 15px;
+              letter-spacing: 5%;
+            }
+          }
+        }
+      }
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 28px;
+      letter-spacing: 0.085em;
+      text-align: left;
+    }
+
+    .family-exhibits {
+      display: flex;
+      gap:20px; 
+      margin-top: -200px;
+      .exhibit {
+        width: 100%;
+        img {
+          width: 100%;
+          height: auto;
+        }
+        h4 {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          letter-spacing: 0.085em;
+          text-align: left;
+          margin-bottom: 4px;
+        }
+      }
+    }
+ 
+  }
+
+  @media ${device.mobileL} {
+      .copy-quote {
+        gap: 0px;
+        padding: 48px 10vw 200px;
+      }
+  }
+
+  @media ${device.tablet} {
+        .family-exhibits {
+          padding: 5vh 36px;
+        }
+    }
+  
+    @media ${device.mobileL} {
+        .family-exhibits {
+          padding: 5vh 24px;
+        }
+    }
+  
+    @media ${device.mobileM} {
+        .family-exhibits {
+          padding: 5vh 24px;
+        }
+    }
+  
+    @media ${device.mobileS} {
+        .family-exhibits {
+          padding: 5vh 24px;
+        }
+    }
 `;
 
 export default function ExhibitsPage({ exhibits, familyExhibits }) {
   return (
     <>
-      <ExhibitsPageStyle>
-        <h1>Exhibits</h1>
-        <p>
-          Book one of SpeakOut's award-winning exhibitions that explore history, race, family diversity, sexual orientation gender identity, and culture. Whether presented in person or virtually, each powerful exhibit offers an unforgettable educational experience.
-        </p>
-
-        <ExhibitsListStyle>
-          {
-            exhibits.data.map(exhibit => (
-              <Exhibit key={exhibit.id} exhibit={{ exhibit }} />
-            ))
-          }
-        </ExhibitsListStyle>
-      </ExhibitsPageStyle>
+      <ContainerBox>
+        <ExhibitsPageStyle>
+          <div className="page-detail">
+            <h1>Exhibits</h1>
+            <p>
+              Book one of SpeakOut's award-winning exhibitions that explore history, race, family diversity, sexual orientation gender identity, and culture. Whether presented in person or virtually, each powerful exhibit offers an unforgettable educational experience.
+            </p>
+          </div>
+          <ExhibitsListStyle>
+            {
+              exhibits.data.map(exhibit => (
+                <Exhibit key={exhibit.id} exhibit={{ exhibit }} />
+              ))
+            }
+          </ExhibitsListStyle>
+        </ExhibitsPageStyle>
+      </ContainerBox>
       <FamilyExhibitsStyle>
         <div className="copy-quote">
           <div className="copy">
@@ -162,23 +312,23 @@ export default function ExhibitsPage({ exhibits, familyExhibits }) {
               <div className="quote-author">
                 — Dale Rogers Marshall <span>President, Wheaton College, Norton, MA</span >
               </div>
-            </div>  
+            </div>
           </div>
         </div>
         <div className="family-exhibits">
           {
             familyExhibits.data.map(familyExhibit => (
               <div className="exhibit" key={familyExhibit.id}>
-                <Image 
-                  src={familyExhibit.attributes.image.data.attributes.url} 
+                <Image
+                  src={familyExhibit.attributes.image.data.attributes.url}
                   alt={familyExhibit.attributes.name}
-                  width={399} 
-                  height={243} 
+                  width={399}
+                  height={243}
                   priority
                 />
                 <h4>{familyExhibit.attributes.name}</h4>
                 <p>{familyExhibit.attributes.description}</p>
-                <ButtonStyles theme={{ main: "#00AFB5;" }} style={{ display: familyExhibit.attributes.video_url === null ? "none" : "flex"}}>
+                <ButtonStyles theme={{ main: "#00AFB5;" }} style={{ display: familyExhibit.attributes.video_url === null ? "none" : "flex" }}>
                   <Link href={familyExhibit.attributes.video_url === null ? "/#" : familyExhibit.attributes.video_url}>Watch a clip</Link>
                 </ButtonStyles>
               </div>
