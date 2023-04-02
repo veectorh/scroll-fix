@@ -54,7 +54,7 @@ const QuotesStyles = styled.section`
         left: -26px;
       }
       .quote-text {
-        font-family: Oswald;
+       
         font-size: 18px;
         font-weight: 300;
         line-height: 24px;

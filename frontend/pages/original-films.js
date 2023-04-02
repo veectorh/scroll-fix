@@ -73,7 +73,7 @@ const OriginalFilmStyles = styled.section`
     padding: 50px 0 0;
 
     h1 {
-      font-family: Oswald;
+     
       font-size: 30px;
       font-weight: 500;
       line-height: 36px;
@@ -83,7 +83,7 @@ const OriginalFilmStyles = styled.section`
 
     h2 {
       //styleName: H1 Mobile;
-      font-family: Oswald;
+     
       font-size: 20px;
       font-weight: 500;
       line-height: 28px;

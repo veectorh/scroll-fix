@@ -41,7 +41,7 @@ const InquiryFormStyle = styled.section`
     padding: 50px 0 0;
 
     h1 {
-      font-family: Oswald;
+     
       font-size: 30px;
       font-weight: 500;
       line-height: 36px;

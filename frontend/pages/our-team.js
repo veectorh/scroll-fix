@@ -37,7 +37,7 @@ const OurTeamStyles = styled.section`
     padding: 50px 0 0;
 
     h1 {
-      font-family: Oswald;
+     
       font-size: 30px;
       font-weight: 500;
       line-height: 36px;
@@ -78,7 +78,7 @@ const TeamImagesStyles = styled.section`
 
   @media ${device.tablet} {
     .heading h2{
-      font-family: Oswald;
+     
       font-size: 20px;
       font-weight: 500;
       line-height: 1px;
@@ -210,7 +210,7 @@ const TeamMemberStyles = styled.div`
   @media ${device.tablet} {
   .speaker-info {
     .name {
-      font-family: Oswald;
+     
       font-size: 16px;
       font-weight: 500;
       line-height: 24px;

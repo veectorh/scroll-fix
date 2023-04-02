@@ -73,7 +73,7 @@ const FAQStyle = styled.section`
     padding: 50px 0 0;
 
     h1 {
-      font-family: Oswald;
+     
       font-size: 30px;
       font-weight: 500;
       line-height: 36px;
@@ -85,7 +85,7 @@ const FAQStyle = styled.section`
       .question {
         padding: 16px;
         p {
-          font-family: Oswald;
+         
           font-size: 14px; 
           font-weight: 500;
           line-height: 18px;

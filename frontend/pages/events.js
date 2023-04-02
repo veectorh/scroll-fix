@@ -38,7 +38,7 @@ const EventsPageStyle = styled.section`
     padding: 50px 0 0;
 
     h1 {
-      font-family: Oswald;
+     
       font-size: 30px;
       font-weight: 500;
       line-height: 36px;
@@ -116,7 +116,7 @@ const CTAStyleEvents = styled.div`
   @media ${device.tablet} {
     padding: 40px 4vw;
     h2 {
-      font-family: Oswald;
+     
       font-size: 16px;
       font-weight: 500;
       line-height: 20px;
@@ -168,7 +168,7 @@ const CTAStyleStore = styled.div`
   @media ${device.tablet} {
     padding: 40px 4vw;
     h2 {
-      font-family: Oswald;
+     
       font-size: 16px;
       font-weight: 500;
       line-height: 20px;

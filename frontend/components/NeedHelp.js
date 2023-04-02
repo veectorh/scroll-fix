@@ -25,10 +25,10 @@ const NeedHelpStyles = styled.section`
     flex-direction: column;
     align-items: flex-start;
     gap: 50px;
-    padding: 20px 20px 25px;
+    padding: 20px 25px 25px;
 
     h3 {
-      font-family: Oswald;
+     
       font-size: 30px;
       font-weight: 400;
       line-height: 40px;

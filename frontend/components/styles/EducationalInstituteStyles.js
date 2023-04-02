@@ -73,7 +73,7 @@ const EducationalInstituteStyles = styled.section`
 
     h2 {
       //styleName: H1 Mobile;
-      font-family: Oswald;
+     
       font-size: 20px;
       font-weight: 500;
       line-height: 28px;

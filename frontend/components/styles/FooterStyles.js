@@ -113,7 +113,7 @@ const FooterStyles = styled.footer`
   @media ${device.tablet} {
     h4{
       //styleName: H3 Mobile;
-      font-family: Oswald;
+     
       font-size: 14px;
       font-weight: 500;
       line-height: 20px;
@@ -157,7 +157,7 @@ const FooterStyles = styled.footer`
         }
       }
       .mission h5{
-        font-family: Oswald;
+       
         font-size: 16px;
         font-weight: 400;
         line-height: 24px; 

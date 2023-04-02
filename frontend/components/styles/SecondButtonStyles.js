@@ -60,7 +60,9 @@ const SecondButtonStyles = styled.div`
   }
 
   @media ${device.tablet} {
-    
+    a {
+      padding: 0 12px;
+    }
   }
   
 `

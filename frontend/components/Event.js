@@ -79,7 +79,7 @@ const EventStyle = styled.div`
 
     h2 {
       //styleName: H2 Mobile;
-      font-family: Oswald;
+     
       font-size: 16px;
       font-weight: 500;
       line-height: 24px;
@@ -89,7 +89,7 @@ const EventStyle = styled.div`
 
     h3 {
       //styleName: H2 Mobile;
-      font-family: Oswald;
+     
       font-size: 16px;
       font-weight: 500;
       line-height: 24px;

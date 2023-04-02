@@ -69,7 +69,7 @@ const AboutPageStyle = styled.section`
     padding: 25px 0 0;
 
     h1 {
-      font-family: Oswald;
+     
       font-size: 30px;
       font-weight: 500;
       line-height: 36px;
@@ -128,7 +128,7 @@ const SponsoredProjectsListStyles = styled.div`
     h3 {
       //styleName: H1 Mobile;
       padding-left: 0px;
-      font-family: Oswald;
+     
       font-size: 20px;
       font-weight: 500;
       line-height: 28px;
