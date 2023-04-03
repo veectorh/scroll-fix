@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import ButtonStyles from './styles/ButtonStyles';
-
+import { device } from './device';
 const ThreeLinkStyles = styled.section`
   background: #F2F2F2;
   .links {
@@ -30,6 +30,25 @@ const ThreeLinkStyles = styled.section`
       margin: 0;
       padding: 10px 0 30px;
       color: #262626;
+    }
+  }
+  @media ${device.tablet} {
+    .links {
+      flex-direction: column;
+      .link {
+      padding: 20px 30px 30px;
+      }
+      .link:nth-of-type(-n+2) {
+        border-right: none;
+        border-bottom: 5px solid white;
+      }
+      h4 {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.085em;
+        text-align: left;
+      }
     }
   }
 `;

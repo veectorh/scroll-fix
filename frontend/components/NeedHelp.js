@@ -25,7 +25,7 @@ const NeedHelpStyles = styled.section`
     flex-direction: column;
     align-items: flex-start;
     gap: 50px;
-    padding: 20px 40px 25px;
+    padding: 20px 30px 25px;
 
     h3 {
      

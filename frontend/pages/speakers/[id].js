@@ -9,7 +9,8 @@ import { loadSpeakers } from '@/lib/load-speakers';
 import { loadSingleSpeakers } from '@/lib/load-single-speaker';
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from "react-markdown";
-
+import ContainerBox from '@/components/styles/ContainerBox';
+import { device } from '@/components/device';
 const colors = ['#FBECDE', '#F2F2F2', '#F8A151'];
 const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
 const color = getRandomColor();
@@ -71,18 +72,82 @@ const SpeakerHeroStyles = styled.section`
       object-position: 0 15%;
     }
   }
+  .mobile-image {
+      display: none;
+  }
+  @media ${device.tablet} {
+
+    flex-direction: column-reverse;
+
+    .speaker-info {
+      padding: 40px 0px;
+        h1 {  
+          font-size: 30px;
+          font-weight: 500;
+          line-height: 36px;
+          letter-spacing: 0.05em;
+          text-align: left;  
+          padding: 17px 0 15px;    
+        }
+        .return-link {
+          a {
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 18px;
+            letter-spacing: 0.065em;
+            text-align: left;
+          }
+        }
+        .speaker-image {
+         display: none;
+        }
+        .mobile-image {
+          display: block;
+          padding-top: 20px;
+          img {
+            border-radius: 50%;
+          }
+        }
+    }
+
+  }
+
+    @media ${device.tablet} {
+        .page-detail {
+          margin: 0px 36px;
+        }
+    }
+  
+    @media ${device.mobileL} {
+        .page-detail {
+          margin: 0px 24px;
+        }
+    }
+  
+    @media ${device.mobileM} {
+        .page-detail {
+          margin: 0px 24px;
+        }
+    }
+  
+    @media ${device.mobileS} {
+        .page-detail {
+          margin: 0px 24px;
+        }
+    }
 `;
 
 const SpeakerInfoStyles = styled.section`
   display: flex;
   justify-content: center;
+  flex-direction: row;
   gap: 7em;
-  margin-top: 50px;
+  margin: 50px 0px;
   .left {
     max-width: 715px;
   }
   .right {
-    width: 265px;
+    max-width: 265px;
   }
   .heading-flex {
     display: flex;
@@ -139,6 +204,39 @@ const SpeakerInfoStyles = styled.section`
   .hide {
     display: none;
   }
+
+  @media ${device.tablet} {
+    flex-direction: column;
+    gap: 40px;
+
+    .heading-flex {
+      justify-content: flex-start;
+      gap: 0px;
+    }
+    .content {
+      padding-bottom: 0px;
+    }
+
+    .left {
+      max-width: 100%;
+   
+    }
+    .right {
+      max-width: 100%;
+    }
+    .links {
+      width: 100%;
+      margin: 25px  0;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.05em;
+      text-align: left;
+    }
+  }
 `;
 
 export const getStaticPaths = async () => {
@@ -176,10 +274,19 @@ export default function SingleSpeaker({ singleSpeaker }) {
   return (
     <>
       <SpeakerHeroStyles>
-        <div className="speaker-info">
+        <div className="speaker-info page-detail">
+
           <div className="return-link">
             <Link href="/speakers">Back to All Speakers</Link>
           </div >
+          <div className='mobile-image'>
+            <Image
+              src={speaker?.photo.data?.attributes.url}
+              alt={speaker?.fullName}
+              width={125}
+              height={125}
+            />
+          </div>
           <h1>{speaker?.fullName}</h1>
           <p>{speaker?.tagLine}</p>
           <div className="buttons">
@@ -203,7 +310,7 @@ export default function SingleSpeaker({ singleSpeaker }) {
               </Link>
             </ButtonStyles>
           </div>
-        </div >
+        </div>
         <div className="speaker-image" style={styleImage}>
           {/* <Image
             src={speaker?.photo.data?.attributes.url}
@@ -214,49 +321,53 @@ export default function SingleSpeaker({ singleSpeaker }) {
           /> */}
         </div>
       </SpeakerHeroStyles>
-      <SpeakerInfoStyles>
-        <div className="left">
-          <div className="heading-flex headings">
-            <h2 onClick={() => setShowAbout(true)} className={showAbout == true ? 'selected' : ''}>&nbsp;&nbsp;About&nbsp;&nbsp;</h2>
-            <h2 onClick={() => setShowAbout(false)} className={showAbout === false ? 'selected' : ''}>&nbsp;&nbsp;Speeches&nbsp;&nbsp;</h2>
-          </div>
-          <div className="content">
-            <div className={`about ${showAbout == false ? 'hide' : ''}`} >
-              <ReactMarkdown children={speaker?.about} />
+      <ContainerBox>
+        <SpeakerInfoStyles>
+          <div className="left">
+            <div className="heading-flex headings">
+              <h2 onClick={() => setShowAbout(true)} className={showAbout == true ? 'selected' : ''}>&nbsp;&nbsp;About&nbsp;&nbsp;</h2>
+              <h2 onClick={() => setShowAbout(false)} className={showAbout === false ? 'selected' : ''}>&nbsp;&nbsp;Speeches&nbsp;&nbsp;</h2>
             </div>
-            <div className={`speeches ${showAbout == true ? 'hide' : ''}`} >
-              <ReactMarkdown children={speaker?.speeches} />
+            <div className="content">
+              <div className={`about ${showAbout == false ? 'hide' : ''}`} >
+                <ReactMarkdown children={speaker?.about} />
+              </div>
+              <div className={`speeches ${showAbout == true ? 'hide' : ''}`} >
+                <ReactMarkdown children={speaker?.speeches} />
+              </div>
             </div>
-          </div>
-        </div >
-        <div className="right">
-          <div className="headings">
-            <h2>&nbsp;&nbsp;Topic Areas</h2>
-          </div>
-          <div className="topics">
-            <TopicListStyles>
-              {speaker?.topics?.data.map(topic =>
-                <div key={topic.id} style={{ backgroundColor: "#F2F2F2" }}>{topic?.attributes?.name}</div>
+          </div >
+          <div className="right">
+            <div className="headings">
+              <h2>&nbsp;&nbsp;Topic Areas</h2>
+            </div>
+            <div className="topics">
+              <TopicListStyles>
+                {speaker?.topics?.data.map(topic =>
+                  <div key={topic.id} style={{ backgroundColor: "#F2F2F2" }}>{topic?.attributes?.name}</div>
+                )}
+
+              </TopicListStyles>
+            </div >
+            <div className="headings">
+              <h2>&nbsp;&nbsp;Related Links</h2>
+            </div>
+            <div className="links">
+              {speaker?.related_links?.map(link =>
+                <a href={link.url} key={link.id}><p>{link.text}</p></a>
               )}
 
-            </TopicListStyles>
-          </div >
-          <div className="headings">
-            <h2>&nbsp;&nbsp;Related Links</h2>
-          </div>
-          <div className="links">
-            {speaker?.related_links?.map(link =>
-              <a href={link.url} key={link.id}><p>{link.text}</p></a>
-            )}
+            </div>
+
+            <ButtonStyles theme={{ main: "#00AFB5" }}>
+              <Link href="/ecourse">
+                Share this Speaker
+              </Link>
+            </ButtonStyles>
 
           </div>
-          <ButtonStyles theme={{ main: "#00AFB5" }}>
-            <Link href="/ecourse">
-              Share this Speaker
-            </Link>
-          </ButtonStyles>
-        </div>
-      </SpeakerInfoStyles>
+        </SpeakerInfoStyles>
+      </ContainerBox>
       <SpeakerQuotesCarousel quotes={quotes} />
       {/* <OurStore /> */}
     </>

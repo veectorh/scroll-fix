@@ -62,7 +62,6 @@ const QuotesStyles = styled.section`
         text-align: left;
       }
     }
-
   }
 `;
 
