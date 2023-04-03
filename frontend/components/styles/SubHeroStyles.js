@@ -95,6 +95,22 @@ const SubHeroStyles = styled.section`
     .about {
       padding-bottom: 0px;
     }
+
+    .three-column {
+      gap: 40px;
+      flex-direction: column;
+      #borders:after {
+      content: '';
+      top: -15px;
+      left: -20px;
+      right: -20px;
+      bottom: -15px;
+      border-left: none;
+      border-right: none;
+      border-top: white 1px solid;
+      border-bottom: white 1px solid;
+    }
+    }
   }
 `;
 

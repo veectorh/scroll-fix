@@ -2,11 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
 import ButtonStyles from './styles/ButtonStyles';
-
+import { device } from './device';
 const ProductStyles = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 262px;
+
+  /* max-width: 262px; */
   .title-price {
     display: flex;
     justify-content: space-between;
@@ -33,6 +34,19 @@ const ProductStyles = styled.div`
   .description {
     margin: 10px 0 20px;
   }
+  img {
+      border-radius: 20px;
+      margin: auto 0px;
+  } 
+ 
+  @media ${device.mobileL} {
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+    } 
+  }
 `;
 
 export default function Product({ product }) {
@@ -42,8 +56,8 @@ export default function Product({ product }) {
         <Image
           src={product.attributes.image.data.attributes.url}
           alt="Facebook"
-          width="262"
-          height="262"
+          width={300}
+          height={300}
         />
       </a>
       <div className="title-price">
