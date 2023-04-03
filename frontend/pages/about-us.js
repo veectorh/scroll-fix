@@ -78,12 +78,30 @@ const AboutPageStyle = styled.section`
       margin-bottom: 5px ;
     }
 
+    h3 {
+      //styleName: H1 Mobile;
+      padding-left: 0px;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 28px;
+      letter-spacing: 0.085em;
+    }
+
     .intro, .history {
       padding: 25px 0 25px;
     }
     .history-copy {
       column-count: 1;
+      padding-bottom: 20px;
     }
+
+    .cta {
+    .buttons {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
   }
 
   @media ${device.mobileL} {
@@ -128,7 +146,6 @@ const SponsoredProjectsListStyles = styled.div`
     h3 {
       //styleName: H1 Mobile;
       padding-left: 0px;
-     
       font-size: 20px;
       font-weight: 500;
       line-height: 28px;
