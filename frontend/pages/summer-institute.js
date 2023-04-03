@@ -150,6 +150,16 @@ const SummerInstituteStyle = styled.section`
       text-align: left;      
     }
 
+    p {
+      //styleName: Body Mobile;
+      font-family: Fira Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-align: left;
+    }
+
     .intro {
       padding: 25px 0 25px;
     }
@@ -161,10 +171,34 @@ const SummerInstituteStyle = styled.section`
         .session {
           /* width: 50%; */
           .session-description {
+            font-family: Fira Sans;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+            letter-spacing: 0.05em;
+            text-align: center;
           }
         }
       }
-  }
+      .speakers {
+          .speaker {
+            .speaker-name {
+              font-style: normal;
+              font-family: Fira Sans;
+              font-size: 12px;
+              font-weight: 400;
+              line-height: 16px;
+              letter-spacing: 0.05em;
+              text-align: center;
+    
+              color: #000000;
+              text-transform: uppercase;
+              width: 120px;
+              padding-top: 15px;
+            }
+          }
+        }
+      }
   }
 
 `;

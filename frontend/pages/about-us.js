@@ -78,6 +78,16 @@ const AboutPageStyle = styled.section`
       margin-bottom: 5px ;
     }
 
+    p {
+      //styleName: Body Mobile;
+      font-family: Fira Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-align: left;
+    }
+
     h3 {
       //styleName: H1 Mobile;
       padding-left: 0px;

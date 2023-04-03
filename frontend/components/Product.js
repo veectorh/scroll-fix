@@ -39,6 +39,38 @@ const ProductStyles = styled.div`
       margin: auto 0px;
   } 
  
+  @media ${device.tablet} {
+    .title-price {
+    .title {
+      //styleName: H2 Mobile;
+      font-family: Oswald;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.085em;
+      text-align: left;
+    }
+    .description {
+      //styleName: Body Mobile;
+      font-family: Fira Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-align: left;
+    }
+    .price {
+      //styleName: H2 Mobile;
+      font-family: Oswald;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.085em;
+      text-align: right;
+
+    }
+  }
+  }
   @media ${device.mobileL} {
 
     img {

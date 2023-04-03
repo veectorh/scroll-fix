@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { device } from '../device';
 const HelpStyles = styled.section`
   padding: 100px 0 0;
   max-width: 1250px;
@@ -16,6 +16,33 @@ const HelpStyles = styled.section`
   p {
     color: #2A2A2A;
     margin: 0 0 35px;
+  }
+
+  @media ${device.tablet} {
+    padding: 50px 0 0;
+
+    h1 {
+     
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+      text-align: left;      
+    }
+
+    p {
+      //styleName: Body Mobile;
+      font-family: Fira Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-align: left;
+    }
+  }
+
+  @media ${device.mobileL} {
+    padding: 36px 0 0;
   }
 `;
 

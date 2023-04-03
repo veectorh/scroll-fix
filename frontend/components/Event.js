@@ -101,6 +101,19 @@ const EventStyle = styled.div`
       width: 100%;
     }
 
+    .name-descriptions,  .artist-description  {
+      p {
+        //styleName: Body Mobile;
+        font-family: Fira Sans;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: 0.05em;
+        text-align: left;
+      }
+    }
+
+
     .image-buttons {
     max-width: 100%;
       img {

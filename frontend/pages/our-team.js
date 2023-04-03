@@ -44,6 +44,16 @@ const OurTeamStyles = styled.section`
       letter-spacing: 0.05em;
       text-align: left;      
     }
+
+    p {
+      //styleName: Body Mobile;
+      font-family: Fira Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-align: left;
+    }
   }
 
   @media ${device.mobileL} {
@@ -85,6 +95,8 @@ const TeamImagesStyles = styled.section`
       letter-spacing: 0.085em;
       text-align: left;
     }
+
+    
   }
 
 `;
@@ -210,11 +222,19 @@ const TeamMemberStyles = styled.div`
   @media ${device.tablet} {
   .speaker-info {
     .name {
-     
       font-size: 16px;
       font-weight: 500;
       line-height: 24px;
       letter-spacing: 0.085em;
+      text-align: left;
+    }
+
+    .tagline {
+      font-family: Fira Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14px;
+      letter-spacing: 0.05em;
       text-align: left;
     }
   }

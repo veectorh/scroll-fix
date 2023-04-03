@@ -48,6 +48,8 @@ const InquiryFormStyle = styled.section`
       letter-spacing: 0.05em;
       text-align: left;      
     }
+
+    
   }
 
   @media ${device.mobileL} {

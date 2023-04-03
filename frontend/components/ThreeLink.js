@@ -8,7 +8,7 @@ const ThreeLinkStyles = styled.section`
     display: flex;
     justify-content: space-around;
     gap: 20px;
-    padding: 0 5px;
+    /* padding: 0 5px; */
     .link {
       padding: 20px 40px 30px;
     }
@@ -35,8 +35,9 @@ const ThreeLinkStyles = styled.section`
   @media ${device.tablet} {
     .links {
       flex-direction: column;
+      gap: 0px;
       .link {
-      padding: 20px 30px 30px;
+      padding: 20px 30px 20px;
       }
       .link:nth-of-type(-n+2) {
         border-right: none;
@@ -48,6 +49,16 @@ const ThreeLinkStyles = styled.section`
         line-height: 24px;
         letter-spacing: 0.085em;
         text-align: left;
+      }
+      p {
+        //styleName: Body Mobile;
+        font-family: Fira Sans;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: 0.05em;
+        text-align: left;
+        padding: 6px 0 24px;
       }
     }
   }

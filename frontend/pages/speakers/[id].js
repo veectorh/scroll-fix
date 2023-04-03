@@ -89,6 +89,15 @@ const SpeakerHeroStyles = styled.section`
           text-align: left;  
           padding: 17px 0 15px;    
         }
+        p {
+          //styleName: Body Mobile;
+          font-family: Fira Sans;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 16px;
+          letter-spacing: 0.05em;
+          text-align: left;
+        }
         .return-link {
           a {
             font-size: 12px;
@@ -215,6 +224,26 @@ const SpeakerInfoStyles = styled.section`
     }
     .content {
       padding-bottom: 0px;
+      p {
+      //styleName: Body Mobile;
+      font-family: Fira Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-align: left;
+     }
+     ul {
+  
+      //styleName: Body Mobile;
+      font-family: Fira Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-align: left;
+
+     }
     }
 
     .left {
@@ -227,6 +256,17 @@ const SpeakerInfoStyles = styled.section`
     .links {
       width: 100%;
       margin: 25px  0;
+      a{
+
+      //styleName: Body Mobile;
+      font-family: Fira Sans;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 0.05em;
+      text-align: left;
+
+      }
     }
 
     h2 {

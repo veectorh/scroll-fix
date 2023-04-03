@@ -123,6 +123,16 @@ const CTAStyleEvents = styled.div`
       letter-spacing: 0.085em;
       text-align: center;
     }
+
+    p {
+      //styleName: Body Mobile;
+      font-family: Fira Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-align: left;
+    }
   }
 `;
 
@@ -174,6 +184,16 @@ const CTAStyleStore = styled.div`
       line-height: 20px;
       letter-spacing: 0.085em;
       text-align: center;
+    }
+
+    p {
+      //styleName: Body Mobile;
+      font-family: Fira Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-align: left;
     }
   }
 `;

@@ -65,6 +65,18 @@ const SpeakersPageStyle = styled.section`
         text-align: left;  
         margin-bottom : 8px;    
       }
+
+      p {
+      //styleName: Body Mobile;
+      font-family: Fira Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-align: left;
+    }
+
+    
       .filter-description {
         flex-direction: column;
         background-color: #F8A151;
@@ -79,14 +91,34 @@ const SpeakersPageStyle = styled.section`
         height: 62px;
         /* padding: 10px 0px 0px 0px; */
       }
-      h4 {
-     
-      }
+  
       .desktop {
         display: none;
       }
       .mobile {
         display: block;
+        h4 {
+          //styleName: H3 Mobile;
+          font-family: Oswald;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 20px;
+          letter-spacing: 0.05em;
+          text-align: left;
+        }
+
+        p {
+          font-family: Fira Sans;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 16px;
+          letter-spacing: 0.05em;
+          text-align: left;
+        }
+
+        .icon {
+          font-size: 42px;
+        }
       }
       .showFilters {
         position: fixed;

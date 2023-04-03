@@ -81,6 +81,16 @@ const OriginalFilmStyles = styled.section`
       text-align: left;      
     }
 
+    p {
+      //styleName: Body Mobile;
+      font-family: Fira Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-align: left;
+    }
+
     h2 {
       //styleName: H1 Mobile;
      
@@ -115,6 +125,17 @@ const OriginalFilmStyles = styled.section`
       padding: 20px 20px 30px;
       h2 {
         text-align: center;
+        
+      }
+      p{
+        //styleName: Body Copy;
+        font-family: Fira Sans;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0.05em;
+        text-align: center;
+        
       }
     }
   }

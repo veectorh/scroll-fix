@@ -123,6 +123,15 @@ const FooterStyles = styled.footer`
 
     .newsletter-footer {
       padding: 16px 30px;
+      p {
+        //styleName: Body Mobile;
+        font-family: Fira Sans;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: 0.05em;
+        text-align: left;
+      }
     }
 
     .br {
@@ -156,7 +165,35 @@ const FooterStyles = styled.footer`
           margin-bottom: 10px;
         }
       }
-      .mission h5{
+
+      .contact-info {
+        .image-info {  
+          .info {
+            p {
+              a {
+                //styleName: Body Mobile;
+                font-family: Fira Sans;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 16px;
+                letter-spacing: 0.05em;
+                text-align: left;
+              }
+            }
+            p {
+                //styleName: Body Mobile;
+                font-family: Fira Sans;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 16px;
+                letter-spacing: 0.05em;
+                text-align: left;
+            }
+          }
+        }
+      }
+
+      .mission h5 {
        
         font-size: 16px;
         font-weight: 400;
@@ -164,6 +201,15 @@ const FooterStyles = styled.footer`
         letter-spacing: 0.05em;
         text-align: left;
 
+      }
+      .mission p {
+        //styleName: Body Mobile;
+        font-family: Fira Sans;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: 0.05em;
+        text-align: left;
       }
     }
   }
