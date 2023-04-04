@@ -169,11 +169,13 @@ export default function SingleSpeaker({ singleSpeaker }) {
   const speaker = singleSpeaker?.data[0]?.attributes;
   const quotes = singleSpeaker.data[0].attributes?.quotes;
   const products = singleSpeaker.data[0]?.attributes?.products?.data;
-  const photos = singleSpeaker.data[0]?.attributes?.publicity_packet?.data[0]?.attributes?.url;
+
+// PUBLICITY PACKET ISSUE
+  // const photos = singleSpeaker.data[0]?.attributes?.publicity_packet?.data[0]?.attributes?.url;
   const [showAbout, setShowAbout] = useState(true);
-  console.log("PRODUCTS", products);
-  console.log("PHOTOSDOWNLOWD", photos);
-  console.log("Empty", products.length === 0);
+  // console.log("PRODUCTS", products);
+  // console.log("PHOTOSDOWNLOWD", photos);
+  // console.log("Empty", products.length === 0);
 
   let styleImage = {
     backgroundImage: "url(" + speaker?.photo.data?.attributes.url + ")",
@@ -194,7 +196,9 @@ export default function SingleSpeaker({ singleSpeaker }) {
                 Request Info
               </Link>
             </ButtonStyles>
-            <ButtonStyles theme={{ main: "#00AFB5;" }} style={{ display: photos === null ? "none" : "flex"}}>
+
+{/* PUBLICITY PACKET ISSUE */}
+            {/* <ButtonStyles theme={{ main: "#00AFB5;" }} style={{ display: photos === null ? "none" : "flex"}}>
               <Link href={photos}>
                 Photos
                 <span className="icon">
@@ -207,7 +211,7 @@ export default function SingleSpeaker({ singleSpeaker }) {
                   />
                 </span>
               </Link>
-            </ButtonStyles>
+            </ButtonStyles> */}
           </div>
         </div >
         <div className="speaker-image" style={styleImage}>
