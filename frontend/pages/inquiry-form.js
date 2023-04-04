@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Image from 'next/image';
 import Link from 'next/link';
+import { device } from "@/components/device";
+import ContainerBox from "@/components/styles/ContainerBox";
 
 const InquiryFormStyle = styled.section`
   padding: 100px 0 0;
@@ -20,7 +22,7 @@ const InquiryFormStyle = styled.section`
   }
 
   .form {
-      width: 900px;
+      max-width: 900px;
 
       iframe {
         border: none;
@@ -33,19 +35,42 @@ const InquiryFormStyle = styled.section`
           color: orange;
         }
       }
+  }
+
+  @media ${device.tablet} {
+    padding: 50px 0 0;
+
+    h1 {
+     
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+      text-align: left;      
     }
+
+    
+  }
+
+  @media ${device.mobileL} {
+    padding: 36px 0 0;
+  }
+  
+
+  
 `;
 export default function InquiryFormPage() {
   return (
     <InquiryFormStyle>
-      <h1>SPEAKERS INQUIRY FORM</h1>
-      <p>Please submit the form below to request more information on speakers including fees and availability. For immediate assistance, please call 510-647-9115 or email info@speakoutnow.org. For other inquiries, please use our contact form.<br/><br/>
-      
-      *Required Field.</p>
+      <ContainerBox>
+        <h1>SPEAKERS INQUIRY FORM</h1>
+        <p>Please submit the form below to request more information on speakers including fees and availability. For immediate assistance, please call 510-647-9115 or email info@speakoutnow.org. For other inquiries, please use our contact form.<br /><br />
 
-      <div className="form">
-        <iframe src="https://speakout.formstack.com/forms/inquiry_form" title="Inquiry Form" width="600" height="1000"></iframe>
-      </div>
+          *Required Field.</p>
+        <div className="form">
+          <iframe src="https://speakout.formstack.com/forms/inquiry_form" title="Inquiry Form" width="600" height="1000"></iframe>
+        </div>
+      </ContainerBox>
     </InquiryFormStyle>
   );
 }

@@ -1,12 +1,17 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-
+import { device } from './device';
 const SocialStyles = styled.nav`
   display: flex;
   align-items: center;
   padding: 15px 0px;
   a {
     margin: 0 5px;
+  }
+  @media ${device.tablet} {
+    a{
+      display: none;
+    }
   }
 `;
 
@@ -69,7 +74,7 @@ export default function Social() {
         />
       </a>
       <DonateButtonStyle>
-        <a href="https://www.paypal.com/us/fundraiser/charity/2248447" target="_blank" rel="noreferrer" style={{ marginLeft:15 }}>
+        <a href="https://www.paypal.com/us/fundraiser/charity/2248447" target="_blank" rel="noreferrer" style={{ marginLeft: 15 }}>
           DONATE
         </a>
       </DonateButtonStyle>
