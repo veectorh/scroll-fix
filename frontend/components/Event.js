@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Image from 'next/image';
 import Link from 'next/link';
 import SecondButtonStyles from './styles/SecondButtonStyles';
+import ReactMarkdown from "react-markdown";
 
 const EventStyle = styled.div`
   background-color: #F2F2F2;
@@ -45,6 +46,13 @@ const EventStyle = styled.div`
     gap: 10px;
   }
 
+  .name-descriptions {
+    a {
+        color: inherit;
+        text-decoration: underline;
+      }
+  }
+  
   .artist {
     display: flex;
     gap: 20px;
@@ -91,7 +99,7 @@ export default function Event( event ) {
       </div>
       <div className="name-descriptions">
         <h2>{name}</h2>
-        <p>{description}</p>
+        <ReactMarkdown children={description} />
         <div className="artist">
           {/* <div className="artist-image">
             <Image 
