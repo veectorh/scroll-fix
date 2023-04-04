@@ -1,7 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
-import { device } from './device';
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -63,32 +62,10 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const InnerStyles = styled.div`
-    /* margin: 0px 20px;
-
-    @media ${device.laptopL} {
-      margin: 0px 48px;
-    }
-
-    @media ${device.laptop} {
-      margin: 0px 36px;
-    }
-
-    @media ${device.tablet} {
-      margin: 0px 36px;
-    }
-
-    @media ${device.mobileL} {
-      margin: 0px 24px;
-    }
-
-    @media ${device.mobileM} {
-      margin: 0px 24px;
-    }
-
-    @media ${device.mobileS} {
-      margin: 0px 24px;
-    } */
-
+  /* max-width: var(--maxWidth); */
+  /* margin: 0;
+  padding: 0; */
+  /* outline: 1px solid red; */
 `;
 
 export default function Page({ children }) {

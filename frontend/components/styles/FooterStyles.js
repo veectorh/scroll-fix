@@ -1,10 +1,6 @@
 import styled from 'styled-components';
-import { device } from '../device';
-const FooterStyles = styled.footer`
-  .newsletter-footer {
-    padding: 0px 90px;
-  }
 
+const FooterStyles = styled.footer`
   h4 {
     font-size: 24px;
     font-weight: 400;
@@ -33,7 +29,7 @@ const FooterStyles = styled.footer`
     display: flex;
     justify-content: center;
     gap: 40px;
-    padding: 90px 7vw;
+    padding: 40px 7vw;
     background: #00AFB5;
 
     .newsletter {
@@ -57,7 +53,7 @@ const FooterStyles = styled.footer`
     justify-content: center;
     align-items: center;
     gap: 9vw;
-    padding: 66px 30px 62px;
+    padding: 66px 0 62px;
     .logo-social {
       .logo {
         margin-bottom: 21px;
@@ -107,110 +103,6 @@ const FooterStyles = styled.footer`
     }
     .privacy:hover {
       color: #F8A151
-    }
-  }
-
-  @media ${device.tablet} {
-    h4{
-      //styleName: H3 Mobile;
-     
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 20px;
-      letter-spacing: 0.05em;
-      text-align: left;
-    }
-
-    .newsletter-footer {
-      padding: 16px 30px;
-      p {
-        //styleName: Body Mobile;
-        font-family: Fira Sans;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 16px;
-        letter-spacing: 0.05em;
-        text-align: left;
-      }
-    }
-
-    .br {
-      display: inline;
-    }
-
-    .newsletter-footer {
-      flex-direction: column;
-      gap: 20px;
-    }
-    
-    .footer {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 30px 30px;
-      gap: 16px;
-      .logo-social {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 30px;
-        .logo img {
-          width: 146px;
-          height: 66px;
-        }
-        .social {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 10px;
-        }
-      }
-
-      .contact-info {
-        .image-info {  
-          .info {
-            p {
-              a {
-                //styleName: Body Mobile;
-                font-family: Fira Sans;
-                font-size: 12px;
-                font-weight: 400;
-                line-height: 16px;
-                letter-spacing: 0.05em;
-                text-align: left;
-              }
-            }
-            p {
-                //styleName: Body Mobile;
-                font-family: Fira Sans;
-                font-size: 12px;
-                font-weight: 400;
-                line-height: 16px;
-                letter-spacing: 0.05em;
-                text-align: left;
-            }
-          }
-        }
-      }
-
-      .mission h5 {
-       
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px; 
-        letter-spacing: 0.05em;
-        text-align: left;
-
-      }
-      .mission p {
-        //styleName: Body Mobile;
-        font-family: Fira Sans;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 16px;
-        letter-spacing: 0.05em;
-        text-align: left;
-      }
     }
   }
 `;
