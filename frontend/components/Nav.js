@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
-import { BsChevronDown, BsChevronUp } from "react-icons/bs";
-
+import { BsChevronDown } from "react-icons/bs";
+import { device } from './device';
 
 const NavStyles = styled.nav`
   font-family: "Oswald", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -76,7 +76,12 @@ const NavStyles = styled.nav`
   ul{
     padding: 0px
    }
+
+   @media ${device.tablet} {
+    display: none;
+  }
 `;
+
 
 export default function Nav() {
   const router = useRouter();
@@ -136,7 +141,7 @@ export default function Nav() {
       </div>
       <div className='link-1' >
         <Link
-          className={`${router.pathname === '/about-us' || router.pathname === '/our-team' || router.pathname === '/faq' ||router.pathname === '/sponsored-projects' || router.pathname === '/contact' ? "active-link" : ''} main-nav-link`}
+          className={`${router.pathname === '/about-us' || router.pathname === '/our-team' || router.pathname === '/faq' || router.pathname === '/sponsored-projects' || router.pathname === '/contact' ? "active-link" : ''} main-nav-link`}
           href="/about-us">
           ABOUT
           <BsChevronDown className='icon' />

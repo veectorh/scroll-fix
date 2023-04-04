@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Image from 'next/image';
 import Link from 'next/link';
 import SecondButtonStyles from './styles/SecondButtonStyles';
-
+import { device } from "./device";
 const EventStyle = styled.div`
   background-color: #F2F2F2;
   display: flex;
@@ -64,20 +64,84 @@ const EventStyle = styled.div`
       margin-bottom: 30px;
     }
   }
+
+  @media ${device.laptop} {
+    flex-direction: column;
+    .image-buttons {
+      max-width: 440px;
+    }
+  }
+
+  @media ${device.tablet} {
+    flex-direction: column;
+    padding: 24px ;
+    gap: 24px;
+
+    h2 {
+      //styleName: H2 Mobile;
+     
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.085em;
+      text-align: left;
+    }
+
+    h3 {
+      //styleName: H2 Mobile;
+     
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.085em;
+      text-align: left;
+
+    }
+    .buttons {
+      width: 100%;
+    }
+
+    .name-descriptions,  .artist-description  {
+      p {
+        //styleName: Body Mobile;
+        font-family: Fira Sans;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: 0.05em;
+        text-align: left;
+      }
+    }
+
+
+    .image-buttons {
+    max-width: 100%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .artist {
+    display: flex;
+    gap: 16px;
+    padding-top: 20px;
+  }
 `;
 
-export default function Event( event ) {
+export default function Event(event) {
   const { name, description, artist_name, image, enroll_url } = event.event.event.attributes;
   // const slug = artist_name.data.attributes.fullName.toLowerCase().replace('.', '').split(' ').join('-');
 
   return (
     <EventStyle>
       <div className="image-buttons">
-        <Image 
-          src={image.data.attributes.url} 
-          alt={name} 
-          width={436} 
-          height={255} 
+        <Image
+          src={image.data.attributes.url}
+          alt={name}
+          width={436}
+          height={255}
           priority
         />
         <div className="buttons">

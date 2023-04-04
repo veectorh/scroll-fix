@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { loadStaff } from "@/lib/load-staff";
 import { loadDirectors } from "@/lib/load-directors";
 import { useState } from 'react';
-
+import { device } from "@/components/device";
+import ContainerBox from "@/components/styles/ContainerBox";
 
 const OurTeamStyles = styled.section`
   padding: 100px 0 0;
@@ -31,6 +32,33 @@ const OurTeamStyles = styled.section`
     margin: 0 0 35px;
     max-width: 910px;
   }
+
+  @media ${device.tablet} {
+    padding: 50px 0 0;
+
+    h1 {
+     
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+      text-align: left;      
+    }
+
+    p {
+      //styleName: Body Mobile;
+      font-family: Fira Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-align: left;
+    }
+  }
+
+  @media ${device.mobileL} {
+    padding: 36px 0 0;
+  }
 `;
 
 const TeamImagesStyles = styled.section`
@@ -38,6 +66,7 @@ const TeamImagesStyles = styled.section`
   max-width: 1250px;
   margin: 0 auto 40px;
   padding-top: 20px;
+
   .heading {
     h2 {
       font-weight: 400;
@@ -56,6 +85,20 @@ const TeamImagesStyles = styled.section`
       }
     }
   }
+
+  @media ${device.tablet} {
+    .heading h2{
+     
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1px;
+      letter-spacing: 0.085em;
+      text-align: left;
+    }
+
+    
+  }
+
 `;
 
 const MembersListStyles = styled.div`
@@ -65,6 +108,11 @@ const MembersListStyles = styled.div`
   grid-column-gap: 28px;
   grid-row-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  @media ${device.mobileL} {
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-row-gap: 16px;
+    padding: 40px 0 0px;
+  }
 `;
 
 //   border-radius: 20px;
@@ -118,7 +166,8 @@ const TeamMemberStyles = styled.div`
   background: rgba(67, 67, 67, 0.6);
   position: relative;
   img {
-    width: 399px;
+    /* min-width: 399px; */
+    width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
@@ -131,7 +180,7 @@ const TeamMemberStyles = styled.div`
     width: 100%;
     height: ${({ isExpanded }) => (isExpanded ? '100%' : '80px')};
     padding: 8px 16px;
-    max-width: 399px;
+    max-width: 100%;
     overflow: hidden;
     border-bottom-right-radius: 20px;
     cursor: pointer;
@@ -169,6 +218,27 @@ const TeamMemberStyles = styled.div`
       right: 11px;
     }
   }
+
+  @media ${device.tablet} {
+  .speaker-info {
+    .name {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.085em;
+      text-align: left;
+    }
+
+    .tagline {
+      font-family: Fira Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14px;
+      letter-spacing: 0.05em;
+      text-align: left;
+    }
+  }
+  }
 `;
 
 
@@ -192,70 +262,72 @@ function OurTeamPage({ staff, directors }) {
 
   return (
     <>
-      <OurTeamStyles>
-        <h1>Our Team</h1>
-        <p>Meet the passionate and dedicated team behind SpeakOut, who are on a mission to create positive change through education, storytelling, and activism.</p>
-      </OurTeamStyles>
-  
-      <TeamImagesStyles>
-        <div className="heading">
-          <h2><span>Staff</span></h2>
-        </div>
-        <MembersListStyles>
-          {staff.data.map((s, index) => (
-            <TeamMemberStyles
-              key={index}
-              isExpanded={index === expandedIndex}
-              onClick={() => toggleExpansion(index)}
-            >
-              <Image 
-                src={s.attributes.photo.data?.attributes.url} 
-                alt={s.attributes.name} 
-                width={399} 
-                height={466} 
-                priority
-              />
-              <div className="speaker-info">
-                <p className="name">{s.attributes.name}</p>
-                <p className="tagline">{s.attributes.title}</p>
-                <p className="description">{s.attributes.description}</p>
-                <div className="icon">{index === expandedIndex ? '–' : '+'}</div>
-              </div>
-            </TeamMemberStyles>
-          ))}
-        </MembersListStyles>
-      </TeamImagesStyles>
+      <ContainerBox>
+        <OurTeamStyles>
+          <h1>Our Team</h1>
+          <p>Meet the passionate and dedicated team behind SpeakOut, who are on a mission to create positive change through education, storytelling, and activism.</p>
+        </OurTeamStyles>
 
-      <TeamImagesStyles>
-        <div className="heading">
-          <h2><span>Board of Directors</span></h2>
-        </div>
-        <MembersListStyles>
-          {
-            directors.data.map((director, index) => (
+        <TeamImagesStyles>
+          <div className="heading">
+            <h2><span>Staff</span></h2>
+          </div>
+          <MembersListStyles>
+            {staff.data.map((s, index) => (
               <TeamMemberStyles
                 key={index}
                 isExpanded={index === expandedIndex}
                 onClick={() => toggleExpansion(index)}
               >
-                <Image 
-                  src={director.attributes.photo.data?.attributes.url} 
-                  alt={director.attributes.name} 
-                  width={399} 
-                  height={466} 
+                <Image
+                  src={s.attributes.photo.data?.attributes.url}
+                  alt={s.attributes.name}
+                  width={399}
+                  height={466}
                   priority
                 />
                 <div className="speaker-info">
-                  <p className="name">{director.attributes.name}</p>
-                  <p className="tagline">{director.attributes.title}</p>
-                  <p className="description">{director.attributes.description}</p>
+                  <p className="name">{s.attributes.name}</p>
+                  <p className="tagline">{s.attributes.title}</p>
+                  <p className="description">{s.attributes.description}</p>
                   <div className="icon">{index === expandedIndex ? '–' : '+'}</div>
                 </div>
               </TeamMemberStyles>
-            ))
-          }
-        </MembersListStyles>
-      </TeamImagesStyles>
+            ))}
+          </MembersListStyles>
+        </TeamImagesStyles>
+
+        <TeamImagesStyles>
+          <div className="heading">
+            <h2><span>Board of Directors</span></h2>
+          </div>
+          <MembersListStyles>
+            {
+              directors.data.map((director, index) => (
+                <TeamMemberStyles
+                  key={index}
+                  isExpanded={index === expandedIndex}
+                  onClick={() => toggleExpansion(index)}
+                >
+                  <Image
+                    src={director.attributes.photo.data?.attributes.url}
+                    alt={director.attributes.name}
+                    width={399}
+                    height={466}
+                    priority
+                  />
+                  <div className="speaker-info">
+                    <p className="name">{director.attributes.name}</p>
+                    <p className="tagline">{director.attributes.title}</p>
+                    <p className="description">{director.attributes.description}</p>
+                    <div className="icon">{index === expandedIndex ? '–' : '+'}</div>
+                  </div>
+                </TeamMemberStyles>
+              ))
+            }
+          </MembersListStyles>
+        </TeamImagesStyles>
+      </ContainerBox>
     </>
   );
 }
@@ -263,7 +335,7 @@ function OurTeamPage({ staff, directors }) {
 export async function getStaticProps() {
   const staff = await loadStaff();
   const directors = await loadDirectors();
-  return { props: { staff, directors }}
+  return { props: { staff, directors } }
 }
 
 export default OurTeamPage;
