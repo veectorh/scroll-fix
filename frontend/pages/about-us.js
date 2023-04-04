@@ -100,7 +100,7 @@ export default function AboutUsPage({ projects, quotes }) {
         </SubHeroStyles>
         <h3 className="history">Our History</h3>
         <p className="history-copy">
-          SpeakOut (501c3) was founded in 1990 with the goal of showcasing progressive authors and speakers, such as Howard Zinn, Noam Chomsky, Elizabeth Martinez, and Winona LaDuke. Over the years, our roster has grown to include dozens of speakers, scholars, performing and visual artists, exhibits, and films, all working to educate, inspire, and empower young people and others to become actively engaged in society and to work for social justice. Our roster of speakers and artists includes some of the most prominent and influential figures in their fields.<br/><br/>
+          SpeakOut (501c3) was founded in 1990 as part of the Institute for Social and Cultural Change, a non-profit organization that also included the progressive publishing house South End Press and Z Magazine. Initially, SpeakOut served as a platform to showcase authors from South End Press, including renowned intellectuals such as Howard Zinn, Noam Chomsky, Elizabeth Martinez, and Winona LaDuke.<br/><br/>
 
           The organization was founded by Jean Caiani, who brought with her experience in organizing speaking tours for former CIA agent and whistleblower Philip Agee, as well as her years of service with the United Farm Workers Union, where she coordinated tours for Cesar Chavez. SpeakOut quickly became a go-to resource for those seeking progressive speakers and artists to engage with on campuses and beyond.
 
