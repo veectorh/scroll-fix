@@ -34,6 +34,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::speaker.speaker"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }
