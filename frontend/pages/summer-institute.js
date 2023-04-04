@@ -3,12 +3,9 @@ import ButtonStyles from "@/components/styles/ButtonStyles";
 import Link from "next/link";
 import Image from 'next/image';
 import { loadSummerInstitutes } from "@/lib/load-summer-institutes";
-import { device } from "@/components/device";
-import ContainerBox from "@/components/styles/ContainerBox";
 
 const SummerInstituteStyle = styled.section`
   padding: 50px 0 0;
-
   h1 {
     font-weight: 400;
     font-size: 60px;
@@ -112,9 +109,7 @@ const SummerInstituteStyle = styled.section`
 
     .sessions {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      /* flex-direction: row; */
+      flex-direction: row;
       gap: 44px;
       flex-wrap: wrap;
       .session {
@@ -137,70 +132,6 @@ const SummerInstituteStyle = styled.section`
       }
     }
   }
-
-  @media ${device.tablet} {
-    padding: 25px 0 0;
-
-    h1 {
-     
-      font-size: 30px;
-      font-weight: 500;
-      line-height: 36px;
-      letter-spacing: 0.05em;
-      text-align: left;      
-    }
-
-    p {
-      //styleName: Body Mobile;
-      font-family: Fira Sans;
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 16px;
-      letter-spacing: 0.05em;
-      text-align: left;
-    }
-
-    .intro {
-      padding: 25px 0 25px;
-    }
-
-    .summer-institute {
-      padding: 24px 0 36px;
-      .sessions {
-        gap: 22px;
-        .session {
-          /* width: 50%; */
-          .session-description {
-            font-family: Fira Sans;
-            font-size: 12px;
-            font-weight: 400;
-            line-height: 16px;
-            letter-spacing: 0.05em;
-            text-align: center;
-          }
-        }
-      }
-      .speakers {
-          .speaker {
-            .speaker-name {
-              font-style: normal;
-              font-family: Fira Sans;
-              font-size: 12px;
-              font-weight: 400;
-              line-height: 16px;
-              letter-spacing: 0.05em;
-              text-align: center;
-    
-              color: #000000;
-              text-transform: uppercase;
-              width: 120px;
-              padding-top: 15px;
-            }
-          }
-        }
-      }
-  }
-
 `;
 
 const PreviousInstitutesCTA = styled.section`
@@ -242,10 +173,6 @@ const PreviousInstitutesCTA = styled.section`
     margin: 0;
     padding: 0;
   }
-
-  @media ${device.tablet} {
-    flex-direction: column;
-  }
 `;
 
 const PreviousInstituteStyle = styled.div`
@@ -262,25 +189,19 @@ const PreviousInstituteStyle = styled.div`
     text-align: center;
     margin-bottom: 25px;
   }
-
-  @media ${device.tablet} {
-        padding: 32px 20px;
-  }
 `;
 
 
-export default function SummerInstitutePage({ institutes }) {
+export default function SummerInstitutePage({ institutes}) {
   console.log("INSTITUTES", institutes.data);
 
   return (
     <>
       <SummerInstituteStyle>
-        <ContainerBox>
-          <div className="intro">
-            <h1>Summer Institute</h1>
-            <p>A virtual institute focused on building equity and social justice education and providing participants with ideas, tools, and resources to create inclusive learning environments on campus and online. For college faculty and professional staff.</p>
-          </div >
-        </ContainerBox>
+        <div className="intro">
+          <h1>Summer Institute</h1>
+          <p>A virtual institute focused on building equity and social justice education and providing participants with ideas, tools, and resources to create inclusive learning environments on campus and online. For college faculty and professional staff.</p>
+        </div >
 
         {
           institutes.data.map(institute => (
@@ -290,7 +211,7 @@ export default function SummerInstitutePage({ institutes }) {
               <h3>{institute.attributes.title}</h3>
               <p>{institute.attributes.description}</p>
               <ButtonStyles theme={{ main: "#00AFB5" }}>
-                <Link href={institute.attributes.register_url}>Register Now</Link>
+                  <Link href={institute.attributes.register_url}>Register Now</Link>
               </ButtonStyles>
 
               <h3 className="top">SPEAKERS</h3>
@@ -338,7 +259,7 @@ export default function SummerInstitutePage({ institutes }) {
           <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh ipsum consequat nisl vel pretium. Suspendisse in est ante in nibh mauris. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Tristique nulla aliquet enim </p>
           <ButtonStyles theme={{ main: "#00AFB5" }}>
-            <Link href="/speakers">Register Now</Link>
+              <Link href="/speakers">Register Now</Link>
           </ButtonStyles>
         </PreviousInstituteStyle>
         <PreviousInstituteStyle>
@@ -347,7 +268,7 @@ export default function SummerInstitutePage({ institutes }) {
           <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh ipsum consequat nisl vel pretium. Suspendisse in est ante in nibh mauris. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Tristique nulla aliquet enim </p>
           <ButtonStyles theme={{ main: "#00AFB5" }}>
-            <Link href="/speakers">Register Now</Link>
+              <Link href="/speakers">Register Now</Link>
           </ButtonStyles>
         </PreviousInstituteStyle>
       </PreviousInstitutesCTA>

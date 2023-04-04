@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { device } from '../device';
 
 const SubHeroStyles = styled.section`
   text-align: center;
@@ -76,40 +75,6 @@ const SubHeroStyles = styled.section`
       bottom: 30px;
       border-left: white 1px solid;
       border-right: white 1px solid;
-    }
-  }
-
-  @media ${device.tablet} {
-    padding: 43px 48px;
-
-    h2 {
-    font-family: Fira Sans;
-    font-size: 24px;
-    font-style: italic;
-    font-weight: 600;
-    line-height: 28px;
-    letter-spacing: 0.03em;
-    text-align: center;
-    }
-
-    .about {
-      padding-bottom: 0px;
-    }
-
-    .three-column {
-      gap: 40px;
-      flex-direction: column;
-      #borders:after {
-      content: '';
-      top: -15px;
-      left: -20px;
-      right: -20px;
-      bottom: -15px;
-      border-left: none;
-      border-right: none;
-      border-top: white 1px solid;
-      border-bottom: white 1px solid;
-    }
     }
   }
 `;

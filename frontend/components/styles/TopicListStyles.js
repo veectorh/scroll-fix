@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from '../device';
+
 const TopicListStyles = styled.section`
     display: flex;
     flex-wrap: wrap;

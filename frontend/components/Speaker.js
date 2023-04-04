@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { device } from './device';
+
 const SpeakerStyles = styled.div`
     border-radius: 20px;
     overflow: hidden;
@@ -43,38 +43,6 @@ const SpeakerStyles = styled.div`
         color: #ffffff;
         margin: 0;
       }
-    }
-
-  
-    @media ${device.tablet} {
-      height: 100%;
-      img, .speaker-info {
-        width: 100%;
-        max-width: 100%;
-      }
-      img {
-        height: auto;
-      }
-      .speaker-info {
-        .name {
-          font-size: 16px;
-          font-weight: 500;
-          line-height: 24px;
-          letter-spacing: 0.085em;
-          text-align: left;
-        }
-        .tagline {
-          font-size: 12px;
-          font-weight: 400;
-          line-height: 16px;
-          letter-spacing: 0.05em;
-          text-align: left;
-        }
-      }
-    }
-
-    @media ${device.mobileL} {
-      height: 279;
     }
 
 `;

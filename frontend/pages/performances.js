@@ -2,8 +2,7 @@ import styled from "styled-components";
 import NeedHelp from "@/components/NeedHelp";
 import { loadPerformances } from "@/lib/load-performances";
 import Performance from "@/components/Performance";
-import { device } from "@/components/device";
-import ContainerBox from "@/components/styles/ContainerBox";
+
 const PerformancesPageStyle = styled.section`
   padding: 100px 0 0;
   max-width: 1250px;
@@ -32,59 +31,6 @@ const PerformancesPageStyle = styled.section`
     margin: 0;
     max-width: 910px;
   }
-  @media ${device.tablet} {
-    padding: 50px 0 0;
-
-    h1 {
-      font-size: 30px;
-      font-weight: 500;
-      line-height: 36px;
-      letter-spacing: 0.05em;
-      text-align: left;  
-      margin-bottom : 8px;
-    }
-    
-    p {
-      //styleName: Body Mobile;
-      font-family: Fira Sans;
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 16px;
-      letter-spacing: 0.05em;
-      text-align: left;
-    }
-  
-  }
-
-
-  @media ${device.mobileL} {
-    padding: 36px 0 0;
-  }
-
-  
-    @media ${device.tablet} {
-        .page-detail {
-          margin: 0px 36px;
-        }
-    }
-  
-    @media ${device.mobileL} {
-        .page-detail {
-          margin: 0px 24px;
-        }
-    }
-  
-    @media ${device.mobileM} {
-        .page-detail {
-          margin: 0px 24px;
-        }
-    }
-  
-    @media ${device.mobileS} {
-        .page-detail {
-          margin: 0px 24px;
-        }
-    }
 `;
 
 const PerfomancesListStyle = styled.div`
@@ -95,23 +41,19 @@ const PerfomancesListStyle = styled.div`
 export default function PerformancesPage({ performances }) {
   return (
     <>
-      <ContainerBox>
-        <PerformancesPageStyle>
-          <div className="page-detail">
-            <h1>Performances</h1>
-            <p>Experience the power of live performance from top SpeakOut artist/activists. Solo-shows, spoken word and poetry, comedy, and film - each program brings vital and inspiring messages to campuses and communities. Join us for a transformative experience, available in person or virtually.</p>
-          </div>
+      <PerformancesPageStyle>
+        <h1>Performances</h1>
+        <p>Experience the power of live performance from top SpeakOut artist/activists. Solo-shows, spoken word and poetry, comedy, and film - each program brings vital and inspiring messages to campuses and communities. Join us for a transformative experience, available in person or virtually.</p>
+        
 
-
-          <PerfomancesListStyle>
-            {
-              performances.data.map(performance => (
-                <Performance key={performance.id} performance={{ performance }} />
-              ))
-            }
-          </PerfomancesListStyle>
-        </PerformancesPageStyle>
-      </ContainerBox>
+        <PerfomancesListStyle>
+          {
+            performances.data.map(performance => (
+              <Performance key={performance.id} performance={{ performance }} />
+            ))
+          }
+        </PerfomancesListStyle>
+      </PerformancesPageStyle>
       <NeedHelp />
     </>
   );

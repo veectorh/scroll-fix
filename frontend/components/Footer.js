@@ -13,7 +13,7 @@ export default function Footer() {
           <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }} fullWidth={true}><Link href="#">Sign Up Now</Link></ButtonStyles>
         </div>
         <div className="instagram-section">
-          <h4>Follow us <div className="br" /> On Instagram</h4>
+          <h4>Follow us <br/>On Instagram</h4>
           {/* <div className='instagram-images'>
             <a href="https://www.instagram.com/p/CoczDQrJmEJ/?hl=en" target="_blank" rel="noreferrer">
               <Image
