@@ -61,7 +61,7 @@ const Home = ({ featuredSpeakers, quotes, products }) => {
         </SubHeroStyles>
         <FeaturedSpeakersStyles>
           <div className="featured-intro">
-            <h2>Featured speakers</h2>
+            <h2>Featured Speakers</h2>
             <p>SpeakOut&apos;s mission is to encourage critical and imaginative thinking to address the major inequities of our day and transform a fractured world.</p>
             <ButtonStyles theme={{ main: "#00AFB5" }}><Link href="/speakers">Explore Our Speakers</Link></ButtonStyles>
           </div>
