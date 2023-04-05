@@ -3,6 +3,7 @@ import ButtonStyles from "@/components/styles/ButtonStyles";
 import Link from "next/link";
 import Image from 'next/image';
 import { loadSummerInstitutes } from "@/lib/load-summer-institutes";
+import Head from 'next/head'
 
 const SummerInstituteStyle = styled.section`
   padding: 50px 0 0;
@@ -197,6 +198,9 @@ export default function SummerInstitutePage({ institutes}) {
 
   return (
     <>
+      <Head>
+        <title>SpeakOut | Summer Institute</title>
+      </Head>
       <SummerInstituteStyle>
         <div className="intro">
           <h1>Summer Institute</h1>

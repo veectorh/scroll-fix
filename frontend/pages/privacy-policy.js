@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Head from 'next/head'
 
 const PrivacyPageStyle = styled.section`
   padding: 100px 0 0;
@@ -41,6 +42,9 @@ const PrivacyPageStyle = styled.section`
 export default function PrivacyPolicyPage() {
   return (
     <>
+      <Head>
+        <title>SpeakOut | Privacy Policy</title>
+      </Head>
       <PrivacyPageStyle>
         <h1>Privacy Policy</h1>
         <p>Last updated: January 31, 2023</p>

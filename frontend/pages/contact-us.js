@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Image from 'next/image';
 import Link from 'next/link';
+import Head from 'next/head'
 
 const ContactUsStyle = styled.section`
   padding: 100px 0 0;
@@ -78,112 +79,117 @@ const ContactUsStyle = styled.section`
 
 export default function ContactUsPage() {
   return (
-    <ContactUsStyle>
-      <h1>CONTACT US</h1>
-      <p>Contact us for general inquiries or to learn more about how to get involved in SpeakOut's efforts for social justice.</p>
+    <>
+      <Head>
+        <title>SpeakOut | Contact Us </title>
+      </Head>
+      <ContactUsStyle>
+        <h1>CONTACT US</h1>
+        <p>Contact us for general inquiries or to learn more about how to get involved in SpeakOut's efforts for social justice.</p>
 
-      <div className="contact">
+        <div className="contact">
 
-        <div className="contact-area">
-          <div className="logo-social">
-            <div className='logo'>
-              <Link href="/">
-                <Image
-                  src="/images/speakout-logo-dark.png"
-                  alt="Speakout"
-                  width="258"
-                  height="119"
-                  priority
-                />
-              </Link>
-            </div >
+          <div className="contact-area">
+            <div className="logo-social">
+              <div className='logo'>
+                <Link href="/">
+                  <Image
+                    src="/images/speakout-logo-dark.png"
+                    alt="Speakout"
+                    width="258"
+                    height="119"
+                    priority
+                  />
+                </Link>
+              </div >
+            </div>
+
+            <p>A mission-driven speakers agency<br/> and education institute.</p>
+
+            <div className="contact-info">
+              <div div className="image-info">
+                <div className="image">
+                  <Image
+                    src="/images/location-icon-dark.png"
+                    alt="Address"
+                    width="14"
+                    height="21"
+                    priority
+                  />
+                </div>
+                <div className="info">
+                  <p style={{paddingLeft:"10px"}}>SpeakOut<br/>PO Box 22748<br/>Oakland, CA 94609</p>
+                </div>
+              </div>
+
+              <div className="image-info">
+                <div className="image">
+                  <Image
+                    src="/images/phone-icon-dark.png"
+                    alt="Phone"
+                    width="19"
+                    height="19"
+                    priority
+                  />
+                </div>
+                <div className="info">
+                  <p style={{paddingLeft:"5px"}}><a href="tel:+15106479115">+1 (510) 647-9115</a></p>
+                </div>
+              </div>
+
+              <div className="image-info">
+                <div className="image">
+                  <Image
+                    src='/images/email-icon-dark.png'
+                    alt="Email"
+                    width="24"
+                    height="17"
+                    priority
+                  />
+                </div>
+                <div className="info">
+                  <p style={{paddingLeft:"2px"}}><a href="mailto:info@speakoutnow.org">info@speakoutnow.org</a></p>
+                </div>
+              </div>
+            </div>  
+
+            <div className="logo-social">
+              <div className="social">
+                <a href="https://www.facebook.com/SpeakOutSpeakers" target="_blank" rel="noreferrer">
+                  <Image
+                    src='/images/facebook-dark.png'
+                    alt="Facebook"
+                    width="12"
+                    height="21"
+                  />
+                </a>
+                <a href="https://www.instagram.com/SpeakOutspeakers" target="_blank" rel="noreferrer">
+                  <Image
+                    src='/images/instagram-dark.png'
+                    alt="Instagram"
+                    width="20"
+                    height="20"
+                  />
+                </a>
+                <a href="https://twitter.com/SpeakOutIDEC" target="_blank" rel="noreferrer">
+                  <Image
+                    src="/images/twitter-dark.png"
+                    alt="Twitter"
+                    width="23"
+                    height="19"
+                  />
+                </a>
+              </div>
+            </div>
           </div>
 
-          <p>A mission-driven speakers agency<br/> and education institute.</p>
 
-          <div className="contact-info">
-            <div div className="image-info">
-              <div className="image">
-                <Image
-                  src="/images/location-icon-dark.png"
-                  alt="Address"
-                  width="14"
-                  height="21"
-                  priority
-                />
-              </div>
-              <div className="info">
-                <p style={{paddingLeft:"10px"}}>SpeakOut<br/>PO Box 22748<br/>Oakland, CA 94609</p>
-              </div>
-            </div>
 
-            <div className="image-info">
-              <div className="image">
-                <Image
-                  src="/images/phone-icon-dark.png"
-                  alt="Phone"
-                  width="19"
-                  height="19"
-                  priority
-                />
-              </div>
-              <div className="info">
-                <p style={{paddingLeft:"5px"}}><a href="tel:+15106479115">+1 (510) 647-9115</a></p>
-              </div>
-            </div>
-
-            <div className="image-info">
-              <div className="image">
-                <Image
-                  src='/images/email-icon-dark.png'
-                  alt="Email"
-                  width="24"
-                  height="17"
-                  priority
-                />
-              </div>
-              <div className="info">
-                <p style={{paddingLeft:"2px"}}><a href="mailto:info@speakoutnow.org">info@speakoutnow.org</a></p>
-              </div>
-            </div>
-          </div>  
-
-          <div className="logo-social">
-            <div className="social">
-              <a href="https://www.facebook.com/SpeakOutSpeakers" target="_blank" rel="noreferrer">
-                <Image
-                  src='/images/facebook-dark.png'
-                  alt="Facebook"
-                  width="12"
-                  height="21"
-                />
-              </a>
-              <a href="https://www.instagram.com/SpeakOutspeakers" target="_blank" rel="noreferrer">
-                <Image
-                  src='/images/instagram-dark.png'
-                  alt="Instagram"
-                  width="20"
-                  height="20"
-                />
-              </a>
-              <a href="https://twitter.com/SpeakOutIDEC" target="_blank" rel="noreferrer">
-                <Image
-                  src="/images/twitter-dark.png"
-                  alt="Twitter"
-                  width="23"
-                  height="19"
-                />
-              </a>
-            </div>
+          <div className="form">
+            <iframe src="https://speakout.formstack.com/forms/contact_us" title="Contact Us" width="600" height="400"></iframe>
           </div>
         </div>
-
-
-
-        <div className="form">
-          <iframe src="https://speakout.formstack.com/forms/contact_us" title="Contact Us" width="600" height="400"></iframe>
-        </div>
-      </div>
-    </ContactUsStyle>
+      </ContactUsStyle>
+    </>
   );
 }

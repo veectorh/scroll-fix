@@ -2,6 +2,7 @@ import styled from "styled-components";
 import NeedHelp from "@/components/NeedHelp";
 import SponsoredProject from "@/components/SponsoredProject";
 import { loadSponsoredProjects } from "@/lib/load-sponsored-projects";
+import Head from 'next/head'
 
 const SponsoredProjectsStyle = styled.section`
   padding: 100px 0 0;
@@ -35,6 +36,9 @@ const SponsoredProjectsListStyles = styled.section`
 export default function SponsoredProjectsPage({ projects }) {
   return (
     <>
+      <Head>
+        <title>SpeakOut | Fiscally-Sponsored Projects </title>
+      </Head>
       <SponsoredProjectsStyle>
         <h1>Our Fiscally-Sponsored Projects</h1>
         <p>Explore the important work of our fiscally-sponsored projects and consider supporting their efforts to create positive change in their communities and beyond. Together, we can invest in the movement for social justice and create a more equitable and compassionate world.</p>

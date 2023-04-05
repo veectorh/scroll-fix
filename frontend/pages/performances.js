@@ -2,6 +2,7 @@ import styled from "styled-components";
 import NeedHelp from "@/components/NeedHelp";
 import { loadPerformances } from "@/lib/load-performances";
 import Performance from "@/components/Performance";
+import Head from 'next/head'
 
 const PerformancesPageStyle = styled.section`
   padding: 100px 0 0;
@@ -41,6 +42,9 @@ const PerfomancesListStyle = styled.div`
 export default function PerformancesPage({ performances }) {
   return (
     <>
+      <Head>
+          <title>SpeakOut | Performances</title>
+      </Head>
       <PerformancesPageStyle>
         <h1>Performances</h1>
         <p>Experience the power of live performance from top SpeakOut artist/activists. Solo-shows, spoken word and poetry, comedy, and film - each program brings vital and inspiring messages to campuses and communities. Join us for a transformative experience, available in person or virtually.</p>

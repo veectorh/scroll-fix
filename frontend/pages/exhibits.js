@@ -6,6 +6,7 @@ import quotemark from '../public/images/quote-blue.png';
 import vevent from '../public/images/virtual-events.png'
 import ButtonStyles from '../components/styles/ButtonStyles';
 import { loadAPI } from '@/lib/load-api';
+import Head from 'next/head'
 
 const ExhibitsPageStyle = styled.section`
   padding: 100px 0 0;
@@ -123,6 +124,9 @@ const FamilyExhibitsStyle = styled.section`
 export default function ExhibitsPage({ exhibits, familyExhibits }) {
   return (
     <>
+      <Head>
+        <title>SpeakOut | Exhibits</title>
+      </Head>
       <ExhibitsPageStyle>
         <h1>Exhibits</h1>
         <p>

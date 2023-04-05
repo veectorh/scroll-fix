@@ -11,6 +11,7 @@ import EducationalInstitute from '@/components/EducationalInstitute';
 import QuotesCarousel from '../components/QuotesCarousel';
 import OurStore from '../components/OurStore';
 import ButtonStyles from '../components/styles/ButtonStyles';
+import Head from 'next/head'
 
 const EducationalIntro = styled.div`
   background: #F2F2F2;
@@ -25,6 +26,9 @@ const EducationalIntro = styled.div`
 const Home = ({ featuredSpeakers, quotes, products }) => {
   return (
     <>
+      <Head>
+        <title>SpeakOut | Voices changing lives</title>
+      </Head>
       <div style={{marginTop: -79}}>
         <HeroStyles>
           <h1>SPEAKOUT</h1>

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import NeedHelp from "@/components/NeedHelp";
 import { loadFAQs } from "@/lib/load-faqs";
 import FAQ from "@/components/FAQ";
+import Head from 'next/head'
 
 const FAQStyle = styled.section`
   padding: 100px 0 0;
@@ -70,6 +71,9 @@ const FAQStyle = styled.section`
 export default function FAQPage({ faqs }) {
   return (
     <>
+      <Head>
+        <title>SpeakOut | FAQs </title>
+      </Head>
       <FAQStyle>
         <h1>FREQUENTLY ASKED QUESTIONS</h1>
         <p>Here are brief responses to questions most often asked of us:</p>

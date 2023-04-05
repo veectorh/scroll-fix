@@ -3,6 +3,7 @@ import Image from 'next/image';
 import ButtonStyles from "@/components/styles/ButtonStyles";
 import ReactMarkdown from "react-markdown";
 import { loadAPI } from "@/lib/load-api";
+import Head from 'next/head'
 
 const OriginalFilmStyles = styled.section`
   padding: 100px 0 0;
@@ -70,55 +71,59 @@ const OriginalFilmStyles = styled.section`
 
 export default function OriginalFilmsPage({ films }) {
   return (
-    <OriginalFilmStyles>
-      <div className="intro">
-        <h1>SPEAKOUT ORIGINAL FILMS</h1>
-        <p>Explore our selection of SpeakOut-produced films and learn about the talented speakers and artists involved. Support the next generation of artists and filmmakers by watching and contributing to our films.</p>
-      </div>
-      <div className="movies">
-        {
-          films.data.map(film => (
-            <div className="movie">
-              <div className="movie-image">
-                <Image 
-                  src={film.attributes.image.data.attributes.url}
-                  alt={film.attributes.name}
-                  width={400} 
-                  height={838} 
-                  priority
-                />
+    <>
+      <Head>
+        <title>SpeakOut | Original Films </title>
+      </Head>
+      <OriginalFilmStyles>
+        <div className="intro">
+          <h1>SPEAKOUT ORIGINAL FILMS</h1>
+          <p>Explore our selection of SpeakOut-produced films and learn about the talented speakers and artists involved. Support the next generation of artists and filmmakers by watching and contributing to our films.</p>
+        </div>
+        <div className="movies">
+          {
+            films.data.map(film => (
+              <div className="movie">
+                <div className="movie-image">
+                  <Image 
+                    src={film.attributes.image.data.attributes.url}
+                    alt={film.attributes.name}
+                    width={400} 
+                    height={838} 
+                    priority
+                  />
+                </div>
+                <div className="movie-description">
+                  <h2>{film.attributes.name}</h2>
+                  <ReactMarkdown children={film.attributes.description} />
+                </div>
+                <div className="buttons">
+                  <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: film.attributes.trailer_url === null ? "none" : "flex"}}>
+                    <a href={film.attributes.trailer_url} target="_blank" >Watch the trailer</a>
+                  </ButtonStyles>
+                  <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: film.attributes.buy_url === null ? "none" : "flex"}}>
+                    <a href={film.attributes.buy_url} target="_blank">Buy the film</a>
+                  </ButtonStyles>
+                </div>
               </div>
-              <div className="movie-description">
-                <h2>{film.attributes.name}</h2>
-                <ReactMarkdown children={film.attributes.description} />
-              </div>
-              <div className="buttons">
-                <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: film.attributes.trailer_url === null ? "none" : "flex"}}>
-                  <a href={film.attributes.trailer_url} target="_blank" >Watch the trailer</a>
-                </ButtonStyles>
-                <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: film.attributes.buy_url === null ? "none" : "flex"}}>
-                  <a href={film.attributes.buy_url} target="_blank">Buy the film</a>
-                </ButtonStyles>
-              </div>
+            ))
+          }
+        </div>
+
+        <div className="callout">
+          <h2>Apply to SpeakOut’s Emerging Filmmakers Fund</h2>
+          <p>We support and nurture the next generation of talented and diverse filmmakers by providing grants and resources to help bring their vision to life. Whether you are a budding filmmaker looking to apply, or a film-lover looking to support the cause, we welcome you to join us!</p>
+          <div className="buttons">
+              {/* <ButtonStyles theme={{ main: "#00AFB5" }}>
+                <a href="#" target="_blank">Submit to the fund</a>
+              </ButtonStyles> */}
+              <ButtonStyles theme={{ main: "#00AFB5" }}>
+                <a href="https://www.paypal.com/us/fundraiser/charity/2248447" target="_blank">Donate to the fund</a>
+              </ButtonStyles>
             </div>
-          ))
-        }
-      </div>
-
-      <div className="callout">
-        <h2>Apply to SpeakOut’s Emerging Filmmakers Fund</h2>
-        <p>We support and nurture the next generation of talented and diverse filmmakers by providing grants and resources to help bring their vision to life. Whether you are a budding filmmaker looking to apply, or a film-lover looking to support the cause, we welcome you to join us!</p>
-        <div className="buttons">
-            {/* <ButtonStyles theme={{ main: "#00AFB5" }}>
-              <a href="#" target="_blank">Submit to the fund</a>
-            </ButtonStyles> */}
-            <ButtonStyles theme={{ main: "#00AFB5" }}>
-              <a href="https://www.paypal.com/us/fundraiser/charity/2248447" target="_blank">Donate to the fund</a>
-            </ButtonStyles>
-          </div>
-      </div>
-    </OriginalFilmStyles>
-
+        </div>
+      </OriginalFilmStyles>
+    </>
   );
 }
 

@@ -9,6 +9,7 @@ import { loadSpeakers } from '@/lib/load-speakers';
 import { loadSingleSpeakers } from '@/lib/load-single-speaker';
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from "react-markdown";
+import Head from 'next/head'
 
 const colors = ['#FBECDE', '#F2F2F2', '#F8A151'];
 const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
@@ -183,6 +184,9 @@ export default function SingleSpeaker({ singleSpeaker }) {
 
   return (
     <>
+      <Head>
+        <title>SpeakOut | {speaker?.fullName}</title>
+      </Head>
       <SpeakerHeroStyles>
         <div className="speaker-info">
           <div className="return-link">

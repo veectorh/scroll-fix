@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { loadStaff } from "@/lib/load-staff";
 import { loadDirectors } from "@/lib/load-directors";
 import { useState } from 'react';
+import Head from 'next/head'
 
 
 const OurTeamStyles = styled.section`
@@ -192,6 +193,9 @@ function OurTeamPage({ staff, directors }) {
 
   return (
     <>
+      <Head>
+        <title>SpeakOut | Our Team</title>
+      </Head>
       <OurTeamStyles>
         <h1>Our Team</h1>
         <p>Meet the passionate and dedicated team behind SpeakOut, who are on a mission to create positive change through education, storytelling, and activism.</p>

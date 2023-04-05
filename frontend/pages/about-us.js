@@ -7,6 +7,7 @@ import Link from "next/link";
 import SubHeroStyles from '../components/styles/SubHeroStyles';
 import { loadSponsoredProjects } from "@/lib/load-sponsored-projects";
 import { loadQuotes } from "@/lib/load-quotes";
+import Head from 'next/head'
 
 const AboutPageStyle = styled.section`
   padding: 50px 0 0;
@@ -89,6 +90,9 @@ const SponsoredProjectsListStyles = styled.div`
 export default function AboutUsPage({ projects, quotes }) {
   return (
     <>
+      <Head>
+        <title>SpeakOut |  About Us</title>
+      </Head>
       <AboutPageStyle>
         <div className="intro">
           <h1>About Us</h1>

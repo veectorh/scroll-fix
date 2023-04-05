@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { loadProducts } from "@/lib/load-products";
 import Product from "@/components/Product";
 import ThreeLink from "@/components/ThreeLink";
+import Head from 'next/head'
 
 const StorePageStyles = styled.section`
   padding: 100px 0 0;
@@ -31,6 +32,9 @@ const StorePageStyles = styled.section`
 export default function StorePage({ products }) {
   return (
     <>
+      <Head>
+        <title>SpeakOut | Store</title>
+      </Head>
       <StorePageStyles>
         <h1>SPEAKOUT STORE</h1>
         <p>Find inspiration in our online store, featuring a selection of racial and social justice books, films, event recordings, and curriculum from SpeakOut speakers.</p>

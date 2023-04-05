@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Event from '@/components/Event';
 import ButtonStyles from '../components/styles/ButtonStyles';
 import { loadAPI } from '@/lib/load-api';
+import Head from 'next/head'
 
 const EventsPageStyle = styled.section`
   padding: 100px 0 0;
@@ -129,6 +130,9 @@ const CTAStyleStore = styled.div`
 export default function EventsPage({ events}) {
   return (
     <>
+      <Head>
+        <title>SpeakOut | Virtual Events</title>
+      </Head>
       <EventsPageStyle>
         <h1>Virtual Events</h1>
         <p>
