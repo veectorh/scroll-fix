@@ -43,7 +43,7 @@ export default function InquiryFormPage() {
       </Head>
       <InquiryFormStyle>
         <h1>SPEAKERS INQUIRY FORM</h1>
-        <p>Please submit the form below to request more information on speakers including fees and availability. For immediate assistance, please call 510-647-9115 or email info@speakoutnow.org. For other inquiries, please use our contact form.<br/><br/>
+        <p>Please submit the form below to request more information on speakers including fees and availability. <br/>For immediate assistance, please call 510-647-9115 or email info@speakoutnow.org. <br/>For other inquiries, please use our contact form.<br/><br/>
         
         *Required Field.</p>
 
