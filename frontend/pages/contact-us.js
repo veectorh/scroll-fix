@@ -128,7 +128,7 @@ export default function ContactUsPage() {
                 />
               </div>
               <div className="info">
-                <p style={{paddingLeft:"5px"}}><a href="tel:+15106010182">+1 (510) 601-0182</a></p>
+                <p style={{paddingLeft:"5px"}}><a href="tel:+15106479115">+1 (510) 647-9115</a></p>
               </div>
             </div>
 
