@@ -166,7 +166,6 @@ export const getStaticProps = async (context) => {
 
 
 export default function SingleSpeaker({ singleSpeaker }) {
-  console.log("SPEAKER", singleSpeaker);
   const speaker = singleSpeaker?.data[0]?.attributes;
   const quotes = singleSpeaker.data[0].attributes?.quotes;
   const products = singleSpeaker.data[0]?.attributes?.products?.data;

@@ -68,7 +68,6 @@ const FilmProgramStyle = styled.div`
 
 
 export default function FilmProgram( film ) {
-  console.log("FILM", film);
   const { name, description, artist_name, image, video_url } = film.film.film.attributes;
   const slug = artist_name.data.attributes.fullName.toLowerCase().replace('.', '').split(' ').join('-');
 

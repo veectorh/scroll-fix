@@ -4,7 +4,6 @@ import { loadTopics } from '@/lib/load-topics';
 import Head from 'next/head'
 
 function SpeakersPage({ speakers, topics }) {
-    // console.log("speakers", speakers.data)
     return (
         <div>
             <Head>

@@ -1,6 +1,7 @@
 import ButtonStyles from "@/components/styles/ButtonStyles";
 import HelpStyles from "@/components/styles/HelpStyles";
 import Link from "next/link";
+import Head from 'next/head'
 
 export default function ThankYouPage() {
   return (
