@@ -71,7 +71,7 @@ const Home = ({ featuredSpeakers, quotes, products }) => {
 
 
         <EducationalIntro>
-          <h2>Educational Institute</h2>
+          <h2>Education Institute</h2>
           <p>A digital destination that empowers young people, educators, and professionals through transformative programming featuring our speakers. The goal of our educational programs is to create a more just society.</p>
         </EducationalIntro>
         <EducationalInstitute />
