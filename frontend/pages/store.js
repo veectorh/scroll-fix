@@ -24,9 +24,13 @@ const StorePageStyles = styled.section`
 
   .products {
     display: grid;
-    grid-column-gap: 5px;
+    grid-column-gap: 50px;
     grid-row-gap: 50px;
     grid-template-columns: repeat(auto-fit,minmax(262px,1fr));
+
+    img {
+      width: 100%;
+    }
   }
 
   @media ${device.tablet} {

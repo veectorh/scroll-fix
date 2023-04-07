@@ -55,7 +55,7 @@ const EventsPageStyle = styled.section`
 `;
 
 const EventsListStyle = styled.div`
-  max-width: 1258px;
+    max-width: 1250px; 
   padding-top: 40px;
   margin-bottom: 25px;
 

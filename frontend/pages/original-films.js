@@ -8,7 +8,7 @@ import ContainerBox from "@/components/styles/ContainerBox";
 
 const OriginalFilmStyles = styled.section`
   padding: 100px 0 0;
-  max-width: 1250px;
+  max-width: 1340px;
   margin: 0 auto 40px;
   h1 {
     font-weight: 400;

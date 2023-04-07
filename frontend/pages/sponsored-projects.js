@@ -60,17 +60,19 @@ const SponsoredProjectsListStyles = styled.section`
   column-gap: 30px;
   row-gap: 40px;
 
-  img{
-    width: 100%;
-    height: auto;
-  }
-
+  
   @media ${device.tablet} {
 
     .projects {
       row-gap: 30px;
       padding: 0px;
     }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
   }
 `;
 

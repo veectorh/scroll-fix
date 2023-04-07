@@ -93,7 +93,7 @@ const FilmProgramsPageStyle = styled.section`
 `;
 
 const FilmProgramListStyle = styled.div`
-  max-width: 1258px;
+    max-width: 1250px; 
   padding-top: 40px;
   
   @media ${device.tablet} {

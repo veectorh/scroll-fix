@@ -6,7 +6,7 @@ import ContainerBox from "@/components/styles/ContainerBox";
 
 const InquiryFormStyle = styled.section`
   padding: 100px 0 0;
-  max-width: 1250px;
+  max-width: 1340px;
   margin: 0 auto 40px;
   h1 {
     font-weight: 400;
@@ -19,6 +19,7 @@ const InquiryFormStyle = styled.section`
   p {
     color: #2A2A2A;
     margin: 0 0 0;
+    max-width: 950px;
   }
 
   .form {
@@ -64,9 +65,14 @@ export default function InquiryFormPage() {
     <InquiryFormStyle>
       <ContainerBox>
         <h1>SPEAKERS INQUIRY FORM</h1>
-        <p>Please submit the form below to request more information on speakers including fees and availability. For immediate assistance, please call 510-647-9115 or email info@speakoutnow.org. For other inquiries, please use our contact form.<br /><br />
-
-          *Required Field.</p>
+        <p>Please submit the form below to request more information on speakers including fees and availability.
+          <br />
+          For immediate assistance, please call 510-647-9115 or email info@speakoutnow.org.
+          <br />
+          For other inquiries, please use our contact form.
+          <br />
+          *Required Field.
+        </p>
         <div className="form">
           <iframe src="https://speakout.formstack.com/forms/inquiry_form" title="Inquiry Form" width="600" height="1000"></iframe>
         </div>

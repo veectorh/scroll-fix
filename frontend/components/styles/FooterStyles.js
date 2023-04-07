@@ -33,7 +33,7 @@ const FooterStyles = styled.footer`
     display: flex;
     justify-content: center;
     gap: 40px;
-    padding: 90px 7vw;
+    padding: 40px 7vw;
     background: #00AFB5;
 
     .newsletter {

@@ -86,7 +86,7 @@ const ExhibitsPageStyle = styled.section`
 `;
 
 const ExhibitsListStyle = styled.div`
-  max-width: 1258px;
+    max-width: 1250px; 
   padding-top: 40px;
   margin-bottom: 25px;
 `;
@@ -165,15 +165,7 @@ const FamilyExhibitsStyle = styled.section`
       img {
         border-radius: 20px;
       }
-      h4 {
-        font-family: 'Oswald';
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
-        letter-spacing: 0.05em;
-        color: #2A2A2A;
-        margin: 6px 0px;
-      }
+      
     }
   }
 

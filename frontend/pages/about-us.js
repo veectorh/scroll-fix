@@ -39,7 +39,7 @@ const AboutPageStyle = styled.section`
     color: #000000;
   }
   .intro {
-    max-width: 1250px;
+    max-width: 1340px;
     margin: 0 auto;
     padding: 50px 0 50px;
   }
@@ -127,6 +127,7 @@ const AboutPageStyle = styled.section`
 const SponsoredProjectsListStyles = styled.div`
   background-color: white;
   padding: 40px 20px 60px;
+  
 
   h3 { 
     padding-left: 5vw;
@@ -168,6 +169,24 @@ const SponsoredProjectsListStyles = styled.div`
       padding: 0px;
     }
   }
+
+    @media ${device.tablet} {
+        
+          margin: 0px 36px;
+     
+    }
+  
+    @media ${device.mobileL} {
+          margin: 0px 24px;
+    }
+  
+    @media ${device.mobileM} {
+          margin: 0px 24px;  
+    }
+  
+    @media ${device.mobileS} {
+          margin: 0px 24px;
+    }
 `;
 
 export default function AboutUsPage({ projects, quotes }) {
@@ -211,18 +230,18 @@ export default function AboutUsPage({ projects, quotes }) {
         </ContainerBox>
       </AboutPageStyle>
       <QuotesCarousel quotes={quotes.data} />
-      <ContainerBox>
-        <SponsoredProjectsListStyles>
-          <h3>Our Fiscally-Sponsored Projects</h3>
-          <div className="projects">
-            {
-              projects?.data?.map(project => (
-                <SponsoredProject key={project.id} project={project} />
-              ))
-            }
-          </div >
-        </SponsoredProjectsListStyles>
-      </ContainerBox>
+
+      <SponsoredProjectsListStyles>
+        <h3>Our Fiscally-Sponsored Projects</h3>
+        <div className="projects">
+          {
+            projects?.data?.map(project => (
+              <SponsoredProject key={project.id} project={project} />
+            ))
+          }
+        </div >
+      </SponsoredProjectsListStyles>
+
       <NeedHelp />
     </>
   );

@@ -48,7 +48,7 @@ const ContactUsStyle = styled.section`
 
       .logo-social {
         .logo {
-          margin-bottom: 21px;
+          margin-bottom: 10px;
         }
         .social {
           margin-top: 30px;
