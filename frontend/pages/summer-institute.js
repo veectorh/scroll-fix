@@ -39,7 +39,7 @@ const SummerInstituteStyle = styled.section`
     color: #000000;
   }
   .sub-heading {
-    font-family: 'Fira Sans';
+    font-family: 'Fira Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -93,7 +93,7 @@ const SummerInstituteStyle = styled.section`
           border-radius: 20px;
         }
         .speaker-name {
-          font-family: 'Fira Sans';
+          font-family: 'Fira Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
           font-style: normal;
           font-weight: 400;
           font-size: 14px;
@@ -115,7 +115,7 @@ const SummerInstituteStyle = styled.section`
       flex-wrap: wrap;
       .session {
         .session-description {
-          font-family: 'Fira Sans';
+          font-family: 'Fira Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
           font-style: normal;
           font-weight: 400;
           font-size: 14px;
@@ -163,7 +163,7 @@ const PreviousInstitutesCTA = styled.section`
     margin: 20px 0 0;
   }
   .sub-heading {
-    font-family: 'Fira Sans';
+    font-family: 'Fira Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

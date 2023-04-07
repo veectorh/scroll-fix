@@ -75,7 +75,7 @@ const CTAStyleEvents = styled.div`
     margin: 10px;
   }
   p {
-    font-family: 'Fira Sans';
+    font-family: 'Fira Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -115,7 +115,7 @@ const CTAStyleStore = styled.div`
     margin: 10px;
   }
   p {
-    font-family: 'Fira Sans';
+    font-family: 'Fira Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

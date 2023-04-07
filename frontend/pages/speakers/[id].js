@@ -106,7 +106,7 @@ const SpeakerInfoStyles = styled.section`
     width: 270px;
     margin: 25px 0 0;
     p {
-      font-family: 'Fira Sans', Arial;
+      font-family: 'Fira Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
