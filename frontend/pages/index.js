@@ -53,6 +53,13 @@ const OurStoreStyles = styled.div`
       }
   }
 
+  .desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
   @media ${device.tablet} {
   
     .desktop {
@@ -103,7 +110,7 @@ const Home = ({ featuredSpeakers, quotes, products }) => {
         <ContainerBox>
           <FeaturedSpeakersStyles>
             <div className="featured-intro">
-              <h2>Featured speakers</h2>
+              <h2>Featured Speakers</h2>
               <p>SpeakOut&apos;s mission is to encourage critical and imaginative thinking to address the major inequities of our day and transform a fractured world.</p>
               <ButtonStyles theme={{ main: "#00AFB5" }}><Link href="/speakers">Explore Our Speakers</Link></ButtonStyles>
             </div>
@@ -125,9 +132,11 @@ const Home = ({ featuredSpeakers, quotes, products }) => {
         <EducationalInstitute />
         <QuotesCarousel quotes={quotes.data} />
         <OurStoreStyles>
-          <div className='desktop'>
-            <OurStore products={products} />
-          </div>
+          <ContainerBox>
+            <div className='desktop'>
+              <OurStore products={products} />
+            </div>
+          </ContainerBox>
           <div className='mobile'>
             <OurStoreCarousel products={products} />
           </div>

@@ -8,6 +8,7 @@ const OurStoreStyles = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1100px;
   padding: 50px 0 80px;
   .products {
     display: flex;
@@ -22,12 +23,12 @@ const OurStoreStyles = styled.section`
 `;
 
 const StoreListStyles = styled.section`
-  padding: 40px 0 100px;
+  padding: 0px 0 100px;
   margin: 0 auto;
   display: grid;
   grid-column-gap: 15px;
   grid-row-gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
   @media ${device.tablet} {
     padding: 40px 0 60px;
@@ -44,7 +45,7 @@ const StoreListStyles = styled.section`
 
 export default function OurStore({ products }) {
   return (
-    <ContainerBox>
+    
       <OurStoreStyles>
         <h2>Our Store</h2>
         {/* <div className="products"> */}
@@ -62,6 +63,6 @@ export default function OurStore({ products }) {
           </ButtonStyles>
         </div >
       </OurStoreStyles>
-    </ContainerBox>
+  
   )
 }
