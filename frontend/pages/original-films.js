@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown";
 import { loadAPI } from "@/lib/load-api";
 import { device } from "@/components/device";
 import ContainerBox from "@/components/styles/ContainerBox";
+import Head from 'next/head'
 
 const OriginalFilmStyles = styled.section`
   padding: 100px 0 0;
@@ -148,42 +149,45 @@ const OriginalFilmStyles = styled.section`
 
 export default function OriginalFilmsPage({ films }) {
   return (
-    <OriginalFilmStyles>
-
-      <ContainerBox>
-        <div className="intro">
-          <h1>SPEAKOUT ORIGINAL FILMS</h1>
-          <p>Explore our selection of SpeakOut-produced films and learn about the talented speakers and artists involved. Support the next generation of artists and filmmakers by watching and contributing to our films.</p>
-        </div>
-        <div className="movies">
-          {
-            films.data.map(film => (
-              <div className="movie">
-                <div className="movie-image">
-                  <Image
-                    src={film.attributes.image.data.attributes.url}
-                    alt={film.attributes.name}
-                    width={400}
-                    height={838}
-                    priority
-                  />
+    <>
+      <Head>
+        <title>SpeakOut | Original Films </title>
+      </Head>
+      <OriginalFilmStyles>
+        <ContainerBox>
+          <div className="intro">
+            <h1>SPEAKOUT ORIGINAL FILMS</h1>
+            <p>Explore our selection of SpeakOut-produced films and learn about the talented speakers and artists involved. Support the next generation of artists and filmmakers by watching and contributing to our films.</p>
+          </div>
+          <div className="movies">
+            {
+              films.data.map(film => (
+                <div className="movie">
+                  <div className="movie-image">
+                    <Image 
+                      src={film.attributes.image.data.attributes.url}
+                      alt={film.attributes.name}
+                      width={400} 
+                      height={838} 
+                      priority
+                    />
+                  </div>
+                  <div className="movie-description">
+                    <h2>{film.attributes.name}</h2>
+                    <ReactMarkdown children={film.attributes.description} />
+                  </div>
+                  <div className="buttons">
+                    <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: film.attributes.trailer_url === null ? "none" : "flex"}}>
+                      <a href={film.attributes.trailer_url} target="_blank" >Watch the trailer</a>
+                    </ButtonStyles>
+                    <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: film.attributes.buy_url === null ? "none" : "flex"}}>
+                      <a href={film.attributes.buy_url} target="_blank">Buy the film</a>
+                    </ButtonStyles>
+                  </div>
                 </div>
-                <div className="movie-description">
-                  <h2>{film.attributes.name}</h2>
-                  <ReactMarkdown children={film.attributes.description} />
-                </div>
-                <div className="buttons">
-                  <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: film.attributes.trailer_url === null ? "none" : "flex" }}>
-                    <a href={film.attributes.trailer_url} target="_blank" >Watch the trailer</a>
-                  </ButtonStyles>
-                  <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: film.attributes.buy_url === null ? "none" : "flex" }}>
-                    <a href={film.attributes.buy_url} target="_blank">Buy the film</a>
-                  </ButtonStyles>
-                </div>
-              </div>
-            ))
-          }
-        </div>
+              ))
+            }
+          </div>
       </ContainerBox>
       <div className="callout">
         <h2>Apply to SpeakOut’s Emerging Filmmakers Fund</h2>
@@ -198,7 +202,7 @@ export default function OriginalFilmsPage({ films }) {
         </div>
       </div>
     </OriginalFilmStyles>
-
+    </>
   );
 }
 

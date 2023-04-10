@@ -8,6 +8,8 @@ import ButtonStyles from '../components/styles/ButtonStyles';
 import { loadAPI } from '@/lib/load-api';
 import { device } from '@/components/device';
 import ContainerBox from '@/components/styles/ContainerBox';
+import Head from 'next/head'
+
 const ExhibitsPageStyle = styled.section`
   padding: 100px 0 0;
   max-width: 1250px;
@@ -273,6 +275,9 @@ export default function ExhibitsPage({ exhibits, familyExhibits }) {
   return (
     <>
       <ContainerBox>
+        <Head>
+          <title>SpeakOut | Exhibits</title>
+        </Head>
         <ExhibitsPageStyle>
           <div className="page-detail">
             <h1>Exhibits</h1>

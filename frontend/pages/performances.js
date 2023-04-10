@@ -4,6 +4,8 @@ import { loadPerformances } from "@/lib/load-performances";
 import Performance from "@/components/Performance";
 import { device } from "@/components/device";
 import ContainerBox from "@/components/styles/ContainerBox";
+import Head from 'next/head'
+
 const PerformancesPageStyle = styled.section`
   padding: 100px 0 0;
   max-width: 1250px;
@@ -95,14 +97,15 @@ const PerfomancesListStyle = styled.div`
 export default function PerformancesPage({ performances }) {
   return (
     <>
+      <Head>
+          <title>SpeakOut | Performances</title>
+      </Head>
       <ContainerBox>
         <PerformancesPageStyle>
           <div className="page-detail">
             <h1>Performances</h1>
             <p>Experience the power of live performance from top SpeakOut artist/activists. Solo-shows, spoken word and poetry, comedy, and film - each program brings vital and inspiring messages to campuses and communities. Join us for a transformative experience, available in person or virtually.</p>
           </div>
-
-
           <PerfomancesListStyle>
             {
               performances.data.map(performance => (

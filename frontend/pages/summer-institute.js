@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { loadSummerInstitutes } from "@/lib/load-summer-institutes";
 import { device } from "@/components/device";
 import ContainerBox from "@/components/styles/ContainerBox";
+import Head from 'next/head'
 
 const SummerInstituteStyle = styled.section`
   padding: 50px 0 0;
@@ -41,7 +42,7 @@ const SummerInstituteStyle = styled.section`
     color: #000000;
   }
   .sub-heading {
-    font-family: 'Fira Sans';
+    font-family: 'Fira Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -95,7 +96,7 @@ const SummerInstituteStyle = styled.section`
           border-radius: 20px;
         }
         .speaker-name {
-          font-family: 'Fira Sans';
+          font-family: 'Fira Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
           font-style: normal;
           font-weight: 400;
           font-size: 14px;
@@ -119,7 +120,7 @@ const SummerInstituteStyle = styled.section`
       flex-wrap: wrap;
       .session {
         .session-description {
-          font-family: 'Fira Sans';
+          font-family: 'Fira Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
           font-style: normal;
           font-weight: 400;
           font-size: 14px;
@@ -231,7 +232,7 @@ const PreviousInstitutesCTA = styled.section`
     margin: 20px 0 0;
   }
   .sub-heading {
-    font-family: 'Fira Sans';
+    font-family: 'Fira Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -268,12 +269,12 @@ const PreviousInstituteStyle = styled.div`
   }
 `;
 
-
-export default function SummerInstitutePage({ institutes }) {
-  console.log("INSTITUTES", institutes.data);
-
+export default function SummerInstitutePage({ institutes}) {
   return (
     <>
+      <Head>
+        <title>SpeakOut | Summer Institute</title>
+      </Head>
       <SummerInstituteStyle>
         <ContainerBox>
           <div className="intro">

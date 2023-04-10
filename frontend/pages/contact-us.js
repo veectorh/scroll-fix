@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { device } from "@/components/device";
 import ContainerBox from "@/components/styles/ContainerBox";
+import Head from 'next/head'
+
 const ContactUsStyle = styled.section`
   padding: 100px 0 0;
   max-width: 1250px;
@@ -133,6 +135,9 @@ const ContactUsStyle = styled.section`
 export default function ContactUsPage() {
   return (
     <ContainerBox>
+      <Head>
+        <title>SpeakOut | Contact Us </title>
+      </Head>
       <ContactUsStyle>
         <h1>CONTACT US</h1>
         <p>Contact us for general inquiries or to learn more about how to get involved in SpeakOut's efforts for social justice.</p>
@@ -154,8 +159,8 @@ export default function ContactUsPage() {
                 </Link>
               </div >
             </div>
-
-            <p>A mission-driven speakers agency<br /> and education institute.</p>
+            
+            <p>A mission-driven speakers agency<br/> and education institute.</p>
 
             <div className="contact-info">
               <div div className="image-info">
@@ -166,11 +171,10 @@ export default function ContactUsPage() {
                     width="14"
                     height="21"
                     priority
-
                   />
                 </div>
                 <div className="info">
-                  <p style={{ paddingLeft: "10px" }}>SpeakOut<br />PO Box 22748<br />Oakland, CA 94609</p>
+                  <p style={{paddingLeft:"10px"}}>SpeakOut<br/>PO Box 22748<br/>Oakland, CA 94609</p>
                 </div>
               </div>
 
@@ -185,7 +189,7 @@ export default function ContactUsPage() {
                   />
                 </div>
                 <div className="info">
-                  <p style={{ paddingLeft: "5px" }}><a href="tel:+15106010182">+1 (510) 601-0182</a></p>
+                  <p style={{paddingLeft:"5px"}}><a href="tel:+15106479115">+1 (510) 647-9115</a></p>
                 </div>
               </div>
 
@@ -200,10 +204,10 @@ export default function ContactUsPage() {
                   />
                 </div>
                 <div className="info">
-                  <p style={{ paddingLeft: "2px" }}><a href="mailto:info@speakoutnow.org">info@speakoutnow.org</a></p>
+                  <p style={{paddingLeft:"2px"}}><a href="mailto:info@speakoutnow.org">info@speakoutnow.org</a></p>
                 </div>
               </div>
-            </div>
+            </div>  
 
             <div className="logo-social">
               <div className="social">
@@ -233,7 +237,6 @@ export default function ContactUsPage() {
                 </a>
               </div>
             </div>
-
           </div>
 
           <div className="form">

@@ -5,6 +5,8 @@ import ButtonStyles from '../components/styles/ButtonStyles';
 import { loadAPI } from '@/lib/load-api';
 import ContainerBox from '@/components/styles/ContainerBox';
 import { device } from '@/components/device';
+import Head from 'next/head'
+
 const EventsPageStyle = styled.section`
   padding: 100px 0 0;
   max-width: 1250px;
@@ -102,7 +104,7 @@ const CTAStyleEvents = styled.div`
     margin: 10px;
   }
   p {
-    font-family: 'Fira Sans';
+    font-family: 'Fira Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -164,7 +166,7 @@ const CTAStyleStore = styled.div`
     margin: 10px;
   }
   p {
-    font-family: 'Fira Sans';
+    font-family: 'Fira Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -202,6 +204,9 @@ export default function EventsPage({ events }) {
   return (
     <>
       <ContainerBox>
+        <Head>
+          <title>SpeakOut | Virtual Events</title>
+        </Head>
         <EventsPageStyle>
           <h1>Virtual Events</h1>
           <p>

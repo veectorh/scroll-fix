@@ -14,6 +14,8 @@ import ButtonStyles from '../components/styles/ButtonStyles';
 import OurStoreCarousel from '@/components/OurStoreCrousal';
 import { device } from '@/components/device';
 import ContainerBox from '@/components/styles/ContainerBox';
+import Head from 'next/head'
+
 const EducationalIntro = styled.div`
   background: #F2F2F2;
   text-align: center;
@@ -75,7 +77,10 @@ const OurStoreStyles = styled.div`
 const Home = ({ featuredSpeakers, quotes, products }) => {
   return (
     <>
-      <div style={{ marginTop: -79 }}>
+      <Head>
+        <title>SpeakOut | Voices changing lives</title>
+      </Head>
+      <div style={{marginTop: -79}}>
         <HeroStyles>
           <ContainerBox>
             <h1>SPEAKOUT</h1>
@@ -125,7 +130,7 @@ const Home = ({ featuredSpeakers, quotes, products }) => {
 
         <EducationalIntro>
           <ContainerBox>
-            <h2>Educational Institute</h2>
+            <h2>Education Institute</h2>
             <p>A digital destination that empowers young people, educators, and professionals through transformative programming featuring our speakers. The goal of our educational programs is to create a more just society.</p>
           </ContainerBox>
         </EducationalIntro>

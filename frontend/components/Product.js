@@ -6,8 +6,11 @@ import { device } from './device';
 const ProductStyles = styled.div`
   display: flex;
   flex-direction: column;
-
   /* max-width: 262px; */
+  img {
+      border-radius: 20px;
+  }
+
   .title-price {
     display: flex;
     justify-content: space-between;

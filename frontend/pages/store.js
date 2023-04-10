@@ -4,6 +4,7 @@ import Product from "@/components/Product";
 import ThreeLink from "@/components/ThreeLink";
 import { device } from "@/components/device";
 import ContainerBox from "@/components/styles/ContainerBox";
+import Head from 'next/head'
 
 const StorePageStyles = styled.section`
   padding: 100px 0 0;
@@ -61,6 +62,9 @@ export default function StorePage({ products }) {
   return (
     <>
       <ContainerBox>
+        <Head>
+          <title>SpeakOut | Store</title>
+        </Head>
         <StorePageStyles>
           <h1>SPEAKOUT STORE</h1>
           <p>Find inspiration in our online store, featuring a selection of racial and social justice books, films, event recordings, and curriculum from SpeakOut speakers.</p>

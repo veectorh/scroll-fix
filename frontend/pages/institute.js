@@ -4,6 +4,7 @@ import QuotesCarousel from "@/components/QuotesCarousel";
 import ContainerBox from "@/components/styles/ContainerBox";
 import styled from "styled-components";
 import { device } from "@/components/device";
+import Head from 'next/head'
 
 const InstitutePageStyle = styled.section`
   padding: 100px 0 0;
@@ -61,6 +62,9 @@ export default function InstitutePage() {
   return (
     <>
       <ContainerBox>
+        <Head>
+          <title>SpeakOut | Institute </title>
+        </Head>
         <InstitutePageStyle>
           <h1>EDUCATION INSTITUTE</h1>
           <p>A digital destination that empowers young people, educators, and professionals through transformative programming featuring our speakers. The goal of our educational programs is to create a more just society.</p>

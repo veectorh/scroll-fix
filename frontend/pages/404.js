@@ -2,10 +2,14 @@ import ButtonStyles from "@/components/styles/ButtonStyles";
 import ContainerBox from "@/components/styles/ContainerBox";
 import HelpStyles from "@/components/styles/HelpStyles";
 import Link from "next/link";
+import Head from 'next/head'
 
 export default function ThankYouPage() {
   return (
     <ContainerBox>
+      <Head>
+        <title>SpeakOut | 404</title>
+      </Head>
       <HelpStyles>
         <h1>We couldn't find the page you requested.</h1>
         <p>The page may have been removed, renamed, or made temporarily unavailable.</p>

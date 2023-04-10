@@ -4,6 +4,7 @@ import { loadFAQs } from "@/lib/load-faqs";
 import FAQ from "@/components/FAQ";
 import { device } from "@/components/device";
 import ContainerBox from "@/components/styles/ContainerBox";
+import Head from 'next/head'
 
 const FAQStyle = styled.section`
   padding: 100px 0 0;
@@ -132,6 +133,9 @@ export default function FAQPage({ faqs }) {
   return (
     <>
       <ContainerBox>
+        <Head>
+          <title>SpeakOut | FAQs </title>
+        </Head>
         <FAQStyle>
           <h1>FREQUENTLY ASKED QUESTIONS</h1>
           <p>Here are brief responses to questions most often asked of us:</p>

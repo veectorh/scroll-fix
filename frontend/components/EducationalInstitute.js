@@ -12,7 +12,7 @@ export default function EducationalInstitute() {
         <div className="copy">
           <ContainerBox>
             <div className="copy-container">
-              <h2>E-Course</h2>
+              <h2>E-Courses</h2>
               <p>Learn from leading speakers and experts in our educational, social justice e-courses. Designed for self-paced or group learning, these courses will empower you to make a positive impact on yourself, in your institutions, and in society as a whole.</p>
               <ButtonStyles theme={{ main: "#00AFB5" }}><Link href="/ecourse">Learn More and Sign Up</Link></ButtonStyles>
             </div>

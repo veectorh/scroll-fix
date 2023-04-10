@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { device } from "@/components/device";
 import ContainerBox from "@/components/styles/ContainerBox";
+import Head from 'next/head'
+
 const PrivacyPageStyle = styled.section`
   padding: 100px 0 0;
   max-width: 1250px;
@@ -94,6 +96,9 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <ContainerBox>
+        <Head>
+          <title>SpeakOut | Privacy Policy</title>
+        </Head>
         <PrivacyPageStyle>
           <h1>Privacy Policy</h1>
           <p>Last updated: January 31, 2023</p>

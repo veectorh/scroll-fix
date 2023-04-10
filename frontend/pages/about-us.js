@@ -9,6 +9,7 @@ import { loadSponsoredProjects } from "@/lib/load-sponsored-projects";
 import { loadQuotes } from "@/lib/load-quotes";
 import { device } from "@/components/device";
 import ContainerBox from "@/components/styles/ContainerBox";
+import Head from 'next/head'
 
 const AboutPageStyle = styled.section`
   padding: 50px 0 0;
@@ -192,6 +193,9 @@ const SponsoredProjectsListStyles = styled.div`
 export default function AboutUsPage({ projects, quotes }) {
   return (
     <>
+      <Head>
+        <title>SpeakOut |  About Us</title>
+      </Head>
       <AboutPageStyle>
         <ContainerBox>
           <div className="intro">
@@ -203,7 +207,6 @@ export default function AboutUsPage({ projects, quotes }) {
           <h2 className="about">Our mission is to encourage critical and imaginative thinking to address the major inequities of our day and transform a fractured world.</h2>
           <p className="about white">Our network of speakers, artists, and strategic partners provide experiential learning opportunities and programming through lectures, workshops, professional development and trainings, film screenings, performances and curriculum development. Since our founding in 1990, we have worked with thousands of colleges, universities, K-12 schools and districts, community organizations, government and private sector providing 15,000 programs which advance the humanities and promote critical analysis, creativity, and innovative strategies for 21st-century problem-solving. We have reached over 3 million people nationwide through our network of 35k contacts.</p>
         </SubHeroStyles>
-
         <ContainerBox>
           <h3 className="history">Our History</h3>
           <p className="history-copy">

@@ -6,6 +6,7 @@ import { loadDirectors } from "@/lib/load-directors";
 import { useState } from 'react';
 import { device } from "@/components/device";
 import ContainerBox from "@/components/styles/ContainerBox";
+import Head from 'next/head'
 
 const OurTeamStyles = styled.section`
   padding: 100px 0 0;
@@ -262,11 +263,44 @@ function OurTeamPage({ staff, directors }) {
 
   return (
     <>
+
+      <Head>
+        <title>SpeakOut | Our Team</title>
+      </Head>
       <ContainerBox>
         <OurTeamStyles>
           <h1>Our Team</h1>
           <p>Meet the passionate and dedicated team behind SpeakOut, who are on a mission to create positive change through education, storytelling, and activism.</p>
         </OurTeamStyles>
+
+        <TeamImagesStyles>
+          <div className="heading">
+            <h2><span>Staff</span></h2>
+          </div>
+          <MembersListStyles>
+            {staff.data.map((s, index) => (
+              <TeamMemberStyles
+                key={index}
+                isExpanded={index === expandedIndex}
+                onClick={() => toggleExpansion(index)}
+              >
+                <Image 
+                  src={s.attributes.photo.data?.attributes.url} 
+                  alt={s.attributes.name} 
+                  width={399} 
+                  height={466} 
+                  priority
+                />
+                <div className="speaker-info">
+                  <p className="name">{s.attributes.name}</p>
+                  <p className="tagline">{s.attributes.title}</p>
+                  <p className="description">{s.attributes.description}</p>
+                  <div className="icon">{index === expandedIndex ? '–' : '+'}</div>
+                </div>
+              </TeamMemberStyles>
+            ))}
+          </MembersListStyles>
+        </TeamImagesStyles>
 
         <TeamImagesStyles>
           <div className="heading">

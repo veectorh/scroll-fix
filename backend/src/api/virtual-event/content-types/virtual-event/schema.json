@@ -16,10 +16,6 @@
       "type": "string",
       "required": true
     },
-    "description": {
-      "type": "text",
-      "required": true
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -38,6 +34,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::speaker.speaker"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }

@@ -4,6 +4,8 @@ import FilmProgram from "@/components/FilmProgram";
 import { loadAPI } from "@/lib/load-api";
 import { device } from "@/components/device";
 import ContainerBox from "@/components/styles/ContainerBox";
+import Head from 'next/head'
+
 
 const FilmProgramsPageStyle = styled.section`
   padding: 100px 0 0;
@@ -105,6 +107,9 @@ export default function FilmProgramsPage({ films }) {
   return (
     <>
       <ContainerBox>
+        <Head>
+          <title>SpeakOut | Film Programs</title>
+        </Head>
         <FilmProgramsPageStyle>
           <div className="page-detail">
             <h1>Film Programs</h1>

@@ -11,6 +11,8 @@ import React, { useState, useEffect } from 'react';
 import ReactMarkdown from "react-markdown";
 import ContainerBox from '@/components/styles/ContainerBox';
 import { device } from '@/components/device';
+import Head from 'next/head'
+
 const colors = ['#FBECDE', '#F2F2F2', '#F8A151'];
 const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
 const color = getRandomColor();
@@ -179,7 +181,7 @@ const SpeakerInfoStyles = styled.section`
     width: 270px;
     margin: 25px 0 0;
     p {
-      font-family: 'Fira Sans', Arial;
+      font-family: 'Fira Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
@@ -303,7 +305,6 @@ export const getStaticProps = async (context) => {
 
 
 export default function SingleSpeaker({ singleSpeaker }) {
-  console.log("SPEAKER", singleSpeaker);
   const speaker = singleSpeaker?.data[0]?.attributes;
   const quotes = singleSpeaker.data[0].attributes?.quotes;
   const products = singleSpeaker.data[0]?.attributes?.products?.data;
@@ -321,6 +322,9 @@ export default function SingleSpeaker({ singleSpeaker }) {
 
   return (
     <>
+      <Head>
+        <title>SpeakOut | {speaker?.fullName}</title>
+      </Head>
       <SpeakerHeroStyles>
         <div className="speaker-info page-detail">
 
