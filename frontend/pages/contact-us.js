@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Image from 'next/image';
 import Link from 'next/link';
+import { device } from "@/components/device";
+import ContainerBox from "@/components/styles/ContainerBox";
 import Head from 'next/head'
 
 const ContactUsStyle = styled.section`
@@ -48,7 +50,7 @@ const ContactUsStyle = styled.section`
 
       .logo-social {
         .logo {
-          margin-bottom: 21px;
+          margin-bottom: 10px;
         }
         .social {
           margin-top: 30px;
@@ -60,8 +62,8 @@ const ContactUsStyle = styled.section`
     }
 
     .form {
-      width: 900px;
-
+      max-width: 900px;
+      width: 100%;
       iframe {
         border: none;
         height: 1000px;
@@ -75,11 +77,64 @@ const ContactUsStyle = styled.section`
       }
     }
   }
+
+
+  @media ${device.tablet} {
+    padding: 50px 0 0;
+    h1 {
+     
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+      text-align: left;      
+    }
+
+    p {
+      //styleName: Body Mobile;
+      font-family: Fira Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-align: left;
+    }
+    
+    .contact {
+      flex-direction: column;
+      gap: 40px;
+      .contact-area {
+        max-width: 100%;
+        width: 100%;
+        padding-top: 0px;
+          .logo {
+            width: 136px;
+            height: 62px;
+          }
+      }
+    }
+    .form {
+      .fsBody{
+        padding: 0px !important;
+        color: red;
+      }
+    }
+    .fsForm {
+      .fsSubmit {
+
+      }
+    }
+  }
+
+  @media ${device.mobileL} {
+    padding: 36px 0 0;
+  }
+  
 `;
 
 export default function ContactUsPage() {
   return (
-    <>
+    <ContainerBox>
       <Head>
         <title>SpeakOut | Contact Us </title>
       </Head>
@@ -99,11 +154,12 @@ export default function ContactUsPage() {
                     width="258"
                     height="119"
                     priority
+                    className="logo"
                   />
                 </Link>
               </div >
             </div>
-
+            
             <p>A mission-driven speakers agency<br/> and education institute.</p>
 
             <div className="contact-info">
@@ -183,13 +239,11 @@ export default function ContactUsPage() {
             </div>
           </div>
 
-
-
           <div className="form">
             <iframe src="https://speakout.formstack.com/forms/contact_us" title="Contact Us" width="600" height="400"></iframe>
           </div>
         </div>
       </ContactUsStyle>
-    </>
+    </ContainerBox>
   );
 }

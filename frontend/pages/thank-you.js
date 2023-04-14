@@ -1,11 +1,12 @@
 import ButtonStyles from "@/components/styles/ButtonStyles";
+import ContainerBox from "@/components/styles/ContainerBox";
 import HelpStyles from "@/components/styles/HelpStyles";
 import Link from "next/link";
 import Head from 'next/head'
 
 export default function ThankYouPage() {
   return (
-    <>
+    <ContainerBox>  
       <Head>
         <title>SpeakOut | Thank You</title>
       </Head>
@@ -14,6 +15,6 @@ export default function ThankYouPage() {
         <p>You will now receive updates from SpeakOut.</p>
         <ButtonStyles theme={{ main: "#00AFB5" }}><Link href="/">Back to Home</Link></ButtonStyles>
       </HelpStyles>
-    </>
+    </ContainerBox>
   );
 }

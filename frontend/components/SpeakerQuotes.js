@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 import quotemark from '../public/images/quote.png';
+import { device } from './device';
 
 const QuotesStyles = styled.section`
   background: #F2F2F2;
@@ -43,9 +44,29 @@ const QuotesStyles = styled.section`
       }
     }
   }
+
+  @media ${device.tablet} {
+    .quote-container {
+      padding: 10px 0 120px;
+      img {
+        top: -8px;
+        width: 36px;
+        height: 32px;
+        left: -26px;
+      }
+      .quote-text {
+       
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 24px;
+        letter-spacing: 0.03em;
+        text-align: left;
+      }
+    }
+  }
 `;
 
-export default function SpeakerQuotes( quote ) {
+export default function SpeakerQuotes(quote) {
   return (
     <QuotesStyles>
       <div className="quote-container">

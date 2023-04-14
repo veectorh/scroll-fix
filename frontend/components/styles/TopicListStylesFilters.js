@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { device } from '../device';
-const TopicListStyles = styled.section`
+const TopicListStylesFilter = styled.section`
     display: flex;
     flex-wrap: wrap;
     row-gap: 5px;
@@ -24,6 +24,19 @@ const TopicListStyles = styled.section`
       color: #000000;
       cursor: pointer;
     }
+    @media ${device.tablet} {
+      flex-direction: column;
+      align-items: center;
+      div{
+        width: fit-content;
+        padding: 10px 20px 10px 20px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.085em;
+        text-align: center;
+      }
+    }
 `;
 
-export default TopicListStyles;
+export default TopicListStylesFilter;

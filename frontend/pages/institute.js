@@ -1,7 +1,9 @@
 import EducationalInstitute from "@/components/EducationalInstitute";
 import NeedHelp from "@/components/NeedHelp";
 import QuotesCarousel from "@/components/QuotesCarousel";
+import ContainerBox from "@/components/styles/ContainerBox";
 import styled from "styled-components";
+import { device } from "@/components/device";
 import Head from 'next/head'
 
 const InstitutePageStyle = styled.section`
@@ -36,18 +38,38 @@ const InstitutePageStyle = styled.section`
     color: #2A2A2A;
     margin: 0;
   }
+
+  @media ${device.tablet} {
+    padding: 50px 0 0;
+
+    h1 {
+     
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+      text-align: left;      
+    }
+    
+  }
+
+  @media ${device.mobileL} {
+    padding: 36px 0 0;
+  }
 `;
 
 export default function InstitutePage() {
   return (
     <>
-      <Head>
-        <title>SpeakOut | Institute </title>
-      </Head>
-      <InstitutePageStyle>
-        <h1>EDUCATION INSTITUTE</h1>
-        <p>A digital destination that empowers young people, educators, and professionals through transformative programming featuring our speakers. The goal of our educational programs is to create a more just society.</p>
-      </InstitutePageStyle>
+      <ContainerBox>
+        <Head>
+          <title>SpeakOut | Institute </title>
+        </Head>
+        <InstitutePageStyle>
+          <h1>EDUCATION INSTITUTE</h1>
+          <p>A digital destination that empowers young people, educators, and professionals through transformative programming featuring our speakers. The goal of our educational programs is to create a more just society.</p>
+        </InstitutePageStyle>
+      </ContainerBox>
       <EducationalInstitute />
     </>
   );

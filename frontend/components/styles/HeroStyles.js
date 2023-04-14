@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { device } from '../device';
 const HeroStyles = styled.section`
   text-align: center;
   padding: 278px 0 250px;
@@ -43,6 +43,45 @@ const HeroStyles = styled.section`
     gap: 20px;
     padding: 40px 0;
   }
+  
+  @media ${device.tablet} {
+
+    padding: 140px 0 40px;
+
+    h1 {
+      font-size: 46px;
+      font-weight: 500;
+      line-height: 68px;
+      letter-spacing: 0.05em;
+      text-align: center;
+    }
+
+    .sub-text {
+
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.085em;
+      text-align: center;
+
+    }
+
+    .voices {
+
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-align: center;
+
+    }
+
+    .hero-buttons {
+    align-items: center;
+    flex-direction: column;
+    }
+  }
+
 `;
 
 export default HeroStyles;

@@ -2,13 +2,20 @@ import styled from "styled-components";
 import NeedHelp from "@/components/NeedHelp";
 import FilmProgram from "@/components/FilmProgram";
 import { loadAPI } from "@/lib/load-api";
+import { device } from "@/components/device";
+import ContainerBox from "@/components/styles/ContainerBox";
 import Head from 'next/head'
+
 
 const FilmProgramsPageStyle = styled.section`
   padding: 100px 0 0;
   max-width: 1250px;
   margin: 0 auto 40px;
   background-color: white;
+  
+  .page-detail {
+
+  }
   h1 {
     font-weight: 400;
     font-size: 60px;
@@ -32,31 +39,91 @@ const FilmProgramsPageStyle = styled.section`
     margin: 0;
     max-width: 910px;
   }
+
+
+  @media ${device.tablet} {
+    padding: 50px 0 0;
+
+    h1 {
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+      text-align: left;  
+      margin-bottom : 8px;
+    }
+
+    p {
+      //styleName: Body Mobile;
+      font-family: Fira Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-align: left;
+    }
+  }
+
+  @media ${device.mobileL} {
+    padding: 36px 0 0;
+  }
+
+  @media ${device.tablet} {
+      .page-detail {
+        margin: 0px 36px;
+      }
+  }
+
+  @media ${device.mobileL} {
+      .page-detail {
+        margin: 0px 24px;
+      }
+  }
+
+  @media ${device.mobileM} {
+      .page-detail {
+        margin: 0px 24px;
+      }
+  }
+
+  @media ${device.mobileS} {
+      .page-detail {
+        margin: 0px 24px;
+      }
+  }
+   
 `;
 
 const FilmProgramListStyle = styled.div`
-  max-width: 1258px;
+    max-width: 1250px; 
   padding-top: 40px;
+  
+  @media ${device.tablet} {
+    padding-top: 20px;
+  }
 `;
 
 export default function FilmProgramsPage({ films }) {
   return (
     <>
-      <Head>
-        <title>SpeakOut | Film Programs</title>
-      </Head>
-      <FilmProgramsPageStyle>
-        <h1>Film Programs</h1>
-        <p>Book a film program featuring SpeakOut's award-winning filmmakers - in person or virutally. Explore a variety of cultural and social issues through powerful and thought-provoking films, accompanied by in-depth discussions with the filmmakers themselves. A unique and enriching experience!</p>
-
-        <FilmProgramListStyle>
-          {
-            films.data.map(film => (
-              <FilmProgram key={film.id} film={{ film }} />
-            ))
-          }
-        </FilmProgramListStyle>
-      </FilmProgramsPageStyle>
+      <ContainerBox>
+        <Head>
+          <title>SpeakOut | Film Programs</title>
+        </Head>
+        <FilmProgramsPageStyle>
+          <div className="page-detail">
+            <h1>Film Programs</h1>
+            <p>Book a film program featuring SpeakOut's award-winning filmmakers - in person or virutally. Explore a variety of cultural and social issues through powerful and thought-provoking films, accompanied by in-depth discussions with the filmmakers themselves. A unique and enriching experience!</p>
+          </div>
+          <FilmProgramListStyle>
+            {
+              films.data.map(film => (
+                <FilmProgram key={film.id} film={{ film }} />
+              ))
+            }
+          </FilmProgramListStyle>
+        </FilmProgramsPageStyle>
+      </ContainerBox>
       <NeedHelp />
     </>
   );

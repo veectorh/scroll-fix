@@ -11,6 +11,9 @@ import EducationalInstitute from '@/components/EducationalInstitute';
 import QuotesCarousel from '../components/QuotesCarousel';
 import OurStore from '../components/OurStore';
 import ButtonStyles from '../components/styles/ButtonStyles';
+import OurStoreCarousel from '@/components/OurStoreCrousal';
+import { device } from '@/components/device';
+import ContainerBox from '@/components/styles/ContainerBox';
 import Head from 'next/head'
 
 const EducationalIntro = styled.div`
@@ -21,6 +24,54 @@ const EducationalIntro = styled.div`
     max-width: 898px;
     margin: 0 auto 0px;
   }
+
+  @media ${device.tablet} {
+    margin-bottom: 16px;
+
+    h2 {
+      //styleName: H1 Mobile;
+      font-family: Oswald;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 28px;
+      letter-spacing: 0.085em;
+      text-align: center;
+   
+    }
+  }
+
+`;
+const OurStoreStyles = styled.div`
+
+  .mobile {
+      display: none;
+      h2 {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0.085em;
+        text-align: center;
+        margin-top: 40px;
+      }
+  }
+
+  .desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  @media ${device.tablet} {
+  
+    .desktop {
+      display: none;
+    }
+    .mobile {
+      display: block;
+    }
+  }
+
 `;
 
 const Home = ({ featuredSpeakers, quotes, products }) => {
@@ -31,14 +82,16 @@ const Home = ({ featuredSpeakers, quotes, products }) => {
       </Head>
       <div style={{marginTop: -79}}>
         <HeroStyles>
-          <h1>SPEAKOUT</h1>
-          <p className="sub-text">A mission-driven speakers agency and education institute.</p>
-          <p className="voices">Voices changing lives.</p>
-          <div className="hero-buttons">
-            <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }}><Link href="/speakers">Explore Our Speakers</Link></ButtonStyles>
-            <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }}><Link href="/institute">Explore the Institute</Link></ButtonStyles>
-            <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }}><Link href="#">Watch Our Video <span></span></Link></ButtonStyles>
-          </div>
+          <ContainerBox>
+            <h1>SPEAKOUT</h1>
+            <p className="sub-text">A mission-driven speakers agency and education institute.</p>
+            <p className="voices">Voices changing lives.</p>
+            <div className="hero-buttons">
+              <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }}><Link href="/speakers">Explore Our Speakers</Link></ButtonStyles>
+              <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }}><Link href="/institute">Explore the Institute</Link></ButtonStyles>
+              <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }}><Link href="#">Watch Our Video <span></span></Link></ButtonStyles>
+            </div>
+          </ContainerBox>
         </HeroStyles>
         <SubHeroStyles>
           <h2>We are SpeakOut </h2>
@@ -59,28 +112,40 @@ const Home = ({ featuredSpeakers, quotes, products }) => {
           </div>
           <ButtonStyles theme={{ main: "#00AFB5" }}><Link href="/about-us">learn more about speakout</Link></ButtonStyles>
         </SubHeroStyles>
-        <FeaturedSpeakersStyles>
-          <div className="featured-intro">
-            <h2>Featured Speakers</h2>
-            <p>SpeakOut&apos;s mission is to encourage critical and imaginative thinking to address the major inequities of our day and transform a fractured world.</p>
-            <ButtonStyles theme={{ main: "#00AFB5" }}><Link href="/speakers">Explore Our Speakers</Link></ButtonStyles>
-          </div>
-          <div className="featured-images">
-            { featuredSpeakers.map(speaker => (
+        <ContainerBox>
+          <FeaturedSpeakersStyles>
+            <div className="featured-intro">
+              <h2>Featured Speakers</h2>
+              <p>SpeakOut&apos;s mission is to encourage critical and imaginative thinking to address the major inequities of our day and transform a fractured world.</p>
+              <ButtonStyles theme={{ main: "#00AFB5" }}><Link href="/speakers">Explore Our Speakers</Link></ButtonStyles>
+            </div>
+            <div className="featured-images">
+              {featuredSpeakers.map(speaker => (
                 <Speaker key={speaker.id} speaker={speaker} />
               ))
-            }
-          </div>
-        </FeaturedSpeakersStyles>
-
+              }
+            </div>
+          </FeaturedSpeakersStyles>
+        </ContainerBox>
 
         <EducationalIntro>
-          <h2>Education Institute</h2>
-          <p>A digital destination that empowers young people, educators, and professionals through transformative programming featuring our speakers. The goal of our educational programs is to create a more just society.</p>
+          <ContainerBox>
+            <h2>Education Institute</h2>
+            <p>A digital destination that empowers young people, educators, and professionals through transformative programming featuring our speakers. The goal of our educational programs is to create a more just society.</p>
+          </ContainerBox>
         </EducationalIntro>
         <EducationalInstitute />
         <QuotesCarousel quotes={quotes.data} />
-        <OurStore products={products} />
+        <OurStoreStyles>
+          <ContainerBox>
+            <div className='desktop'>
+              <OurStore products={products} />
+            </div>
+          </ContainerBox>
+          <div className='mobile'>
+            <OurStoreCarousel products={products} />
+          </div>
+        </OurStoreStyles>
       </div>
     </>
   );

@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import ButtonStyles from './styles/ButtonStyles';
-
+import { device } from './device';
 const NeedHelpStyles = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 100px;
   background: rgba(0, 0, 0, 0.9);
-  padding: 40px 0 45px;
+  padding: 40px 20px 45px;
   h3 {
     font-family: 'Oswald';
     font-style: normal;
@@ -20,6 +20,28 @@ const NeedHelpStyles = styled.section`
     color: #00AFB5;
     margin: 0;
   }
+
+  @media ${device.tablet} {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 20px 30px 25px;
+
+    h3 {
+     
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 40px;
+      letter-spacing: 0.03em;
+      text-align: left;
+    }
+
+    
+  }
+  @media ${device.mobileL} {
+    gap: 30px;
+  }
+
 `;
 
 export default function NeedHelp() {

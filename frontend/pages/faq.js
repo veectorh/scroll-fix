@@ -2,6 +2,8 @@ import styled from "styled-components";
 import NeedHelp from "@/components/NeedHelp";
 import { loadFAQs } from "@/lib/load-faqs";
 import FAQ from "@/components/FAQ";
+import { device } from "@/components/device";
+import ContainerBox from "@/components/styles/ContainerBox";
 import Head from 'next/head'
 
 const FAQStyle = styled.section`
@@ -43,6 +45,7 @@ const FAQStyle = styled.section`
         margin: 0;
       }
       .icon {
+        margin-left: 10px;
         color: #F8A151;
         font-size: 55px;
         line-height: 0;
@@ -66,23 +69,83 @@ const FAQStyle = styled.section`
       }
     }
   }
+
+  @media ${device.tablet} {
+    padding: 50px 0 0;
+
+    h1 {
+     
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+      text-align: left;      
+    }
+
+    p {
+      //styleName: Body Mobile;
+      font-family: Fira Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-align: left;
+    }
+
+    .question-answer {
+      .question {
+        padding: 16px;
+        p {
+         
+          font-size: 14px; 
+          font-weight: 500;
+          line-height: 18px;
+          letter-spacing: 0.05em; 
+          text-align: left;
+        }
+
+        .icon {
+        color: #F8A151;
+        font-size: 40px;
+        line-height: 0;
+        font-weight: 320
+        }
+      }
+
+      .answer {
+        padding: 0 16px 16px;
+
+        p {
+          margin: 8px 0;
+        }
+      }
+    }
+  }
+
+  @media ${device.mobileL} {
+    padding: 36px 0 0;
+  }
+
+
 `;
 
 export default function FAQPage({ faqs }) {
   return (
     <>
-      <Head>
-        <title>SpeakOut | FAQs </title>
-      </Head>
-      <FAQStyle>
-        <h1>FREQUENTLY ASKED QUESTIONS</h1>
-        <p>Here are brief responses to questions most often asked of us:</p>
-        {
-          faqs.data.map(faq => (
-            <FAQ question={faq.attributes.question} answer={faq.attributes.answer} key={faq.id} />
-          ))
-        }      
-      </FAQStyle>
+      <ContainerBox>
+        <Head>
+          <title>SpeakOut | FAQs </title>
+        </Head>
+        <FAQStyle>
+          <h1>FREQUENTLY ASKED QUESTIONS</h1>
+          <p>Here are brief responses to questions most often asked of us:</p>
+          {
+            faqs.data.map(faq => (
+              <FAQ question={faq.attributes.question} answer={faq.attributes.answer} key={faq.id} />
+            ))
+          }
+        </FAQStyle>
+      </ContainerBox>
       <NeedHelp />
     </>
   );
