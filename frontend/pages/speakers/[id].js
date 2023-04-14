@@ -156,6 +156,9 @@ const SpeakerInfoStyles = styled.section`
   margin: 50px 0px;
   .left {
     max-width: 715px;
+    h2 {
+      cursor: pointer;
+    }
   }
   .right {
     max-width: 265px;
