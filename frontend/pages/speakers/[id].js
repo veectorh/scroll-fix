@@ -12,6 +12,7 @@ import ReactMarkdown from "react-markdown";
 import ContainerBox from '@/components/styles/ContainerBox';
 import { device } from '@/components/device';
 import Head from 'next/head'
+import RelatedSpeakers from '@/components/RelatedSpeakers';
 
 const colors = ['#FBECDE', '#F2F2F2', '#F8A151'];
 const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
@@ -284,33 +285,12 @@ const SpeakerInfoStyles = styled.section`
   }
 `;
 
-export const getStaticPaths = async () => {
-  const speakers = await loadSpeakers();
-  // create path names with id
-  const paths = speakers?.data?.map(speaker => {
-    return {
-      params: { id: speaker.attributes.slug }
-    }
-  })
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export const getStaticProps = async (context) => {
-  const slug = context.params.id;
-  // fetch data of each user with id 
-  const speaker = await loadSingleSpeakers(slug);
-  // generate pages 
-  return { props: { singleSpeaker: speaker } }
-}
-
-
 export default function SingleSpeaker({ singleSpeaker }) {
   const speaker = singleSpeaker?.data[0]?.attributes;
   const quotes = singleSpeaker.data[0].attributes?.quotes;
   const products = singleSpeaker.data[0]?.attributes?.products?.data;
+  const relatedSpeakers = singleSpeaker?.data[0]?.attributes.related_speakers.data;
+  console.log("RelatedSpeakers", singleSpeaker?.data[0]?.attributes.related_speakers.data)
 
 // PUBLICITY PACKET ISSUE
   // const photos = singleSpeaker.data[0]?.attributes?.publicity_packet?.data[0]?.attributes?.url;
@@ -428,6 +408,30 @@ export default function SingleSpeaker({ singleSpeaker }) {
       <SpeakerQuotesCarousel quotes={quotes} />
       {/* Display OurStore component only if Speaker has a related Product */}
       { products.length === 0 ? null : <OurStore products={products} /> }
+      { relatedSpeakers.length === 0 ? null : <RelatedSpeakers relatedSpeakers={relatedSpeakers} /> }
+      
     </>
   );
+}
+
+export const getStaticPaths = async () => {
+  const speakers = await loadSpeakers();
+  // create path names with id
+  const paths = speakers?.data?.map(speaker => {
+    return {
+      params: { id: speaker.attributes.slug }
+    }
+  })
+  return {
+    paths,
+    fallback: false,
+  }
+}
+
+export const getStaticProps = async (context) => {
+  const slug = context.params.id;
+  // fetch data of each user with id 
+  const speaker = await loadSingleSpeakers(slug);
+  // generate pages 
+  return { props: { singleSpeaker: speaker } }
 }
