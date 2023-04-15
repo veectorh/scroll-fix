@@ -13,6 +13,7 @@ import ContainerBox from '@/components/styles/ContainerBox';
 import { device } from '@/components/device';
 import Head from 'next/head'
 import RelatedSpeakers from '@/components/RelatedSpeakers';
+import Videos from '@/components/Videos';
 
 const colors = ['#FBECDE', '#F2F2F2', '#F8A151'];
 const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
@@ -290,7 +291,8 @@ export default function SingleSpeaker({ singleSpeaker }) {
   const quotes = singleSpeaker.data[0].attributes?.quotes;
   const products = singleSpeaker.data[0]?.attributes?.products?.data;
   const relatedSpeakers = singleSpeaker?.data[0]?.attributes.related_speakers.data;
-  console.log("RelatedSpeakers", singleSpeaker?.data[0]?.attributes.related_speakers.data)
+  const videos = singleSpeaker?.data[0]?.attributes.videos
+  console.log("Videos", videos)
 
 // PUBLICITY PACKET ISSUE
   // const photos = singleSpeaker.data[0]?.attributes?.publicity_packet?.data[0]?.attributes?.url;
@@ -405,6 +407,7 @@ export default function SingleSpeaker({ singleSpeaker }) {
           </div>
         </SpeakerInfoStyles>
       </ContainerBox>
+      <Videos videos={videos} />
       <SpeakerQuotesCarousel quotes={quotes} />
       {/* Display OurStore component only if Speaker has a related Product */}
       { products.length === 0 ? null : <OurStore products={products} /> }

@@ -16,7 +16,6 @@ const RelatedSpeakersStyles = styled.section`
   }
 `;
 export default function RelatedSpeakers({ relatedSpeakers }) {
-  console.log("INSIDE", relatedSpeakers);
   return (
     <RelatedSpeakersStyles>
       <h2>Related Speakers</h2>
