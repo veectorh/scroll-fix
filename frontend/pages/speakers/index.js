@@ -8,6 +8,12 @@ function SpeakersPage({ speakers, topics }) {
         <div>
             <Head>
                 <title>SpeakOut | Our Speakers</title>
+                <meta property="og:title" content="SpeakOut | Our Speakers"/>
+                <meta property="og:description" content="" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.speakoutnow.org/speakers"
+                 />
+                <meta property="og:image" content="/images/speakout-logo-dark.png" />
             </Head>
             <Speakers speakers={speakers.data} topics={topics} error />
         </div>
