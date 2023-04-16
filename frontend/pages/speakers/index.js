@@ -9,11 +9,11 @@ function SpeakersPage({ speakers, topics }) {
             <Head>
                 <title>SpeakOut | Our Speakers</title>
                 <meta property="og:title" content="SpeakOut | Our Speakers"/>
-                <meta property="og:description" content="" />
+                <meta property="og:description" content="Voices Changing Lives" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.speakoutnow.org/speakers"
                  />
-                <meta property="og:image" content="/images/speakout-logo-dark.png" />
+                <meta property="og:image" content="https://speakout-website.s3.amazonaws.com/speakout_logo_dark_c683312f3e.png" />
             </Head>
             <Speakers speakers={speakers.data} topics={topics} error />
         </div>
