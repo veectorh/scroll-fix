@@ -292,6 +292,7 @@ export default function SingleSpeaker({ singleSpeaker }) {
   const products = singleSpeaker.data[0]?.attributes?.products?.data;
   const relatedSpeakers = singleSpeaker?.data[0]?.attributes.related_speakers.data;
   const videos = singleSpeaker?.data[0]?.attributes.videos
+  console.log("YO", speaker);
 
 // PUBLICITY PACKET ISSUE
   // const photos = singleSpeaker.data[0]?.attributes?.publicity_packet?.data[0]?.attributes?.url;
@@ -308,6 +309,11 @@ export default function SingleSpeaker({ singleSpeaker }) {
     <>
       <Head>
         <title>SpeakOut | {speaker?.fullName}</title>
+        <meta property="og:title" content={`SpeakOut | ${speaker.fullName}`} />
+        <meta property="og:description" content={speaker?.tagLine} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://www.speakoutnow.org/speakers/${speaker.slug}`} />
+        <meta property="og:image" content={speaker?.photo.data?.attributes.url} />
       </Head>
       <SpeakerHeroStyles>
         <div className="speaker-info page-detail">
