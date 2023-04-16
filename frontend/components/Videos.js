@@ -9,7 +9,6 @@ const VideoStyles = styled.section`
 `;
 
 export default function Videos({ videos }) {
-  console.log("INSIDE", videos);
   return (
     <VideoStyles>
       <h2>Videos</h2>
