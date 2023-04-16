@@ -278,6 +278,11 @@ export default function ExhibitsPage({ exhibits, familyExhibits }) {
       <ContainerBox>
         <Head>
           <title>SpeakOut | Exhibits</title>
+          <meta property="og:title" content="SpeakOut | Exhibits"/>
+          <meta property="og:description" content="Voices Changing Lives" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://www.speakoutnow.org/exhibits" />
+          <meta property="og:image" content="https://speakout-website.s3.amazonaws.com/speakout_logo_dark_c683312f3e.png" />
         </Head>
         <ExhibitsPageStyle>
           <div className="page-detail">

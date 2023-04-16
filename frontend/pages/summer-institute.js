@@ -274,6 +274,11 @@ export default function SummerInstitutePage({ institutes}) {
     <>
       <Head>
         <title>SpeakOut | Summer Institute</title>
+        <meta property="og:title" content="SpeakOut | Summer Institute"/>
+        <meta property="og:description" content="Voices Changing Lives" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.speakoutnow.org/summer-institute" />
+        <meta property="og:image" content="https://speakout-website.s3.amazonaws.com/speakout_logo_dark_c683312f3e.png" />
       </Head>
       <SummerInstituteStyle>
         <ContainerBox>

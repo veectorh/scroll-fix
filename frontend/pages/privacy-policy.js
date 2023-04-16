@@ -98,6 +98,11 @@ export default function PrivacyPolicyPage() {
       <ContainerBox>
         <Head>
           <title>SpeakOut | Privacy Policy</title>
+          <meta property="og:title" content="SpeakOut | Privacy Policy"/>
+          <meta property="og:description" content="Voices Changing Lives" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://www.speakoutnow.org/privacy-policy" />
+          <meta property="og:image" content="https://speakout-website.s3.amazonaws.com/speakout_logo_dark_c683312f3e.png" />
         </Head>
         <PrivacyPageStyle>
           <h1>Privacy Policy</h1>

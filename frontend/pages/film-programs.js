@@ -109,6 +109,11 @@ export default function FilmProgramsPage({ films }) {
       <ContainerBox>
         <Head>
           <title>SpeakOut | Film Programs</title>
+          <meta property="og:title" content="SpeakOut | Film Programs"/>
+          <meta property="og:description" content="Voices Changing Lives" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://www.speakoutnow.org/film-programs" />
+          <meta property="og:image" content="https://speakout-website.s3.amazonaws.com/speakout_logo_dark_c683312f3e.png" />
         </Head>
         <FilmProgramsPageStyle>
           <div className="page-detail">

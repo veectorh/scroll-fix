@@ -64,6 +64,11 @@ export default function InstitutePage() {
       <ContainerBox>
         <Head>
           <title>SpeakOut | Institute </title>
+          <meta property="og:title" content="SpeakOut | Institute"/>
+          <meta property="og:description" content="Voices Changing Lives" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://www.speakoutnow.org/institute" />
+          <meta property="og:image" content="https://speakout-website.s3.amazonaws.com/speakout_logo_dark_c683312f3e.png" />
         </Head>
         <InstitutePageStyle>
           <h1>EDUCATION INSTITUTE</h1>

@@ -83,6 +83,11 @@ export default function SponsoredProjectsPage({ projects }) {
       <ContainerBox>
         <Head>
           <title>SpeakOut | Fiscally-Sponsored Projects </title>
+          <meta property="og:title" content="SpeakOut | Fiscally-Sponsored Projects"/>
+          <meta property="og:description" content="Voices Changing Lives" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://www.speakoutnow.org/sponsored-projects" />
+          <meta property="og:image" content="https://speakout-website.s3.amazonaws.com/speakout_logo_dark_c683312f3e.png" />
         </Head>
         <SponsoredProjectsStyle>
           <h1>Our Fiscally-Sponsored Projects</h1>

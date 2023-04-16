@@ -195,6 +195,11 @@ export default function AboutUsPage({ projects, quotes }) {
     <>
       <Head>
         <title>SpeakOut |  About Us</title>
+        <meta property="og:title" content="SpeakOut | About Us"/>
+        <meta property="og:description" content="Voices Changing Lives" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.speakoutnow.org/about-us" />
+        <meta property="og:image" content="https://speakout-website.s3.amazonaws.com/speakout_logo_dark_c683312f3e.png" />
       </Head>
       <AboutPageStyle>
         <ContainerBox>

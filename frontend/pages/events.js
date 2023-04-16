@@ -206,6 +206,11 @@ export default function EventsPage({ events }) {
       <ContainerBox>
         <Head>
           <title>SpeakOut | Virtual Events</title>
+          <meta property="og:title" content="SpeakOut | Virtual Events"/>
+          <meta property="og:description" content="Voices Changing Lives" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://www.speakoutnow.org/events" />
+          <meta property="og:image" content="https://speakout-website.s3.amazonaws.com/speakout_logo_dark_c683312f3e.png" />
         </Head>
         <EventsPageStyle>
           <h1>Virtual Events</h1>

@@ -135,6 +135,11 @@ export default function FAQPage({ faqs }) {
       <ContainerBox>
         <Head>
           <title>SpeakOut | FAQs </title>
+          <meta property="og:title" content="SpeakOut | FAQs"/>
+          <meta property="og:description" content="Voices Changing Lives" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://www.speakoutnow.org/faq" />
+          <meta property="og:image" content="https://speakout-website.s3.amazonaws.com/speakout_logo_dark_c683312f3e.png" />
         </Head>
         <FAQStyle>
           <h1>FREQUENTLY ASKED QUESTIONS</h1>

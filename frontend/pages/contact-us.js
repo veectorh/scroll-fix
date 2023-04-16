@@ -137,6 +137,11 @@ export default function ContactUsPage() {
     <ContainerBox>
       <Head>
         <title>SpeakOut | Contact Us </title>
+        <meta property="og:title" content="SpeakOut | Contact Us"/>
+        <meta property="og:description" content="Voices Changing Lives" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.speakoutnow.org/contact-us" />
+        <meta property="og:image" content="https://speakout-website.s3.amazonaws.com/speakout_logo_dark_c683312f3e.png" />
       </Head>
       <ContactUsStyle>
         <h1>CONTACT US</h1>
