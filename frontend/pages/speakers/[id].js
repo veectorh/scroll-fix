@@ -291,8 +291,7 @@ export default function SingleSpeaker({ singleSpeaker }) {
   const quotes = singleSpeaker.data[0].attributes?.quotes;
   const products = singleSpeaker.data[0]?.attributes?.products?.data;
   const relatedSpeakers = singleSpeaker?.data[0]?.attributes.related_speakers.data;
-  const videos = singleSpeaker?.data[0]?.attributes.videos
-  console.log("YO", speaker);
+  const videos = singleSpeaker?.data[0]?.attributes.videos;
 
 // PUBLICITY PACKET ISSUE
   // const photos = singleSpeaker.data[0]?.attributes?.publicity_packet?.data[0]?.attributes?.url;
