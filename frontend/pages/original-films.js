@@ -6,6 +6,8 @@ import { loadAPI } from "@/lib/load-api";
 import { device } from "@/components/device";
 import ContainerBox from "@/components/styles/ContainerBox";
 import Head from 'next/head'
+import VideoModal from "@/components/VideoModal";
+import { useState } from "react";
 
 const OriginalFilmStyles = styled.section`
   padding: 100px 0 0;
@@ -148,6 +150,18 @@ const OriginalFilmStyles = styled.section`
 `;
 
 export default function OriginalFilmsPage({ films }) {
+  const [showModal, setShowModal] = useState(false);
+
+  function handleButtonClick() {
+    setShowModal(true);
+  }
+
+  function handleCloseModal() {
+    setShowModal(false);
+  }
+
+  console.log("FILMS", films);
+
   return (
     <>
       <Head>
@@ -167,7 +181,7 @@ export default function OriginalFilmsPage({ films }) {
           <div className="movies">
             {
               films.data.map(film => (
-                <div className="movie">
+                <div className="movie" key={film.id}>
                   <div className="movie-image">
                     <Image 
                       src={film.attributes.image.data.attributes.url}
@@ -182,9 +196,12 @@ export default function OriginalFilmsPage({ films }) {
                     <ReactMarkdown children={film.attributes.description} />
                   </div>
                   <div className="buttons">
-                    <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: film.attributes.trailer_url === null ? "none" : "flex"}}>
-                      <a href={film.attributes.trailer_url} target="_blank" >Watch the trailer</a>
+                    <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: film.attributes.trailer_url === null ? "none" : "flex"}} onClick={handleButtonClick}>
+                      <a>Watch the trailer</a>
                     </ButtonStyles>
+                    {film.attributes.trailer_url && showModal && (
+                      <VideoModal videoSrc={film.attributes.trailer_url} onClose={handleCloseModal} />
+                    )}
                     <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: film.attributes.buy_url === null ? "none" : "flex"}}>
                       <a href={film.attributes.buy_url} target="_blank">Buy the film</a>
                     </ButtonStyles>
