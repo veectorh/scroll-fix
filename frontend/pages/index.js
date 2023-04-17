@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from 'styled-components';
 import Link from 'next/link';
 import { loadFeaturedSpeakers } from '@/lib/load-featured-speakers';
@@ -8,6 +9,7 @@ import Speaker from '@/components/Speaker';
 import SubHeroStyles from '../components/styles/SubHeroStyles';
 import FeaturedSpeakersStyles from '../components/styles/FeaturedSpeakersStyles';
 import EducationalInstitute from '@/components/EducationalInstitute';
+import VideoModal from "@/components/VideoModal";
 import QuotesCarousel from '../components/QuotesCarousel';
 import OurStore from '../components/OurStore';
 import ButtonStyles from '../components/styles/ButtonStyles';
@@ -75,6 +77,16 @@ const OurStoreStyles = styled.div`
 `;
 
 const Home = ({ featuredSpeakers, quotes, products }) => {
+  const [showModal, setShowModal] = useState(false);
+
+  function handleButtonClick() {
+    setShowModal(true);
+  }
+
+  function handleCloseModal() {
+    setShowModal(false);
+  }
+
   return (
     <>
       <Head>
@@ -94,7 +106,12 @@ const Home = ({ featuredSpeakers, quotes, products }) => {
             <div className="hero-buttons">
               <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }}><Link href="/speakers">Explore Our Speakers</Link></ButtonStyles>
               <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }}><Link href="/institute">Explore the Institute</Link></ButtonStyles>
-              <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }}><Link href="#">Watch Our Video <span></span></Link></ButtonStyles>
+              <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }} onClick={handleButtonClick}>
+                <a>Watch Our Video <span></span></a>
+              </ButtonStyles>
+              {showModal && (
+                <VideoModal videoSrc="https://www.youtube.com/watch?v=op0SFgqziP4" onClose={handleCloseModal} />
+              )}
             </div>
           </ContainerBox>
         </HeroStyles>

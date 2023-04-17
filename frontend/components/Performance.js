@@ -171,7 +171,6 @@ export default function Performance(performance) {
 
   const { name, description, artist_name, image, video_url } = performance.performance.performance.attributes;
   const slug = artist_name.data.attributes.fullName.toLowerCase().replace('.', '').split(' ').join('-');
-  console.log("URL", video_url);
 
   return (
     <PerformanceStyle>
