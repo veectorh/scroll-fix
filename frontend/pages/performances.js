@@ -5,6 +5,7 @@ import Performance from "@/components/Performance";
 import { device } from "@/components/device";
 import ContainerBox from "@/components/styles/ContainerBox";
 import Head from 'next/head'
+import { useState } from "react";
 
 const PerformancesPageStyle = styled.section`
   padding: 100px 0 0;
@@ -95,6 +96,16 @@ const PerfomancesListStyle = styled.div`
 `;
 
 export default function PerformancesPage({ performances }) {
+  const [showModal, setShowModal] = useState(false);
+
+  function handleButtonClick() {
+    setShowModal(true);
+  }
+
+  function handleCloseModal() {
+    setShowModal(false);
+  }
+
   return (
     <>
       <Head>
@@ -114,7 +125,7 @@ export default function PerformancesPage({ performances }) {
           <PerfomancesListStyle>
             {
               performances.data.map(performance => (
-                <Performance key={performance.id} performance={{ performance }} />
+                <Performance key={performance.id} performance={{ performance }} onClose={handleCloseModal} onClick={handleButtonClick} showModal={showModal} />
               ))
             }
           </PerfomancesListStyle>

@@ -5,7 +5,7 @@ import { loadAPI } from "@/lib/load-api";
 import { device } from "@/components/device";
 import ContainerBox from "@/components/styles/ContainerBox";
 import Head from 'next/head'
-
+import { useState } from "react";
 
 const FilmProgramsPageStyle = styled.section`
   padding: 100px 0 0;
@@ -104,6 +104,16 @@ const FilmProgramListStyle = styled.div`
 `;
 
 export default function FilmProgramsPage({ films }) {
+  const [showModal, setShowModal] = useState(false);
+
+  function handleButtonClick() {
+    setShowModal(true);
+  }
+
+  function handleCloseModal() {
+    setShowModal(false);
+  }
+
   return (
     <>
       <ContainerBox>
@@ -123,7 +133,7 @@ export default function FilmProgramsPage({ films }) {
           <FilmProgramListStyle>
             {
               films.data.map(film => (
-                <FilmProgram key={film.id} film={{ film }} />
+                <FilmProgram key={film.id} film={{ film }} onClose={handleCloseModal} onClick={handleButtonClick} showModal={showModal} />
               ))
             }
           </FilmProgramListStyle>

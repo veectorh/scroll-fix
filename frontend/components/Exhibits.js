@@ -3,6 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SecondButtonStyles from '../components/styles/SecondButtonStyles';
 import { device } from "./device";
+import VideoModal from "@/components/VideoModal";
+import { useState } from "react";
+
 const ExhibitStyle = styled.div`
   background-color: #F2F2F2;
   display: flex;
@@ -155,6 +158,15 @@ export default function Exhibit(exhibit) {
   const { name, description, artist_name, image, video_url } = exhibit.exhibit.exhibit.attributes;
   const slug = artist_name.data.attributes.fullName.toLowerCase().replace('.', '').split(' ').join('-');
 
+  const [showModal, setShowModal] = useState(false);
+
+  function handleButtonClick() {
+    setShowModal(true);
+  }
+
+  function handleCloseModal() {
+    setShowModal(false);
+  }
 
   return (
     <ExhibitStyle>
@@ -167,9 +179,12 @@ export default function Exhibit(exhibit) {
           priority
         />
         <div className="buttons">
-          <SecondButtonStyles theme={{ main: "#00AFB5" }} className="test">
-            <Link href={video_url === null ? "/#" : video_url}>Watch a Clip</Link>
+          <SecondButtonStyles theme={{ main: "#00AFB5" }} className="test" style={{ display: video_url === null ? "none" : "flex"}} onClick={handleButtonClick}>
+            <a>Watch a Clip</a>
           </SecondButtonStyles>
+          {video_url && showModal && (
+            <VideoModal videoSrc={video_url} onClose={handleCloseModal} />
+          )}
           <SecondButtonStyles theme={{ main: "#00AFB5" }} className="test">
             <Link href="/inquiry-form">Request Info</Link>
           </SecondButtonStyles>
