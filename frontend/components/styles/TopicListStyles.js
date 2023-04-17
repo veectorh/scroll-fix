@@ -16,7 +16,7 @@ const TopicListStyles = styled.section`
       -moz-border-radius: 20px;
       -webkit-border-radius: 20px;
       padding: 0 10px;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 400;
       line-height: 22px;
       text-align: center;
