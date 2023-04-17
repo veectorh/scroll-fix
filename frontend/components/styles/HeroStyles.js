@@ -3,9 +3,17 @@ import { device } from '../device';
 const HeroStyles = styled.section`
   text-align: center;
   padding: 278px 0 250px;
-  background: #30E8BF;
+  /* background: #30E8BF;
   background: -webkit-linear-gradient(to left, #FF8235, #30E8BF);
-  background: linear-gradient(to left, #FF8235, #30E8BF); 
+  background: linear-gradient(to left, #FF8235, #30E8BF);  */
+  background-color:hsla(181,100%,35%,1);
+background-image:
+radial-gradient(at 2% 13%, hsla(0,0%,100%,0.1) 0px, transparent 50%),
+radial-gradient(at 98% 6%, hsla(181,78%,18%,1) 0px, transparent 50%),
+radial-gradient(at 39% 40%, hsla(28,92%,64%,0.67) 0px, transparent 50%),
+radial-gradient(at 74% 5%, hsla(181,78%,18%,1) 0px, transparent 50%),
+radial-gradient(at 28% 7%, hsla(28,92%,64%,1) 0px, transparent 50%),
+radial-gradient(at 19% 70%, hsla(181,100%,35%,1) 0px, transparent 50%);
   h1 {
     font-family: "Oswald", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 80px;
