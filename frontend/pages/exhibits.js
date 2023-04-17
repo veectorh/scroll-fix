@@ -10,6 +10,7 @@ import { loadAPI } from '@/lib/load-api';
 import { device } from '@/components/device';
 import ContainerBox from '@/components/styles/ContainerBox';
 import Head from 'next/head'
+import { useState } from "react";
 
 const ExhibitsPageStyle = styled.section`
   padding: 100px 0 0;
@@ -273,6 +274,16 @@ const FamilyExhibitsStyle = styled.section`
 `;
 
 export default function ExhibitsPage({ exhibits, familyExhibits }) {
+  const [showModal, setShowModal] = useState(false);
+
+  function handleButtonClick() {
+    setShowModal(true);
+  }
+
+  function handleCloseModal() {
+    setShowModal(false);
+  }
+
   return (
     <>
       <ContainerBox>
@@ -294,7 +305,7 @@ export default function ExhibitsPage({ exhibits, familyExhibits }) {
           <ExhibitsListStyle>
             {
               exhibits.data.map(exhibit => (
-                <Exhibit key={exhibit.id} exhibit={{ exhibit }} />
+                <Exhibit key={exhibit.id} exhibit={{ exhibit }}  onClose={handleCloseModal} onClick={handleButtonClick} showModal={showModal} />
               ))
             }
           </ExhibitsListStyle>
