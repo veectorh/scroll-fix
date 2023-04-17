@@ -160,8 +160,6 @@ export default function OriginalFilmsPage({ films }) {
     setShowModal(false);
   }
 
-  console.log("FILMS", films);
-
   return (
     <>
       <Head>
