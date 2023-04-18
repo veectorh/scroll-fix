@@ -59,12 +59,14 @@ const EventStyle = styled.div`
     gap: 20px;
     padding-top: 30px;
   }
+
   .artist-image {
     img {
       object-fit: cover;
       border-radius: 20px;
     }
   }
+
   .artist-description {
     display: flex;
     flex-direction: column;
@@ -122,7 +124,6 @@ const EventStyle = styled.div`
       }
     }
 
-
     .image-buttons {
     max-width: 100%;
       img {
@@ -130,13 +131,14 @@ const EventStyle = styled.div`
         height: auto;
       }
     }
+
+    .artist {
+      display: flex;
+      gap: 16px;
+      padding-top: 20px;
+    }
   }
 
-  .artist {
-    display: flex;
-    gap: 16px;
-    padding-top: 20px;
-  }
 `;
 
 export default function Event(event) {

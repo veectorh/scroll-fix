@@ -72,7 +72,6 @@ const CTASectionStyle = styled.section`
   justify-content: space-between;
   @media ${device.tablet} {
     flex-direction: column;
-    padding-bottom: 36px;
   }
 `;
 
