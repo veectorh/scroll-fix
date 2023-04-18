@@ -292,13 +292,9 @@ export default function SingleSpeaker({ singleSpeaker }) {
   const products = singleSpeaker.data[0]?.attributes?.products?.data;
   const relatedSpeakers = singleSpeaker?.data[0]?.attributes.related_speakers.data;
   const videos = singleSpeaker?.data[0]?.attributes.videos;
+  const photos = singleSpeaker.data[0]?.attributes?.publicity_packet?.data?.[0]?.attributes?.url;
 
-// PUBLICITY PACKET ISSUE
-  // const photos = singleSpeaker.data[0]?.attributes?.publicity_packet?.data[0]?.attributes?.url;
   const [showAbout, setShowAbout] = useState(true);
-  // console.log("PRODUCTS", products);
-  // console.log("PHOTOSDOWNLOWD", photos);
-  // console.log("Empty", products.length === 0);
 
   let styleImage = {
     backgroundImage: "url(" + speaker?.photo.data?.attributes.url + ")",
@@ -337,21 +333,23 @@ export default function SingleSpeaker({ singleSpeaker }) {
               </Link>
             </ButtonStyles>
 
-{/* PUBLICITY PACKET ISSUE */}
-            {/* <ButtonStyles theme={{ main: "#00AFB5;" }} style={{ display: photos === null ? "none" : "flex"}}>
-              <Link href={photos}>
-                Photos
-                <span className="icon">
-                  <Image
-                    src='/images/download-icon.png'
-                    alt="Download"
-                    width={16}
-                    height={16}
-                    priority
-                  />
-                </span>
-              </Link>
-            </ButtonStyles> */}
+            { photos && (
+              <ButtonStyles theme={{ main: "#00AFB5;" }} style={{ display: photos === null ? "none" : "flex"}}>
+                <Link href={photos}>
+                  Photos
+                  <span className="icon">
+                    <Image
+                      src='/images/download-icon.png'
+                      alt="Download"
+                      width={16}
+                      height={16}
+                      priority
+                    />
+                  </span>
+                </Link>
+              </ButtonStyles>
+            )}
+            
           </div>
         </div>
         <div className="speaker-image" style={styleImage}>
