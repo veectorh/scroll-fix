@@ -4,6 +4,8 @@ import VideoModal from "@/components/VideoModal";
 import Image from "next/image";
 import ContainerBox from "./styles/ContainerBox";
 import { device } from "./device";
+import Video from "./Video";
+
 const VideoStyles = styled.section`
   display: flex;
   flex-direction: column;
@@ -12,6 +14,7 @@ const VideoStyles = styled.section`
 
   .videos {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
     
@@ -38,14 +41,7 @@ const VideoStyles = styled.section`
       }
     }
   } 
-  
 `;
-
-function getYoutubeImage(url) {
-  // https://img.youtube.com/vi/<insert-youtube-video-id-here>/hqdefault.jpg
-  const videoId = new URL(url).searchParams.get("v");
-  return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
-}
 
 export default function Videos({ videos }) {
   const [showModal, setShowModal] = useState(false);
@@ -61,22 +57,11 @@ export default function Videos({ videos }) {
   return (
     <ContainerBox>
       <VideoStyles>
-        {/* <h2>Videos</h2> */}
         <div className="videos">
           {
-            videos.map(video => (
-              <div className="video-container" key={video.id} >
-                <div className="video" onClick={handleButtonClick}>
-                  <img src={getYoutubeImage(video.video_url)} width={262} className="thumbnail" />
-                  <Image src="/images/orange-play-button.png" width="64" height="64" className="play" alt="Play" />
-                  <p>{video.video_name}</p>
-                </div>
-                {video.video_url && showModal && (
-                  <VideoModal videoSrc={video.video_url} onClose={handleCloseModal} />
-                )}
-              </div>
+            videos.map(video => (  
+              <Video key={video.id} video={video} onClose={handleCloseModal} onClick={handleButtonClick} showModal={showModal} />
             ))
-
           }
         </div>
       </VideoStyles>
