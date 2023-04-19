@@ -49,6 +49,12 @@ const InquiryFormStyle = styled.section`
       letter-spacing: 0.05em;
       text-align: left;      
     }  
+
+    .form {
+      iframe {
+         height: 2800px;
+      }
+    }
   }
 
   @media ${device.mobileL} {
@@ -61,7 +67,7 @@ export default function InquiryFormPage() {
     <>
       <Head>
         <title>SpeakOut | Inquiry Form</title>
-        <meta property="og:title" content="SpeakOut | Inquiry Form"/>
+        <meta property="og:title" content="SpeakOut | Inquiry Form" />
         <meta property="og:description" content="Voices Changing Lives" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.speakoutnow.org/inquiry-form" />
@@ -70,12 +76,12 @@ export default function InquiryFormPage() {
       <InquiryFormStyle>
         <ContainerBox>
           <h1>SPEAKERS INQUIRY FORM</h1>
-          <p>Please submit the form below to request more information on speakers including fees and availability. <br/>For immediate assistance, please call 510-647-9115 or email info@speakoutnow.org. <br/>For other inquiries, please use our contact form.<br/><br/>
+          <p>Please submit the form below to request more information on speakers including fees and availability. <br />For immediate assistance, please call 510-647-9115 or email info@speakoutnow.org. <br />For other inquiries, please use our contact form.<br /><br />
 
-          *Required Field.</p>
+            *Required Field.</p>
 
           <div className="form">
-            <iframe src="https://speakout.formstack.com/forms/inquiry_form" title="Inquiry Form" width="600" height="1000"></iframe>
+            <iframe src="https://speakout.formstack.com/forms/inquiry_form" title="Inquiry Form" width="600" ></iframe>
           </div>
         </ContainerBox>
       </InquiryFormStyle>

@@ -12,7 +12,7 @@ import Link from 'next/link';
 
 const SpeakersPageStyle = styled.section`
     padding: 100px 0 0;
-    max-width: 1250px;
+    max-width: 1340px;
     margin: 0 auto;
     position: relative;
     h1 {
@@ -127,7 +127,7 @@ const SpeakersPageStyle = styled.section`
         z-index: 99;
         height: 100vh;
         overflow: scroll;
-        padding-bottom: 250px;
+        padding-bottom: 200px;
       }
       .showFilters .filter-description {
         border-radius: 20px 20px 0px 0px;
@@ -150,7 +150,7 @@ const SpeakersPageStyle = styled.section`
         width: 100%;
         padding: 16px 0px;
         position: fixed;
-        bottom: 44px;
+        bottom: 0px;
         background-color: white;
         border-top: 1px solid #000000
       }
@@ -305,9 +305,9 @@ export default function Speakers(speakers, topics, error) {
             </div>
             <div className="filter-btn">
               <ContainerBox>
-                <SecondButtonStyles theme={{ main: "#00AFB5" }} className="test">
-                  <Link href={'/'} onClick={e => e.preventDefault()}>
-                    show 30 results
+                <SecondButtonStyles onClick={() => setExpandedIndex(-1)} theme={{ main: "#00AFB5" }} className="test">
+                  <Link href={'/'} onClick={e => e.preventDefault()}> 
+                    show {topicsList.filter(topic => topic.selected == true).length > 0 ? topicsList.filter(topic => topic.selected == true).length : topicsList.length } results
                   </Link>
                 </SecondButtonStyles>
               </ContainerBox>

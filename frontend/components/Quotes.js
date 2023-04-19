@@ -51,7 +51,7 @@ const QuotesStyles = styled.section`
         top: -8px;
         width: 36px;
         height: 32px;
-        left: -26px;
+        left: -15px;
       }
       .quote-text {
        

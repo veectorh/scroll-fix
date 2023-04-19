@@ -11,6 +11,8 @@ const RelatedSpeakersStyles = styled.section`
   .speakers {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
   }

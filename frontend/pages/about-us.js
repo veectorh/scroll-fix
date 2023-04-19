@@ -40,7 +40,7 @@ const AboutPageStyle = styled.section`
     color: #000000;
   }
   .intro {
-    max-width: 1340px;
+    max-width: 1250px;
     margin: 0 auto;
     padding: 50px 0 50px;
   }

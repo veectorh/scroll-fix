@@ -222,6 +222,7 @@ const TeamMemberStyles = styled.div`
 
   @media ${device.tablet} {
   .speaker-info {
+    height: ${({ isExpanded }) => (isExpanded ? '100%' : '74px')};
     .name {
       font-size: 16px;
       font-weight: 500;

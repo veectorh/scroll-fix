@@ -6,7 +6,7 @@ import { device } from './device';
 const ProductStyles = styled.div`
   display: flex;
   flex-direction: column;
-  /* max-width: 262px; */
+  max-width: 262px;
   img {
       border-radius: 20px;
   }
@@ -74,8 +74,9 @@ const ProductStyles = styled.div`
     }
   }
   }
-  @media ${device.mobileL} {
+  @media ${device.mobile} {
 
+    max-width: 100%;
     img {
       width: 100%;
       height: 100%;
@@ -91,8 +92,8 @@ export default function Product({ product }) {
         <Image
           src={product.attributes.image.data.attributes.url}
           alt="Facebook"
-          width={300}
-          height={300}
+          width={262}
+          height={262}
         />
       </a>
       <div className="title-price">

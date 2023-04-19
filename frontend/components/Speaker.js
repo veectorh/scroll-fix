@@ -56,6 +56,8 @@ const SpeakerStyles = styled.div`
         height: auto;
       }
       .speaker-info {
+        bottom: 4px;
+        border-bottom-left-radius: 20px;
         .name {
           font-size: 16px;
           font-weight: 500;

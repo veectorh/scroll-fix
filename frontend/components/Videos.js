@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { useState } from "react";
 import VideoModal from "@/components/VideoModal";
 import Image from "next/image";
-
+import ContainerBox from "./styles/ContainerBox";
+import { device } from "./device";
 const VideoStyles = styled.section`
   display: flex;
   flex-direction: column;
@@ -11,6 +12,7 @@ const VideoStyles = styled.section`
 
   .videos {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     
     .video {
@@ -35,7 +37,8 @@ const VideoStyles = styled.section`
         border-radius: 20px;
       }
     }
-  }
+  } 
+  
 `;
 
 function getYoutubeImage(url) {
@@ -56,25 +59,27 @@ export default function Videos({ videos }) {
   }
 
   return (
-    <VideoStyles>
-      {/* <h2>Videos</h2> */}
-      <div className="videos">
-        {
-          videos.map(video => (  
-            <div className="video-container" key={video.id} >
-              <div className="video" onClick={handleButtonClick}>
-                <img src={getYoutubeImage(video.video_url)} width={262} className="thumbnail" />
-                <Image src="/images/orange-play-button.png" width="64" height="64" className="play" alt="Play" />
-                <p>{video.video_name}</p>
+    <ContainerBox>
+      <VideoStyles>
+        {/* <h2>Videos</h2> */}
+        <div className="videos">
+          {
+            videos.map(video => (
+              <div className="video-container" key={video.id} >
+                <div className="video" onClick={handleButtonClick}>
+                  <img src={getYoutubeImage(video.video_url)} width={262} className="thumbnail" />
+                  <Image src="/images/orange-play-button.png" width="64" height="64" className="play" alt="Play" />
+                  <p>{video.video_name}</p>
+                </div>
+                {video.video_url && showModal && (
+                  <VideoModal videoSrc={video.video_url} onClose={handleCloseModal} />
+                )}
               </div>
-              {video.video_url && showModal && (
-                <VideoModal videoSrc={video.video_url} onClose={handleCloseModal} />
-              )}
-            </div>    
-          ))
-          
-        }
-      </div>
-    </VideoStyles>
+            ))
+
+          }
+        </div>
+      </VideoStyles>
+    </ContainerBox>
   )
 }

@@ -75,7 +75,7 @@ const ExhibitStyle = styled.div`
       align-items: center;
       justify-content:  flex-end;
     .btn {
-      width: calc(100% - 102px);
+      width: calc(100% - 100px);
     }
   }
 
@@ -91,6 +91,7 @@ const ExhibitStyle = styled.div`
   @media ${device.laptop} {
     flex-direction: column;
     .btn-container {
+      margin-top: 14px;
       .btn {
         width: 100%;
       }
@@ -111,6 +112,10 @@ const ExhibitStyle = styled.div`
   @media ${device.tablet} {
     padding: 24px 24px;
     gap: 16px;
+
+    .btn-container {
+      margin-top: 0px;
+    }
 
     h2 {
       font-size: 16px;
@@ -179,7 +184,7 @@ export default function Exhibit(exhibit) {
           priority
         />
         <div className="buttons">
-          <SecondButtonStyles theme={{ main: "#00AFB5" }} className="test" style={{ display: video_url === null ? "none" : "flex"}} onClick={handleButtonClick}>
+          <SecondButtonStyles theme={{ main: "#00AFB5" }} className="test" style={{ display: video_url === null ? "none" : "flex" }} onClick={handleButtonClick}>
             <a>Watch a Clip</a>
           </SecondButtonStyles>
           {video_url && showModal && (

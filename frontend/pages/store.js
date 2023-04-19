@@ -25,9 +25,9 @@ const StorePageStyles = styled.section`
 
   .products {
     display: grid;
-    grid-column-gap: 67px;
+    grid-column-gap: 5px;
     grid-row-gap: 50px;
-    grid-template-columns: repeat(auto-fit,minmax(210px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(262px, 1fr));
 
     img {
       width: 100%;
