@@ -55,6 +55,11 @@ const SpeakersPageStyle = styled.section`
         display: none;
     }
 
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
     @media ${device.tablet} {
     padding: 50px 0 0;
       h1 {
@@ -252,7 +257,7 @@ export default function Speakers(speakers, topics, error) {
                   <div className="filter-description-title">
                     <h4 style={{ width: '210px' }}>Filter Speakers by Topic</h4>
                   </div>
-                  <p>Our extensive roster covers a range of topics, budgets, and needs. Filter below or if you need help or recommendations, reach out here.</p>
+                  <p>Our extensive roster covers a range of topics, budgets, and needs. Filter below or if you need help or recommendations, <Link href="/inquiry-form">reach&nbsp;out&nbsp;here</Link>.</p>
                 </div>
                 <TopicListStyles>
                   {
