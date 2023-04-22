@@ -15,7 +15,7 @@ import Head from 'next/head'
 import RelatedSpeakers from '@/components/RelatedSpeakers';
 import Videos from '@/components/Videos';
 
-const colors = ['#FBECDE', '#F2F2F2', '#F8A151'];
+const colors = ['#FBECDE', '#F2F2F2', '#E2EAEA'];
 const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
 const color = getRandomColor();
 
