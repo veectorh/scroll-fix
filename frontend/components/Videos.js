@@ -8,7 +8,7 @@ const VideoStyles = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 0 80px;
+  padding: 0 0 50px;
 
   .videos {
     display: flex;

@@ -173,8 +173,6 @@ const SpeakerInfoStyles = styled.section`
     border-bottom: 1px solid #000000;
   }
   .content {
-    padding-bottom: 75px;
-
     p {
       white-space: pre-line;
     }
