@@ -152,7 +152,7 @@ const SpeakersPageStyle = styled.section`
         position: fixed;
         bottom: 0px;
         background-color: white;
-        border-top: 1px solid #000000;  
+        border-top: 1px solid #000000
       }
     }
 
@@ -240,51 +240,51 @@ export default function Speakers(speakers, topics, error) {
     <>
       <SpeakersPageStyle>
         {/* {expandedIndex == -1 && ( */}
-        <>
-          <ContainerBox>
-            <h1>Speakers</h1>
-            <p>Browse through the profiles of our diverse network of speakers and artists who offer a range of learning opportunities, including lectures, workshops, films. and performances. Our speakers have a wealth of knowledge and experience in a variety of fields and are able to customize their presentations to meet your specific needs and goals. Use the filter options to narrow down your search or contact us for personalized recommendations. We look forward to connecting you to find the perfect speaker for your event.</p>
-          </ContainerBox>
-          {/* desktop filter */}
-          <div className="desktop">
+          <>
             <ContainerBox>
-              <div className="filter-description">
-                <div className="filter-description-title">
-                  <h4 style={{ width: '210px' }}>Filter Speakers by Topic</h4>
-                </div>
-                <p>Our extensive roster covers a range of topics, budgets, and needs. Filter below or if you need help or recommendations, reach out here.</p>
-              </div>
-              <TopicListStyles>
-                {
-                  topicsList.map((topic) => (
-                    <div style={{ backgroundColor: topic.selected == true ? "#F8A151" : "#F2F2F2" }} key={topic.id} onClick={() => handleSelectedCategory(topic.id)}>{topic.name}</div>
-                  ))
-                }
-              </TopicListStyles>
+              <h1>Speakers</h1>
+              <p>Browse through the profiles of our diverse network of speakers and artists who offer a range of learning opportunities, including lectures, workshops, films. and performances. Our speakers have a wealth of knowledge and experience in a variety of fields and are able to customize their presentations to meet your specific needs and goals. Use the filter options to narrow down your search or contact us for personalized recommendations. We look forward to connecting you to find the perfect speaker for your event.</p>
             </ContainerBox>
-          </div>
-          {/* mobile filter btn */}
-          <div className={`mobile`}>
-            <div className="filter-description" onClick={() => setExpandedIndex(1)}>
-              <div className="filter-description-title">
-                <ContainerBox className="filter-description-title">
-                  <h4>Filter Speakers by Topic</h4>
-                  <div className="icon">+</div>
-                </ContainerBox>
+            {/* desktop filter */}
+            <div className="desktop">
+              <ContainerBox>
+                <div className="filter-description">
+                  <div className="filter-description-title">
+                    <h4 style={{ width: '210px' }}>Filter Speakers by Topic</h4>
+                  </div>
+                  <p>Our extensive roster covers a range of topics, budgets, and needs. Filter below or if you need help or recommendations, reach out here.</p>
+                </div>
+                <TopicListStyles>
+                  {
+                    topicsList.map((topic) => (
+                      <div style={{ backgroundColor: topic.selected == true ? "#F8A151" : "#F2F2F2" }} key={topic.id} onClick={() => handleSelectedCategory(topic.id)}>{topic.name}</div>
+                    ))
+                  }
+                </TopicListStyles>
+              </ContainerBox>
+            </div>
+            {/* mobile filter btn */}
+            <div className={`mobile`}>
+              <div className="filter-description" onClick={() => setExpandedIndex(1)}>
+                <div className="filter-description-title">
+                  <ContainerBox className="filter-description-title">
+                    <h4>Filter Speakers by Topic</h4>
+                    <div className="icon">+</div>
+                  </ContainerBox>
+                </div>
               </div>
             </div>
-          </div>
-          {/* speaker detail  */}
-          <ContainerBox>
-            <SpeakersListStyles>
-              {
-                speakersList?.map(speaker => (
-                  <Speaker key={speaker.id} speaker={speaker} />
-                ))
-              }
-            </SpeakersListStyles>
-          </ContainerBox>
-        </>
+            {/* speaker detail  */}
+            <ContainerBox>
+              <SpeakersListStyles>
+                {
+                  speakersList?.map(speaker => (
+                    <Speaker key={speaker.id} speaker={speaker} />
+                  ))
+                }
+              </SpeakersListStyles>
+            </ContainerBox>
+          </>
         {/* )} */}
 
         {/* mobile filter detail */}
@@ -306,19 +306,19 @@ export default function Speakers(speakers, topics, error) {
             <div className="filter-btn">
               <ContainerBox>
                 <SecondButtonStyles onClick={() => setExpandedIndex(-1)} theme={{ main: "#00AFB5" }} className="test">
-                  <Link href={'/'} onClick={e => e.preventDefault()}>
-                    show results
+                  <Link href={'/'} onClick={e => e.preventDefault()}> 
+                    show {topicsList.filter(topic => topic.selected == true).length > 0 ? topicsList.filter(topic => topic.selected == true).length : topicsList.length } results
                   </Link>
                 </SecondButtonStyles>
               </ContainerBox>
             </div>
-              <TopicListStylesFilters>
-                {
-                  topicsList.map((topic) => (
-                    <div style={{ backgroundColor: topic.selected == true ? "#F8A151" : "#F2F2F2" }} key={topic.id} onClick={() => handleSelectedCategory(topic.id)}>{topic.name}</div>
-                  ))
-                }
-              </TopicListStylesFilters>
+            <TopicListStylesFilters>
+              {
+                topicsList.map((topic) => (
+                  <div style={{ backgroundColor: topic.selected == true ? "#F8A151" : "#F2F2F2" }} key={topic.id} onClick={() => handleSelectedCategory(topic.id)}>{topic.name}</div>
+                ))
+              }
+            </TopicListStylesFilters>
           </div>
         )}
 
