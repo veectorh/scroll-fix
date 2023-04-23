@@ -127,7 +127,7 @@ const SpeakersPageStyle = styled.section`
         z-index: 99;
         height: 100vh;
         overflow: scroll;
-        padding-bottom: 200px;
+        padding-bottom: 270px;
       }
       .showFilters .filter-description {
         border-radius: 20px 20px 0px 0px;
@@ -307,7 +307,7 @@ export default function Speakers(speakers, topics, error) {
               <ContainerBox>
                 <SecondButtonStyles onClick={() => setExpandedIndex(-1)} theme={{ main: "#00AFB5" }} className="test">
                   <Link href={'/'} onClick={e => e.preventDefault()}> 
-                    show {topicsList.filter(topic => topic.selected == true).length > 0 ? topicsList.filter(topic => topic.selected == true).length : topicsList.length } results
+                    show results
                   </Link>
                 </SecondButtonStyles>
               </ContainerBox>
