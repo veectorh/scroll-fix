@@ -95,7 +95,7 @@ const SpeakerHeroStyles = styled.section`
         }
         p {
           //styleName: Body Mobile;
-          font-family: Fira Sans;
+          /* font-family: Fira Sans; */
           font-size: 12px;
           font-weight: 400;
           line-height: 16px;
@@ -233,7 +233,7 @@ const SpeakerInfoStyles = styled.section`
       padding-bottom: 0px;
       p {
       //styleName: Body Mobile;
-      font-family: Fira Sans;
+      /* font-family: Fira Sans; */
       font-size: 12px;
       font-weight: 400;
       line-height: 16px;
@@ -243,7 +243,7 @@ const SpeakerInfoStyles = styled.section`
      ul {
   
       //styleName: Body Mobile;
-      font-family: Fira Sans;
+      /* font-family: Fira Sans; */
       font-size: 12px;
       font-weight: 400;
       line-height: 16px;
@@ -266,7 +266,7 @@ const SpeakerInfoStyles = styled.section`
       a{
 
       //styleName: Body Mobile;
-      font-family: Fira Sans;
+      /* font-family: Fira Sans; */
       font-size: 14px;
       font-weight: 400;
       line-height: 20px;

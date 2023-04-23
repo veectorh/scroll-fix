@@ -125,7 +125,7 @@ const FooterStyles = styled.footer`
       padding: 16px 30px;
       p {
         //styleName: Body Mobile;
-        font-family: Fira Sans;
+        /* font-family: Fira Sans; */
         font-size: 12px;
         font-weight: 400;
         line-height: 16px;
@@ -172,7 +172,7 @@ const FooterStyles = styled.footer`
             p {
               a {
                 //styleName: Body Mobile;
-                font-family: Fira Sans;
+                /* font-family: Fira Sans; */
                 font-size: 12px;
                 font-weight: 400;
                 line-height: 16px;
@@ -182,7 +182,7 @@ const FooterStyles = styled.footer`
             }
             p {
                 //styleName: Body Mobile;
-                font-family: Fira Sans;
+                /* font-family: Fira Sans; */
                 font-size: 12px;
                 font-weight: 400;
                 line-height: 16px;
@@ -204,7 +204,7 @@ const FooterStyles = styled.footer`
       }
       .mission p {
         //styleName: Body Mobile;
-        font-family: Fira Sans;
+        /* font-family: Fira Sans; */
         font-size: 12px;
         font-weight: 400;
         line-height: 16px;
