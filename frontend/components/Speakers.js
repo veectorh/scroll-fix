@@ -312,7 +312,6 @@ export default function Speakers(speakers, topics, error) {
                 </SecondButtonStyles>
               </ContainerBox>
             </div>
-           
               <TopicListStylesFilters>
                 {
                   topicsList.map((topic) => (
@@ -320,7 +319,6 @@ export default function Speakers(speakers, topics, error) {
                   ))
                 }
               </TopicListStylesFilters>
-           
           </div>
         )}
 
