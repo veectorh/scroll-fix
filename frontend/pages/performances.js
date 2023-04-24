@@ -64,7 +64,6 @@ const PerformancesPageStyle = styled.section`
     padding: 36px 0 0;
   }
 
-  
     @media ${device.tablet} {
         .page-detail {
           margin: 0px 36px;
