@@ -273,7 +273,6 @@ const PreviousInstituteStyle = styled.div`
 `;
 
 export default function SummerInstitutePage({ institutes}) {
-  console.log("Institutes", institutes); 
   return (
     <>
       <Head>
