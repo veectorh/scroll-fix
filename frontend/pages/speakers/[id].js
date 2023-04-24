@@ -222,6 +222,9 @@ const SpeakerInfoStyles = styled.section`
 
   .elfsight-app-1633c2e5-e526-4994-abb0-0089aacdd09c {
     margin-top: 40px;
+    .eapps-social-share-buttons-container {
+      text-align: left;
+    }
   }
 
   @media ${device.tablet} {
