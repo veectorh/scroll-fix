@@ -24,6 +24,10 @@ const TopicListStyles = styled.section`
       color: #000000;
       cursor: pointer;
     }
+
+    div:hover {
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 3px 0px;
+    }
 `;
 
 export default TopicListStyles;
