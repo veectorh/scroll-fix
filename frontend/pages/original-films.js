@@ -71,6 +71,9 @@ const OriginalFilmStyles = styled.section`
     }
   }
 
+  @media (min-width : 1440px) {
+      max-width: 1290px;
+  }
 
   @media ${device.tablet} {
     padding: 50px 0 0;
