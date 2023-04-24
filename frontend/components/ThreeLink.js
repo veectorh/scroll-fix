@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import ButtonStyles from './styles/ButtonStyles';
 import { device } from './device';
+
 const ThreeLinkStyles = styled.section`
   background: #F2F2F2;
   .links {
@@ -84,7 +85,7 @@ export default function ThreeLink() {
         </div>
         <div className="link">
           <h4>Film Programs</h4>
-          <p>Book a film program featuring SpeakOut's award-winning filmmakers - in person or virutally. Explore a variety of cultural and social issues through powerful and thought-provoking films, accompanied by in-depth discussions with the filmmakers themselves. A unique and enriching experience!</p>
+          <p>Book a film program featuring SpeakOut's award-winning filmmakers - in person or virtually. Explore a variety of cultural and social issues through powerful and thought-provoking films, accompanied by in-depth discussions with the filmmakers themselves. A unique and enriching experience!</p>
           <ButtonStyles theme={{ main: "#00AFB5;" }}>
             <Link href="/film-programs">See Film Programs</Link>
           </ButtonStyles>

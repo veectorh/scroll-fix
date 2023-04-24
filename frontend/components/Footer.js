@@ -107,8 +107,8 @@ export default function Footer() {
           </div >
         </div>
         <div className="mission">
-          <h5>The Institute for Democratice<br/> Education and Culture</h5>
-          <p>A mission-driven speakers agency <br/>and education instiute.</p>
+          <h5>The Institute for Democratic<br/> Education and Culture</h5>
+          <p>A mission-driven speakers agency <br/>and education institute.</p>
         </div>
         <div className="contact-info">
           <div className="image-info">

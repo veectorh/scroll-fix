@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Script from 'next/script'
 import styled from 'styled-components';
 import ButtonStyles from '@/components/styles/ButtonStyles';
 import Image from 'next/image';
@@ -219,6 +220,13 @@ const SpeakerInfoStyles = styled.section`
     display: none;
   }
 
+  .elfsight-app-1633c2e5-e526-4994-abb0-0089aacdd09c {
+    margin-top: 40px;
+    .eapps-social-share-buttons-container {
+      text-align: left;
+    }
+  }
+
   @media ${device.tablet} {
     flex-direction: column;
     gap: 40px;
@@ -395,15 +403,10 @@ export default function SingleSpeaker({ singleSpeaker }) {
               {speaker?.related_links?.map(link =>
                 <a href={link.url} key={link.id}><p>{link.text}</p></a>
               )}
-
             </div>
 
-            <ButtonStyles theme={{ main: "#00AFB5" }}>
-              <Link href="/ecourse">
-                Share this Speaker
-              </Link>
-            </ButtonStyles>
-
+            <Script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer />
+            <div class="elfsight-app-1633c2e5-e526-4994-abb0-0089aacdd09c"></div>
           </div>
         </SpeakerInfoStyles>
       </ContainerBox>
