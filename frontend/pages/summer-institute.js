@@ -272,7 +272,7 @@ const PreviousInstituteStyle = styled.div`
   }
 `;
 
-export default function SummerInstitutePage({ institutes}) {
+export default function SummerInstitutePage({ institutes }) {
   return (
     <>
       <Head>
