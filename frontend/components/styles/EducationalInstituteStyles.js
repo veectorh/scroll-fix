@@ -71,6 +71,23 @@ const EducationalInstituteStyles = styled.section`
     margin: 0 auto 33px;;
     }
 
+    .copy-image {
+      #virtual-event {
+        object-position: 0px 0%;
+      }
+      #summer-institute {
+        object-position: 0px 0%;
+      }
+      #original-film {
+        /* object-position: -120px 0%; */
+      }
+
+      .image {
+        height: 40vh;
+      }
+
+    }
+
     .copy-image:nth-child(even) {
       flex-direction: column;
     }
