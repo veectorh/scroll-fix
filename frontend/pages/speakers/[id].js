@@ -406,7 +406,7 @@ export default function SingleSpeaker({ singleSpeaker }) {
             </div>
 
             <Script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer />
-            <div class="elfsight-app-1633c2e5-e526-4994-abb0-0089aacdd09c"></div>
+            <div className="elfsight-app-1633c2e5-e526-4994-abb0-0089aacdd09c"></div>
           </div>
         </SpeakerInfoStyles>
       </ContainerBox>
