@@ -209,7 +209,7 @@ export default function AboutUsPage({ projects, quotes }) {
           </div>
         </ContainerBox>
         <SubHeroStyles>
-          <h2 className="about">Our mission is to encourage critical and imaginative thinking to address the major inequities of our day and transform a fractured world.</h2>
+          <h2 className="about">SpeakOut's mission is to encourage critical and imaginative thinking to address the major inequities of our day and transform a fractured world.</h2>
           <p className="about white">Our network of speakers, artists, and strategic partners provide experiential learning opportunities and programming through lectures, workshops, professional development and trainings, film screenings, performances and curriculum development. Since our founding in 1990, we have worked with thousands of colleges, universities, K-12 schools and districts, community organizations, government and private sector providing 15,000 programs which advance the humanities and promote critical analysis, creativity, and innovative strategies for 21st-century problem-solving. We have reached over 3 million people nationwide through our network of 35k contacts.</p>
         </SubHeroStyles>
         <ContainerBox>

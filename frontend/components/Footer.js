@@ -136,7 +136,7 @@ export default function Footer() {
               />
             </div>
             <div className="info">
-              <p><a href="tel:+15106010182">+1 (510) 601-0182</a></p>
+              <p><a href="tel:+15106479115">+1 (510) 647-9115</a></p>
             </div>
           </div>
           <div className="image-info">

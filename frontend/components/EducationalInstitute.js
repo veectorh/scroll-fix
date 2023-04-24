@@ -52,6 +52,7 @@ export default function EducationalInstitute() {
             fill
             sizes="50vw"
             priority
+            id="virtual-event"
           />
         </div>
       </div>
@@ -75,6 +76,7 @@ export default function EducationalInstitute() {
             fill
             sizes="50vw"
             priority
+            id="summer-institute"
           />
         </div>
       </div >
@@ -98,6 +100,7 @@ export default function EducationalInstitute() {
             fill
             sizes="50vw"
             priority
+            id="original-film"
           />
         </div>
       </div >
