@@ -49,7 +49,7 @@ const PerformancesPageStyle = styled.section`
     
     p {
       //styleName: Body Mobile;
-      font-family: Fira Sans;
+      /* font-family: Fira Sans; */
       font-size: 12px;
       font-weight: 400;
       line-height: 16px;

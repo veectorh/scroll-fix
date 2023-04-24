@@ -79,7 +79,7 @@ const PerformanceStyle = styled.div`
       align-items: center;
       justify-content:  flex-end;
     .btn {
-      width: calc(100% - 102px);
+      width: calc(100% - 100px);
     }
   }
 
@@ -95,6 +95,7 @@ const PerformanceStyle = styled.div`
   @media ${device.laptop} {
     flex-direction: column;
     .btn-container {
+      margin-top: 14px;
       .btn {
         width: 100%;
       }
@@ -116,6 +117,10 @@ const PerformanceStyle = styled.div`
     padding: 24px 24px;
     gap: 16px;
 
+    .btn-container {
+      margin-top: 0px;
+    }
+
     h2 {
       font-size: 16px;
       font-weight: 500;
@@ -128,7 +133,7 @@ const PerformanceStyle = styled.div`
     .name-descriptions,  .artist-description  {
       p {
         //styleName: Body Mobile;
-        font-family: Fira Sans;
+        /* font-family: Fira Sans; */
         font-size: 12px;
         font-weight: 400;
         line-height: 16px;

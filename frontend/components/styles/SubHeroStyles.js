@@ -83,9 +83,8 @@ const SubHeroStyles = styled.section`
     padding: 43px 48px;
 
     h2 {
-    font-family: Fira Sans;
+    /* font-family: Fira Sans; */
     font-size: 24px;
-    font-style: italic;
     font-weight: 600;
     line-height: 28px;
     letter-spacing: 0.03em;
@@ -93,7 +92,8 @@ const SubHeroStyles = styled.section`
     }
 
     .about {
-      padding-bottom: 0px;
+      /* padding-bottom: 0px;   */
+      text-align: center;
     }
 
     .three-column {

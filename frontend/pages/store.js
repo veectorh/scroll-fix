@@ -25,9 +25,9 @@ const StorePageStyles = styled.section`
 
   .products {
     display: grid;
-    grid-column-gap: 50px;
+    grid-column-gap: 5px;
     grid-row-gap: 50px;
-    grid-template-columns: repeat(auto-fit,minmax(262px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(262px, 1fr));
 
     img {
       width: 100%;
@@ -48,7 +48,7 @@ const StorePageStyles = styled.section`
 
     p {
       //styleName: Body Mobile;
-      font-family: Fira Sans;
+      /* font-family: Fira Sans; */
       font-size: 12px;
       font-weight: 400;
       line-height: 16px;

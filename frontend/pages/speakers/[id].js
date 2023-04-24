@@ -95,7 +95,7 @@ const SpeakerHeroStyles = styled.section`
         }
         p {
           //styleName: Body Mobile;
-          font-family: Fira Sans;
+          /* font-family: Fira Sans; */
           font-size: 12px;
           font-weight: 400;
           line-height: 16px;
@@ -233,7 +233,7 @@ const SpeakerInfoStyles = styled.section`
       padding-bottom: 0px;
       p {
       //styleName: Body Mobile;
-      font-family: Fira Sans;
+      /* font-family: Fira Sans; */
       font-size: 12px;
       font-weight: 400;
       line-height: 16px;
@@ -243,7 +243,7 @@ const SpeakerInfoStyles = styled.section`
      ul {
   
       //styleName: Body Mobile;
-      font-family: Fira Sans;
+      /* font-family: Fira Sans; */
       font-size: 12px;
       font-weight: 400;
       line-height: 16px;
@@ -266,7 +266,7 @@ const SpeakerInfoStyles = styled.section`
       a{
 
       //styleName: Body Mobile;
-      font-family: Fira Sans;
+      /* font-family: Fira Sans; */
       font-size: 14px;
       font-weight: 400;
       line-height: 20px;
@@ -333,8 +333,8 @@ export default function SingleSpeaker({ singleSpeaker }) {
               </Link>
             </ButtonStyles>
 
-            { photos && (
-              <ButtonStyles theme={{ main: "#00AFB5;" }} style={{ display: photos === null ? "none" : "flex"}}>
+            {photos && (
+              <ButtonStyles theme={{ main: "#00AFB5;" }} style={{ display: photos === null ? "none" : "flex" }}>
                 <Link href={photos}>
                   Photos
                   <span className="icon">
@@ -349,7 +349,7 @@ export default function SingleSpeaker({ singleSpeaker }) {
                 </Link>
               </ButtonStyles>
             )}
-            
+
           </div>
         </div>
         <div className="speaker-image" style={styleImage}>
@@ -410,11 +410,16 @@ export default function SingleSpeaker({ singleSpeaker }) {
         </SpeakerInfoStyles>
       </ContainerBox>
       <Videos videos={videos} />
+
       <SpeakerQuotesCarousel quotes={quotes} />
       {/* Display OurStore component only if Speaker has a related Product */}
-      { products.length === 0 ? null : <OurStore products={products} /> }
-      { relatedSpeakers.length === 0 ? null : <RelatedSpeakers relatedSpeakers={relatedSpeakers} /> }
-      
+      <ContainerBox>
+        <>
+          {products.length === 0 ? null : <OurStore products={products} />}
+          {relatedSpeakers.length === 0 ? null : <RelatedSpeakers relatedSpeakers={relatedSpeakers} />}
+        </>
+      </ContainerBox>
+
     </>
   );
 }

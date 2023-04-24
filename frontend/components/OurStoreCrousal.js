@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import OurStore from './OurStore';
 import Product from './Product';
+import ButtonStyles from './styles/ButtonStyles';
 import ContainerBox from './styles/ContainerBox';
+import Link from 'next/link';
 export default function OurStoreCarousel({ products }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -37,6 +39,11 @@ export default function OurStoreCarousel({ products }) {
           ))}
         </div>
       </div>
+      <div  style={styles.button}>
+        <ButtonStyles theme={{ main: "#F8A151" }} fullWidth={true}>
+          <Link href="/store">View Our Store</Link>
+        </ButtonStyles>
+      </div >
     </ContainerBox>
   );
 }
@@ -45,7 +52,7 @@ const styles = {
   container: {
     position: 'relative',
     width: '100%',
-    padding: '20px 0px 80px 0px',
+    padding: '20px 0px 60px 0px',
     alignItems: 'center'
   },
   image: {
@@ -84,6 +91,9 @@ const styles = {
     lineHeight: '28px',
     letterSpacing: '0.085em',
     textAlign: 'center',
-
+  },
+  button : {
+    maxWidth: '1100px',
+    margin: '0px 0px 16px 0px'
   }
 };

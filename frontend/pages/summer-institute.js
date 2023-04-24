@@ -153,7 +153,7 @@ const SummerInstituteStyle = styled.section`
 
     p {
       //styleName: Body Mobile;
-      font-family: Fira Sans;
+      /* font-family: Fira Sans; */
       font-size: 12px;
       font-weight: 400;
       line-height: 16px;
@@ -172,7 +172,7 @@ const SummerInstituteStyle = styled.section`
         .session {
           /* width: 50%; */
           .session-description {
-            font-family: Fira Sans;
+            /* font-family: Fira Sans; */
             font-size: 12px;
             font-weight: 400;
             line-height: 16px;
@@ -185,7 +185,7 @@ const SummerInstituteStyle = styled.section`
           .speaker {
             .speaker-name {
               font-style: normal;
-              font-family: Fira Sans;
+              /* font-family: Fira Sans; */
               font-size: 12px;
               font-weight: 400;
               line-height: 16px;

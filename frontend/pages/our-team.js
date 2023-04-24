@@ -48,7 +48,7 @@ const OurTeamStyles = styled.section`
 
     p {
       //styleName: Body Mobile;
-      font-family: Fira Sans;
+      /* font-family: Fira Sans; */
       font-size: 12px;
       font-weight: 400;
       line-height: 16px;
@@ -222,6 +222,7 @@ const TeamMemberStyles = styled.div`
 
   @media ${device.tablet} {
   .speaker-info {
+    height: ${({ isExpanded }) => (isExpanded ? '100%' : '74px')};
     .name {
       font-size: 16px;
       font-weight: 500;
@@ -231,7 +232,7 @@ const TeamMemberStyles = styled.div`
     }
 
     .tagline {
-      font-family: Fira Sans;
+      /* font-family: Fira Sans; */
       font-size: 12px;
       font-weight: 400;
       line-height: 14px;

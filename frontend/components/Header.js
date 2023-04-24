@@ -59,7 +59,7 @@ export default function Header() {
     <StickyNav>
       <HeaderStyles>
         <Logo>
-          <Link href="/">
+          <Link href="/" onClick={()=> setOpenSideBar(false)}>
             <Image
               src="/images/speakout-logo.png"
               alt="Speakout"
