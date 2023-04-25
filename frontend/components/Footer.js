@@ -14,40 +14,40 @@ export default function Footer() {
         </div>
         <div className="instagram-section">
           <h4>Follow us <div className="br" /> On Instagram</h4>
-          {/* <div className='instagram-images'>
-            <a href="https://www.instagram.com/p/CoczDQrJmEJ/?hl=en" target="_blank" rel="noreferrer">
+          <div className='instagram-images'>
+            <a href="https://www.instagram.com/p/CrTihQXLo0h/" target="_blank" rel="noreferrer">
               <Image
-                src="https://scontent-qro1-1.cdninstagram.com/v/t51.2885-15/329783503_1964936083837401_35886849969918183_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_ht=scontent-qro1-1.cdninstagram.com&_nc_cat=109&_nc_ohc=GYfy4viTVBYAX-B3sBD&edm=AP_V10EBAAAA&ccb=7-5&oh=00_AfDtzKz-gsRMgBo0WiG6WLNBlCopyNJ37CzfOiC2fgLMgQ&oe=63F3F4B4&_nc_sid=4f375e"
+                src='/images/ig1.jpg'
                 alt="Instagram"
                 width="80"
                 height="80"
               />
             </a>
-            <a href="https://www.instagram.com/p/CoIgQ5gSRIp/?hl=en" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/p/CrRmfo-PtDj/" target="_blank" rel="noreferrer">
               <Image
-                src="https://scontent-qro1-1.cdninstagram.com/v/t51.2885-15/328343721_136142175992300_4959602985400347971_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-qro1-1.cdninstagram.com&_nc_cat=108&_nc_ohc=c90FY3D9gZoAX9_siM0&edm=AP_V10EBAAAA&ccb=7-5&oh=00_AfBDwvWhLLVUjeWq0nF-t3BIZLE3Vo-yF6A5lOblviCfjw&oe=63F41F13&_nc_sid=4f375e"
+                src='/images/ig2.jpg'
                 alt="Instagram"
                 width="80"
                 height="80"
               />
             </a>
-            <a href="https://www.instagram.com/p/Cn4-Vhnjz2J/?hl=en" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/p/CrOov-tP9lk/" target="_blank" rel="noreferrer">
               <Image
-                src="https://scontent-qro1-1.cdninstagram.com/v/t51.2885-15/327166719_920288815646653_5337147632539691665_n.jpg?stp=c0.280.720.720a_dst-jpg_e15_s640x640&_nc_ht=scontent-qro1-1.cdninstagram.com&_nc_cat=101&_nc_ohc=wnNmzlnSOkwAX8iZsGF&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBbVjBI-Vdz9q26-c3ZhGfJZPhNgw2A2qOvcv6BwkEXUQ&oe=63F145CE&_nc_sid=8fd12b"
+                src='/images/ig3.jpg'
                 alt="Instagram"
                 width="80"
                 height="80"
               />
             </a>
-            <a href="https://www.instagram.com/p/Cn2U79MDB7P/?hl=en" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/p/CrJw_1VPK2o/" target="_blank" rel="noreferrer">
               <Image
-                src="https://scontent-qro1-1.cdninstagram.com/v/t51.2885-15/327108332_896592711691738_9217700112696790543_n.jpg?stp=c0.280.720.720a_dst-jpg_e15_s640x640&_nc_ht=scontent-qro1-1.cdninstagram.com&_nc_cat=110&_nc_ohc=cTF_m1S07rgAX_d4Bak&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfAHBp6byQ_3oZdKfGZeNccnVMWrvuq9vBsvsxcgYlP0mA&oe=63F14811&_nc_sid=8fd12b"
+                src='/images/ig4.jpg'
                 alt="Instagram"
                 width="80"
                 height="80"
               />
             </a>
-            <a href="https://www.instagram.com/p/CnpuzElyLbV/?hl=en" target="_blank" rel="noreferrer">
+            {/* <a href="https://www.instagram.com/p/CnpuzElyLbV/?hl=en" target="_blank" rel="noreferrer">
               <Image
                 src="https://scontent-qro1-1.cdninstagram.com/v/t51.2885-15/326306315_1538939279844994_291280877626659987_n.jpg?stp=c0.169.1349.1349a_dst-jpg_e35_s640x640_sh0.08&_nc_ht=scontent-qro1-1.cdninstagram.com&_nc_cat=110&_nc_ohc=3BMMRZD37GEAX-cCF1q&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDtlDEKq-P2PsAMNXD7negs-6i8MRUucpiQiGKsAsOyDg&oe=63F3E4D5&_nc_sid=8fd12b"
                 alt="Instagram"
@@ -62,8 +62,8 @@ export default function Footer() {
                 width="80"
                 height="80"
               />
-            </a>
-          </div> */}
+            </a> */}
+          </div>
         </div>
       </div>
       <div className="footer">
@@ -107,8 +107,8 @@ export default function Footer() {
           </div >
         </div>
         <div className="mission">
-          <h5>The Institute for Democratice<br/> Education and Culture</h5>
-          <p>A mission-driven speakers agency <br/>and education instiute.</p>
+          <h5>The Institute for Democratic<br/> Education and Culture</h5>
+          <p>A mission-driven speakers agency <br/>and education institute.</p>
         </div>
         <div className="contact-info">
           <div className="image-info">
@@ -136,7 +136,7 @@ export default function Footer() {
               />
             </div>
             <div className="info">
-              <p><a href="tel:+15106010182">+1 (510) 601-0182</a></p>
+              <p><a href="tel:+15106479115">+1 (510) 647-9115</a></p>
             </div>
           </div>
           <div className="image-info">

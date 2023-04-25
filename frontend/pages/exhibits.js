@@ -316,7 +316,7 @@ export default function ExhibitsPage({ exhibits, familyExhibits }) {
           <div className="copy">
             <h2>Family Diversity Exhibits</h2>
             <p>
-              These award-winning, traveling photo-text exhibits tell the stories of real people and help eliminate prejudice, stereotyping, bullying, and harassment of people who are discriminated against due to sexual orientation, genter, gender identity, race, national origin, religion, and disabilities of all kinds. Bring one or more to your campus, house of worship, workplace, library, museum, corporate headquarters, conference, or community gathering.
+              These award-winning, traveling photo-text exhibits tell the stories of real people and help eliminate prejudice, stereotyping, bullying, and harassment of people who are discriminated against due to sexual orientation, gender, gender identity, race, national origin, religion, and disabilities of all kinds. Bring one or more to your campus, house of worship, workplace, library, museum, corporate headquarters, conference, or community gathering.
             </p>
             <p>
               Each easy-to-display exhibition includes approximately 20 museum-quality framed photographs (16" x 20") along with accompanying laminated text. Several of the exhibits are also available for virtual screenings. Peggy Gillespie, the Co-Founder and Director of Family Diversity Projects, is also available to speak in conjunction with any exhibition.<br/><br/>

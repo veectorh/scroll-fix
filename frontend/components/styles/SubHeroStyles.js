@@ -15,6 +15,7 @@ const SubHeroStyles = styled.section`
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-attachment: fixed;
   color: white;
 
   h2 {

@@ -10,6 +10,7 @@ const ButtonStyles = styled.div`
     border: none;
     height: 44px;
     text-align: center;
+    cursor: pointer;
     padding: 0 20px;
     background: ${props => props.theme.main};
     background-blend-mode: multiply;

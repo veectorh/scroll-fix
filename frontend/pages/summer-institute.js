@@ -94,6 +94,9 @@ const SummerInstituteStyle = styled.section`
           width: 120px;
           height: 120px;
           border-radius: 20px;
+          img {
+            border-radius: 20px;
+          }
         }
         .speaker-name {
           font-family: 'Fira Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
@@ -269,7 +272,7 @@ const PreviousInstituteStyle = styled.div`
   }
 `;
 
-export default function SummerInstitutePage({ institutes}) {
+export default function SummerInstitutePage({ institutes }) {
   return (
     <>
       <Head>
@@ -303,19 +306,22 @@ export default function SummerInstitutePage({ institutes}) {
               <div className="speakers">
                 {
                   institute.attributes.speakers.data.map(speaker => (
-                    <div className="speaker">
-                      <div className="speaker-image">
-                        {/* Add Speaker Image here from API */}
-                        {/* <Image 
-                          src={image.data.attributes.url} 
-                          alt={name} 
-                          width={436} 
-                          height={255} 
-                          priority
-                        /> */}
+                    <Link href={`/speakers/${speaker.attributes.slug}`} passHref>
+                      <div className="speaker">
+                        <div className="speaker-image">
+                          {/* Add Speaker Image here from API */}
+                            <Image 
+                              src={speaker.attributes.photo.data.attributes.url} 
+                              alt={speaker.attributes.fullName} 
+                              width={120} 
+                              height={120} 
+                              priority
+                            />
+                          
+                        </div>
+                        <div className="speaker-name">{speaker.attributes.fullName}</div>
                       </div>
-                      <div className="speaker-name">{speaker.attributes.fullName}</div>
-                    </div>
+                    </Link>
                   ))
                 }
               </div>
@@ -325,9 +331,11 @@ export default function SummerInstitutePage({ institutes}) {
                 {
                   institute.attributes.sessions.map(session => (
                     <div className="session">
-                      <div className="session-description">
-                        {session.session_name} WITH <span className="name">{session.speaker.data.attributes.fullName}</span>
-                      </div>
+                     <Link href={`/speakers/${session.speaker.data.attributes.slug}`} passHref>
+                        <div className="session-description">
+                          {session.session_name} WITH <span className="name">{session.speaker.data.attributes.fullName}</span>
+                        </div>
+                      </Link>
                     </div>
                   ))
                 }
@@ -337,7 +345,7 @@ export default function SummerInstitutePage({ institutes}) {
         }
       </SummerInstituteStyle>
 
-      <PreviousInstitutesCTA>
+      {/* <PreviousInstitutesCTA>
         <PreviousInstituteStyle>
           <h2>2021</h2>
           <p className="sub-heading">Summer Institute</p>
@@ -356,7 +364,7 @@ export default function SummerInstitutePage({ institutes}) {
             <Link href="/speakers">Register Now</Link>
           </ButtonStyles>
         </PreviousInstituteStyle>
-      </PreviousInstitutesCTA>
+      </PreviousInstitutesCTA> */}
     </>
   );
 }

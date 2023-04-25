@@ -30,6 +30,16 @@ const EducationalInstituteStyles = styled.section`
         object-fit: cover;
       }
     }
+
+    #virtual-event {
+      object-position: -90px 0%;
+    }
+    #summer-institute {
+      object-position: -300px 0%;
+    }
+    #original-film {
+      object-position: 0px 0%;
+    }
   }
 
   .copy-image:nth-child(even) {
@@ -59,6 +69,23 @@ const EducationalInstituteStyles = styled.section`
     width: 100%;
     max-width: 100%;
     margin: 0 auto 33px;;
+    }
+
+    .copy-image {
+      #virtual-event {
+        object-position: 0px 0%;
+      }
+      #summer-institute {
+        object-position: 0px 0%;
+      }
+      #original-film {
+        /* object-position: -120px 0%; */
+      }
+
+      .image {
+        height: 40vh;
+      }
+
     }
 
     .copy-image:nth-child(even) {

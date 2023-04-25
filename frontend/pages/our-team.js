@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Image from 'next/image';
-import Link from 'next/link';
 import { loadStaff } from "@/lib/load-staff";
 import { loadDirectors } from "@/lib/load-directors";
 import { useState } from 'react';
@@ -116,49 +115,6 @@ const MembersListStyles = styled.div`
   }
 `;
 
-//   border-radius: 20px;
-//   overflow: hidden;
-//   position: relative;
-//   height: 466px;
-//   background: rgba(67, 67, 67, 0.6);
-//   img {
-//     width: 399px;
-//     height: 100%;
-//     object-fit: cover;
-//     border-radius: 20px;
-//     overflow: hidden;
-//   }
-//   .speaker-info {
-//     background-color: rgba(0, 0, 0, 0.5);
-//     position: absolute;
-//     bottom: 0;
-//     width: 100%;
-//     height: 80px;
-//     padding: 8px 16px;
-//     max-width: 399px;
-//     overflow: hidden;
-//     border-bottom-right-radius: 20px;
-//     cursor: pointer;
-//     .name {
-//       font-family: 'Oswald';
-//       font-size: 18px;
-//       font-weight: 500;
-//       line-height: 25px;
-//       letter-spacing: 0.085em;
-//       text-transform: uppercase;
-//       color: #F8A151;
-//       margin: 0;
-//     }
-//     .tagline {
-//       font-size: 12px;
-//       font-weight: 400;
-//       line-height: 17px;
-//       letter-spacing: 0.05em;
-//       color: #ffffff;
-//       margin: 0;
-//     }
-//   }
-// `;
 const TeamMemberStyles = styled.div`
   border-radius: 20px;
   overflow: hidden;
@@ -243,15 +199,7 @@ const TeamMemberStyles = styled.div`
   }
 `;
 
-
 function OurTeamPage({ staff, directors }) {
-  const jeaniIndex = staff.data.findIndex(item => item.attributes.name === "Jean Caiani");
-  const shavonneeIndex = staff.data.findIndex(item => item.attributes.name === "Shavonnee Clark-Lowe");
-  // move Jean Caiani to the first index
-  staff.data.splice(0, 0, staff.data.splice(jeaniIndex, 1)[0]);
-  // move Shavonnee to the second index
-  staff.data.splice(1, 0, staff.data.splice(shavonneeIndex, 1)[0]);
-
   const [expandedIndex, setExpandedIndex] = useState(-1);
 
   const toggleExpansion = (index) => {

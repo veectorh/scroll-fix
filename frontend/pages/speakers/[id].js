@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Script from 'next/script'
 import styled from 'styled-components';
 import ButtonStyles from '@/components/styles/ButtonStyles';
 import Image from 'next/image';
@@ -15,7 +16,7 @@ import Head from 'next/head'
 import RelatedSpeakers from '@/components/RelatedSpeakers';
 import Videos from '@/components/Videos';
 
-const colors = ['#FBECDE', '#F2F2F2', '#F8A151'];
+const colors = ['#FBECDE', '#F2F2F2', '#E2EAEA'];
 const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
 const color = getRandomColor();
 
@@ -173,8 +174,6 @@ const SpeakerInfoStyles = styled.section`
     border-bottom: 1px solid #000000;
   }
   .content {
-    padding-bottom: 75px;
-
     p {
       white-space: pre-line;
     }
@@ -219,6 +218,13 @@ const SpeakerInfoStyles = styled.section`
   }
   .hide {
     display: none;
+  }
+
+  .elfsight-app-1633c2e5-e526-4994-abb0-0089aacdd09c {
+    margin-top: 40px;
+    .eapps-social-share-buttons-container {
+      text-align: left;
+    }
   }
 
   @media ${device.tablet} {
@@ -397,15 +403,10 @@ export default function SingleSpeaker({ singleSpeaker }) {
               {speaker?.related_links?.map(link =>
                 <a href={link.url} key={link.id}><p>{link.text}</p></a>
               )}
-
             </div>
 
-            <ButtonStyles theme={{ main: "#00AFB5" }}>
-              <Link href="/ecourse">
-                Share this Speaker
-              </Link>
-            </ButtonStyles>
-
+            <Script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer />
+            <div className="elfsight-app-1633c2e5-e526-4994-abb0-0089aacdd09c"></div>
           </div>
         </SpeakerInfoStyles>
       </ContainerBox>
