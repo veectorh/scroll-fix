@@ -14,7 +14,12 @@ import ContainerBox from '@/components/styles/ContainerBox';
 import { device } from '@/components/device';
 import Head from 'next/head'
 import RelatedSpeakers from '@/components/RelatedSpeakers';
-import Videos from '@/components/Videos';
+// import Videos from '@/components/Videos';
+
+import dynamic from 'next/dynamic'
+const VideosBox = dynamic(() => import('@/components/Videos'), {
+  loading: () => <p>Loading...</p>,
+})
 
 const colors = ['#FBECDE', '#F2F2F2', '#E2EAEA'];
 const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
@@ -410,7 +415,8 @@ export default function SingleSpeaker({ singleSpeaker }) {
           </div>
         </SpeakerInfoStyles>
       </ContainerBox>
-      <Videos videos={videos} />
+
+      <VideosBox videos={videos.slice(0, 5)} />
 
       <SpeakerQuotesCarousel quotes={quotes} />
       {/* Display OurStore component only if Speaker has a related Product */}

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { device } from './device';
 const Overlay = styled.div`
   position: fixed;
   top: 0;
@@ -37,6 +37,32 @@ const ModalContent = styled.div`
     line-height: 1;
     cursor: pointer;
   }
+
+  @media ${device.mobile} {
+    width: 300px;
+    background-color: transparent;
+    .iframeContainer {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding-top: 56.25%;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    }
+  }
+
+  @media ${device.mobileM} {
+    width: 200px;
+    background-color: transparent;
+  }
 `;
 
 export default function VideoModal({ videoSrc, onClose }) {
@@ -45,7 +71,9 @@ export default function VideoModal({ videoSrc, onClose }) {
   return (
     <Overlay>
       <ModalContent>
-        <iframe width="560" height="315" src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" autoPlay allowFullScreen></iframe>
+        <div className='iframeContainer'>
+          <iframe width="560" height="315" src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" autoPlay allowFullScreen></iframe>
+        </div>
         <button onClick={onClose}>x</button>
       </ModalContent>
     </Overlay>
