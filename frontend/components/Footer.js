@@ -1,17 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import FooterStyles from './styles/FooterStyles';
-import ButtonStyles from './styles/ButtonStyles';
+import Newsletter from './Newsletter';
 
 export default function Footer() {
   return (
     <FooterStyles>
       <div className="newsletter-footer">
-        <div className="newsletter">
-          <h4>Join Our Newsletter</h4>
-          <p>Stay informed on when speakers and artists will be in your area and receive updates on new educational resources.</p>
-          <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }} fullWidth={true}><Link href="#">Sign Up Now</Link></ButtonStyles>
-        </div>
+        <Newsletter/>
         <div className="instagram-section">
           <h4>Follow us <div className="br" /> On Instagram</h4>
           <div className='instagram-images'>
