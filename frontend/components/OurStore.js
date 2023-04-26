@@ -10,7 +10,7 @@ const OurStoreStyles = styled.section`
   align-items: center;
   justify-content: center;
   /* width: 100%; */
-  padding: 50px 0 80px;
+  padding: 50px 0 20px;
   .store {
     display: flex;
     flex-direction: column;
@@ -30,6 +30,9 @@ const StoreListStyles = styled.section`
   grid-row-gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(262px, 1fr));
   width: 100%;
+  justify-items: center;
+  margin-bottom: 40px;
+
   @media ${device.tablet} {
     padding: 40px 0 60px;
     grid-column-gap: 10px;
