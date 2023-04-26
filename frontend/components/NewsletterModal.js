@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from './device';
 
 const Overlay = styled.div`
   position: fixed;
@@ -19,11 +20,13 @@ const ModalContent = styled.div`
   margin: 0;
   position: relative;
 
-  iframe {
-    margin: -5px;
-    background-color: rgba(0, 0, 0, 0.85);
-    height: 700px;
-    width: 650px;
+  .iframeContainer {
+    width: 80vw;
+    height: 90vh;
+    iframe {
+      height: 100%;
+      width: 100%;
+    }
   }
 
   button {
@@ -39,13 +42,31 @@ const ModalContent = styled.div`
     line-height: 1;
     cursor: pointer;
   }
+
+  @media ${device.mobile} {
+    .iframeContainer {
+      width: 80vw;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    }
+  }
 `;
 
 export default function NewsletterModal({ onClose }) {
   return (
     <Overlay>
       <ModalContent>
-        <iframe src="https://lp.constantcontactpages.com/su/U1hkiPj/newsletter"></iframe>
+        <div className="iframeContainer">
+          <iframe src="https://lp.constantcontactpages.com/su/U1hkiPj/newsletter"></iframe>
+        </div>
         <button onClick={onClose}>x</button>
       </ModalContent>
     </Overlay>
