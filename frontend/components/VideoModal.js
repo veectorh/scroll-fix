@@ -22,6 +22,8 @@ const ModalContent = styled.div`
   iframe {
     margin: -5px;
     background-color: rgba(0, 0, 0, 0.85);
+    width: 75vw;
+    height: 65vh;
   }
 
   button {
@@ -72,7 +74,7 @@ export default function VideoModal({ videoSrc, onClose }) {
     <Overlay>
       <ModalContent>
         <div className='iframeContainer'>
-          <iframe width="560" height="315" src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" autoPlay allowFullScreen></iframe>
+          <iframe src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" autoPlay allowFullScreen></iframe>
         </div>
         <button onClick={onClose}>x</button>
       </ModalContent>
