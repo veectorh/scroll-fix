@@ -46,6 +46,7 @@ const ModalContent = styled.div`
   @media ${device.mobile} {
     .iframeContainer {
       width: 80vw;
+      height: 70vh;
       iframe {
         position: absolute;
         top: 0;
