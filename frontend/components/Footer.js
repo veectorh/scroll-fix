@@ -15,32 +15,32 @@ export default function Footer() {
               <Image
                 src='/images/ig1.jpg'
                 alt="Instagram"
-                width="80"
-                height="80"
+                width="70"
+                height="70"
               />
             </a>
             <a href="https://www.instagram.com/p/CrRmfo-PtDj/" target="_blank" rel="noreferrer">
               <Image
                 src='/images/ig2.jpg'
                 alt="Instagram"
-                width="80"
-                height="80"
+                width="70"
+                height="70"
               />
             </a>
             <a href="https://www.instagram.com/p/CrOov-tP9lk/" target="_blank" rel="noreferrer">
               <Image
                 src='/images/ig3.jpg'
                 alt="Instagram"
-                width="80"
-                height="80"
+                width="70"
+                height="70"
               />
             </a>
             <a href="https://www.instagram.com/p/CrJw_1VPK2o/" target="_blank" rel="noreferrer">
               <Image
                 src='/images/ig4.jpg'
                 alt="Instagram"
-                width="80"
-                height="80"
+                width="70"
+                height="70"
               />
             </a>
             {/* <a href="https://www.instagram.com/p/CnpuzElyLbV/?hl=en" target="_blank" rel="noreferrer">
