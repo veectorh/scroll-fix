@@ -166,8 +166,6 @@ export default function Videos({ videos }) {
     handleWindowResize();
   }, [videos]);
 
-  console.log("showCarousal", showCarousal)
-
   return (
     <ContainerBox>
       <VideoStyles>
