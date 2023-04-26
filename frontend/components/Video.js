@@ -4,12 +4,13 @@ import VideoModal from "@/components/VideoModal";
 import Image from "next/image";
 
 const VideoStyle = styled.div`
+    /* width: 265px; */
   .video {
-    width: 265px;
+    width: 100%;
+    max-width: 265px;
     border-radius: 20px;
-    position: relative;
     cursor: pointer;
-    
+    padding: 15px;
     p {
       font-family: 'Oswald';
       font-style: normal;
@@ -19,11 +20,24 @@ const VideoStyle = styled.div`
     }
     .play {
       position: absolute;
-      top: 42px;
-      left: 100px;
+      top: 30%;
+      left: 38%;
+      width: 25%;
+      height: 40%;
+      /* max-width : 64px;
+      min-height : 64px; */
     }
     img {
       border-radius: 20px;
+    }
+
+    .video-thumbnail {
+      position: relative;
+    }
+    .thumbnail {
+      width: 100%;
+      max-width: 265px;
+      /* height: 100%; */
     }
   }
 `;
@@ -33,27 +47,19 @@ function getYoutubeImage(url) {
   return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
 }
 
-export default function Video({ video }) {
-  const [showModal, setShowModal] = useState(false);
-
-  function handleButtonClick() {
-    setShowModal(true);
-  }
-
-  function handleCloseModal() {
-    setShowModal(false);
-  }
+export default function Video({ video, handleButtonClick }) {
+  
 
   return (
     <VideoStyle>
-      <div className="video" onClick={handleButtonClick}>
-        <img src={getYoutubeImage(video.video_url)} width={262} className="thumbnail" />
-        <Image src="/images/orange-play-button.png" width="64" height="64" className="play" alt="Play" />
+      <div className="video" onClick={()=> handleButtonClick(video)}>
+        <div className="video-thumbnail">
+          <img src={getYoutubeImage(video.video_url)} className="thumbnail" />
+          <img src="/images/orange-play-button.png" className="play" alt="Play" />
+        </div>
         <p>{video.video_name}</p>
       </div>
-      {video.video_url && showModal && (
-        <VideoModal videoSrc={video.video_url} onClose={handleCloseModal} />
-      )}
-    </VideoStyle> 
+    
+    </VideoStyle>
   )
 }
