@@ -97,7 +97,6 @@ export default VideoCarousal;
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
-  console.log("click")
   return (
     <div
       className="next-btn"

@@ -1,17 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import FooterStyles from './styles/FooterStyles';
-import ButtonStyles from './styles/ButtonStyles';
+import Newsletter from './Newsletter';
 
 export default function Footer() {
   return (
     <FooterStyles>
       <div className="newsletter-footer">
-        <div className="newsletter">
-          <h4>Join Our Newsletter</h4>
-          <p>Stay informed on when speakers and artists will be in your area and receive updates on new educational resources.</p>
-          <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }} fullWidth={true}><Link href="#">Sign Up Now</Link></ButtonStyles>
-        </div>
+        <Newsletter/>
         <div className="instagram-section">
           <h4>Follow us <div className="br" /> On Instagram</h4>
           <div className='instagram-images'>
@@ -19,32 +15,32 @@ export default function Footer() {
               <Image
                 src='/images/ig1.jpg'
                 alt="Instagram"
-                width="80"
-                height="80"
+                width="70"
+                height="70"
               />
             </a>
             <a href="https://www.instagram.com/p/CrRmfo-PtDj/" target="_blank" rel="noreferrer">
               <Image
                 src='/images/ig2.jpg'
                 alt="Instagram"
-                width="80"
-                height="80"
+                width="70"
+                height="70"
               />
             </a>
             <a href="https://www.instagram.com/p/CrOov-tP9lk/" target="_blank" rel="noreferrer">
               <Image
                 src='/images/ig3.jpg'
                 alt="Instagram"
-                width="80"
-                height="80"
+                width="70"
+                height="70"
               />
             </a>
             <a href="https://www.instagram.com/p/CrJw_1VPK2o/" target="_blank" rel="noreferrer">
               <Image
                 src='/images/ig4.jpg'
                 alt="Instagram"
-                width="80"
-                height="80"
+                width="70"
+                height="70"
               />
             </a>
             {/* <a href="https://www.instagram.com/p/CnpuzElyLbV/?hl=en" target="_blank" rel="noreferrer">

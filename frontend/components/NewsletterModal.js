@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { device } from './device';
+
 const Overlay = styled.div`
   position: fixed;
   top: 0;
@@ -19,11 +20,13 @@ const ModalContent = styled.div`
   margin: 0;
   position: relative;
 
-  iframe {
-    margin: -5px;
-    background-color: rgba(0, 0, 0, 0.85);
-    width: 75vw;
-    height: 65vh;
+  .iframeContainer {
+    width: 80vw;
+    height: 90vh;
+    iframe {
+      height: 100%;
+      width: 100%;
+    }
   }
 
   button {
@@ -41,13 +44,9 @@ const ModalContent = styled.div`
   }
 
   @media ${device.mobile} {
-    width: 300px;
-    background-color: transparent;
     .iframeContainer {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      padding-top: 56.25%;
+      width: 80vw;
+      height: 70vh;
       iframe {
         position: absolute;
         top: 0;
@@ -60,21 +59,14 @@ const ModalContent = styled.div`
       }
     }
   }
-
-  @media ${device.mobileM} {
-    width: 200px;
-    background-color: transparent;
-  }
 `;
 
-export default function VideoModal({ videoSrc, onClose }) {
-  const videoId = new URL(videoSrc).searchParams.get("v");
-
+export default function NewsletterModal({ onClose }) {
   return (
     <Overlay>
       <ModalContent>
-        <div className='iframeContainer'>
-          <iframe src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" autoPlay allowFullScreen></iframe>
+        <div className="iframeContainer">
+          <iframe src="https://lp.constantcontactpages.com/su/U1hkiPj/newsletter"></iframe>
         </div>
         <button onClick={onClose}>x</button>
       </ModalContent>
