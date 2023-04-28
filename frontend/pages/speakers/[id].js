@@ -15,6 +15,7 @@ import { device } from '@/components/device';
 import Head from 'next/head'
 import RelatedSpeakers from '@/components/RelatedSpeakers';
 // import Videos from '@/components/Videos';
+import { useRouter } from 'next/router';
 
 import dynamic from 'next/dynamic'
 const VideosBox = dynamic(() => import('@/components/Videos'), {
@@ -304,11 +305,21 @@ export default function SingleSpeaker({ singleSpeaker }) {
   const relatedSpeakers = singleSpeaker?.data[0]?.attributes.related_speakers.data;
   const videos = singleSpeaker?.data[0]?.attributes.videos;
   const photos = singleSpeaker.data[0]?.attributes?.publicity_packet?.data?.[0]?.attributes?.url;
+  const router = useRouter();
 
   const [showAbout, setShowAbout] = useState(true);
 
   let styleImage = {
     backgroundImage: "url(" + speaker?.photo.data?.attributes.url + ")",
+  }
+
+  const handleTopicClick = (id, name) => {
+
+    router.push({
+      pathname: '/speakers',
+      query: { topic: name.replace(" ", "-"), id: id },
+    })
+
   }
 
   return (
@@ -396,7 +407,7 @@ export default function SingleSpeaker({ singleSpeaker }) {
             <div className="topics">
               <TopicListStyles>
                 {speaker?.topics?.data.map(topic =>
-                  <div key={topic.id} style={{ backgroundColor: "#F2F2F2" }}>{topic?.attributes?.name}</div>
+                  <div onClick={() => handleTopicClick(topic?.id, topic?.attributes?.name)} key={topic.id} style={{ backgroundColor: "#F2F2F2" }}>{topic?.attributes?.name}</div>
                 )}
 
               </TopicListStyles>
