@@ -9,7 +9,7 @@ import ContainerBox from "./styles/ContainerBox";
 import { device } from "./device";
 import SecondButtonStyles from "./styles/SecondButtonStyles";
 import Link from 'next/link';
-
+import { useRouter } from "next/router";
 const SpeakersPageStyle = styled.section`
     padding: 100px 0 0;
     max-width: 1340px;
@@ -190,20 +190,25 @@ export default function Speakers(speakers, topics, error) {
     return <div>An error occured: {error.message}</div>;
   }
 
+  const router = useRouter();
   const [topicsList, setTopicsList] = useState([]);
   const [speakersList, setSpeakersList] = useState([]);
   const [expandedIndex, setExpandedIndex] = useState(-1);
 
   useEffect(() => {
     if (speakers.topics.data) {
-      const topicsList = speakers?.topics?.data.map(item => ({
+      const topicsListDetail = speakers?.topics?.data.map(item => ({
         id: item.id,
         name: item.attributes.name,
-        selected: false,
+        selected:  false,
       }))
-      setTopicsList(topicsList);
-
+      setTopicsList(topicsListDetail);
       setSpeakersList(speakers?.speakers)
+
+      // show filtered result if topic id is passed in the url 
+      if (router.query.id) {
+        handleSelectedCategory(router?.query?.id, topicsListDetail)
+      }
     }
   }, [speakers])
 
@@ -219,14 +224,14 @@ export default function Speakers(speakers, topics, error) {
   }
 
   // filter function
-  const handleSelectedCategory = (id) => {
+  const handleSelectedCategory = (id, topicsListDetail) => {
 
     const updateSpeakersList = [];
-    const updateTopicList = [...topicsList]
+    const updateTopicList = [...topicsListDetail]
     let selectedTopicsList = [];
 
     // update topic list 
-    const index = topicsList.findIndex(item => item.id == id);
+    const index = topicsListDetail.findIndex(item => item.id == id);
     updateTopicList[index].selected = !updateTopicList[index].selected;
 
 
@@ -277,7 +282,7 @@ export default function Speakers(speakers, topics, error) {
               <TopicListStyles>
                 {
                   topicsList.map((topic) => (
-                    <div style={{ backgroundColor: topic.selected == true ? "#F8A151" : "#F2F2F2" }} key={topic.id} onClick={() => handleSelectedCategory(topic.id)}>{topic.name}</div>
+                    <div style={{ backgroundColor: topic.selected == true ? "#F8A151" : "#F2F2F2" }} key={topic.id} onClick={() => handleSelectedCategory(topic.id, topicsList)}>{topic.name}</div>
                   ))
                 }
               </TopicListStyles>
@@ -335,7 +340,7 @@ export default function Speakers(speakers, topics, error) {
             <TopicListStylesFilters>
               {
                 topicsList.map((topic) => (
-                  <div style={{ backgroundColor: topic.selected == true ? "#F8A151" : "#F2F2F2" }} key={topic.id} onClick={() => handleSelectedCategory(topic.id)}>{topic.name}</div>
+                  <div style={{ backgroundColor: topic.selected == true ? "#F8A151" : "#F2F2F2" }} key={topic.id} onClick={() => handleSelectedCategory(topic.id, topicsList)}>{topic.name}</div>
                 ))
               }
             </TopicListStylesFilters>
