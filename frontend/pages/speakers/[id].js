@@ -14,9 +14,8 @@ import ContainerBox from '@/components/styles/ContainerBox';
 import { device } from '@/components/device';
 import Head from 'next/head'
 import RelatedSpeakers from '@/components/RelatedSpeakers';
-// import Videos from '@/components/Videos';
-
 import dynamic from 'next/dynamic'
+
 const VideosBox = dynamic(() => import('@/components/Videos'), {
   loading: () => <p>Loading...</p>,
 })
@@ -162,8 +161,10 @@ const SpeakerInfoStyles = styled.section`
   flex-direction: row;
   gap: 7em;
   margin: 50px 0px;
+  flex-wrap: wrap;
   .left {
     max-width: 715px;
+    padding-left: 20px
     h2 {
       cursor: pointer;
     }
@@ -179,6 +180,7 @@ const SpeakerInfoStyles = styled.section`
     border-bottom: 1px solid #000000;
   }
   .content {
+    min-width: 715px;
     p {
       white-space: pre-line;
     }
@@ -235,6 +237,7 @@ const SpeakerInfoStyles = styled.section`
   @media ${device.tablet} {
     flex-direction: column;
     gap: 40px;
+    flex-wrap: unset;
 
     .heading-flex {
       justify-content: flex-start;
@@ -242,6 +245,7 @@ const SpeakerInfoStyles = styled.section`
     }
     .content {
       padding-bottom: 0px;
+      min-width: unset;
       p {
       //styleName: Body Mobile;
       /* font-family: Fira Sans; */
@@ -266,7 +270,7 @@ const SpeakerInfoStyles = styled.section`
 
     .left {
       max-width: 100%;
-   
+      padding-left: unset;
     }
     .right {
       max-width: 100%;
