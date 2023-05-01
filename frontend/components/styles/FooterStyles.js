@@ -13,7 +13,22 @@ const FooterStyles = styled.footer`
     color: white;
     text-transform: uppercase;
     margin-bottom: 10px;
+
+    span {
+      font-size: 18px;
+      text-transform: lowercase;
+      font-weight: 300;
+    }
   }
+
+  .instagram-handle:hover {
+    color: white;
+    span {
+      color: #F8A151;
+      font-weight: 400;
+    }
+  }
+  
   h5 {
     font-size: 22px;
     font-weight: 400;
@@ -119,6 +134,12 @@ const FooterStyles = styled.footer`
       line-height: 20px;
       letter-spacing: 0.05em;
       text-align: left;
+
+      span {
+        font-size: 12px;
+        font-weight: 300;
+
+      }
     }
 
     .newsletter-footer {

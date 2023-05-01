@@ -9,7 +9,9 @@ export default function Footer() {
       <div className="newsletter-footer">
         <Newsletter/>
         <div className="instagram-section">
-          <h4>Follow us <div className="br" /> On Instagram</h4>
+          <a href="https://www.instagram.com/speakoutspeakers/" target="_blank">
+            <h4 className='instagram-handle'>Follow us <div className="br" /> On Instagram <span> @speakoutspeakers</span></h4>
+          </a>
           <div className='instagram-images'>
             <a href="https://www.instagram.com/p/CrTihQXLo0h/" target="_blank" rel="noreferrer">
               <Image
