@@ -23,7 +23,7 @@
     },
     "product_url": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "image": {
       "type": "media",
