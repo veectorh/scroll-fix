@@ -85,6 +85,24 @@ const ProductStyles = styled.div`
   }
 `;
 
+function PayPalButton({ product }) {
+  return (
+    <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+      <input type="hidden" name="cmd" value="_s-xclick" />
+      <input type="hidden" name="hosted_button_id" value={product.attributes.paypal_id} />
+      <input
+        type="image"
+        src="/images/buy-now.png"
+        width="108"
+        border="0"
+        name="submit"
+        alt="PayPal - The safer, easier way to pay online!"
+      />
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+    </form>
+  );
+}
+
 export default function Product({ product }) {
   return (
     <ProductStyles>
@@ -102,7 +120,7 @@ export default function Product({ product }) {
       </div>
       <p className="description">{product.attributes.description}</p>
       <ButtonStyles theme={{ main: "#00AFB5" }}>
-        <Link href={product.attributes.product_url} target="_blank">Buy Now</Link>
+        <PayPalButton product={product} />
       </ButtonStyles>
     </ProductStyles>
   )
