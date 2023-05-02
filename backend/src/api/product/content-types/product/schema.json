@@ -46,6 +46,10 @@
     "price": {
       "type": "decimal",
       "required": true
+    },
+    "paypal_id": {
+      "type": "string",
+      "required": true
     }
   }
 }
