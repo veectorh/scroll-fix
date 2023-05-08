@@ -15,8 +15,9 @@ const SubHeroStyles = styled.section`
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-attachment: fixed;
-  color: white;
+  /* background-attachment: fixed; */
+  color: white;    
+  background-position: 0% 53%;
 
   h2 {
     font-family: "Fira Sans",-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
