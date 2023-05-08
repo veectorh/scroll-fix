@@ -66,6 +66,11 @@ const nextConfig = {
         destination: '/speakers/yosimar-reyes',
         permanent: true, 
       },
+      {
+        source: '/speaker/keith-knight',
+        destination: '/speakers/keith-knight',
+        permanent: true, 
+      },
     ]
   },
 }
