@@ -4,19 +4,20 @@ import Link from 'next/link';
 import { loadFeaturedSpeakers } from '@/lib/load-featured-speakers';
 import { loadQuotes } from '@/lib/load-quotes';
 import { loadFeaturedProducts } from '@/lib/load-featured-products';
-import HeroStyles from '../components/styles/HeroStyles';
+// import HeroStyles from '../components/styles/HeroStyles';
 import Speaker from '@/components/Speaker';
 import EducationalIntro from "@/components/styles/EducationalIntro";
 import SubHeroStyles from '../components/styles/SubHeroStyles';
 import FeaturedSpeakersStyles from '../components/styles/FeaturedSpeakersStyles';
 import EducationalInstitute from '@/components/EducationalInstitute';
-import VideoModal from "@/components/VideoModal";
+// import VideoModal from "@/components/VideoModal";
 import QuotesCarousel from '../components/QuotesCarousel';
 import OurStore from '../components/OurStore';
 import ButtonStyles from '../components/styles/ButtonStyles';
 import OurStoreStyles from '../components/styles/OurStoreStyles';
 import OurStoreCarousel from '@/components/OurStoreCrousal';
 import ContainerBox from '@/components/styles/ContainerBox';
+import Hero from "@/components/Hero";
 
 const Home = ({ featuredSpeakers, quotes, products }) => {
   const [showModal, setShowModal] = useState(false);
@@ -40,23 +41,7 @@ const Home = ({ featuredSpeakers, quotes, products }) => {
         <meta property="og:image" content="https://speakout-website.s3.amazonaws.com/speakout_logo_dark_c683312f3e.png" />
       </Head>
       <div style={{marginTop: -79}}>
-        <HeroStyles>
-          <ContainerBox>
-            <h1>SPEAKOUT</h1>
-            <p className="sub-text">A mission-driven speakers agency and education institute.</p>
-            <p className="voices">Voices changing lives.</p>
-            <div className="hero-buttons">
-              <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }}><Link href="/speakers">Explore Our Speakers</Link></ButtonStyles>
-              <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }}><Link href="/institute">Explore the Institute</Link></ButtonStyles>
-              <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }} onClick={handleButtonClick}>
-                <a>Watch Our Video <span></span></a>
-              </ButtonStyles>
-              {showModal && (
-                <VideoModal videoSrc="https://www.youtube.com/watch?v=op0SFgqziP4" onClose={handleCloseModal} />
-              )}
-            </div>
-          </ContainerBox>
-        </HeroStyles>
+        <Hero showModal={showModal} onClick={handleButtonClick} onClose={handleCloseModal} />
         <SubHeroStyles>
           <h2>We are SpeakOut </h2>
           <h2 className="sub">The Institute for Democratic Education and Culture</h2>
