@@ -7,17 +7,17 @@ const SubHeroStyles = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 185px 0;
-  background: linear-gradient(
+  /* background: linear-gradient(
       rgba(0, 0, 0, 0.55), 
       rgba(0, 0, 0, 0.55)
     ), url('/images/hero-image.png') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover; */
   /* background-attachment: fixed; */
   color: white;    
-  background-position: 0% 53%;
+  /* background-position: 0% 53%; */
 
   h2 {
     font-family: "Fira Sans",-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
