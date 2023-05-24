@@ -1,11 +1,12 @@
 import { useState } from "react";
-import styled from 'styled-components';
+import Head from 'next/head'
 import Link from 'next/link';
 import { loadFeaturedSpeakers } from '@/lib/load-featured-speakers';
 import { loadQuotes } from '@/lib/load-quotes';
 import { loadFeaturedProducts } from '@/lib/load-featured-products';
 import HeroStyles from '../components/styles/HeroStyles';
 import Speaker from '@/components/Speaker';
+import EducationalIntro from "@/components/styles/EducationalIntro";
 import SubHeroStyles from '../components/styles/SubHeroStyles';
 import FeaturedSpeakersStyles from '../components/styles/FeaturedSpeakersStyles';
 import EducationalInstitute from '@/components/EducationalInstitute';
@@ -13,68 +14,9 @@ import VideoModal from "@/components/VideoModal";
 import QuotesCarousel from '../components/QuotesCarousel';
 import OurStore from '../components/OurStore';
 import ButtonStyles from '../components/styles/ButtonStyles';
+import OurStoreStyles from '../components/styles/OurStoreStyles';
 import OurStoreCarousel from '@/components/OurStoreCrousal';
-import { device } from '@/components/device';
 import ContainerBox from '@/components/styles/ContainerBox';
-import Head from 'next/head'
-
-const EducationalIntro = styled.section`
-  background: #F2F2F2;
-  text-align: center;
-  padding: 30px 0 60px;
-  p {
-    max-width: 898px;
-    margin: 0 auto 0px;
-  }
-
-  @media ${device.tablet} {
-    margin-bottom: 16px;
-
-    h2 {
-      //styleName: H1 Mobile;
-      font-family: Oswald;
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 28px;
-      letter-spacing: 0.085em;
-      text-align: center;
-   
-    }
-  }
-
-`;
-const OurStoreStyles = styled.section`
-
-  .mobile {
-      display: none;
-      h2 {
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 28px;
-        letter-spacing: 0.085em;
-        text-align: center;
-        margin-top: 40px;
-      }
-  }
-
-  .desktop {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-  }
-
-  @media ${device.tablet} {
-  
-    .desktop {
-      display: none;
-    }
-    .mobile {
-      display: block;
-    }
-  }
-
-`;
 
 const Home = ({ featuredSpeakers, quotes, products }) => {
   const [showModal, setShowModal] = useState(false);
@@ -172,12 +114,6 @@ const Home = ({ featuredSpeakers, quotes, products }) => {
     </>
   );
 };
-
-// Return 4 Random Featured Speakers
-// function getRandomSpeakers(speakersData) {
-//   const shuffledSpeakers = speakersData.data.sort(() => Math.random() - 0.5);
-//   return shuffledSpeakers.slice(0, 4);
-// }
 
 export async function getStaticProps() {
   const featuredSpeakers = await loadFeaturedSpeakers();
