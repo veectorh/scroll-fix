@@ -1,6 +1,6 @@
 import { device } from "../device";
 import styled from 'styled-components';
-const ContainerBox = styled.div`
+const ContainerBox = styled.section`
     margin: 0px 20px;
 
     @media ${device.laptopL} {

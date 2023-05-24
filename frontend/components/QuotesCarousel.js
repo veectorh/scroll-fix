@@ -19,7 +19,7 @@ export default function QuotesCarousel({quotes}) {
   }
   
   return (
-    <div style={styles.container}>
+    <section style={styles.container}>
       <Quotes {...quotes[currentSlide]}  />
       <div style={styles.dots}>
         {quotes.map((_, index) => (
@@ -33,7 +33,7 @@ export default function QuotesCarousel({quotes}) {
           />
           ))}
       </div>
-    </div>
+    </section>
   );
 }
 

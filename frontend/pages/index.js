@@ -18,7 +18,7 @@ import { device } from '@/components/device';
 import ContainerBox from '@/components/styles/ContainerBox';
 import Head from 'next/head'
 
-const EducationalIntro = styled.div`
+const EducationalIntro = styled.section`
   background: #F2F2F2;
   text-align: center;
   padding: 30px 0 60px;
@@ -43,7 +43,7 @@ const EducationalIntro = styled.div`
   }
 
 `;
-const OurStoreStyles = styled.div`
+const OurStoreStyles = styled.section`
 
   .mobile {
       display: none;
