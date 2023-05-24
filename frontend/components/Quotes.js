@@ -8,6 +8,7 @@ const QuotesStyles = styled.section`
   justify-content: center;
   .quote-container {
     max-width: 1042px;
+    min-height: 630px;
     margin: 0 50px;
     padding: 102px 0 142px;
     position: relative;
