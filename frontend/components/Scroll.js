@@ -22,7 +22,7 @@ export default function Scroll({ children, active, setActive }) {
           setActive(idx);
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.15 }
     );
     placeholderRefs.current.forEach((placeholder, idx) => {
       observer.observe(placeholder);

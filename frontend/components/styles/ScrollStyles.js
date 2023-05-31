@@ -4,7 +4,7 @@ import { device } from "../device";
 const ScrollStyles = styled.section`
   width: 100%;
   position: relative;
-  height: calc(60vh + ${({ childrenLen }) => childrenLen * 130}vh);
+  height: calc(20vh + ${({ childrenLen }) => childrenLen * 100}vh);
 
   .track {
     width: 100%;
@@ -15,7 +15,7 @@ const ScrollStyles = styled.section`
   }
 
   .placeholders {
-    padding-top: 30vh;
+    padding-top: 10vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -24,7 +24,7 @@ const ScrollStyles = styled.section`
     z-index: -1;
     .placeholder {
       width: 100%;
-      height: 130vh;
+      height: 100vh;
     }
   }
 
