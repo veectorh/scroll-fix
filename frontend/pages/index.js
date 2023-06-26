@@ -16,6 +16,18 @@ import FeaturedSpeakersStyles from '../components/styles/FeaturedSpeakersStyles'
 import ButtonStyles from '../components/styles/ButtonStyles';
 import OurStoreStyles from '../components/styles/OurStoreStyles';
 import ContainerBox from '@/components/styles/ContainerBox';
+import styled from 'styled-components';
+import { device } from '../components/device';
+
+const HeroScroll = styled.div`
+  height: 95vh;
+  overflow-y: scroll;
+
+  @media ${device.tablet} {
+    height: unset;
+    overflow-y: unset;
+  }
+`;
 
 const Home = ({ featuredSpeakers, quotes, products }) => {
   const [showModal, setShowModal] = useState(false);
@@ -39,8 +51,10 @@ const Home = ({ featuredSpeakers, quotes, products }) => {
         <meta property="og:image" content="https://speakout-website.s3.amazonaws.com/speakout_logo_dark_c683312f3e.png" />
       </Head>
       <div style={{marginTop: -79}}>
-        <Hero showModal={showModal} onClick={handleButtonClick} onClose={handleCloseModal} />
-        <SubHero />
+        <HeroScroll>
+          <Hero showModal={showModal} onClick={handleButtonClick} onClose={handleCloseModal} />
+          <SubHero />
+        </HeroScroll>
         <ContainerBox>
           <FeaturedSpeakersStyles>
             <div className="featured-intro">
