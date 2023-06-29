@@ -6,8 +6,9 @@ import ButtonStyles from "../components/styles/ButtonStyles";
 import ContainerBox from "./styles/ContainerBox";
 import { useEffect, useRef, useState } from "react";
 
-export default function EducationalInstitute() {
+export default function EducationalInstitute(events) {
   const [active, setActive] = useState(0);
+
   return (
     <EducationalInstituteStyles>
       <Scroll active={active} setActive={setActive}>
@@ -58,11 +59,8 @@ export default function EducationalInstitute() {
                   and affordable events.
                 </p>
                 <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-                  <ButtonStyles theme={{ main: "#00AFB5" }}>
-                    <a
-                      href="https://www.eventbrite.com/e/spill-the-disabili-tea-an-introduction-to-disability-justice-alex-locust-tickets-580911781777"
-                      target="_blank"
-                    >
+                  <ButtonStyles theme={{ main: "#00AFB5" }} style={{ display: events.events?.data[0]?.attributes.enroll_url === undefined ? "none" : "flex"}}>
+                    <a href={events.events?.data[0]?.attributes.enroll_url} target="_blank">
                       Upcoming Event
                     </a>
                   </ButtonStyles>

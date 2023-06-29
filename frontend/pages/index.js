@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { loadFeaturedSpeakers } from '@/lib/load-featured-speakers';
 import { loadQuotes } from '@/lib/load-quotes';
 import { loadFeaturedProducts } from '@/lib/load-featured-products';
+import { loadAPI } from '@/lib/load-api';
 import Hero from "@/components/Hero";
 import SubHero from "@/components/SubHero";
 import EducationalInstitute from '@/components/EducationalInstitute';
@@ -29,7 +30,7 @@ const HeroScroll = styled.div`
   }
 `;
 
-const Home = ({ featuredSpeakers, quotes, products }) => {
+const Home = ({ featuredSpeakers, quotes, products, events }) => {
   const [showModal, setShowModal] = useState(false);
 
   function handleButtonClick() {
@@ -77,7 +78,7 @@ const Home = ({ featuredSpeakers, quotes, products }) => {
             <p>A digital destination that empowers young people, educators, and professionals through transformative programming featuring our speakers. The goal of our educational programs is to create a more just society.</p>
           </ContainerBox>
         </EducationalIntro>
-        <EducationalInstitute />
+        <EducationalInstitute events={events} />
         <QuotesCarousel quotes={quotes.data} />
         <OurStoreStyles>
           <ContainerBox>
@@ -98,8 +99,9 @@ export async function getStaticProps() {
   const featuredSpeakers = await loadFeaturedSpeakers();
   const quotes = await loadQuotes();
   const products = await loadFeaturedProducts();
+  const events = await loadAPI("virtual-events");
 
-  return { props: { featuredSpeakers, quotes, products } }
+  return { props: { featuredSpeakers, quotes, products, events } }
 }
 
 export default Home;

@@ -1,10 +1,9 @@
 import EducationalInstitute from "@/components/EducationalInstitute";
-import NeedHelp from "@/components/NeedHelp";
-import QuotesCarousel from "@/components/QuotesCarousel";
 import ContainerBox from "@/components/styles/ContainerBox";
 import styled from "styled-components";
 import { device } from "@/components/device";
 import Head from 'next/head'
+import { loadAPI } from '@/lib/load-api';
 
 const InstitutePageStyle = styled.section`
   padding: 100px 0 0;
@@ -58,7 +57,7 @@ const InstitutePageStyle = styled.section`
   }
 `;
 
-export default function InstitutePage() {
+export default function InstitutePage({ events }) {
   return (
     <>
       <ContainerBox>
@@ -75,7 +74,13 @@ export default function InstitutePage() {
           <p>A digital destination that empowers young people, educators, and professionals through transformative programming featuring our speakers. The goal of our educational programs is to create a more just society.</p>
         </InstitutePageStyle>
       </ContainerBox>
-      <EducationalInstitute />
+      <EducationalInstitute events={events} />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const events = await loadAPI("virtual-events");
+
+  return { props: { events } }
 }
