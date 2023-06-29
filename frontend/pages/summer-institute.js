@@ -6,6 +6,7 @@ import { loadSummerInstitutes } from "@/lib/load-summer-institutes";
 import { device } from "@/components/device";
 import ContainerBox from "@/components/styles/ContainerBox";
 import Head from 'next/head'
+import ReactMarkdown from "react-markdown";
 
 const SummerInstituteStyle = styled.section`
   padding: 50px 0 0;
@@ -297,7 +298,7 @@ export default function SummerInstitutePage({ institutes }) {
               <h2 className="orange-heading">{institute.attributes.year}</h2>
               <p className="sub-heading">Summer Institute</p>
               <h3>{institute.attributes.title}</h3>
-              <p>{institute.attributes.description}</p>
+              <ReactMarkdown linkTarget="_blank" children={institute.attributes.description} />
               <ButtonStyles theme={{ main: "#00AFB5" }}>
                 <Link href={institute.attributes.register_url}>Register Now</Link>
               </ButtonStyles>
