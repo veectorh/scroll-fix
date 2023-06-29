@@ -23,7 +23,7 @@ export default function SubHero() {
             <p>SpeakOut works with colleges, universities, schools, organizations, government agencies and the private sector, promoting critical analysis, creativity and innovative strategies for 21st century problem-solving.</p>
           </div>
         </div>
-        <ButtonStyles theme={{ main: "#00AFB5" }}><Link href="/about-us">learn more about speakout</Link></ButtonStyles>
+        <ButtonStyles theme={{ main: "rgba(9, 88, 91, 0.6)" }}><Link href="/about-us">learn more about speakout</Link></ButtonStyles>
       </SubHeroStyles>
     </SharedBackground>
   )

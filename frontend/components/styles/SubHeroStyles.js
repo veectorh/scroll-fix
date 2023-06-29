@@ -26,7 +26,7 @@ const SubHeroStyles = styled.section`
     line-height: 48px;
     text-align: center;
     letter-spacing: 0.03em;
-    color: #38F0F0;
+    color: #FFFFFF;
     margin: 0;
   }
   .sub {
@@ -34,7 +34,7 @@ const SubHeroStyles = styled.section`
     font-weight: 400;
     font-size: 34px;
     line-height: 41px;
-    color: #FFFFFF;
+    color: #262626;
   }
 
   .white {
@@ -57,10 +57,10 @@ const SubHeroStyles = styled.section`
       text-align: center;
 
       h3 {
-        color: white;
+        color: #262626;
       }
       p {
-        color: white;
+        color: #262626;
       }
     }
 
@@ -76,8 +76,8 @@ const SubHeroStyles = styled.section`
       left: -20px;
       right: -20px;
       bottom: 30px;
-      border-left: white 1px solid;
-      border-right: white 1px solid;
+      border-left: #262626 1px solid;
+      border-right: #262626 1px solid;
     }
   }
 
