@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { device } from "../device";
 
+// console.log("YO", childrenLen)
+
 const ScrollStyles = styled.section`
   width: 100%;
   position: relative;
-  height: calc(20vh + ${({ childrenLen }) => childrenLen * 100}vh);
+  height: calc(60vh + ${({ childrenLen }) => childrenLen * 130}vh);
 
   .track {
     width: 100%;
