@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from 'next/head'
 import Link from 'next/link';
 import { loadFeaturedSpeakers } from '@/lib/load-featured-speakers';
@@ -19,10 +19,11 @@ import OurStoreStyles from '../components/styles/OurStoreStyles';
 import ContainerBox from '@/components/styles/ContainerBox';
 import styled from 'styled-components';
 import { device } from '../components/device';
+import EducationInst from "@/components/EducationInst";
 
 const HeroScroll = styled.div`
-  height: 95vh;
-  overflow-y: scroll;
+  /* height: 95vh; */
+  overflow-y: hidden;
 
   @media ${device.tablet} {
     height: unset;
@@ -32,6 +33,8 @@ const HeroScroll = styled.div`
 
 const Home = ({ featuredSpeakers, quotes, products, events }) => {
   const [showModal, setShowModal] = useState(false);
+  const [showRollerSpeed, setShowRollerSpeed] = useState(false);
+  
 
   function handleButtonClick() {
     setShowModal(true);
@@ -41,6 +44,46 @@ const Home = ({ featuredSpeakers, quotes, products, events }) => {
     setShowModal(false);
   }
 
+  var checkScrollSpeed = (function(settings){
+    settings = settings || {};
+  
+    var lastPos, newPos, timer, delta, 
+        delay = settings.delay || 50; // in "ms" (higher means lower fidelity )
+  
+    function clear() {
+      lastPos = null;
+      delta = 0;
+    }
+  
+    clear();
+    
+    return function(){
+      newPos = window.scrollY;
+      if ( lastPos != null ){ // && newPos < maxScroll 
+        delta = newPos -  lastPos;
+      }
+      lastPos = newPos;
+      clearTimeout(timer);
+      timer = setTimeout(clear, delay);
+      return delta;
+    };
+})();
+
+let speed
+let scrollSpeed
+
+
+   // listen to "scroll" event
+   if (typeof window !== 'undefined') {
+      window.onscroll = function(){
+      
+        scrollSpeed = checkScrollSpeed();
+        scrollSpeed > 90 ? setTimeout(() => {setShowRollerSpeed(true)}, 900) :    setTimeout(() => {setShowRollerSpeed(false)}, 900)
+        console.log(showRollerSpeed, "roller speed") 
+      };
+   }
+
+  
   return (
     <>
       <Head>
@@ -78,7 +121,7 @@ const Home = ({ featuredSpeakers, quotes, products, events }) => {
             <p>A digital destination that empowers young people, educators, and professionals through transformative programming featuring our speakers. The goal of our educational programs is to create a more just society.</p>
           </ContainerBox>
         </EducationalIntro>
-        <EducationalInstitute events={events} />
+        {!showRollerSpeed ? <EducationalInstitute events={events} /> : <EducationInst />}
         <QuotesCarousel quotes={quotes.data} />
         <OurStoreStyles>
           <ContainerBox>
