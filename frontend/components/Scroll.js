@@ -1,50 +1,23 @@
-import ScrollStyles from "./styles/ScrollStyles";
-import { useEffect, useRef, useState } from "react";
+import { motion, cubicBezier } from "framer-motion";
+export default function Scroll({ children }) {
+  
+  const contentSequence = {
+    visible: { opacity: 1, height: "100vh" },
+    hidden: { opacity: 0, height: "0vh"}
+  }
 
-export default function Scroll({ children, active, setActive }) {
-  const placeholderRefs = useRef([]);
-  const parentRef = useRef();
-  useEffect(() => {
-    if (
-      parentRef.current &&
-      parentRef.current.getBoundingClientRect().top === 0
-    ) {
-      placeholderRefs.current[active].scrollIntoView();
-    }
-  }, [active]);
+  const easing = cubicBezier(0.7, 0, 0.3, 1)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const newEntry = entries.find((entry) => entry.isIntersecting);
-        if (newEntry) {
-          const idx = Number(newEntry.target.attributes.idx.textContent);
-          setActive(idx);
-        }
-      },
-      { threshold: 0.9 }
-    );
-    placeholderRefs.current.forEach((placeholder, idx) => {
-      observer.observe(placeholder);
-    });
-  }, [placeholderRefs.current]);
 
   return (
-    <ScrollStyles childrenLen={children.length}>
-      <div className="track" ref={parentRef}>
-        {children}
-      </div>
-      <div className="placeholders">
-        {children.map((child, idx) => (
-          <div
-            id={`scroll-elem-${idx}`}
-            idx={idx}
-            key={`scroll-elem-${idx}`}
-            className="placeholder"
-            ref={(el) => (placeholderRefs.current[idx] = el)}
-          />
-        ))}
-      </div>
-    </ScrollStyles>
+    <motion.div 
+        className="copy-image"
+        initial={contentSequence.hidden}
+        whileInView={contentSequence.visible}
+        viewport={{ once: false }}
+        transition={{ ease: easing, duration: 0.5 }}
+      >
+      {children}
+    </motion.div>
   );
 }

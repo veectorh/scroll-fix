@@ -4,15 +4,16 @@ import EducationalInstituteStyles from "../components/styles/EducationalInstitut
 import Scroll from "./Scroll";
 import ButtonStyles from "../components/styles/ButtonStyles";
 import ContainerBox from "./styles/ContainerBox";
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+
 
 export default function EducationalInstitute(events) {
-  const [active, setActive] = useState(0);
+
 
   return (
     <EducationalInstituteStyles>
-      <Scroll active={active} setActive={setActive}>
-        <div className={`copy-image ${active === 0 ? "visible" : ""}`}>
+      <motion.div transition={{staggerChildren: 3}}>
+        <Scroll>
           <div className="copy">
             <ContainerBox>
               <div className="copy-container">
@@ -45,9 +46,9 @@ export default function EducationalInstitute(events) {
               priority
             />
           </div>
-        </div>
+        </Scroll>
 
-        <div className={`copy-image ${active === 1 ? "visible" : ""}`}>
+        <Scroll>
           <div className="copy">
             <ContainerBox>
               <div className="copy-container">
@@ -82,9 +83,9 @@ export default function EducationalInstitute(events) {
               id="virtual-event"
             />
           </div>
-        </div>
+        </Scroll>
 
-        <div className={`copy-image ${active === 2 ? "visible" : ""}`}>
+        <Scroll>
           <div className="copy">
             <ContainerBox>
               <div className="copy-container">
@@ -113,9 +114,9 @@ export default function EducationalInstitute(events) {
               id="summer-institute"
             />
           </div>
-        </div>
+        </Scroll>
 
-        <div className={`copy-image ${active === 3 ? "visible" : ""}`}>
+        <Scroll>
           <div className="copy">
             <ContainerBox>
               <div className="copy-container">
@@ -143,8 +144,8 @@ export default function EducationalInstitute(events) {
               id="original-film"
             />
           </div>
-        </div>
-      </Scroll>
+        </Scroll>
+      </motion.div>
     </EducationalInstituteStyles>
   );
 }

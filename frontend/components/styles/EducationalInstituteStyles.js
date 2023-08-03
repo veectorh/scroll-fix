@@ -15,22 +15,11 @@ const EducationalInstituteStyles = styled.section`
     width: 100%;
     /* margin-bottom: -4px; */
     height: 101vh;
-    position: absolute;
     top: 0;
     left: 0;
-    &.visible {
-      z-index: 10;
-      .copy {
-        transform: translateY(0);
-      }
-      .image {
-        transform: translateY(0);
-      }
     }
 
     .copy {
-      transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
-      transform: translateY(100%);
       height: 100%;
       display: flex;
       align-items: center;
@@ -43,8 +32,6 @@ const EducationalInstituteStyles = styled.section`
       }
     }
     .image {
-      transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
-      transform: translateY(-100%);
       height: 100%;
 
       img {
