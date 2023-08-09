@@ -12,7 +12,7 @@ export default function EducationalInstitute(events) {
 
   return (
     <EducationalInstituteStyles>
-      <motion.div transition={{staggerChildren: 3}}>
+      <motion.div>
         <Scroll>
           <div className="copy">
             <ContainerBox>
