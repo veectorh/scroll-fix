@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import EducationalInstituteStyles from "../components/styles/EducationalInstituteStyles";
 import Scroll from "./Scroll";
+import ScrollInverse from "./ScrollInverse";
 import ButtonStyles from "../components/styles/ButtonStyles";
 import ContainerBox from "./styles/ContainerBox";
 import { motion } from "framer-motion";
@@ -14,7 +15,6 @@ export default function EducationalInstitute(events) {
     <EducationalInstituteStyles>
       <motion.div>
         <Scroll>
-          <div className="copy">
             <ContainerBox>
               <div className="copy-container">
                 <h2>E-Courses</h2>
@@ -35,21 +35,17 @@ export default function EducationalInstitute(events) {
                 </ButtonStyles>
               </div>
             </ContainerBox>
-          </div>
 
-          <div className="image">
             <Image
               src="/images/ecourse.png"
               alt="e-course"
               fill
               sizes="50vw"
               priority
-            />
-          </div>
+            />   
         </Scroll>
 
-        <Scroll>
-          <div className="copy">
+        <ScrollInverse>
             <ContainerBox>
               <div className="copy-container">
                 <h2>Virtual Events</h2>
@@ -70,10 +66,8 @@ export default function EducationalInstitute(events) {
                   </ButtonStyles>
                 </div>
               </div>
-            </ContainerBox>
-          </div>
+            </ContainerBox>          
 
-          <div className="image">
             <Image
               src="/images/virtual-events.png"
               alt="virtual events"
@@ -82,11 +76,10 @@ export default function EducationalInstitute(events) {
               priority
               id="virtual-event"
             />
-          </div>
-        </Scroll>
+          
+        </ScrollInverse>
 
         <Scroll>
-          <div className="copy">
             <ContainerBox>
               <div className="copy-container">
                 <h2>Summer Institute</h2>
@@ -101,10 +94,8 @@ export default function EducationalInstitute(events) {
                   <Link href="/summer-institute">Learn More and Register</Link>
                 </ButtonStyles>
               </div>
-            </ContainerBox>
-          </div>
+            </ContainerBox>       
 
-          <div className="image">
             <Image
               src="/images/summer-institute.png"
               alt="summer institute"
@@ -113,11 +104,9 @@ export default function EducationalInstitute(events) {
               priority
               id="summer-institute"
             />
-          </div>
         </Scroll>
 
-        <Scroll>
-          <div className="copy">
+        <ScrollInverse>
             <ContainerBox>
               <div className="copy-container">
                 <h2>SpeakOut Original Films</h2>
@@ -131,10 +120,8 @@ export default function EducationalInstitute(events) {
                   <Link href="/original-films">Explore Our Films</Link>
                 </ButtonStyles>
               </div>
-            </ContainerBox>
-          </div>
+            </ContainerBox>    
 
-          <div className="image">
             <Image
               src="/images/so-original-films.png"
               alt="original films"
@@ -142,9 +129,8 @@ export default function EducationalInstitute(events) {
               sizes="50vw"
               priority
               id="original-film"
-            />
-          </div>
-        </Scroll>
+            />      
+        </ScrollInverse>
       </motion.div>
     </EducationalInstituteStyles>
   );

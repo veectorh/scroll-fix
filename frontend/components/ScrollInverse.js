@@ -1,9 +1,9 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 
-export default function Scroll({ children }) {
+export default function ScrollInverse({ children }) {
   const ref = useRef(null);
   const [copyRef, copyInView] = useInView({
     triggerOnce: false,
@@ -13,20 +13,20 @@ export default function Scroll({ children }) {
   });
 
   const copyvariants = {
-    hidden: { opacity: 0, x: "-100%" },
+    hidden: { opacity: 0, x: "100%" },
     visible: { opacity: 1, x: "0%",
-      transition: {
-          duration: 0.5
-      } 
+        transition: {
+            duration: 1
+        } 
     },
   };
 
   const imagevariants = {
-    hidden: { opacity: 0, x: "100%" },
+    hidden: { opacity: 0, x: "-100%" },
     visible: { opacity: 1, x: "0%",
-      transition: {
-          duration: 0.5
-      } 
+        transition: {
+            duration: 1
+        } 
     },
   };
 
