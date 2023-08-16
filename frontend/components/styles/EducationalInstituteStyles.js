@@ -4,6 +4,7 @@ const EducationalInstituteStyles = styled.section`
   background: #f2f2f2;
   text-align: center;
   padding: 0;
+  overflow-x: hidden;
   p {
     max-width: 898px;
     margin: 0 auto 66px;
